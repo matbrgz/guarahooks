@@ -1,0 +1,35 @@
+{
+  "name": "Easy Hooks",
+  "homepage": "https://easy-hooks.vercel.app/",
+  "items": [
+    {
+      "name": "use-window-size",
+      "type": "registry:hook",
+      "title": "Use Window Size",
+      "description": "A hook to get the window size",
+      "files": [
+        {
+          "path": "registry/hooks/use-window-size.tsx",
+          "type": "registry:hook",
+          "target": "hooks/easy-hooks/use-window-size.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-window-size-demo",
+      "type": "registry:example",
+      "title": "Use Window Size Demo",
+      "description": "A demo of the use-window-size hook.",
+      "registryDependencies": [
+        "https://easy-hooks.vercel.app/r/use-window-size"
+      ],
+      "files": [
+        {
+          "path": "registry/examples/use-window-size-demo.tsx",
+          "type": "registry:example",
+          "target": "components/examples/use-window-size-demo.tsx"
+        }
+      ]
+    }
+  ]
+}

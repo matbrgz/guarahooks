@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-window-size",
+  "type": "registry:hook",
+  "title": "Use Window Size",
+  "description": "A hook to get the window size",
+  "files": [
+    {
+      "path": "registry/hooks/use-window-size.tsx",
+      "content": "'use client';\n\nimport { useEffect, useState } from 'react';\n\ninterface UseWindowSizeOptions {\n  initialWidth?: number;\n  initialHeight?: number;\n  onChange?: (width: number, height: number) => void;\n}\n\ninterface WindowSize {\n  width: number;\n  height: number;\n}\n\nexport function useWindowSize(options: UseWindowSizeOptions = {}): WindowSize {\n  const {\n    initialWidth = window.innerWidth,\n    initialHeight = window.innerHeight,\n    onChange,\n  } = options;\n\n  const [windowSize, setWindowSize] = useState<WindowSize>({\n    width: initialWidth,\n    height: initialHeight,\n  });\n\n  useEffect(() => {\n    const handleResize = () => {\n      const width = window.innerWidth;\n      const height = window.innerHeight;\n\n      setWindowSize({ width, height });\n\n      if (onChange) {\n        onChange(width, height);\n      }\n    };\n\n    window.addEventListener('resize', handleResize);\n\n    // Call handler right away to update size on mount\n    handleResize();\n\n    return () => window.removeEventListener('resize', handleResize);\n  }, [onChange]);\n\n  return windowSize;\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/easy-hooks/use-window-size.tsx"
+    }
+  ]
+}
