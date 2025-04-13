@@ -5,6 +5,7 @@
     "tsconfig.json": "tsconfig.*.json",
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
     "next.config.ts": "next-env.d.ts, components.json",
-    "eslint.config.mjs": "prettier.config.mjs, lint-staged.config.mjs, postcss.config.mjs, commitlint.config.mjs"
+    "eslint.config.mjs": "prettier.config.mjs, lint-staged.config.mjs, postcss.config.mjs, commitlint.config.mjs",
+    "README.md": "*.md"
   }
 }
