@@ -4,7 +4,10 @@ import { geistMono, sora } from '@/assets/fonts';
 
 import '@/assets/globals.css';
 
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
+import { Toaster } from '@/components/ui/sonner';
 
 import { cn } from '@/lib/utils';
 
@@ -26,13 +29,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'relative w-full min-h-dvh bg-background font-sans antialiased scroll-smooth',
-          geistMono.variable,
+          'relative w-full min-h-dvh bg-background font-sans antialiased scroll-smooth flex flex-col overflow-x-hidden',
           sora.variable,
+          geistMono.variable,
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <Header />
+          <main className="grow">{children}</main>
+          <Footer />
+          <Toaster richColors position="bottom-center" duration={3000} />
         </ThemeProvider>
       </body>
     </html>
