@@ -4,10 +4,10 @@ import { PageBanner } from '@/components/page-banner';
 
 import { cn, getHookExamples } from '@/lib/utils';
 
-import { hooks } from '@/config/hooks';
+import { examples } from '@/registry/registry-examples';
 
 export default function Home() {
-  const hooksExamples = getHookExamples(hooks.map((hook) => hook.name));
+  const hookExamples = getHookExamples(examples.map((example) => example.name));
 
   return (
     <>
@@ -21,9 +21,9 @@ export default function Home() {
           'relative w-full grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3',
         )}
       >
-        {hooksExamples.map((hook) => (
-          <article key={hook.name}>
-            <HookExampleLoaderClient hook={hook} />
+        {hookExamples.map((example) => (
+          <article key={example.name}>
+            <HookExampleLoaderClient hook={example} />
           </article>
         ))}
       </section>

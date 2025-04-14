@@ -24,7 +24,11 @@ export function HookExampleLoaderClient<TProps extends object>({
   const newPath = path.replace('registry/', '');
 
   const HookExample = dynamic(
-    () => import(`@/registry/${newPath}`).catch(() => () => null),
+    () =>
+      import(`@/registry/${newPath}`).catch((err) => {
+        console.error('Error importing component:', newPath, err);
+        return () => null;
+      }),
     {
       loading: () => (
         <div
