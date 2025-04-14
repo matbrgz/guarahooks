@@ -14,9 +14,11 @@ interface WindowSize {
 }
 
 export function useWindowSize(options: UseWindowSizeOptions = {}): WindowSize {
+  const isBrowser = typeof window !== 'undefined';
+
   const {
-    initialWidth = window.innerWidth,
-    initialHeight = window.innerHeight,
+    initialWidth = isBrowser ? window.innerWidth : 0,
+    initialHeight = isBrowser ? window.innerHeight : 0,
     onChange,
   } = options;
 
@@ -26,6 +28,8 @@ export function useWindowSize(options: UseWindowSizeOptions = {}): WindowSize {
   });
 
   useEffect(() => {
+    if (!isBrowser) return;
+
     const handleResize = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
@@ -43,7 +47,7 @@ export function useWindowSize(options: UseWindowSizeOptions = {}): WindowSize {
     handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
-  }, [onChange]);
+  }, [onChange, isBrowser]);
 
   return windowSize;
 }

@@ -20,7 +20,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/hooks/use-window-size.tsx');
+      const mod = await import('@/registry/hooks/easy-hooks/use-window-size');
       const exportName =
         Object.keys(mod).find(
           (key) =>

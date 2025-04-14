@@ -11,13 +11,28 @@ import { Toaster } from '@/components/ui/sonner';
 
 import { cn } from '@/lib/utils';
 
+import { siteConfig } from '@/config/site';
+
 export const metadata: Metadata = {
   title: {
-    default: 'Easy Hooks',
-    template: '%s | Easy Hooks',
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    'Reusable and customizable hooks that you can copy and paste into your projects. Free and Open-Source.',
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: 'h3rmel', url: siteConfig.links.author }],
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [
+      {
+        url: `${siteConfig.url}/og.png`,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -36,7 +51,9 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="grow">{children}</main>
+          <main className="grow border-x flex flex-col h-full border-dashed max-w-7xl mx-auto w-full px-8">
+            {children}
+          </main>
           <Footer />
           <Toaster richColors position="bottom-center" duration={3000} />
         </ThemeProvider>
