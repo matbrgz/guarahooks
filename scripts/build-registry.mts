@@ -114,7 +114,7 @@ async function buildRegistry() {
     });
   });
 
-  // 2. Replace `@/registry/easy-hooks/` with `@/hooks/easy-hooks/` in all files
+  // 2. Replace `@/registry/hooks/` with `@/hooks/easy-hooks/` in all files
   const files = await fs.readdir(path.join(process.cwd(), 'public/r'));
 
   await Promise.all(
@@ -128,9 +128,9 @@ async function buildRegistry() {
 
       // Replace `@/registry/easy-hooks/` in files
       registryItem.files = registryItem.files?.map((file) => {
-        if (file.content?.includes('@/registry/easy-hooks')) {
+        if (file.content?.includes('@/registry/hooks')) {
           file.content = file.content?.replaceAll(
-            '@/registry/easy-hooks',
+            '@/registry/hooks',
             '@/hooks/easy-hooks',
           );
         }

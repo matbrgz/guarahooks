@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/examples/use-window-size-demo.tsx",
-      "content": "export default function UseWindowSizeDemo() {\n  return <section></section>;\n}\n",
+      "content": "'use client';\n\nimport { useWindowSize } from '../hooks/use-window-size';\n\nexport default function UseWindowSizeDemo() {\n  const { width, height } = useWindowSize();\n\n  return (\n    <div className=\"flex gap-2\">\n      <p className=\"text-sm text-muted-foreground\">\n        Width: <span className=\"text-foreground\">{width}</span>\n      </p>\n      <p className=\"text-sm text-muted-foreground\">\n        Height: <span className=\"text-foreground\">{height}</span>\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": "components/examples/use-window-size-demo.tsx"
     }
