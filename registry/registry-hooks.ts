@@ -14,4 +14,17 @@ export const hooks: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-media',
+    type: 'registry:hook',
+    title: 'UseMedia',
+    description: 'Checks if the current window matches a media query.',
+    files: [
+      {
+        path: 'registry/hooks/use-media.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-media.tsx',
+      },
+    ],
+  },
 ];

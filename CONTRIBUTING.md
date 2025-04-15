@@ -132,13 +132,35 @@ export const examples: Registry['items'] = [
 
 Make sure to add any necessary dependencies, configurations or other properties as needed for your specific hook.
 
-### 4. Build Registry
+### 4. Update Docs
+
+Update the `config/hooks.ts` wity your new hook in the correct category.
+
+```typescript
+
+export const categories: HookCategory[] = [
+  // ... existing categories and hooks ...
+  {
+    slug: 'examples',
+    name: 'Examples',
+    description: 'Teaching you how to add a hook in this amazing project!'
+    hooks: [
+      {
+        name: 'use-example-hook',
+      },
+    ],
+  }
+  // ... existing categories and hooks ...
+];
+```
+
+### 5. Build Registry
 
 ```bash
 pnpm build:registry
 ```
 
-### 5. Format and fix linting before committing
+### 6. Format and fix linting before committing
 
 ```bash
 pnpm format:write

@@ -24,6 +24,9 @@ export const categories: HookCategory[] = [
       {
         name: 'use-window-size',
       },
+      {
+        name: 'use-media',
+      },
     ],
     isNew: true, // TODO: Remove this after 1.0.0
   },
