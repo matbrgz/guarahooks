@@ -7,7 +7,7 @@ import { HookExampleLoaderClient } from '@/components/hook-example-loader-client
 import { PageBanner } from '@/components/page-banner';
 import { PageGrid } from '@/components/page-grid';
 
-import { getHooksByNames } from '@/lib/utils';
+import { getHooksByNames, getHooksExamplesByNames } from '@/lib/utils';
 
 import { getCategory } from '@/config/hooks';
 
@@ -23,6 +23,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   const hooks = getHooksByNames(category.hooks.map((item) => item.name));
+  const examples = getHooksExamplesByNames(
+    category.hooks.map((item) => item.name),
+  );
 
   const getSubtitle = () => {
     return hooks.length === 1
@@ -34,13 +37,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     <>
       <PageBanner title={category.name} subtitle={getSubtitle()} />
       <PageGrid>
-        {hooks.map((hook) => (
+        {hooks.map((hook, index) => (
           <HookCard
             key={hook.name}
             name={hook.name}
             description={hook.description ?? ''}
           >
-            <HookExampleLoaderClient hook={hook} />
+            <HookExampleLoaderClient hook={examples[index]} />
             <HookDetails hook={hook} />
           </HookCard>
         ))}
