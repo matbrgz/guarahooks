@@ -9,7 +9,7 @@ import * as React from 'react';
 export const Index: Record<string, any> = {
   'use-window-size': {
     name: 'use-window-size',
-    description: 'A hook to get the window size',
+    description: "Tracks the current window's dimensions (width and height).",
     type: 'registry:hook',
     registryDependencies: undefined,
     files: [
@@ -32,7 +32,7 @@ export const Index: Record<string, any> = {
   },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
-    description: "Hook to get the current window's size.",
+    description: "use-window-size's hook in action.",
     type: 'registry:example',
     registryDependencies: ['https://h3-use.vercel.app/r/use-window-size'],
     files: [

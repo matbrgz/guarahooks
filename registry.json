@@ -5,8 +5,8 @@
     {
       "name": "use-window-size",
       "type": "registry:hook",
-      "title": "Use Window Size",
-      "description": "A hook to get the window size",
+      "title": "UseWindowSize",
+      "description": "Tracks the current window's dimensions (width and height).",
       "files": [
         {
           "path": "registry/hooks/use-window-size.tsx",
@@ -18,8 +18,8 @@
     {
       "name": "use-window-size-demo",
       "type": "registry:example",
-      "title": "Use Window Size Demo",
-      "description": "Hook to get the current window's size.",
+      "title": "UseWindowSizeDemo",
+      "description": "use-window-size's hook in action.",
       "registryDependencies": ["https://h3-use.vercel.app/r/use-window-size"],
       "files": [
         {

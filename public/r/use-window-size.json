@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-window-size",
   "type": "registry:hook",
-  "title": "Use Window Size",
-  "description": "A hook to get the window size",
+  "title": "UseWindowSize",
+  "description": "Tracks the current window's dimensions (width and height).",
   "files": [
     {
       "path": "registry/hooks/use-window-size.tsx",
