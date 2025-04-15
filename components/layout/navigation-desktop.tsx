@@ -23,6 +23,7 @@ export function NavigationDesktop() {
         <Link
           href="https://github.com/h3rmel/h3-use/"
           className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}
+          target="_blank"
           aria-label="GitHub"
         >
           <Icons.Github className="size-4" />
