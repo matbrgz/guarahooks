@@ -1,4 +1,3 @@
-import { Badge } from './ui/badge';
 import {
   Card,
   CardContent,
@@ -15,7 +14,7 @@ type HookCardProps = {
 
 export function HookCard({ name, description, children }: HookCardProps) {
   return (
-    <Card className="relative h-64">
+    <Card className="relative">
       <CardHeader className="border-b">
         <CardTitle>{name.replace('-demo', '')}</CardTitle>
         <CardDescription>{description}</CardDescription>

@@ -1,10 +1,8 @@
-import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { HookCard } from '@/components/hook-card';
 import { HookCta } from '@/components/hook-cta';
 import { HookDetails } from '@/components/hook-details';
-import { HookExampleLoaderClient } from '@/components/hook-example-loader-client';
 import { PageBanner } from '@/components/page-banner';
 import { PageGrid } from '@/components/page-grid';
 
@@ -44,15 +42,14 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   return (
     <>
       <PageBanner title={category.name} subtitle={category.description} />
-      <PageGrid className="grow h-max">
+      <PageGrid className="grow h-full">
         {hooks.map((hook, index) => (
           <HookCard
             key={hook.name}
             name={hook.name}
             description={hook.description ?? ''}
           >
-            <HookExampleLoaderClient hook={examples[index]} />
-            <HookDetails hook={hook} />
+            <HookDetails hook={hook} example={examples[index]} />
           </HookCard>
         ))}
       </PageGrid>
