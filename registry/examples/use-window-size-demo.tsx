@@ -1,6 +1,6 @@
 'use client';
 
-import { useWindowSize } from '../hooks/use-window-size';
+import { useWindowSize } from '@/registry/hooks/use-window-size';
 
 export default function UseWindowSizeDemo() {
   const { width, height } = useWindowSize();

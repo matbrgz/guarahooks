@@ -44,14 +44,112 @@ To add a new Hook to h3/use, you will need to modify and add several files. Foll
 
 ### 1. Create Hook
 
-Create the main hook in `registry/hooks/use-example-hook`
+Create the main hook in `registry/hooks/use-example-hook.tsx`
 
 ```typescript
 import React from 'react';
 
 export function useExampleHook() {
-  const [dummyState, setDummyState] = useState('dummy');
+  const [dummyState, setDummyState] = React.useState('dummy');
 
-  return [dummy, setDummyState];
+  return [dummyState, setDummyState];
 }
 ```
+
+### 2. Create Hook Demo
+
+Provide a basic example to showcase your hook in `registry/examples/use-example.hook.tsx`
+
+```typescript
+import { useExampleHook } from '@registry/hooks/use-example-hook';
+
+export function useExampleHookDemo() {
+  const { dummyState, handleClick } = useExampleHook();
+
+  return (
+    <div>
+      <p>{dummyState}</p>
+      <button onClick={() => handleClick()}>Click me</button>
+    </div>
+  );
+}
+```
+
+### 3. Update Registry
+
+Export you hook and example in the registry files:
+
+#### In `registry/registry-hooks.ts`:
+
+```typescript
+export const hooks: Registry['items'] = [
+  // ... existing hooks ...
+  {
+    name: 'use-example-hook',
+    type: 'registry:hook',
+    title: 'UseExampleHook',
+    description:
+      'An hook to explain in step-by-step how to add a hook to h3/use.',
+    files: [
+      {
+        path: 'registry/hooks/use-example-hook.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-example-hook.tsx',
+      },
+    ],
+  },
+  // ... existing hooks ...
+];
+```
+
+#### In `registry/registry-examples.ts`:
+
+````typescript
+import { Registry } from 'shadcn/registry';
+
+export const examples: Registry['items'] = [
+   // ... existing examples ...
+  {
+    name: 'use-example-hook-demo',
+    type: 'registry:example',
+    title: 'UseExampleSize Demo',
+    description: "use-example-hook's hook in action.",
+    registryDependencies: ['https://h3-use.vercel.app/r/use-example-hook'],
+    files: [
+      {
+        path: 'registry/examples/use-example-hook-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-example-hook-demo.tsx',
+      },
+    ],
+  },
+     // ... existing examples ...
+
+];
+
+```
+````
+
+Make sure to add any necessary dependencies, configurations or other properties as needed for your specific hook.
+
+### 4. Build Registry
+
+```bash
+pnpm build:registry
+```
+
+### 5. Format and fix linting before committing
+
+```bash
+pnpm format:write
+```
+
+```bash
+pnpm lint:fix
+```
+
+Make sure to run these two commands before committing your changes.
+
+## Ask for Help
+
+For any help or questions, please open a new GitHub issue.
