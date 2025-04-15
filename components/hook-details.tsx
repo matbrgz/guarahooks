@@ -100,32 +100,34 @@ export function HookDetails({ hook }: HookDetailsProps) {
               Use the CLI to add components to your project
             </DialogDescription>
           </DialogHeader>
-          <div className="min-w-0 flex flex-col gap-4">
+          <div className="min-w-0 space-y-4">
             <ScriptCopy name={hook.name} />
             <p className="text-lg font-semibold tracking-tight">Code</p>
-            {code === '' ? (
-              <p className="text-muted-foreground text-sm">
-                No code available. If you think this is an error, please{' '}
-                <a
-                  href="https://github.com/origin-space/originui/issues"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-foreground font-medium underline hover:no-underline"
-                >
-                  open an issue
-                </a>
-                .
-              </p>
-            ) : (
-              <>
-                <CodeBlock
-                  code={code}
-                  lang="ts"
-                  preHighlighted={highlightedCode}
-                />
-                <CopyButton componentSource={code} />
-              </>
-            )}
+            <div className="relative">
+              {code === '' ? (
+                <p className="text-muted-foreground text-sm">
+                  No code available. If you think this is an error, please{' '}
+                  <a
+                    href="https://github.com/h3rmel/easy-hooks/issues"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground font-medium underline hover:no-underline"
+                  >
+                    open an issue
+                  </a>
+                  .
+                </p>
+              ) : (
+                <>
+                  <CodeBlock
+                    code={code}
+                    lang="ts"
+                    preHighlighted={highlightedCode}
+                  />
+                  <CopyButton componentSource={code} className="right-4" />
+                </>
+              )}
+            </div>
           </div>
         </DialogContent>
       </Dialog>
