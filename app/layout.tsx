@@ -5,11 +5,8 @@ import { geistMono, sora } from '@/assets/fonts';
 import '@/assets/globals.css';
 
 import { BackgroundBeams } from '@/components/accertinityui/background-beams';
-import { WavyBackground } from '@/components/accertinityui/wavy-background';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
-import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
-import { DotPattern } from '@/components/magicui/dot-pattern';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -58,7 +55,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TooltipProvider delayDuration={200}>
             <Header />
-            <main className="z-10 bg-background/50 backdrop-blur-xs grow border-x h-full border-dashed max-w-7xl mx-auto w-full px-8">
+            <main className="z-10 bg-background/50 flex flex-col backdrop-blur-xs grow border-x size-full border-dashed max-w-7xl mx-auto px-8">
               {children}
             </main>
             <Footer />

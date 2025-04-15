@@ -23,15 +23,9 @@ export async function generateMetadata({ params }: CategoryPageProps) {
     return {};
   }
 
-  const components = getHooksByNames(category.hooks.map((item) => item.name));
-
-  const isSingleHook = components.length === 1;
-
   return {
-    title: isSingleHook ? `${category.name} hook` : `${category.name} hooks`,
-    description: isSingleHook
-      ? `An reusable and customizable ${category.name.toLowerCase()} hook built with and for React.`
-      : `A collection of reusable and customizable ${category.name.toLowerCase()} hooks built with and for React.`,
+    title: category.name,
+    description: `A collection of reusable and customizable ${category.name.toLowerCase()} hooks built with and for React.`,
   };
 }
 
@@ -50,7 +44,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   return (
     <>
       <PageBanner title={category.name} subtitle={category.description} />
-      <PageGrid>
+      <PageGrid className="grow h-max">
         {hooks.map((hook, index) => (
           <HookCard
             key={hook.name}
