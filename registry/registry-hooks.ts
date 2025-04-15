@@ -10,7 +10,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-window-size.tsx',
         type: 'registry:hook',
-        target: 'hooks/ez-hooks/use-window-size.tsx',
+        target: 'hooks/h3-use/use-window-size.tsx',
       },
     ],
   },

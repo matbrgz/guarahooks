@@ -21,7 +21,7 @@ export function NavigationDesktop() {
         className={cn('flex items-center gap-2 border-l border-dashed pl-4')}
       >
         <Link
-          href="https://github.com/h3rmel/ez-hooks/"
+          href="https://github.com/h3rmel/h3-use/"
           className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}
           aria-label="GitHub"
         >

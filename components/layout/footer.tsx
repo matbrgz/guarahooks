@@ -18,7 +18,11 @@ export function Footer() {
         </p>
         <p className="text-muted-foreground text-sm">
           Brought to you by{' '}
-          <Link href="https://github.com/h3rmel" className="underline">
+          <Link
+            href="https://github.com/h3rmel"
+            className="underline"
+            target="_blank"
+          >
             hermel
           </Link>
           .

@@ -50,7 +50,7 @@ export function NavigationMobile() {
         <SheetFooter>
           <div className={cn('flex items-center justify-end gap-2')}>
             <Link
-              href="https://github.com/h3rmel/ez-hooks/"
+              href="https://github.com/h3rmel/h3-use/"
               className={cn(
                 buttonVariants({ variant: 'outline', size: 'icon' }),
               )}

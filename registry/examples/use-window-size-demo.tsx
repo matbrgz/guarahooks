@@ -8,10 +8,7 @@ export default function UseWindowSizeDemo() {
   return (
     <div className="flex flex-col gap-2">
       <p className="text-sm text-muted-foreground">
-        <span className="font-mono bg-accent/50 px-1 py-0.5">
-          useWindowSize
-        </span>{' '}
-        hook in action. Resize the window to see the changes.
+        Resize the window to see the values changing.
       </p>
       <p className="text-sm text-muted-foreground">
         Width: <span className="text-foreground">{width}</span>

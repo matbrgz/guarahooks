@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "Use Window Size Demo",
   "description": "Hook to get the current window's size.",
-  "registryDependencies": ["https://ez-hooks.vercel.app/r/use-window-size"],
+  "registryDependencies": ["https://h3-use.vercel.app/r/use-window-size"],
   "files": [
     {
       "path": "registry/examples/use-window-size-demo.tsx",

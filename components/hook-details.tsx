@@ -111,7 +111,7 @@ export function HookDetails({ hook }: HookDetailsProps) {
                 <p className="text-muted-foreground text-sm">
                   No code available. If you think this is an error, please{' '}
                   <a
-                    href="https://github.com/h3rmel/ez-hooks/issues"
+                    href="https://github.com/h3rmel/h3-use/issues"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-foreground font-medium underline hover:no-underline"
