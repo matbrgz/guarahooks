@@ -32,7 +32,7 @@ export const Index: Record<string, any> = {
   },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
-    description: 'A demo of the use-window-size hook.',
+    description: "Hook to get the current window's size.",
     type: 'registry:example',
     registryDependencies: ['https://easy-hooks.vercel.app/r/use-window-size'],
     files: [

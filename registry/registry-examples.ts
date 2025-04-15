@@ -5,7 +5,7 @@ export const examples: Registry['items'] = [
     name: 'use-window-size-demo',
     type: 'registry:example',
     title: 'Use Window Size Demo',
-    description: 'A demo of the use-window-size hook.',
+    description: "Tracks the current window's dimensions (width and height).",
     registryDependencies: ['https://easy-hooks.vercel.app/r/use-window-size'],
     files: [
       {

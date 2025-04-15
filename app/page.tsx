@@ -1,33 +1,33 @@
-import { HookCta } from '@/components/hook-cta';
-import { HookExampleLoaderClient } from '@/components/hook-example-loader-client';
+import { CategoryCard } from '@/components/category-card';
 import { PageBanner } from '@/components/page-banner';
+import { PageGrid } from '@/components/page-grid';
 
-import { cn, getHookExamples } from '@/lib/utils';
-
-import { examples } from '@/registry/registry-examples';
+import { categories } from '@/config/hooks';
 
 export default function Home() {
-  const hookExamples = getHookExamples(examples.map((example) => example.name));
+  const sortedCategories = categories.sort((a, b) => {
+    if (a.isNew && !b.isNew) return -1;
+    if (!a.isNew && b.isNew) return 1;
+    return 0;
+  });
 
   return (
     <>
       <PageBanner
-        title="Beautiful hooks built with TypeScript and React."
-        subtitle="An open-source collection of copy-and-paste hooks to help you quickly build applications."
-        className="pt-16"
+        title="Reusable, customizable and type-safe hooks built with and for React."
+        subtitle="An open-source collection of copy-and-paste hooks to help you quickly build applications. Open Source and Open Code."
       />
-      <section
-        className={cn(
-          'relative w-full grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3',
-        )}
-      >
-        {hookExamples.map((example) => (
-          <article key={example.name}>
-            <HookExampleLoaderClient hook={example} />
-          </article>
+      <PageGrid>
+        {sortedCategories.map((category) => (
+          <CategoryCard
+            key={category.slug}
+            slug={category.slug}
+            name={category.name}
+            hooksCount={category.hooks.length}
+            isNew={category.isNew}
+          />
         ))}
-      </section>
-      <HookCta />
+      </PageGrid>
     </>
   );
 }

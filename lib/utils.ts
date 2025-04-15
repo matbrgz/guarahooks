@@ -8,12 +8,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const getHookExamples = (names: string[]): RegistryItem[] => {
+export const getHooksByNames = (names: string[]): RegistryItem[] => {
   const hooksExamplesMap = new Map(
     examples.map((example) => [example.name, example]),
   );
 
   return names
-    .map((name) => hooksExamplesMap.get(name))
-    .filter((example): example is RegistryItem => Boolean(example));
+    .map((name) => hooksExamplesMap.get(`${name}-demo`))
+    .filter((hook): hook is RegistryItem => Boolean(hook));
 };

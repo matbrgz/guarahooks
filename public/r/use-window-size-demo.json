@@ -3,7 +3,7 @@
   "name": "use-window-size-demo",
   "type": "registry:example",
   "title": "Use Window Size Demo",
-  "description": "A demo of the use-window-size hook.",
+  "description": "Hook to get the current window's size.",
   "registryDependencies": ["https://easy-hooks.vercel.app/r/use-window-size"],
   "files": [
     {

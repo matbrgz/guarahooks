@@ -16,11 +16,23 @@ export function PageBanner({
   children,
 }: PageBannerProps) {
   return (
-    <hgroup className={cn('w-full max-w-3xl flex flex-col gap-1', className)}>
-      <h1 className="font-heading text-foreground mb-4 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]">
+    <hgroup className={cn('w-full flex flex-col gap-1 pt-16', className)}>
+      <h1
+        className={cn(
+          'font-heading text-foreground text-3xl font-bold tracking-tight md:text-4xl',
+          'max-w-[24ch]',
+        )}
+      >
         {title}
       </h1>
-      <h6 className="text-muted-foreground mb-8 text-lg">{subtitle}</h6>
+      <h6
+        className={cn(
+          'text-muted-foreground mb-8 text-base md:text-lg',
+          'max-w-[64ch]',
+        )}
+      >
+        {subtitle}
+      </h6>
       <div>{children}</div>
     </hgroup>
   );

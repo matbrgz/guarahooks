@@ -5,7 +5,7 @@ export const hooks: Registry['items'] = [
     name: 'use-window-size',
     type: 'registry:hook',
     title: 'Use Window Size',
-    description: 'A hook to get the window size',
+    description: "Tracks the current window's dimensions (width and height).",
     files: [
       {
         path: 'registry/hooks/use-window-size.tsx',

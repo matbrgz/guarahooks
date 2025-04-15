@@ -1,6 +1,6 @@
 # Easy Hooks
 
-Reusable and customizable hooks that you can copy and paste into your projects. Free and Open-Source.
+Set of reusable and customizable hooks that you can copy-and-paste into your apps. Free. Open Source and Open Code.
 
 ## Documentation
 

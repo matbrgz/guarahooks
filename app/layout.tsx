@@ -13,27 +13,27 @@ import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
 
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  keywords: siteConfig.keywords,
-  authors: [{ name: 'h3rmel', url: siteConfig.links.author }],
-  openGraph: {
-    title: siteConfig.name,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [
-      {
-        url: `${siteConfig.url}/og.png`,
-      },
-    ],
-  },
-};
+// export const metadata: Metadata = {
+//   title: {
+//     default: siteConfig.name,
+//     template: `%s | ${siteConfig.name}`,
+//   },
+//   description: siteConfig.description,
+//   keywords: siteConfig.keywords,
+//   authors: [{ name: 'h3rmel', url: siteConfig.links.author }],
+//   openGraph: {
+//     title: siteConfig.name,
+//     description: siteConfig.description,
+//     url: siteConfig.url,
+//     siteName: siteConfig.name,
+//     type: 'website',
+//     images: [
+//       {
+//         url: `${siteConfig.url}/og.png`,
+//       },
+//     ],
+//   },
+// };
 
 export default function RootLayout({
   children,
@@ -51,7 +51,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="grow border-x flex flex-col h-full border-dashed max-w-7xl mx-auto w-full px-8">
+          <main className="grow border-x h-full border-dashed max-w-7xl mx-auto w-full px-8">
             {children}
           </main>
           <Footer />
