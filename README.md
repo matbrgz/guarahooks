@@ -1,14 +1,14 @@
 # Easy Hooks
 
-Set of reusable and customizable hooks that you can copy-and-paste into your apps. Free. Open Source and Open Code.
+A set of reusable and customizable hooks that you can copy-and-paste into your apps. Free. Open Source and Open Code.
 
 ## Documentation
 
-Visit https://easy-hooks.vercel.app to view the documentation.
+Visit https://ez-hooks.vercel.app to view the documentation.
 
 ## Contributing
 
-Visit our [contributing guide](https://github.com/h3rmel/easy-hooks/blob/main/CONTRIBUTING.md) to learn how to contribute. It only takes ~5 minutes to add an hook!
+Visit our [contributing guide](https://github.com/h3rmel/ez-hooks/blob/main/CONTRIBUTING.md) to learn how to contribute. It only takes ~5 minutes to add an hook!
 
 ## Authors
 

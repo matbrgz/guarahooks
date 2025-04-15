@@ -10,7 +10,7 @@ import { hooks } from '../registry/registry-hooks';
 
 const registry: Registry = {
   name: 'Easy Hooks',
-  homepage: 'https://easy-hooks.vercel.app/',
+  homepage: 'https://ez-hooks.vercel.app/',
   items: [...hooks, ...examples],
 };
 
@@ -114,7 +114,7 @@ async function buildRegistry() {
     });
   });
 
-  // 2. Replace `@/registry/hooks/` with `@/hooks/easy-hooks/` in all files
+  // 2. Replace `@/registry/hooks/` with `@/hooks/ez-hooks/` in all files
   const files = await fs.readdir(path.join(process.cwd(), 'public/r'));
 
   await Promise.all(
@@ -126,12 +126,12 @@ async function buildRegistry() {
 
       const registryItem = JSON.parse(content);
 
-      // Replace `@/registry/easy-hooks/` in files
+      // Replace `@/registry/ez-hooks/` in files
       registryItem.files = registryItem.files?.map((file) => {
         if (file.content?.includes('@/registry/hooks')) {
           file.content = file.content?.replaceAll(
             '@/registry/hooks',
-            '@/hooks/easy-hooks',
+            '@/hooks/ez-hooks',
           );
         }
         return file;

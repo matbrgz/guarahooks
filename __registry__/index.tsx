@@ -16,7 +16,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-window-size.tsx',
         type: 'registry:hook',
-        target: 'hooks/easy-hooks/use-window-size.tsx',
+        target: 'hooks/ez-hooks/use-window-size.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -34,7 +34,7 @@ export const Index: Record<string, any> = {
     name: 'use-window-size-demo',
     description: "Hook to get the current window's size.",
     type: 'registry:example',
-    registryDependencies: ['https://easy-hooks.vercel.app/r/use-window-size'],
+    registryDependencies: ['https://ez-hooks.vercel.app/r/use-window-size'],
     files: [
       {
         path: 'registry/examples/use-window-size-demo.tsx',
