@@ -17,3 +17,9 @@ export const getHooksByNames = (names: string[]): RegistryItem[] => {
     .map((name) => hooksExamplesMap.get(`${name}-demo`))
     .filter((hook): hook is RegistryItem => Boolean(hook));
 };
+
+export const convertRegistryPaths = (content: string): string => {
+  return content
+    .replace(/@\/registry\/hooks/g, '@/hooks/easy-hooks')
+    .replace(/@\/registry\/examples/g, '@/components/easy-hooks');
+};

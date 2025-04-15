@@ -8,6 +8,7 @@ import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 import { cn } from '@/lib/utils';
 
@@ -50,12 +51,14 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header />
-          <main className="grow border-x h-full border-dashed max-w-7xl mx-auto w-full px-8">
-            {children}
-          </main>
-          <Footer />
-          <Toaster richColors position="bottom-center" duration={3000} />
+          <TooltipProvider delayDuration={200}>
+            <Header />
+            <main className="grow border-x h-full border-dashed max-w-7xl mx-auto w-full px-8">
+              {children}
+            </main>
+            <Footer />
+            <Toaster richColors position="bottom-center" duration={3000} />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -2,49 +2,52 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 
+import { HeaderLogo } from './header-logo';
 import { Icons } from './icons';
+import { NavigationLink } from './navigation-link';
 import { ThemeToggle } from './theme/theme-toggle';
 import { Button, buttonVariants } from './ui/button';
 import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from './ui/drawer';
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from './ui/sheet';
 
 export function NavigationMobile() {
   return (
-    <Drawer>
-      <DrawerTrigger asChild>
-        <Button variant="ghost" size="icon" className="ml-auto flex lg:hidden">
-          <Icons.Menu className="size-5" />
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="ghost" size="icon" className="mr-auto flex lg:hidden">
+          <Icons.Menu className="size-5 -scale-x-100" />
         </Button>
-      </DrawerTrigger>
-      <DrawerContent>
-        <DrawerHeader className="sr-only">
-          <DrawerTitle>Easy Hooks</DrawerTitle>
-          <DrawerDescription>
-            Reusable and customizable hooks that you can copy and paste into
-            your projects. Free and Open-Source.
-          </DrawerDescription>
-        </DrawerHeader>
-        <ul className={cn('flex items-center gap-2 pt-4')}>
+      </SheetTrigger>
+      <SheetContent side="left">
+        <SheetHeader className="border-b flex flex-row items-center justify-between">
+          <div className="sr-only">
+            <SheetTitle>Easy Hooks</SheetTitle>
+            <SheetDescription>
+              Reusable and customizable hooks that you can copy and paste into
+              your projects. Free and Open-Source.
+            </SheetDescription>
+          </div>
+          <HeaderLogo />
+          <SheetClose asChild>
+            <Button variant="ghost" size="icon">
+              <Icons.Close className="size-5" />
+            </Button>
+          </SheetClose>
+        </SheetHeader>
+        <ul className={cn('flex items-start justify-start gap-2 grow')}>
           <li>
-            <Link
-              href="/"
-              className={cn(
-                buttonVariants({ variant: 'link', size: 'lg' }),
-                'font-light text-xl tracking-wide',
-              )}
-            >
-              Hooks
-            </Link>
+            <NavigationLink href="/">Hooks</NavigationLink>
           </li>
         </ul>
-        <DrawerFooter>
+        <SheetFooter>
           <div className={cn('flex items-center justify-end gap-2')}>
             <Link
               href="https://github.com/h3rmel/easy-hooks/"
@@ -56,8 +59,8 @@ export function NavigationMobile() {
             </Link>
             <ThemeToggle variant="outline" />
           </div>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
   );
 }

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 import { Icons } from './icons';
+import { NavigationLink } from './navigation-link';
 import { ThemeToggle } from './theme/theme-toggle';
 import { buttonVariants } from './ui/button';
 
@@ -13,15 +14,7 @@ export function NavigationDesktop() {
     >
       <ul className={cn('flex items-center gap-2 pr-4')}>
         <li>
-          <Link
-            href="/"
-            className={cn(
-              buttonVariants({ variant: 'link', size: 'sm' }),
-              'font-light',
-            )}
-          >
-            Hooks
-          </Link>
+          <NavigationLink href="/">Hooks</NavigationLink>
         </li>
       </ul>
       <div

@@ -1,0 +1,2 @@
+- Terminar componente de card do Hook e visualização do código e comando de cli do Hook
+- Criar novos hooks e categorias

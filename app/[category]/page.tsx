@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 
 import { HookCard } from '@/components/hook-card';
 import { HookCta } from '@/components/hook-cta';
+import { HookDetails } from '@/components/hook-details';
 import { HookExampleLoaderClient } from '@/components/hook-example-loader-client';
 import { PageBanner } from '@/components/page-banner';
 import { PageGrid } from '@/components/page-grid';
@@ -40,6 +41,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             description={hook.description ?? ''}
           >
             <HookExampleLoaderClient hook={hook} />
+            <HookDetails hook={hook} />
           </HookCard>
         ))}
       </PageGrid>
