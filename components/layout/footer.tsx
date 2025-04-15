@@ -4,12 +4,13 @@ import { cn } from '@/lib/utils';
 
 export function Footer() {
   return (
-    <footer className={cn('w-full h-16', 'border-t border-dashed')}>
+    <footer className={cn('w-full h-16 z-10')}>
       <section
         className={cn(
           'max-w-7xl w-full mx-auto h-full px-4',
+          'bg-background/50 backdrop-blur-xs',
           'flex items-center justify-between',
-          'lg:border-x border-dashed',
+          'lg:border-x border-t border-dashed',
         )}
       >
         <p className="text-muted-foreground text-sm">

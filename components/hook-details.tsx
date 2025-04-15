@@ -4,7 +4,8 @@ import { JSX, useEffect, useState } from 'react';
 
 import { RegistryItem } from 'shadcn/registry';
 
-import { cn, convertRegistryPaths } from '@/lib/utils';
+import { convertRegistryPaths } from '@/lib/hooks';
+import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
 
@@ -77,7 +78,9 @@ export function HookDetails({ hook }: HookDetailsProps) {
         'flex gap-2 peer-data-comp-loading:hidden',
       )}
     >
-      <OpenInV0 componentSource={`${siteConfig.url}/r/${hook.name}.json`} />
+      <OpenInV0
+        componentSource={`${siteConfig.url}/r/${hook.name}-demo.json`}
+      />
       <Dialog>
         <Tooltip>
           <TooltipTrigger asChild>

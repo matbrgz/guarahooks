@@ -19,20 +19,20 @@ export function PageBanner({
     <hgroup className={cn('w-full flex flex-col gap-1 pt-16', className)}>
       <h1
         className={cn(
-          'font-heading text-foreground text-3xl font-bold tracking-tight md:text-4xl',
-          'max-w-[24ch]',
+          'font-heading text-foreground text-3xl font-semibold tracking-normal md:text-4xl',
+          'max-w-[28ch]',
         )}
       >
         {title}
       </h1>
-      <h6
+      <p
         className={cn(
           'text-muted-foreground mb-8 text-base md:text-lg',
           'max-w-[64ch]',
         )}
       >
         {subtitle}
-      </h6>
+      </p>
       <div>{children}</div>
     </hgroup>
   );

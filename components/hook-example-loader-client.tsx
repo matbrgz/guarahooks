@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import type { RegistryItem } from 'shadcn/registry';
 
 import { Icons } from './icons';
+import { Badge } from './ui/badge';
 
 type HookLoaderClientProps = {
   hook: RegistryItem;
@@ -46,5 +47,15 @@ export function HookExampleLoaderClient<TProps extends object>({
     },
   ) as ComponentType<TProps>;
 
-  return <HookExample {...(props as TProps)} />;
+  return (
+    <>
+      <Badge
+        variant="outline"
+        className="font-mono text-muted-foreground tracking-wide absolute bottom-1 right-1"
+      >
+        Example
+      </Badge>
+      <HookExample {...(props as TProps)} />
+    </>
+  );
 }

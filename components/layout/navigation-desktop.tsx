@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 
-import { Icons } from './icons';
+import { Icons } from '../icons';
+import { ThemeToggle } from '../theme/theme-toggle';
+import { buttonVariants } from '../ui/button';
 import { NavigationLink } from './navigation-link';
-import { ThemeToggle } from './theme/theme-toggle';
-import { buttonVariants } from './ui/button';
 
 export function NavigationDesktop() {
   return (
@@ -23,6 +23,7 @@ export function NavigationDesktop() {
         <Link
           href="https://github.com/h3rmel/easy-hooks/"
           className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}
+          aria-label="GitHub"
         >
           <Icons.Github className="size-4" />
         </Link>

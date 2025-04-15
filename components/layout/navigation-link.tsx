@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
 
-import { buttonVariants } from './ui/button';
+import { buttonVariants } from '../ui/button';
 
 export type NavigationLinkProps = {
   href: string;

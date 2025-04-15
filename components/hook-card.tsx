@@ -1,3 +1,4 @@
+import { Badge } from './ui/badge';
 import {
   Card,
   CardContent,
@@ -14,12 +15,12 @@ type HookCardProps = {
 
 export function HookCard({ name, description, children }: HookCardProps) {
   return (
-    <Card className="relative">
+    <Card className="relative h-64">
       <CardHeader className="border-b">
         <CardTitle>{name.replace('-demo', '')}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent>{children}</CardContent>
+      <CardContent className="h-full">{children}</CardContent>
     </Card>
   );
 }

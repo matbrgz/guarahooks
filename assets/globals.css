@@ -159,3 +159,16 @@
     scrollbar-color: var(--border) transparent;
   }
 }
+
+.pattern-bg {
+  background-color: oklch(
+    0.141 0.005 285.823
+  ); /* --background do tema zinc dark */
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    oklch(0.21 0.006 285.885) 10px,
+    /* --card do tema zinc dark */ oklch(0.21 0.006 285.885) 12px
+  );
+}

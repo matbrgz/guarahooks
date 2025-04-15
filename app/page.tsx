@@ -23,6 +23,8 @@ export default function Home() {
             key={category.slug}
             slug={category.slug}
             name={category.name}
+            description={category.description}
+            icon={category.icon}
             hooksCount={category.hooks.length}
             isNew={category.isNew}
           />

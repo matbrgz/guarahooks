@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { HookCard } from '@/components/hook-card';
@@ -7,13 +8,32 @@ import { HookExampleLoaderClient } from '@/components/hook-example-loader-client
 import { PageBanner } from '@/components/page-banner';
 import { PageGrid } from '@/components/page-grid';
 
-import { getHooksByNames, getHooksExamplesByNames } from '@/lib/utils';
+import { getHooksByNames, getHooksExamplesByNames } from '@/lib/hooks';
 
 import { getCategory } from '@/config/hooks';
 
 type CategoryPageProps = {
   params: Promise<{ category: string }>;
 };
+
+export async function generateMetadata({ params }: CategoryPageProps) {
+  const category = getCategory((await params).category);
+
+  if (!category) {
+    return {};
+  }
+
+  const components = getHooksByNames(category.hooks.map((item) => item.name));
+
+  const isSingleHook = components.length === 1;
+
+  return {
+    title: isSingleHook ? `${category.name} hook` : `${category.name} hooks`,
+    description: isSingleHook
+      ? `An reusable and customizable ${category.name.toLowerCase()} hook built with and for React.`
+      : `A collection of reusable and customizable ${category.name.toLowerCase()} hooks built with and for React.`,
+  };
+}
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const category = getCategory((await params).category);
@@ -27,15 +47,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     category.hooks.map((item) => item.name),
   );
 
-  const getSubtitle = () => {
-    return hooks.length === 1
-      ? `A ${category.name.toLowerCase()} hook built with and for React.`
-      : `A collection of ${category.name.toLowerCase()} hooks built with and for React.`;
-  };
-
   return (
     <>
-      <PageBanner title={category.name} subtitle={getSubtitle()} />
+      <PageBanner title={category.name} subtitle={category.description} />
       <PageGrid>
         {hooks.map((hook, index) => (
           <HookCard

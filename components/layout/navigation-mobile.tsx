@@ -2,11 +2,9 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 
-import { HeaderLogo } from './header-logo';
-import { Icons } from './icons';
-import { NavigationLink } from './navigation-link';
-import { ThemeToggle } from './theme/theme-toggle';
-import { Button, buttonVariants } from './ui/button';
+import { Icons } from '../icons';
+import { ThemeToggle } from '../theme/theme-toggle';
+import { Button, buttonVariants } from '../ui/button';
 import {
   Sheet,
   SheetClose,
@@ -16,7 +14,9 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from './ui/sheet';
+} from '../ui/sheet';
+import { HeaderLogo } from './header-logo';
+import { NavigationLink } from './navigation-link';
 
 export function NavigationMobile() {
   return (
@@ -54,6 +54,7 @@ export function NavigationMobile() {
               className={cn(
                 buttonVariants({ variant: 'outline', size: 'icon' }),
               )}
+              aria-label="GitHub"
             >
               <Icons.Github className="size-4" />
             </Link>
