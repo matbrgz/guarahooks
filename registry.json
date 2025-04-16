@@ -16,6 +16,19 @@
       ]
     },
     {
+      "name": "use-media",
+      "type": "registry:hook",
+      "title": "UseMedia",
+      "description": "Checks if the current window matches a media query.",
+      "files": [
+        {
+          "path": "registry/hooks/use-media.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-media.tsx"
+        }
+      ]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -26,6 +39,20 @@
           "path": "registry/examples/use-window-size-demo.tsx",
           "type": "registry:example",
           "target": "components/examples/use-window-size-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-media-demo",
+      "type": "registry:example",
+      "title": "UseMediaDemo",
+      "description": "use-media's hook in action.",
+      "registryDependencies": ["https://h3-use.vercel.app/r/use-media"],
+      "files": [
+        {
+          "path": "registry/examples/use-media-demo.tsx",
+          "type": "registry:example",
+          "target": "components/examples/use-media-demo.tsx"
         }
       ]
     }

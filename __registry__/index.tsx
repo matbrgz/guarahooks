@@ -30,6 +30,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-media': {
+    name: 'use-media',
+    description: 'Checks if the current window matches a media query.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-media.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-media.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-media.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -44,6 +67,29 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/examples/use-window-size-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-media-demo': {
+    name: 'use-media-demo',
+    description: "use-media's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.vercel.app/r/use-media'],
+    files: [
+      {
+        path: 'registry/examples/use-media-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-media-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/examples/use-media-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
