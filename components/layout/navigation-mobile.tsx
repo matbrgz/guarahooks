@@ -2,6 +2,8 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 
+import { siteConfig } from '@/config/site';
+
 import { Icons } from '../icons';
 import { ThemeToggle } from '../theme/theme-toggle';
 import { Button, buttonVariants } from '../ui/button';
@@ -29,7 +31,7 @@ export function NavigationMobile() {
       <SheetContent side="left">
         <SheetHeader className="border-b flex flex-row items-center justify-between">
           <div className="sr-only">
-            <SheetTitle>h3/use</SheetTitle>
+            <SheetTitle>{siteConfig.name}</SheetTitle>
             <SheetDescription>
               Reusable and customizable hooks that you can copy and paste into
               your projects. Free and Open-Source.
