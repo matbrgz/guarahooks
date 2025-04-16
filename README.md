@@ -12,7 +12,9 @@ Visit our [contributing guide](https://github.com/h3rmel/h3-use/blob/main/CONTRI
 
 ## Authors
 
-<!-- TODO: add Repobeats when repository is public -->
+<a href="https://github.com/h3rmel/h3-use/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=h3rmel/h3-use" />
+</a>
 
 ## License
 
