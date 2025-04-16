@@ -42,7 +42,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   return (
     <>
       <PageBanner title={category.name} subtitle={category.description} />
-      <PageGrid className="grow h-full">
+      <PageGrid className="grow lg:grid-cols-2">
         {hooks.map((hook, index) => (
           <HookCard
             key={hook.name}
