@@ -77,6 +77,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-keypress': {
+    name: 'use-keypress',
+    description: 'Tracks keyboard combinations and key presses.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-keypress.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-keypress.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-keypress.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -137,6 +160,29 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/examples/use-mouse-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-keypress-demo': {
+    name: 'use-keypress-demo',
+    description: "use-keypress's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.vercel.app/r/use-keypress'],
+    files: [
+      {
+        path: 'registry/examples/use-keypress-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-keypress-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/examples/use-keypress-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

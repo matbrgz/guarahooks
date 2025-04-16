@@ -41,4 +41,17 @@ export const hooks: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-keypress',
+    type: 'registry:hook',
+    title: 'UseKeypress',
+    description: 'Tracks keyboard combinations and key presses.',
+    files: [
+      {
+        path: 'registry/hooks/use-keypress.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-keypress.tsx',
+      },
+    ],
+  },
 ];

@@ -43,4 +43,18 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-keypress-demo',
+    type: 'registry:example',
+    title: 'UseKeypressDemo',
+    description: "use-keypress's hook in action.",
+    registryDependencies: ['https://h3-use.vercel.app/r/use-keypress'],
+    files: [
+      {
+        path: 'registry/examples/use-keypress-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-keypress-demo.tsx',
+      },
+    ],
+  },
 ];

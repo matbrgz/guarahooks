@@ -10,6 +10,9 @@ import { getHooksByNames, getHooksExamplesByNames } from '@/lib/hooks';
 
 import { getCategory } from '@/config/hooks';
 
+import UseKeypressDemo from '@/registry/examples/use-keypress-demo';
+import { UseMouseDemo } from '@/registry/examples/use-mouse-demo';
+
 type CategoryPageProps = {
   params: Promise<{ category: string }>;
 };
