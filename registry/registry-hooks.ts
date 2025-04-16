@@ -58,4 +58,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['sensors'],
   },
+  {
+    name: 'use-orientation',
+    type: 'registry:hook',
+    title: 'UseOrientation',
+    description: 'Tracks the current orientation of the device.',
+    files: [
+      {
+        path: 'registry/hooks/use-orientation.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-orientation.tsx',
+      },
+    ],
+    categories: ['sensors'],
+  },
 ];

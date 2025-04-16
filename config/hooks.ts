@@ -33,6 +33,9 @@ export const categories: HookCategory[] = [
       {
         name: 'use-keypress',
       },
+      {
+        name: 'use-orientation',
+      },
     ],
   },
 ];

@@ -4,7 +4,7 @@ import { RefObject, useRef, useState } from 'react';
 
 import { useMouse } from '@/registry/hooks/use-mouse';
 
-export function UseMouseDemo() {
+export default function UseMouseDemo() {
   const ref = useRef<HTMLDivElement>(null);
   const [trackOutside, setTrackOutside] = useState(false);
   const [clampToZero, setClampToZero] = useState(false);

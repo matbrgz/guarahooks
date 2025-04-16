@@ -59,6 +59,20 @@
       "categories": ["sensors"]
     },
     {
+      "name": "use-orientation",
+      "type": "registry:hook",
+      "title": "UseOrientation",
+      "description": "Tracks the current orientation of the device.",
+      "files": [
+        {
+          "path": "registry/hooks/use-orientation.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-orientation.tsx"
+        }
+      ],
+      "categories": ["sensors"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -111,6 +125,20 @@
           "path": "registry/examples/use-keypress-demo.tsx",
           "type": "registry:example",
           "target": "components/examples/use-keypress-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-orientation-demo",
+      "type": "registry:example",
+      "title": "UseOrientationDemo",
+      "description": "use-orientation's hook in action.",
+      "registryDependencies": ["https://h3-use.vercel.app/r/use-orientation"],
+      "files": [
+        {
+          "path": "registry/examples/use-orientation-demo.tsx",
+          "type": "registry:example",
+          "target": "components/examples/use-orientation-demo.tsx"
         }
       ]
     }

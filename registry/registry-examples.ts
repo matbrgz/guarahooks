@@ -57,4 +57,18 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-orientation-demo',
+    type: 'registry:example',
+    title: 'UseOrientationDemo',
+    description: "use-orientation's hook in action.",
+    registryDependencies: ['https://h3-use.vercel.app/r/use-orientation'],
+    files: [
+      {
+        path: 'registry/examples/use-orientation-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-orientation-demo.tsx',
+      },
+    ],
+  },
 ];
