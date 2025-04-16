@@ -53,6 +53,76 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-mouse': {
+    name: 'use-mouse',
+    description:
+      'Tracks the mouse position relative to an element and the document.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-mouse.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-mouse.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-mouse.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-keypress': {
+    name: 'use-keypress',
+    description: 'Tracks keyboard combinations and key presses.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-keypress.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-keypress.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-keypress.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-orientation': {
+    name: 'use-orientation',
+    description: 'Tracks the current orientation of the device.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-orientation.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-orientation.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-orientation.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -90,6 +160,75 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/examples/use-media-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-mouse-demo': {
+    name: 'use-mouse-demo',
+    description: "use-mouse's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.vercel.app/r/use-mouse'],
+    files: [
+      {
+        path: 'registry/examples/use-mouse-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-mouse-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/examples/use-mouse-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-keypress-demo': {
+    name: 'use-keypress-demo',
+    description: "use-keypress's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.vercel.app/r/use-keypress'],
+    files: [
+      {
+        path: 'registry/examples/use-keypress-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-keypress-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/examples/use-keypress-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-orientation-demo': {
+    name: 'use-orientation-demo',
+    description: "use-orientation's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.vercel.app/r/use-orientation'],
+    files: [
+      {
+        path: 'registry/examples/use-orientation-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-orientation-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/examples/use-orientation-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

@@ -13,6 +13,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-window-size.tsx',
       },
     ],
+    categories: ['sensors'],
   },
   {
     name: 'use-media',
@@ -26,5 +27,49 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-media.tsx',
       },
     ],
+    categories: ['sensors'],
+  },
+  {
+    name: 'use-mouse',
+    type: 'registry:hook',
+    title: 'UseMouse',
+    description:
+      'Tracks the mouse position relative to an element and the document.',
+    files: [
+      {
+        path: 'registry/hooks/use-mouse.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-mouse.tsx',
+      },
+    ],
+    categories: ['sensors'],
+  },
+  {
+    name: 'use-keypress',
+    type: 'registry:hook',
+    title: 'UseKeypress',
+    description: 'Tracks keyboard combinations and key presses.',
+    files: [
+      {
+        path: 'registry/hooks/use-keypress.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-keypress.tsx',
+      },
+    ],
+    categories: ['sensors'],
+  },
+  {
+    name: 'use-orientation',
+    type: 'registry:hook',
+    title: 'UseOrientation',
+    description: 'Tracks the current orientation of the device.',
+    files: [
+      {
+        path: 'registry/hooks/use-orientation.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-orientation.tsx',
+      },
+    ],
+    categories: ['sensors'],
   },
 ];

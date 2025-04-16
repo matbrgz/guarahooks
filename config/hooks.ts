@@ -27,7 +27,15 @@ export const categories: HookCategory[] = [
       {
         name: 'use-media',
       },
+      {
+        name: 'use-mouse',
+      },
+      {
+        name: 'use-keypress',
+      },
+      {
+        name: 'use-orientation',
+      },
     ],
-    isNew: true, // TODO: Remove this after 1.0.0
   },
 ];

@@ -29,4 +29,46 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-mouse-demo',
+    type: 'registry:example',
+    title: 'UseMouseDemo',
+    description: "use-mouse's hook in action.",
+    registryDependencies: ['https://h3-use.vercel.app/r/use-mouse'],
+    files: [
+      {
+        path: 'registry/examples/use-mouse-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-mouse-demo.tsx',
+      },
+    ],
+  },
+  {
+    name: 'use-keypress-demo',
+    type: 'registry:example',
+    title: 'UseKeypressDemo',
+    description: "use-keypress's hook in action.",
+    registryDependencies: ['https://h3-use.vercel.app/r/use-keypress'],
+    files: [
+      {
+        path: 'registry/examples/use-keypress-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-keypress-demo.tsx',
+      },
+    ],
+  },
+  {
+    name: 'use-orientation-demo',
+    type: 'registry:example',
+    title: 'UseOrientationDemo',
+    description: "use-orientation's hook in action.",
+    registryDependencies: ['https://h3-use.vercel.app/r/use-orientation'],
+    files: [
+      {
+        path: 'registry/examples/use-orientation-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-orientation-demo.tsx',
+      },
+    ],
+  },
 ];
