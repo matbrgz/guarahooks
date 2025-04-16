@@ -53,6 +53,30 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-mouse': {
+    name: 'use-mouse',
+    description:
+      'Tracks the mouse position relative to an element and the document.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-mouse.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-mouse.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-mouse.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -90,6 +114,29 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/examples/use-media-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-mouse-demo': {
+    name: 'use-mouse-demo',
+    description: "use-mouse's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.vercel.app/r/use-mouse'],
+    files: [
+      {
+        path: 'registry/examples/use-mouse-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-mouse-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/examples/use-mouse-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

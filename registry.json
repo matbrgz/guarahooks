@@ -29,6 +29,19 @@
       ]
     },
     {
+      "name": "use-mouse",
+      "type": "registry:hook",
+      "title": "UseMouse",
+      "description": "Tracks the mouse position relative to an element and the document.",
+      "files": [
+        {
+          "path": "registry/hooks/use-mouse.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-mouse.tsx"
+        }
+      ]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -53,6 +66,20 @@
           "path": "registry/examples/use-media-demo.tsx",
           "type": "registry:example",
           "target": "components/examples/use-media-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-mouse-demo",
+      "type": "registry:example",
+      "title": "UseMouseDemo",
+      "description": "use-mouse's hook in action.",
+      "registryDependencies": ["https://h3-use.vercel.app/r/use-mouse"],
+      "files": [
+        {
+          "path": "registry/examples/use-mouse-demo.tsx",
+          "type": "registry:example",
+          "target": "components/examples/use-mouse-demo.tsx"
         }
       ]
     }

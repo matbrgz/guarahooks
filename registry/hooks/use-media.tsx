@@ -4,7 +4,7 @@ const getInitialState = (query: string, defaultState?: boolean): boolean => {
   const isBrowser = typeof window !== 'undefined';
 
   if (!query || typeof query !== 'string') {
-    throw new Error('useMedia: query deve ser uma string não vazia.');
+    throw new Error('useMedia: query should be a non-empty string.');
   }
 
   if (defaultState !== undefined) {
@@ -31,7 +31,7 @@ export function useMedia(query: string, defaultState?: boolean): boolean {
 
   useEffect(() => {
     if (!query || typeof query !== 'string') {
-      throw new Error('useMedia: query deve ser uma string não vazia.');
+      throw new Error('useMedia: query should be a non-empty string.');
     }
 
     let mounted = true;

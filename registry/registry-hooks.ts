@@ -27,4 +27,18 @@ export const hooks: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-mouse',
+    type: 'registry:hook',
+    title: 'UseMouse',
+    description:
+      'Tracks the mouse position relative to an element and the document.',
+    files: [
+      {
+        path: 'registry/hooks/use-mouse.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-mouse.tsx',
+      },
+    ],
+  },
 ];
