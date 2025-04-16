@@ -1,6 +1,6 @@
 'use client';
 
-import { JSX, useLayoutEffect, useState } from 'react';
+import { JSX, useEffect, useRef, useState } from 'react';
 
 import { toJsxRuntime } from 'hast-util-to-jsx-runtime';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
@@ -31,8 +31,9 @@ export function CodeBlock({ code, lang, initial, preHighlighted }: Props) {
   const [content, setContent] = useState<JSX.Element | null>(
     preHighlighted || initial || null,
   );
+  const highlightId = useRef(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // If we have pre-highlighted content, use that
     if (preHighlighted) {
       setContent(preHighlighted);
@@ -40,10 +41,14 @@ export function CodeBlock({ code, lang, initial, preHighlighted }: Props) {
     }
 
     let isMounted = true;
+    const currentId = ++highlightId.current;
 
     if (code) {
       highlight(code, lang).then((result) => {
-        if (isMounted) setContent(result);
+        // Aplies only if the highlight is the most recent and the component is mounted
+        if (isMounted && highlightId.current === currentId) {
+          setContent((prev) => (prev !== result ? result : prev));
+        }
       });
     } else {
       setContent(
