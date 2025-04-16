@@ -8,12 +8,12 @@ Visit https://h3-use.vercel.app to view the documentation.
 
 ## Contributing
 
-Visit our [contributing guide](https://github.com/h3rmel/h3-use/blob/main/CONTRIBUTING.md) to learn how to contribute. It only takes ~5 minutes to add an hook!
+Visit our [contributing guide](https://github.com/h3-org/h3-use/blob/main/CONTRIBUTING.md) to learn how to contribute. It only takes ~5 minutes to add an hook!
 
 ## Authors
 
-<a href="https://github.com/h3rmel/h3-use/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=h3rmel/h3-use" />
+<a href="https://github.com/h3-org/h3-use/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=h3-org/h3-use" />
 </a>
 
 ## License

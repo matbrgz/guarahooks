@@ -21,7 +21,7 @@ export function Footer() {
         <p className="text-muted-foreground text-sm">
           Brought to you by{' '}
           <Link
-            href="https://github.com/h3rmel"
+            href={siteConfig.authorUrl}
             className="underline"
             target="_blank"
           >
