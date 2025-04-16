@@ -14,7 +14,7 @@ export function Footer() {
         )}
       >
         <p className="text-muted-foreground text-sm">
-          &copy; {new Date().getFullYear()} Easy Hooks
+          &copy; {new Date().getFullYear()} h3/use
         </p>
         <p className="text-muted-foreground text-sm">
           Brought to you by{' '}

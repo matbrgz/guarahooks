@@ -1,4 +1,4 @@
-# Easy Hooks
+# h3/use
 
 A set of reusable and customizable hooks that you can copy-and-paste into your apps. Free. Open Source and Open Code.
 

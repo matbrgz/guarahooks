@@ -9,7 +9,7 @@ import { examples } from '../registry/registry-examples';
 import { hooks } from '../registry/registry-hooks';
 
 const registry: Registry = {
-  name: 'Easy Hooks',
+  name: 'h3/use',
   homepage: 'https://h3-use.vercel.app/',
   items: [...hooks, ...examples],
 };

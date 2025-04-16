@@ -29,7 +29,7 @@ export function NavigationMobile() {
       <SheetContent side="left">
         <SheetHeader className="border-b flex flex-row items-center justify-between">
           <div className="sr-only">
-            <SheetTitle>Easy Hooks</SheetTitle>
+            <SheetTitle>h3/use</SheetTitle>
             <SheetDescription>
               Reusable and customizable hooks that you can copy and paste into
               your projects. Free and Open-Source.
