@@ -7,7 +7,7 @@ Thank you for your interest in contributing to h3/use! We appreciate your suppor
 Fork and clone the repository.
 
 1. **Fork this repository**  
-   Click [here](https://github.com/h3-org/h3-use/fork) to fork the repository.
+   Click [here](https://github.com/h3rmel/h3-use/fork) to fork the repository.
 
 2. **Clone your forked repository to your local machine**
 
