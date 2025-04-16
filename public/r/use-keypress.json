@@ -11,5 +11,6 @@
       "type": "registry:hook",
       "target": "hooks/h3-use/use-keypress.tsx"
     }
-  ]
+  ],
+  "categories": ["sensors"]
 }

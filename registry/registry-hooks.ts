@@ -13,6 +13,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-window-size.tsx',
       },
     ],
+    categories: ['sensors'],
   },
   {
     name: 'use-media',
@@ -26,6 +27,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-media.tsx',
       },
     ],
+    categories: ['sensors'],
   },
   {
     name: 'use-mouse',
@@ -40,6 +42,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-mouse.tsx',
       },
     ],
+    categories: ['sensors'],
   },
   {
     name: 'use-keypress',
@@ -53,5 +56,6 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-keypress.tsx',
       },
     ],
+    categories: ['sensors'],
   },
 ];

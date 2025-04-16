@@ -13,7 +13,8 @@
           "type": "registry:hook",
           "target": "hooks/h3-use/use-window-size.tsx"
         }
-      ]
+      ],
+      "categories": ["sensors"]
     },
     {
       "name": "use-media",
@@ -26,7 +27,8 @@
           "type": "registry:hook",
           "target": "hooks/h3-use/use-media.tsx"
         }
-      ]
+      ],
+      "categories": ["sensors"]
     },
     {
       "name": "use-mouse",
@@ -39,7 +41,8 @@
           "type": "registry:hook",
           "target": "hooks/h3-use/use-mouse.tsx"
         }
-      ]
+      ],
+      "categories": ["sensors"]
     },
     {
       "name": "use-keypress",
@@ -52,7 +55,8 @@
           "type": "registry:hook",
           "target": "hooks/h3-use/use-keypress.tsx"
         }
-      ]
+      ],
+      "categories": ["sensors"]
     },
     {
       "name": "use-window-size-demo",
