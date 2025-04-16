@@ -9,6 +9,7 @@ export const siteConfig = {
   },
   authorUrl: 'https://github.com/h3rmel',
   keywords: ['React', 'Next.js', 'Hooks', 'TypeScript', 'Type-safe'],
+  ogImage: 'https://h3-use.vercel.app/og.png',
 };
 
 export type SiteConfig = typeof siteConfig;

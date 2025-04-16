@@ -33,6 +33,14 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     type: 'website',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
   metadataBase: new URL(siteConfig.url),
   creator: 'h3rmel',
