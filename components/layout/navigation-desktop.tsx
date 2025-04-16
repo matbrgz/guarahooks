@@ -2,6 +2,8 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 
+import { siteConfig } from '@/config/site';
+
 import { Icons } from '../icons';
 import { ThemeToggle } from '../theme/theme-toggle';
 import { buttonVariants } from '../ui/button';
@@ -21,7 +23,7 @@ export function NavigationDesktop() {
         className={cn('flex items-center gap-2 border-l border-dashed pl-4')}
       >
         <Link
-          href="https://github.com/h3rmel/h3-use/"
+          href={siteConfig.links.github}
           className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}
           target="_blank"
           aria-label="GitHub"

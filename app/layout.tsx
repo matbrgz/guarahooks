@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  authors: [{ name: 'h3rmel', url: siteConfig.links.author }],
+  authors: [{ name: 'h3rmel', url: siteConfig.authorUrl }],
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,

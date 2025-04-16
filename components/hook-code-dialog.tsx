@@ -2,6 +2,8 @@
 
 import { RegistryItem } from 'shadcn/registry';
 
+import { siteConfig } from '@/config/site';
+
 import { useLoadCode } from '@/hooks/use-load-code';
 
 import { CodeBlock } from './code-block';
@@ -57,7 +59,7 @@ export function HookCodeDialog({ hook }: HookCodeDialogProps) {
               <p className="text-muted-foreground text-sm">
                 No code available. If you think this is an error, please{' '}
                 <a
-                  href="https://github.com/h3rmel/h3-use/issues"
+                  href={`${siteConfig.links.github}/issues`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground font-medium underline hover:no-underline"
