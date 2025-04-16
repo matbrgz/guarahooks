@@ -2,16 +2,16 @@
 
 import { useEffect, useState } from 'react';
 
-interface UseWindowSizeOptions {
+type UseWindowSizeOptions = {
   initialWidth?: number;
   initialHeight?: number;
   onChange?: (width: number, height: number) => void;
-}
+};
 
-interface WindowSize {
+type WindowSize = {
   width: number;
   height: number;
-}
+};
 
 export function useWindowSize(options: UseWindowSizeOptions = {}): WindowSize {
   const isBrowser = typeof window !== 'undefined';

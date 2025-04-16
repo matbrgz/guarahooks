@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-interface UseCopyReturn {
+type UseCopyReturn = {
   copied: boolean;
   copy: (text: string) => Promise<boolean>;
-}
+};
 
 export function useCopy(duration: number = 1500): UseCopyReturn {
   const [copied, setCopied] = useState<boolean>(false);
