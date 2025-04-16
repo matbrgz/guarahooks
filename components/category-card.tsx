@@ -23,7 +23,7 @@ export function CategoryCard({
   isNew = false,
 }: CategoryCard) {
   const href = `/${slug}`;
-  const isComingSoon: boolean = hooksCount === undefined;
+  const isComingSoon: boolean = hooksCount === 0;
 
   const renderIcon = () => {
     const IconComponent = Icons[icon];
@@ -46,7 +46,7 @@ export function CategoryCard({
           <h2 className="text-2xl font-bold group-hover:underline">{name}</h2>
           <p className="text-muted-foreground text-sm">{description}</p>
           <Badge variant="secondary" className="font-mono text-xs">
-            {hooksCount} hook(s)
+            {isComingSoon ? 'No hooks yet' : `${hooksCount} hook(s)`}
           </Badge>
         </hgroup>
         <div className="absolute top-1 right-1 flex items-center justify-center gap-1">

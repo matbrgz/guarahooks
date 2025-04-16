@@ -38,4 +38,27 @@ export const categories: HookCategory[] = [
       },
     ],
   },
+  {
+    slug: 'state-management',
+    name: 'State Management',
+    description:
+      'Easily manage the state of different types of data in your application.',
+    icon: 'Swap',
+    hooks: [],
+  },
+  {
+    slug: 'side-effects',
+    name: 'Side Effects',
+    description:
+      'Trigger side effects in your application in a declarative way.',
+    icon: 'Pages',
+    hooks: [],
+  },
+  {
+    slug: 'lifecycles',
+    name: 'Lifecycles',
+    description: 'Handle the lifecycle of the components of your application.',
+    icon: 'Refresh',
+    hooks: [],
+  },
 ];
