@@ -9,8 +9,8 @@ export function PageGrid({ children, className }: PageGridProps) {
   return (
     <section
       className={cn(
-        'relative w-full',
-        'grid gap-x-6 gap-y-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+        'relative size-full',
+        'grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
         className,
       )}
     >

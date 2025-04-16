@@ -14,7 +14,7 @@ type HookCardProps = {
 
 export function HookCard({ name, description, children }: HookCardProps) {
   return (
-    <Card className="relative max-h-[200px]">
+    <Card className="relative">
       <CardHeader className="border-b">
         <CardTitle>{name.replace('-demo', '')}</CardTitle>
         <CardDescription>{description}</CardDescription>
