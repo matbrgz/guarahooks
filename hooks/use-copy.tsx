@@ -48,7 +48,7 @@ export function useCopy(duration: number = 1500): UseCopyReturn {
         }
 
         if (success) {
-          setCopied(true);
+          if (!copied) setCopied(true);
 
           if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
