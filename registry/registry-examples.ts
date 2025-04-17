@@ -71,4 +71,32 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-toggle-demo',
+    type: 'registry:example',
+    title: 'UseToggleDemo',
+    description: "use-toggle's hook in action.",
+    registryDependencies: ['https://h3-use.vercel.app/r/use-toggle'],
+    files: [
+      {
+        path: 'registry/examples/use-toggle-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-toggle-demo.tsx',
+      },
+    ],
+  },
+  {
+    name: 'use-set-demo',
+    type: 'registry:example',
+    title: 'UseSetDemo',
+    description: "use-set's hook in action.",
+    registryDependencies: ['https://h3-use.vercel.app/r/use-set'],
+    files: [
+      {
+        path: 'registry/examples/use-set-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-set-demo.tsx',
+      },
+    ],
+  },
 ];

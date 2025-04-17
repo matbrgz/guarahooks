@@ -72,4 +72,32 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['sensors'],
   },
+  {
+    name: 'use-toggle',
+    type: 'registry:hook',
+    title: 'UseToggle',
+    description: 'Controls a boolean state with a toggler.',
+    files: [
+      {
+        path: 'registry/hooks/use-toggle.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-toggle.tsx',
+      },
+    ],
+    categories: ['state'],
+  },
+  {
+    name: 'use-set',
+    type: 'registry:hook',
+    title: 'UseSet',
+    description: 'Manages a Set of items with ease.',
+    files: [
+      {
+        path: 'registry/hooks/use-set.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-set.tsx',
+      },
+    ],
+    categories: ['state'],
+  },
 ];
