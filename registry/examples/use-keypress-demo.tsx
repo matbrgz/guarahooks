@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-import { useKeypress } from '../hooks/use-keypress';
+import { useKeypress } from '@/registry/hooks/use-keypress';
 
 export default function UseKeypressDemo() {
   const [message, setMessage] = useState(

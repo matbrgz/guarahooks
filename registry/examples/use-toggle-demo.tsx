@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useToggle } from '../hooks/use-toggle';
+import { useToggle } from '@/registry/hooks/use-toggle';
 
 export default function UseToggleDemo() {
   const [isOn, toggle] = useToggle(false);

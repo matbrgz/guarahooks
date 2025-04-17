@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useSet } from '../hooks/use-set';
+import { useSet } from '@/registry/hooks/use-set';
 
 export default function UseSetDemo() {
   const {

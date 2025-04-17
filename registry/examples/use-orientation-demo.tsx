@@ -1,4 +1,4 @@
-import { useOrientation } from '../hooks/use-orientation';
+import { useOrientation } from '@/registry/hooks/use-orientation';
 
 export default function UseOrientationDemo() {
   const orientation = useOrientation();
