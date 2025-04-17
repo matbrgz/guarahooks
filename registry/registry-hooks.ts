@@ -99,4 +99,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['state'],
   },
+  {
+    name: 'use-local-storage',
+    type: 'registry:hook',
+    title: 'UseLocalStorage',
+    description: 'Synchronizes a value with localStorage.',
+    files: [
+      {
+        path: 'registry/hooks/use-local-storage.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-local-storage.tsx',
+      },
+    ],
+    categories: ['side-effects'],
+  },
 ];

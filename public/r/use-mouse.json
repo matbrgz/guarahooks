@@ -3,7 +3,7 @@
   "name": "use-mouse",
   "type": "registry:hook",
   "title": "UseMouse",
-  "description": "Tracks the mouse position relative to an element and the document.",
+  "description": "Tracks the mouse position in the element and document.",
   "files": [
     {
       "path": "registry/hooks/use-mouse.tsx",

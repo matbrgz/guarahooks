@@ -33,8 +33,6 @@ export function CategoryCard({
 }: CategoryCard) {
   const { theme } = useTheme();
 
-  console.log(theme);
-
   const href = `/${slug}`;
   const isComingSoon: boolean = hooksCount === 0;
 

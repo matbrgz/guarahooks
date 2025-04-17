@@ -99,4 +99,18 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-local-storage-demo',
+    type: 'registry:example',
+    title: 'UseLocalStorageDemo',
+    description: "use-local-storage's hook in action.",
+    registryDependencies: ['https://h3-use.com/r/use-local-storage.json'],
+    files: [
+      {
+        path: 'registry/example/use-local-storage-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-local-storage-demo.tsx',
+      },
+    ],
+  },
 ];
