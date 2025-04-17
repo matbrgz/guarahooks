@@ -48,6 +48,9 @@ export const categories: HookCategory[] = [
       {
         name: 'use-toggle',
       },
+      {
+        name: 'use-set',
+      },
     ],
   },
   {

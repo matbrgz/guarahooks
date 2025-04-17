@@ -86,4 +86,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['state'],
   },
+  {
+    name: 'use-set',
+    type: 'registry:hook',
+    title: 'UseSet',
+    description: 'Manages a Set of items with ease.',
+    files: [
+      {
+        path: 'registry/hooks/use-set.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-set.tsx',
+      },
+    ],
+    categories: ['state'],
+  },
 ];

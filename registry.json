@@ -87,6 +87,20 @@
       "categories": ["state"]
     },
     {
+      "name": "use-set",
+      "type": "registry:hook",
+      "title": "UseSet",
+      "description": "Manages a Set of items with ease.",
+      "files": [
+        {
+          "path": "registry/hooks/use-set.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-set.tsx"
+        }
+      ],
+      "categories": ["state"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -167,6 +181,20 @@
           "path": "registry/examples/use-toggle-demo.tsx",
           "type": "registry:example",
           "target": "components/examples/use-toggle-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-set-demo",
+      "type": "registry:example",
+      "title": "UseSetDemo",
+      "description": "use-set's hook in action.",
+      "registryDependencies": ["https://h3-use.vercel.app/r/use-set"],
+      "files": [
+        {
+          "path": "registry/examples/use-set-demo.tsx",
+          "type": "registry:example",
+          "target": "components/examples/use-set-demo.tsx"
         }
       ]
     }

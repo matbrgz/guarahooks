@@ -85,4 +85,18 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-set-demo',
+    type: 'registry:example',
+    title: 'UseSetDemo',
+    description: "use-set's hook in action.",
+    registryDependencies: ['https://h3-use.vercel.app/r/use-set'],
+    files: [
+      {
+        path: 'registry/examples/use-set-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-set-demo.tsx',
+      },
+    ],
+  },
 ];

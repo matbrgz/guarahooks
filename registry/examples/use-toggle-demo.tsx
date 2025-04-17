@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useToggle } from '../hooks/use-toggle';
 
-export function UseToggleDemo() {
+export default function UseToggleDemo() {
   const [isOn, toggle] = useToggle(false);
 
   return (

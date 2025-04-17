@@ -146,6 +146,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-set': {
+    name: 'use-set',
+    description: 'Manages a Set of items with ease.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-set.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-set.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-set.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -275,6 +298,29 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/examples/use-toggle-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-set-demo': {
+    name: 'use-set-demo',
+    description: "use-set's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.vercel.app/r/use-set'],
+    files: [
+      {
+        path: 'registry/examples/use-set-demo.tsx',
+        type: 'registry:example',
+        target: 'components/examples/use-set-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/examples/use-set-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
