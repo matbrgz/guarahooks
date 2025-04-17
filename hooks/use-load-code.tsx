@@ -6,8 +6,6 @@ import { RegistryItem } from 'shadcn/registry';
 
 import { highlight } from '@/components/code-block';
 
-import { convertRegistryPaths } from '@/lib/hooks';
-
 export function useLoadCode(item: RegistryItem) {
   const [code, setCode] = useState<string | null>(null);
   const [highlightedCode, setHighlightedCode] = useState<JSX.Element | null>(
@@ -41,7 +39,7 @@ export function useLoadCode(item: RegistryItem) {
         }
 
         const data = await response.json();
-        const codeContent = convertRegistryPaths(data.files[0].content) || '';
+        const codeContent = data.files[0].content || '';
         if (!isMounted) return;
         setCode(codeContent);
 
