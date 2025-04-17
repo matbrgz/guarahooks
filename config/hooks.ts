@@ -57,14 +57,15 @@ export const categories: HookCategory[] = [
     slug: 'side-effects',
     name: 'Side Effects',
     description:
-      'Trigger side effects in your application in a declarative way.',
+      'Trigger side effects in your application in a declarative and easy way.',
     icon: 'Pages',
     hooks: [],
   },
   {
     slug: 'lifecycles',
     name: 'Lifecycles',
-    description: 'Handle the lifecycle of the components of your application.',
+    description:
+      'Handle the lifecycle of the components of your application with easy.',
     icon: 'Refresh',
     hooks: [],
   },

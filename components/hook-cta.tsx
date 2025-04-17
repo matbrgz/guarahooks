@@ -9,8 +9,8 @@ import { buttonVariants } from './ui/button';
 
 export function HookCta() {
   return (
-    <section className="w-full text-center mt-8 mb-12">
-      <h2 className="font-heading text-foreground mb-4 text-2xl font-semibold">
+    <section className="w-full text-center pt-8 space-y-4">
+      <h2 className="font-heading text-foreground text-2xl font-semibold">
         Didn&apos;t find what you were looking for?
       </h2>
       <Link

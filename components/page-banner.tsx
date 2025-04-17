@@ -16,7 +16,7 @@ export function PageBanner({
   children,
 }: PageBannerProps) {
   return (
-    <hgroup className={cn('w-full flex flex-col gap-1 pt-16 mb-8', className)}>
+    <hgroup className={cn('w-full flex flex-col gap-1 pb-8', className)}>
       <h1
         className={cn(
           'font-heading text-foreground text-3xl font-semibold tracking-normal md:text-4xl',

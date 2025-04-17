@@ -14,14 +14,12 @@ export function NavigationDesktop() {
     <section
       className={cn('grow hidden lg:flex justify-end items-center gap-2')}
     >
-      <ul className={cn('flex items-center gap-2 pr-4')}>
+      <ul className={cn('flex items-center gap-2')}>
         <li>
           <NavigationLink href="/">Hooks</NavigationLink>
         </li>
       </ul>
-      <div
-        className={cn('flex items-center gap-2 border-l border-dashed pl-4')}
-      >
+      <div className={cn('flex items-center gap-2 border-l pl-4')}>
         <Link
           href={siteConfig.links.github}
           className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}

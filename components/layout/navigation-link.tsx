@@ -25,7 +25,6 @@ export function NavigationLink({ href, children }: NavigationLinkProps) {
         'font-light',
         isActive && 'font-medium',
       )}
-      target="_blank"
     >
       {children}
     </Link>

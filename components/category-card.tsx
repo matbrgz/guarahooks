@@ -1,9 +1,18 @@
+'use client';
+
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
 
-import { cn } from '@/lib/utils';
-
 import { Icons } from './icons';
+import { MagicCard } from './magicui/magic-card';
 import { Badge } from './ui/badge';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from './ui/card';
 
 type CategoryCard = {
   slug: string;
@@ -22,6 +31,10 @@ export function CategoryCard({
   hooksCount,
   isNew = false,
 }: CategoryCard) {
+  const { theme } = useTheme();
+
+  console.log(theme);
+
   const href = `/${slug}`;
   const isComingSoon: boolean = hooksCount === 0;
 
@@ -32,37 +45,25 @@ export function CategoryCard({
 
   return (
     <Link href={href}>
-      <article
-        className={cn(
-          'relative flex flex-col justify-center p-6 rounded-md group transition-all duration-300 hover:-translate-y-1 h-48',
-          // Light theme
-          'bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
-          // Dark theme
-          'transform-gpu dark:bg-background dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_60px_-20px_#ffffff1f_inset]',
-        )}
-      >
-        <hgroup className="space-y-2">
-          {renderIcon()}
-          <h2 className="text-2xl font-bold group-hover:underline">{name}</h2>
-          <p className="text-muted-foreground text-sm">{description}</p>
-          <Badge variant="secondary" className="font-mono text-xs">
-            {isComingSoon ? 'No hooks yet' : `${hooksCount} hook(s)`}
-          </Badge>
-        </hgroup>
-        <div className="absolute top-1 right-1 flex items-center justify-center gap-1">
-          {isComingSoon && (
-            <Badge variant="outline" className="font-mono tracking-wide">
-              Coming Soon
+      <Card className="gap-0 h-full border-0">
+        <MagicCard
+          gradientColor={theme === 'dark' ? '#27272a' : '#e4e4e7'}
+          className="p-0 h-full"
+        >
+          <CardHeader className="pb-2">
+            {renderIcon()}
+            <CardTitle className="text-2xl font-semibold">{name}</CardTitle>
+          </CardHeader>
+          <CardContent className="h-full">
+            <p className="text-muted-foreground text-sm">{description}</p>
+          </CardContent>
+          <CardFooter className="pt-4 h-full items-end flex justify-between">
+            <Badge variant="secondary" className="font-mono text-xs">
+              {isComingSoon ? 'No hooks yet' : `${hooksCount} hook(s)`}
             </Badge>
-          )}
-          {isNew && (
-            <Badge variant="outline" className="font-mono tracking-wide">
-              New
-            </Badge>
-          )}
-        </div>
-        <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
-      </article>
+          </CardFooter>
+        </MagicCard>
+      </Card>
     </Link>
   );
 }

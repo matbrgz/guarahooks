@@ -1,8 +1,13 @@
-<img alt="h3/use - Copy-and-paste hooks into your apps." src="./public/og.webp" width="85%" style="border-radius: 16px">
+<img alt="h3/use - Copy-and-paste hooks into your apps." src="./public/og.webp" width="100%" style="border-radius: 16px">
+
+<div align="center">
+  <a href="https://github.com/h3rmel/magicui/h3-use"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/h3rmel/h3-use?style=for-the-badge"></a>
+  <a href="https://github.com/h3rmel/h3-use/blob/main/LICENSE.md"><img alt="License" src="https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge"></a>
+</div>
 
 # h3/use
 
-<p>A set of reusable and customizable hooks that you can copy-and-paste into your apps. Free. Open Source and Open Code.</p>
+A set of reusable and customizable hooks that you can copy-and-paste into your apps. Free. Open Source and Open Code.
 
 ## Documentation
 
