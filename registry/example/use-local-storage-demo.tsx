@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
 
-import { useLocalStorage } from '../hooks/use-local-storage';
+import { useLocalStorage } from '@/registry/hooks/use-local-storage';
 
 export default function UseLocalStorageDemo() {
   // Example with a string
