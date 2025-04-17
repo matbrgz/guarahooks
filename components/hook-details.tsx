@@ -18,7 +18,7 @@ export function HookDetails({ hook, example }: HookDetailsProps) {
     <div className={cn('flex gap-2 peer-data-comp-loading:hidden')}>
       <HookCodeDialog hook={hook} />
       <HookExampleDialog example={example} />
-      {/* <OpenInV0 url={`https://h3-use.vercel.app/r/${example.name}.json`} /> */}
+      <OpenInV0 url={`https://h3-use.vercel.app/r/${example.name}.json`} />
     </div>
   );
 }
