@@ -5,7 +5,7 @@ export const hooks: Registry['items'] = [
     name: 'use-window-size',
     type: 'registry:hook',
     title: 'UseWindowSize',
-    description: "Tracks the current window's dimensions (width and height).",
+    description: "Tracks the current window's dimensions.",
     files: [
       {
         path: 'registry/hooks/use-window-size.tsx',
@@ -33,8 +33,7 @@ export const hooks: Registry['items'] = [
     name: 'use-mouse',
     type: 'registry:hook',
     title: 'UseMouse',
-    description:
-      'Tracks the mouse position relative to an element and the document.',
+    description: 'Tracks the mouse position in the element and document.',
     files: [
       {
         path: 'registry/hooks/use-mouse.tsx',

@@ -9,7 +9,7 @@ export const siteConfig = {
   },
   authorUrl: 'https://github.com/h3rmel',
   keywords: ['React', 'Next.js', 'Hooks', 'TypeScript', 'Type-safe'],
-  ogImage: 'https://h3-use.com/og.png',
+  ogImage: 'https://h3-use.com/og.webp',
 };
 
 export type SiteConfig = typeof siteConfig;

@@ -6,7 +6,6 @@ import '@/assets/globals.css';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import { BackgroundBeamsWithRemove } from '@/components/accertinityui/background-beams-with-remove';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
@@ -62,15 +61,20 @@ export default function RootLayout({
           geistMono.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={200}>
             <Header />
-            <main className="z-10 bg-background/50 flex flex-col backdrop-blur-xs grow border-x size-full border-dashed max-w-7xl mx-auto px-8">
+            <main
+              className={cn(
+                'z-10 flex flex-col grow',
+                'size-full max-w-5xl backdrop-blur-xs',
+                'mx-auto p-8 mt-8 lg:mt-12 mb-8 border rounded-md',
+              )}
+            >
               {children}
             </main>
             <Footer />
             <Toaster richColors position="bottom-center" duration={3000} />
-            <BackgroundBeamsWithRemove />
           </TooltipProvider>
         </ThemeProvider>
         <SpeedInsights />

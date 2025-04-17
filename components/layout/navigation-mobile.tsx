@@ -24,8 +24,8 @@ export function NavigationMobile() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="mr-auto flex lg:hidden">
-          <Icons.Menu className="size-5 -scale-x-100" />
+        <Button variant="ghost" size="icon" className="ml-auto flex lg:hidden">
+          <Icons.Menu className="size-5" />
         </Button>
       </SheetTrigger>
       <SheetContent side="left">

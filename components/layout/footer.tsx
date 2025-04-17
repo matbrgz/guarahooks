@@ -9,10 +9,9 @@ export function Footer() {
     <footer className={cn('w-full h-16 z-10')}>
       <section
         className={cn(
-          'max-w-7xl w-full mx-auto h-full px-4',
-          'bg-background/50 backdrop-blur-xs',
+          'max-w-5xl w-full mx-auto h-full px-8',
           'flex items-center justify-between',
-          'lg:border-x border-t border-dashed',
+          'lg:border border-t rounded-t-md',
         )}
       >
         <p className="text-muted-foreground text-sm">
