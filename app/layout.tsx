@@ -4,6 +4,8 @@ import { geistMono, sora } from '@/assets/fonts';
 
 import '@/assets/globals.css';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import { BackgroundBeamsWithRemove } from '@/components/accertinityui/background-beams-with-remove';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
@@ -71,6 +73,7 @@ export default function RootLayout({
             <BackgroundBeamsWithRemove />
           </TooltipProvider>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
