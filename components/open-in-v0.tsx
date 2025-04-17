@@ -1,11 +1,8 @@
 'use client';
 
-import Link from 'next/link';
-
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
@@ -14,23 +11,24 @@ import { cn } from '@/lib/utils';
 import { Icons } from './icons';
 import { buttonVariants } from './ui/button';
 
-export function OpenInV0({ componentSource }: { componentSource: string }) {
+export function OpenInV0({ url }: { url: string }) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Link
+        <a
           className={cn(
             buttonVariants({
               variant: 'ghost',
               size: 'icon',
             }),
           )}
-          href={`https://v0.dev/chat/api/open?url=${encodeURIComponent(componentSource)}`}
+          href={`https://v0.dev/chat/api/open?url=${url}`}
           target="_blank"
           aria-label="Open in v0"
+          rel="noopener noreferrer"
         >
           <Icons.V0 className="size-4" />
-        </Link>
+        </a>
       </TooltipTrigger>
       <TooltipContent className="text-muted-foreground">
         Open in v0
