@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-window-size-demo",
-  "type": "registry:example",
+  "type": "registry:block",
   "title": "UseWindowSizeDemo",
   "description": "use-window-size's hook in action.",
   "registryDependencies": ["https://h3-use.vercel.app/r/use-window-size"],
@@ -9,7 +9,7 @@
     {
       "path": "registry/examples/use-window-size-demo.tsx",
       "content": "'use client';\n\nimport { useWindowSize } from '@/hooks/h3-use/use-window-size';\n\nexport default function UseWindowSizeDemo() {\n  const { width, height } = useWindowSize();\n\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <p className=\"text-sm text-muted-foreground\">\n        Resize the window to see the values changing.\n      </p>\n      <p className=\"text-sm text-muted-foreground\">\n        Width: <span className=\"text-foreground\">{width}</span>\n      </p>\n      <p className=\"text-sm text-muted-foreground\">\n        Height: <span className=\"text-foreground\">{height}</span>\n      </p>\n    </div>\n  );\n}\n",
-      "type": "registry:example",
+      "type": "registry:block",
       "target": "components/examples/use-window-size-demo.tsx"
     }
   ]

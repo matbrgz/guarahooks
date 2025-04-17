@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-mouse-demo",
-  "type": "registry:example",
+  "type": "registry:block",
   "title": "UseMouseDemo",
   "description": "use-mouse's hook in action.",
   "registryDependencies": ["https://h3-use.vercel.app/r/use-mouse"],
@@ -9,7 +9,7 @@
     {
       "path": "registry/examples/use-mouse-demo.tsx",
       "content": "'use client';\n\nimport { RefObject, useRef, useState } from 'react';\n\nimport { useMouse } from '@/hooks/h3-use/use-mouse';\n\nexport default function UseMouseDemo() {\n  const ref = useRef<HTMLDivElement>(null);\n  const [trackOutside, setTrackOutside] = useState(false);\n  const [clampToZero, setClampToZero] = useState(false);\n  const { docX, docY, posX, posY, elX, elY, elW, elH } = useMouse({\n    ref: ref as unknown as RefObject<HTMLElement>,\n    trackOutside,\n    clampToZero,\n  });\n\n  return (\n    <div className=\"w-full h-full flex flex-col gap-2 items-start\" ref={ref}>\n      <div className=\"flex gap-4 mb-2\">\n        <label>\n          <input\n            type=\"checkbox\"\n            checked={trackOutside}\n            onChange={() => setTrackOutside((v) => !v)}\n          />\n          Track outside\n        </label>\n        <label>\n          <input\n            type=\"checkbox\"\n            checked={clampToZero}\n            onChange={() => setClampToZero((v) => !v)}\n          />\n          Clamp to zero\n        </label>\n      </div>\n      <p>\n        Mouse position in document - x:{docX} y:{docY}\n      </p>\n      <p>\n        Mouse position in element - x:{elX} y:{elY}\n      </p>\n      <div>\n        Element position- x:{posX} y:{posY}\n      </div>\n      <div>\n        Element dimensions - {elW}x{elH}\n      </div>\n    </div>\n  );\n}\n",
-      "type": "registry:example",
+      "type": "registry:block",
       "target": "components/examples/use-mouse-demo.tsx"
     }
   ]

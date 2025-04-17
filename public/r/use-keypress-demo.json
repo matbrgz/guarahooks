@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-keypress-demo",
-  "type": "registry:example",
+  "type": "registry:block",
   "title": "UseKeypressDemo",
   "description": "use-keypress's hook in action.",
   "registryDependencies": ["https://h3-use.vercel.app/r/use-keypress"],
@@ -9,7 +9,7 @@
     {
       "path": "registry/examples/use-keypress-demo.tsx",
       "content": "'use client';\n\nimport React, { useState } from 'react';\n\nimport { useKeypress } from '../hooks/use-keypress';\n\nexport default function UseKeypressDemo() {\n  const [message, setMessage] = useState(\n    'Press Ctrl+M (Windows/Linux) or Cmd+M (Mac)',\n  );\n  const [count, setCount] = useState(0);\n\n  useKeypress({\n    combo: ['ctrl+m', 'meta+m'],\n    callback: (e) => {\n      setCount((c) => c + 1);\n      setMessage('Shortcut detected! (Ctrl+M or Cmd+M)');\n    },\n    preventDefault: true,\n  });\n\n  useKeypress({\n    combo: 'ctrl+k',\n    callback: () => {\n      setCount(0);\n    },\n  });\n\n  return (\n    <div className=\"p-8 max-w-md mx-auto font-sans bg-white rounded shadow mt-12 text-center\">\n      <h2 className=\"text-2xl font-bold mb-4\">useKeypress Demo</h2>\n      <p className=\"mb-2 text-gray-700\">{message}</p>\n      <p className=\"mb-4 text-gray-600\">\n        Shortcut pressed <b className=\"text-blue-600\">{count}</b> times.\n      </p>\n      <small className=\"text-gray-400\">Press Ctrl+K to reset the count.</small>\n    </div>\n  );\n}\n",
-      "type": "registry:example",
+      "type": "registry:block",
       "target": "components/examples/use-keypress-demo.tsx"
     }
   ]
