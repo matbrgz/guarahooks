@@ -60,10 +60,23 @@ export const BackgroundBeams = React.memo(
       'M-44 -573C-44 -573 24 -168 488 -41C952 86 1020 491 1020 491',
       'M-37 -581C-37 -581 31 -176 495 -49C959 78 1027 483 1027 483',
     ];
+
+    const reducedPaths = paths.filter((_, i) => i % 2 === 0);
+
+    const gradientsRandom = React.useMemo(
+      () =>
+        reducedPaths.map(() => ({
+          y2: `${93 + Math.random() * 8}%`,
+          duration: Math.random() * 10 + 10,
+          delay: Math.random() * 10,
+        })),
+      [reducedPaths.length],
+    );
+
     return (
       <div
         className={cn(
-          'absolute inset-0 flex h-full w-full items-center justify-center [mask-repeat:no-repeat] [mask-size:40px]',
+          'absolute inset-0 z-[-1] flex h-full w-full items-center justify-center [mask-repeat:no-repeat] [mask-size:40px]',
           className,
         )}
       >
@@ -82,7 +95,7 @@ export const BackgroundBeams = React.memo(
             strokeWidth="0.5"
           ></path>
 
-          {paths.map((path, index) => (
+          {reducedPaths.map((path, index) => (
             <motion.path
               key={`path-` + index}
               d={path}
@@ -92,7 +105,7 @@ export const BackgroundBeams = React.memo(
             ></motion.path>
           ))}
           <defs>
-            {paths.map((path, index) => (
+            {reducedPaths.map((_, index) => (
               <motion.linearGradient
                 id={`linearGradient-${index}`}
                 key={`gradient-${index}`}
@@ -106,13 +119,13 @@ export const BackgroundBeams = React.memo(
                   x1: ['0%', '100%'],
                   x2: ['0%', '95%'],
                   y1: ['0%', '100%'],
-                  y2: ['0%', `${93 + Math.random() * 8}%`],
+                  y2: ['0%', gradientsRandom[index].y2],
                 }}
                 transition={{
-                  duration: Math.random() * 10 + 10,
+                  duration: gradientsRandom[index].duration,
                   ease: 'easeInOut',
                   repeat: Infinity,
-                  delay: Math.random() * 10,
+                  delay: gradientsRandom[index].delay,
                 }}
               >
                 <stop stopColor="#18CCFC" stopOpacity="0"></stop>
