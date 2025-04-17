@@ -1,6 +1,8 @@
+<img alt="h3/use - Copy-and-paste hooks into your apps." src="./public/og.png" width="85%" style="border-radius: 16px">
+
 # h3/use
 
-A set of reusable and customizable hooks that you can copy-and-paste into your apps. Free. Open Source and Open Code.
+<p>A set of reusable and customizable hooks that you can copy-and-paste into your apps. Free. Open Source and Open Code.</p>
 
 ## Documentation
 
