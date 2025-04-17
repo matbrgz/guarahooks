@@ -18,9 +18,7 @@ export function HookDetails({ hook, example }: HookDetailsProps) {
     <div className={cn('flex gap-2 peer-data-comp-loading:hidden')}>
       <HookCodeDialog hook={hook} />
       <HookExampleDialog example={example} />
-      <OpenInV0
-        componentSource={`${siteConfig.url}/r/${hook.name}-demo.json`}
-      />
+      <OpenInV0 componentSource={`${siteConfig.url}/r/${example.name}.json`} />
     </div>
   );
 }
