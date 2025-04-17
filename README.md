@@ -1,4 +1,4 @@
-<img alt="h3/use - Copy-and-paste hooks into your apps." src="./public/og.png" width="85%" style="border-radius: 16px">
+<img alt="h3/use - Copy-and-paste hooks into your apps." src="./public/og.webp" width="85%" style="border-radius: 16px">
 
 # h3/use
 

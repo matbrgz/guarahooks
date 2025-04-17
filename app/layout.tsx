@@ -6,7 +6,6 @@ import '@/assets/globals.css';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import { BackgroundBeamsWithRemove } from '@/components/accertinityui/background-beams-with-remove';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
@@ -70,7 +69,6 @@ export default function RootLayout({
             </main>
             <Footer />
             <Toaster richColors position="bottom-center" duration={3000} />
-            <BackgroundBeamsWithRemove />
           </TooltipProvider>
         </ThemeProvider>
         <SpeedInsights />
