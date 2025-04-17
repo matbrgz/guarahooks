@@ -44,7 +44,11 @@ export const categories: HookCategory[] = [
     description:
       'Easily manage the state of different types of data in your application.',
     icon: 'Swap',
-    hooks: [],
+    hooks: [
+      {
+        name: 'use-toggle',
+      },
+    ],
   },
   {
     slug: 'side-effects',

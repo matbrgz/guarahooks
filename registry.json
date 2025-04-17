@@ -73,6 +73,20 @@
       "categories": ["sensors"]
     },
     {
+      "name": "use-toggle",
+      "type": "registry:hook",
+      "title": "UseToggle",
+      "description": "Controls a boolean state with a toggler.",
+      "files": [
+        {
+          "path": "registry/hooks/use-toggle.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-toggle.tsx"
+        }
+      ],
+      "categories": ["state"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -139,6 +153,20 @@
           "path": "registry/examples/use-orientation-demo.tsx",
           "type": "registry:example",
           "target": "components/examples/use-orientation-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-toggle-demo",
+      "type": "registry:example",
+      "title": "UseToggleDemo",
+      "description": "use-toggle's hook in action.",
+      "registryDependencies": ["https://h3-use.vercel.app/r/use-toggle"],
+      "files": [
+        {
+          "path": "registry/examples/use-toggle-demo.tsx",
+          "type": "registry:example",
+          "target": "components/examples/use-toggle-demo.tsx"
         }
       ]
     }
