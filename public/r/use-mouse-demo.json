@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "UseMouseDemo",
   "description": "use-mouse's hook in action.",
-  "registryDependencies": ["https://h3-use.vercel.app/r/use-mouse.json"],
+  "registryDependencies": ["https://h3-use.com/r/use-mouse.json"],
   "files": [
     {
       "path": "registry/example/use-mouse-demo.tsx",

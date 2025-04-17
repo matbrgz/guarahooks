@@ -10,7 +10,7 @@ import { hooks } from '../registry/registry-hooks';
 
 const registry: Registry = {
   name: 'h3/use',
-  homepage: 'https://h3-use.vercel.app/',
+  homepage: 'https://h3-use.com/',
   items: [...hooks, ...examples],
 };
 

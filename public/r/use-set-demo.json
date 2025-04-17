@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "UseSetDemo",
   "description": "use-set's hook in action.",
-  "registryDependencies": ["https://h3-use.vercel.app/r/use-set.json"],
+  "registryDependencies": ["https://h3-use.com/r/use-set.json"],
   "files": [
     {
       "path": "registry/example/use-set-demo.tsx",

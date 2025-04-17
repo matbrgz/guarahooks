@@ -6,7 +6,7 @@
 
 ## Documentation
 
-Visit https://h3-use.vercel.app to view the documentation.
+Visit https://h3-use.com to view the documentation.
 
 ## Contributing
 

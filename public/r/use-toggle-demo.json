@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "UseToggleDemo",
   "description": "use-toggle's hook in action.",
-  "registryDependencies": ["https://h3-use.vercel.app/r/use-toggle.json"],
+  "registryDependencies": ["https://h3-use.com/r/use-toggle.json"],
   "files": [
     {
       "path": "registry/example/use-toggle-demo.tsx",

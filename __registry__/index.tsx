@@ -173,7 +173,7 @@ export const Index: Record<string, any> = {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-window-size.json'],
+    registryDependencies: ['https://h3-use.com/r/use-window-size.json'],
     files: [
       {
         path: 'registry/example/use-window-size-demo.tsx',
@@ -196,7 +196,7 @@ export const Index: Record<string, any> = {
     name: 'use-media-demo',
     description: "use-media's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-media.json'],
+    registryDependencies: ['https://h3-use.com/r/use-media.json'],
     files: [
       {
         path: 'registry/example/use-media-demo.tsx',
@@ -219,7 +219,7 @@ export const Index: Record<string, any> = {
     name: 'use-mouse-demo',
     description: "use-mouse's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-mouse.json'],
+    registryDependencies: ['https://h3-use.com/r/use-mouse.json'],
     files: [
       {
         path: 'registry/example/use-mouse-demo.tsx',
@@ -242,7 +242,7 @@ export const Index: Record<string, any> = {
     name: 'use-keypress-demo',
     description: "use-keypress's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-keypress.json'],
+    registryDependencies: ['https://h3-use.com/r/use-keypress.json'],
     files: [
       {
         path: 'registry/example/use-keypress-demo.tsx',
@@ -265,7 +265,7 @@ export const Index: Record<string, any> = {
     name: 'use-orientation-demo',
     description: "use-orientation's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-orientation.json'],
+    registryDependencies: ['https://h3-use.com/r/use-orientation.json'],
     files: [
       {
         path: 'registry/example/use-orientation-demo.tsx',
@@ -288,7 +288,7 @@ export const Index: Record<string, any> = {
     name: 'use-toggle-demo',
     description: "use-toggle's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-toggle.json'],
+    registryDependencies: ['https://h3-use.com/r/use-toggle.json'],
     files: [
       {
         path: 'registry/example/use-toggle-demo.tsx',
@@ -311,7 +311,7 @@ export const Index: Record<string, any> = {
     name: 'use-set-demo',
     description: "use-set's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-set.json'],
+    registryDependencies: ['https://h3-use.com/r/use-set.json'],
     files: [
       {
         path: 'registry/example/use-set-demo.tsx',

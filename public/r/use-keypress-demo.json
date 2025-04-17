@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "UseKeypressDemo",
   "description": "use-keypress's hook in action.",
-  "registryDependencies": ["https://h3-use.vercel.app/r/use-keypress.json"],
+  "registryDependencies": ["https://h3-use.com/r/use-keypress.json"],
   "files": [
     {
       "path": "registry/example/use-keypress-demo.tsx",

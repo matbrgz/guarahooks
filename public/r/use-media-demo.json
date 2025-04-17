@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "UseMediaDemo",
   "description": "use-media's hook in action.",
-  "registryDependencies": ["https://h3-use.vercel.app/r/use-media.json"],
+  "registryDependencies": ["https://h3-use.com/r/use-media.json"],
   "files": [
     {
       "path": "registry/example/use-media-demo.tsx",

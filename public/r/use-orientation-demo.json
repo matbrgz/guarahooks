@@ -4,7 +4,7 @@
   "type": "registry:example",
   "title": "UseOrientationDemo",
   "description": "use-orientation's hook in action.",
-  "registryDependencies": ["https://h3-use.vercel.app/r/use-orientation.json"],
+  "registryDependencies": ["https://h3-use.com/r/use-orientation.json"],
   "files": [
     {
       "path": "registry/example/use-orientation-demo.tsx",

@@ -114,7 +114,7 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseExampleSize Demo',
     description: "use-example-hook's hook in action.",
-    registryDependencies: ['https://h3-use.vercel.app/r/use-example-hook.json'],
+    registryDependencies: ['https://h3-use.com/r/use-example-hook.json'],
     files: [
       {
         path: 'registry/example/use-example-hook-demo.tsx',
