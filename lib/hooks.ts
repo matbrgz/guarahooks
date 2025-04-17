@@ -25,5 +25,5 @@ export const getHooksExamplesByNames = (names: string[]): RegistryItem[] => {
 export const convertRegistryPaths = (content: string): string => {
   return content
     .replace(/@\/registry\/hooks/g, '@/hooks/h3-use')
-    .replace(/@\/registry\/examples/g, '@/components/h3-use');
+    .replace(/@\/registry\/example/g, '@/components/examples');
 };

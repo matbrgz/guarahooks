@@ -173,16 +173,16 @@ export const Index: Record<string, any> = {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-window-size'],
+    registryDependencies: ['https://h3-use.vercel.app/r/use-window-size.json'],
     files: [
       {
-        path: 'registry/examples/use-window-size-demo.tsx',
+        path: 'registry/example/use-window-size-demo.tsx',
         type: 'registry:example',
-        target: 'components/examples/use-window-size-demo.tsx',
+        target: 'components/example/use-window-size-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/examples/use-window-size-demo.tsx');
+      const mod = await import('@/registry/example/use-window-size-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -196,16 +196,16 @@ export const Index: Record<string, any> = {
     name: 'use-media-demo',
     description: "use-media's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-media'],
+    registryDependencies: ['https://h3-use.vercel.app/r/use-media.json'],
     files: [
       {
-        path: 'registry/examples/use-media-demo.tsx',
+        path: 'registry/example/use-media-demo.tsx',
         type: 'registry:example',
-        target: 'components/examples/use-media-demo.tsx',
+        target: 'components/example/use-media-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/examples/use-media-demo.tsx');
+      const mod = await import('@/registry/example/use-media-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -219,16 +219,16 @@ export const Index: Record<string, any> = {
     name: 'use-mouse-demo',
     description: "use-mouse's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-mouse'],
+    registryDependencies: ['https://h3-use.vercel.app/r/use-mouse.json'],
     files: [
       {
-        path: 'registry/examples/use-mouse-demo.tsx',
+        path: 'registry/example/use-mouse-demo.tsx',
         type: 'registry:example',
-        target: 'components/examples/use-mouse-demo.tsx',
+        target: 'components/example/use-mouse-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/examples/use-mouse-demo.tsx');
+      const mod = await import('@/registry/example/use-mouse-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -242,16 +242,16 @@ export const Index: Record<string, any> = {
     name: 'use-keypress-demo',
     description: "use-keypress's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-keypress'],
+    registryDependencies: ['https://h3-use.vercel.app/r/use-keypress.json'],
     files: [
       {
-        path: 'registry/examples/use-keypress-demo.tsx',
+        path: 'registry/example/use-keypress-demo.tsx',
         type: 'registry:example',
-        target: 'components/examples/use-keypress-demo.tsx',
+        target: 'components/example/use-keypress-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/examples/use-keypress-demo.tsx');
+      const mod = await import('@/registry/example/use-keypress-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -265,16 +265,16 @@ export const Index: Record<string, any> = {
     name: 'use-orientation-demo',
     description: "use-orientation's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-orientation'],
+    registryDependencies: ['https://h3-use.vercel.app/r/use-orientation.json'],
     files: [
       {
-        path: 'registry/examples/use-orientation-demo.tsx',
+        path: 'registry/example/use-orientation-demo.tsx',
         type: 'registry:example',
-        target: 'components/examples/use-orientation-demo.tsx',
+        target: 'components/example/use-orientation-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/examples/use-orientation-demo.tsx');
+      const mod = await import('@/registry/example/use-orientation-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -288,16 +288,16 @@ export const Index: Record<string, any> = {
     name: 'use-toggle-demo',
     description: "use-toggle's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-toggle'],
+    registryDependencies: ['https://h3-use.vercel.app/r/use-toggle.json'],
     files: [
       {
-        path: 'registry/examples/use-toggle-demo.tsx',
+        path: 'registry/example/use-toggle-demo.tsx',
         type: 'registry:example',
-        target: 'components/examples/use-toggle-demo.tsx',
+        target: 'components/example/use-toggle-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/examples/use-toggle-demo.tsx');
+      const mod = await import('@/registry/example/use-toggle-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -311,16 +311,16 @@ export const Index: Record<string, any> = {
     name: 'use-set-demo',
     description: "use-set's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['https://h3-use.vercel.app/r/use-set'],
+    registryDependencies: ['https://h3-use.vercel.app/r/use-set.json'],
     files: [
       {
-        path: 'registry/examples/use-set-demo.tsx',
+        path: 'registry/example/use-set-demo.tsx',
         type: 'registry:example',
-        target: 'components/examples/use-set-demo.tsx',
+        target: 'components/example/use-set-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/examples/use-set-demo.tsx');
+      const mod = await import('@/registry/example/use-set-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

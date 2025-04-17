@@ -58,7 +58,7 @@ export function useExampleHook() {
 
 ### 2. Create Hook Demo
 
-Provide a basic example to showcase your hook in `registry/examples/use-example.hook.tsx`
+Provide a basic example to showcase your hook in `registry/example/use-example.hook.tsx`
 
 ```typescript
 import { useExampleHook } from '@registry/hooks/use-example-hook';
@@ -114,12 +114,12 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseExampleSize Demo',
     description: "use-example-hook's hook in action.",
-    registryDependencies: ['https://h3-use.vercel.app/r/use-example-hook'],
+    registryDependencies: ['https://h3-use.vercel.app/r/use-example-hook.json'],
     files: [
       {
-        path: 'registry/examples/use-example-hook-demo.tsx',
+        path: 'registry/example/use-example-hook-demo.tsx',
         type: 'registry:example',
-        target: 'components/examples/use-example-hook-demo.tsx',
+        target: 'components/example/use-example-hook-demo.tsx',
       },
     ],
   },
