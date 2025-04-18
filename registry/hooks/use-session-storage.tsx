@@ -1,67 +1,97 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+interface UseSessionStorageOptions<T> {
+  serialize?: (value: T) => string;
+  deserialize?: (value: string) => T;
+}
+
+/**
+ * Hook to synchronize a value with sessionStorage in a type-safe, performant, and cross-tab reactive way.
+ *
+ * @param key sessionStorage key
+ * @param initialValue Initial value
+ * @param options Custom serialization/deserialization functions
+ */
 function useSessionStorage<T>(
   key: string,
-  initialValue?: T,
-): [T, (value: T) => void] {
-  // Função para ler o valor do sessionStorage
+  initialValue: T,
+  options?: UseSessionStorageOptions<T>,
+) {
+  // Memoize serialize/deserialize to avoid unnecessary dependencies
+  const serialize = useMemo(
+    () => options?.serialize ?? JSON.stringify,
+    [options?.serialize],
+  );
+
+  const deserialize = useMemo(
+    () => options?.deserialize ?? JSON.parse,
+    [options?.deserialize],
+  );
+
+  // Ref to keep the initial value stable
+  const initialRef = useRef(initialValue);
+
   const readValue = useCallback((): T => {
-    if (typeof window === 'undefined') {
-      return initialValue as T;
-    }
+    if (typeof window === 'undefined') return initialRef.current;
+
     try {
       const item = window.sessionStorage.getItem(key);
-      return item ? (JSON.parse(item) as T) : (initialValue as T);
-    } catch (error) {
-      console.warn(`Erro ao ler sessionStorage para a chave "${key}":`, error);
-      return initialValue as T;
-    }
-  }, [key, initialValue]);
 
+      return item != null ? (deserialize(item) as T) : initialRef.current;
+    } catch (error) {
+      console.warn(
+        `[useSessionStorage] Error reading key "${key}" from sessionStorage:`,
+        error,
+      );
+
+      return initialRef.current;
+    }
+  }, [key, deserialize]);
+
+  // State synchronized with sessionStorage
   const [storedValue, setStoredValue] = useState<T>(readValue);
 
-  // Atualiza o sessionStorage e o estado
   const setValue = useCallback(
-    (value: T) => {
+    (value: T | ((val: T) => T)) => {
       try {
-        setStoredValue(value);
-        if (typeof window !== 'undefined') {
-          window.sessionStorage.setItem(key, JSON.stringify(value));
-        }
+        setStoredValue((prev) => {
+          const valueToStore = value instanceof Function ? value(prev) : value;
+
+          window.sessionStorage.setItem(key, serialize(valueToStore));
+
+          return valueToStore;
+        });
       } catch (error) {
         console.warn(
-          `Erro ao definir sessionStorage para a chave "${key}":`,
+          `[useSessionStorage] Error setting key "${key}" in sessionStorage:`,
           error,
         );
       }
     },
-    [key],
+    [key, serialize],
   );
 
-  // Sincroniza entre abas
+  // Synchronize between tabs
   useEffect(() => {
     const handleStorage = (event: StorageEvent) => {
       if (event.storageArea === window.sessionStorage && event.key === key) {
-        setStoredValue(
-          event.newValue
-            ? (JSON.parse(event.newValue) as T)
-            : (initialValue as T),
-        );
+        setStoredValue(readValue());
       }
     };
-    window.addEventListener('storage', handleStorage);
-    return () => window.removeEventListener('storage', handleStorage);
-  }, [key, initialValue]);
 
-  // Atualiza o valor se a chave mudar
+    window.addEventListener('storage', handleStorage);
+
+    return () => window.removeEventListener('storage', handleStorage);
+  }, [key, readValue]);
+
+  // Update the value if the key changes
   useEffect(() => {
     setStoredValue(readValue());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [key]);
+  }, [key, readValue]);
 
-  return [storedValue, setValue];
+  return [storedValue, setValue] as const;
 }
 
 export default useSessionStorage;

@@ -113,4 +113,18 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-session-storage-demo',
+    type: 'registry:example',
+    title: 'UseSessionStorageDemo',
+    description: "use-session-storage's hook in action.",
+    registryDependencies: ['https://h3-use.com/r/use-session-storage.json'],
+    files: [
+      {
+        path: 'registry/example/use-session-storage-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-session-storage-demo.tsx',
+      },
+    ],
+  },
 ];

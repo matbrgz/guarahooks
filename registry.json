@@ -115,6 +115,19 @@
       "categories": ["side-effects"]
     },
     {
+      "name": "use-session-storage",
+      "type": "registry:hook",
+      "title": "UseSessionStorage",
+      "description": "Synchronizes a value with sessionStorage.",
+      "files": [
+        {
+          "path": "registry/hooks/use-session-storage.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-session-storage.tsx"
+        }
+      ]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -223,6 +236,20 @@
           "path": "registry/example/use-local-storage-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-local-storage-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-session-storage-demo",
+      "type": "registry:example",
+      "title": "UseSessionStorageDemo",
+      "description": "use-session-storage's hook in action.",
+      "registryDependencies": ["https://h3-use.com/r/use-session-storage.json"],
+      "files": [
+        {
+          "path": "registry/example/use-session-storage-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-session-storage-demo.tsx"
         }
       ]
     }

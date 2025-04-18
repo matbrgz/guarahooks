@@ -24,6 +24,7 @@ export function useLocalStorage<T>(
     () => options?.serialize ?? JSON.stringify,
     [options?.serialize],
   );
+
   const deserialize = useMemo(
     () => options?.deserialize ?? JSON.parse,
     [options?.deserialize],
@@ -34,14 +35,17 @@ export function useLocalStorage<T>(
 
   const readValue = useCallback((): T => {
     if (typeof window === 'undefined') return initialRef.current;
+
     try {
       const item = window.localStorage.getItem(key);
+
       return item != null ? (deserialize(item) as T) : initialRef.current;
     } catch (error) {
       console.warn(
         `[useLocalStorage] Error reading key "${key}" from localStorage:`,
         error,
       );
+
       return initialRef.current;
     }
   }, [key, deserialize]);
@@ -54,7 +58,9 @@ export function useLocalStorage<T>(
       try {
         setStoredValue((prev) => {
           const valueToStore = value instanceof Function ? value(prev) : value;
+
           window.localStorage.setItem(key, serialize(valueToStore));
+
           return valueToStore;
         });
       } catch (error) {
@@ -74,7 +80,9 @@ export function useLocalStorage<T>(
         setStoredValue(readValue());
       }
     };
+
     window.addEventListener('storage', handleStorage);
+
     return () => window.removeEventListener('storage', handleStorage);
   }, [key, readValue]);
 

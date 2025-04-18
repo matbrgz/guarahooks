@@ -63,6 +63,9 @@ export const categories: HookCategory[] = [
       {
         name: 'use-local-storage',
       },
+      {
+        name: 'use-session-storage',
+      },
     ],
   },
   {

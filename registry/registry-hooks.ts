@@ -113,4 +113,17 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['side-effects'],
   },
+  {
+    name: 'use-session-storage',
+    type: 'registry:hook',
+    title: 'UseSessionStorage',
+    description: 'Synchronizes a value with sessionStorage.',
+    files: [
+      {
+        path: 'registry/hooks/use-session-storage.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-session-storage.tsx',
+      },
+    ],
+  },
 ];
