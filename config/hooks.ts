@@ -66,6 +66,9 @@ export const categories: HookCategory[] = [
       {
         name: 'use-session-storage',
       },
+      {
+        name: 'use-cookie',
+      },
     ],
   },
   {

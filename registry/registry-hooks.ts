@@ -125,5 +125,20 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-session-storage.tsx',
       },
     ],
+    categories: ['side-effects'],
+  },
+  {
+    name: 'use-cookie',
+    type: 'registry:hook',
+    title: 'UseCookie',
+    description: 'Synchronizes a value with cookies.',
+    files: [
+      {
+        path: 'registry/hooks/use-cookie.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-cookie.tsx',
+      },
+    ],
+    categories: ['side-effects'],
   },
 ];

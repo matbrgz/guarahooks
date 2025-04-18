@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useState } from 'react';
 
-import useSessionStorage from '../hooks/use-session-storage';
+import useSessionStorage from '@/registry/hooks/use-session-storage';
 
 // Custom serializer/deserializer for an object
 const userSerializer = (user: { name: string; age: number }) =>

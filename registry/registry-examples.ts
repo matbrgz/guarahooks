@@ -127,4 +127,18 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-cookie-demo',
+    type: 'registry:example',
+    title: 'UseCookieDemo',
+    description: "use-cookie's hook in action.",
+    registryDependencies: ['https://h3-use.com/r/use-cookie.json'],
+    files: [
+      {
+        path: 'registry/example/use-cookie-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-cookie-demo.tsx',
+      },
+    ],
+  },
 ];
