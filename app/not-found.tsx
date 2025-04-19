@@ -12,7 +12,9 @@ export default function NotFound() {
   const router = useRouter();
 
   return (
-    <div className={cn('flex flex-col items-center justify-center gap-4 grow')}>
+    <section
+      className={cn('flex flex-col items-center justify-center gap-4 grow')}
+    >
       <div
         className={cn(
           'flex items-center justify-center',
@@ -37,6 +39,6 @@ export default function NotFound() {
           Take me home
         </Link>
       </div>
-    </div>
+    </section>
   );
 }
