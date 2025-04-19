@@ -1,4 +1,5 @@
 import { CategoryCard } from '@/components/category-card';
+import { PageBanner } from '@/components/page-banner';
 import { PageGrid } from '@/components/page-grid';
 
 import { categories } from '@/config/hooks';
@@ -11,6 +12,7 @@ export default function HooksPage() {
   });
   return (
     <>
+      <PageBanner title="Hooks" subtitle="Select a category to get started." />
       <PageGrid>
         {sortedCategories.map((category) => (
           <CategoryCard
