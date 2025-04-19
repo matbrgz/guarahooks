@@ -59,7 +59,17 @@ export const categories: HookCategory[] = [
     description:
       'Trigger side effects in your application in a declarative and easy way.',
     icon: 'Pages',
-    hooks: [],
+    hooks: [
+      {
+        name: 'use-local-storage',
+      },
+      {
+        name: 'use-session-storage',
+      },
+      {
+        name: 'use-cookie',
+      },
+    ],
   },
   {
     slug: 'lifecycles',

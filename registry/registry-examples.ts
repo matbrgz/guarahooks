@@ -99,4 +99,46 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-local-storage-demo',
+    type: 'registry:example',
+    title: 'UseLocalStorageDemo',
+    description: "use-local-storage's hook in action.",
+    registryDependencies: ['https://h3-use.com/r/use-local-storage.json'],
+    files: [
+      {
+        path: 'registry/example/use-local-storage-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-local-storage-demo.tsx',
+      },
+    ],
+  },
+  {
+    name: 'use-session-storage-demo',
+    type: 'registry:example',
+    title: 'UseSessionStorageDemo',
+    description: "use-session-storage's hook in action.",
+    registryDependencies: ['https://h3-use.com/r/use-session-storage.json'],
+    files: [
+      {
+        path: 'registry/example/use-session-storage-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-session-storage-demo.tsx',
+      },
+    ],
+  },
+  {
+    name: 'use-cookie-demo',
+    type: 'registry:example',
+    title: 'UseCookieDemo',
+    description: "use-cookie's hook in action.",
+    registryDependencies: ['https://h3-use.com/r/use-cookie.json'],
+    files: [
+      {
+        path: 'registry/example/use-cookie-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-cookie-demo.tsx',
+      },
+    ],
+  },
 ];

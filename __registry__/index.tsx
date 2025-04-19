@@ -9,7 +9,7 @@ import * as React from 'react';
 export const Index: Record<string, any> = {
   'use-window-size': {
     name: 'use-window-size',
-    description: "Tracks the current window's dimensions (width and height).",
+    description: "Tracks the current window's dimensions.",
     type: 'registry:hook',
     registryDependencies: undefined,
     files: [
@@ -55,8 +55,7 @@ export const Index: Record<string, any> = {
   },
   'use-mouse': {
     name: 'use-mouse',
-    description:
-      'Tracks the mouse position relative to an element and the document.',
+    description: 'Tracks the mouse position in the element and document.',
     type: 'registry:hook',
     registryDependencies: undefined,
     files: [
@@ -160,6 +159,75 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/hooks/use-set.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-local-storage': {
+    name: 'use-local-storage',
+    description: 'Synchronizes a value with localStorage.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-local-storage.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-local-storage.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-local-storage.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-session-storage': {
+    name: 'use-session-storage',
+    description: 'Synchronizes a value with sessionStorage.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-session-storage.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-session-storage.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-session-storage.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-cookie': {
+    name: 'use-cookie',
+    description: 'Synchronizes a value with cookies.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-cookie.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-cookie.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-cookie.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -321,6 +389,77 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-set-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-local-storage-demo': {
+    name: 'use-local-storage-demo',
+    description: "use-local-storage's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.com/r/use-local-storage.json'],
+    files: [
+      {
+        path: 'registry/example/use-local-storage-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-local-storage-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-local-storage-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-session-storage-demo': {
+    name: 'use-session-storage-demo',
+    description: "use-session-storage's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.com/r/use-session-storage.json'],
+    files: [
+      {
+        path: 'registry/example/use-session-storage-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-session-storage-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/example/use-session-storage-demo.tsx'
+      );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-cookie-demo': {
+    name: 'use-cookie-demo',
+    description: "use-cookie's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['https://h3-use.com/r/use-cookie.json'],
+    files: [
+      {
+        path: 'registry/example/use-cookie-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-cookie-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-cookie-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

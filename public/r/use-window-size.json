@@ -3,7 +3,7 @@
   "name": "use-window-size",
   "type": "registry:hook",
   "title": "UseWindowSize",
-  "description": "Tracks the current window's dimensions (width and height).",
+  "description": "Tracks the current window's dimensions.",
   "files": [
     {
       "path": "registry/hooks/use-window-size.tsx",

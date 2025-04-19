@@ -6,7 +6,7 @@
       "name": "use-window-size",
       "type": "registry:hook",
       "title": "UseWindowSize",
-      "description": "Tracks the current window's dimensions (width and height).",
+      "description": "Tracks the current window's dimensions.",
       "files": [
         {
           "path": "registry/hooks/use-window-size.tsx",
@@ -34,7 +34,7 @@
       "name": "use-mouse",
       "type": "registry:hook",
       "title": "UseMouse",
-      "description": "Tracks the mouse position relative to an element and the document.",
+      "description": "Tracks the mouse position in the element and document.",
       "files": [
         {
           "path": "registry/hooks/use-mouse.tsx",
@@ -99,6 +99,48 @@
         }
       ],
       "categories": ["state"]
+    },
+    {
+      "name": "use-local-storage",
+      "type": "registry:hook",
+      "title": "UseLocalStorage",
+      "description": "Synchronizes a value with localStorage.",
+      "files": [
+        {
+          "path": "registry/hooks/use-local-storage.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-local-storage.tsx"
+        }
+      ],
+      "categories": ["side-effects"]
+    },
+    {
+      "name": "use-session-storage",
+      "type": "registry:hook",
+      "title": "UseSessionStorage",
+      "description": "Synchronizes a value with sessionStorage.",
+      "files": [
+        {
+          "path": "registry/hooks/use-session-storage.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-session-storage.tsx"
+        }
+      ],
+      "categories": ["side-effects"]
+    },
+    {
+      "name": "use-cookie",
+      "type": "registry:hook",
+      "title": "UseCookie",
+      "description": "Synchronizes a value with cookies.",
+      "files": [
+        {
+          "path": "registry/hooks/use-cookie.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-cookie.tsx"
+        }
+      ],
+      "categories": ["side-effects"]
     },
     {
       "name": "use-window-size-demo",
@@ -195,6 +237,48 @@
           "path": "registry/example/use-set-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-set-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-local-storage-demo",
+      "type": "registry:example",
+      "title": "UseLocalStorageDemo",
+      "description": "use-local-storage's hook in action.",
+      "registryDependencies": ["https://h3-use.com/r/use-local-storage.json"],
+      "files": [
+        {
+          "path": "registry/example/use-local-storage-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-local-storage-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-session-storage-demo",
+      "type": "registry:example",
+      "title": "UseSessionStorageDemo",
+      "description": "use-session-storage's hook in action.",
+      "registryDependencies": ["https://h3-use.com/r/use-session-storage.json"],
+      "files": [
+        {
+          "path": "registry/example/use-session-storage-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-session-storage-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-cookie-demo",
+      "type": "registry:example",
+      "title": "UseCookieDemo",
+      "description": "use-cookie's hook in action.",
+      "registryDependencies": ["https://h3-use.com/r/use-cookie.json"],
+      "files": [
+        {
+          "path": "registry/example/use-cookie-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-cookie-demo.tsx"
         }
       ]
     }
