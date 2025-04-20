@@ -15,9 +15,9 @@ export function Header() {
       <section
         className={cn(
           'max-w-5xl w-full mx-auto px-4 h-full',
-          'bg-background/50 backdrop-blur-xs',
+          'bg-card/30 backdrop-blur-md',
           'flex items-center gap-4',
-          'lg:border border-b rounded-md shadow-sm',
+          'lg:border border-b rounded-md shadow-sm dark:shadow-none',
         )}
       >
         <HeaderLogo />

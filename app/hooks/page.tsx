@@ -4,6 +4,8 @@ import { CategoryCard } from '@/components/category-card';
 import { PageBanner } from '@/components/page-banner';
 import { PageGrid } from '@/components/page-grid';
 
+import { cn } from '@/lib/utils';
+
 import { categories } from '@/config/hooks';
 
 export const metadata: Metadata = {
@@ -19,7 +21,7 @@ export default function HooksPage() {
     return 0;
   });
   return (
-    <>
+    <section className={cn('layout-container')}>
       <PageBanner title="Hooks" subtitle="Select a category to get started." />
       <PageGrid>
         {sortedCategories.map((category) => (
@@ -34,6 +36,6 @@ export default function HooksPage() {
           />
         ))}
       </PageGrid>
-    </>
+    </section>
   );
 }

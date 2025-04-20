@@ -7,6 +7,7 @@ import { PageBanner } from '@/components/page-banner';
 import { PageGrid } from '@/components/page-grid';
 
 import { getHooksByNames, getHooksExamplesByNames } from '@/lib/hooks';
+import { cn } from '@/lib/utils';
 
 import { getCategory } from '@/config/hooks';
 
@@ -40,7 +41,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   );
 
   return (
-    <>
+    <section className={cn('layout-container')}>
       <PageBanner title={category.name} subtitle={category.description} />
       <PageGrid className="grow">
         {hooks.map((hook, index) => (
@@ -54,6 +55,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         ))}
       </PageGrid>
       <HookCta />
-    </>
+    </section>
   );
 }
