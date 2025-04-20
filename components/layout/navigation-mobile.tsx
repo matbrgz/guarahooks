@@ -1,12 +1,10 @@
 import Link from 'next/link';
 
-import { cn } from '@/lib/utils';
-
-import { siteConfig } from '@/config/site';
-
-import { Icons } from '../icons';
-import { ThemeToggle } from '../theme/theme-toggle';
-import { Button, buttonVariants } from '../ui/button';
+import { Icons } from '@/components/icons';
+import { HeaderLogo } from '@/components/layout/header-logo';
+import { NavigationLink } from '@/components/layout/navigation-link';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
+import { Button, buttonVariants } from '@/components/ui/button';
 import {
   Sheet,
   SheetClose,
@@ -16,9 +14,11 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '../ui/sheet';
-import { HeaderLogo } from './header-logo';
-import { NavigationLink } from './navigation-link';
+} from '@/components/ui/sheet';
+
+import { cn } from '@/lib/utils';
+
+import { siteConfig } from '@/config/site';
 
 export function NavigationMobile() {
   return (
@@ -47,6 +47,9 @@ export function NavigationMobile() {
         <ul className={cn('flex items-start justify-start gap-2 grow')}>
           <li>
             <NavigationLink href="/">Hooks</NavigationLink>
+          </li>
+          <li>
+            <NavigationLink href="/showcase">Showcase</NavigationLink>
           </li>
         </ul>
         <SheetFooter>
