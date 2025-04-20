@@ -1,12 +1,10 @@
 import { RegistryItem } from 'shadcn/registry';
 
+import { HookCodeDialog } from '@/components/hook-code-dialog';
+import { HookExampleDialog } from '@/components/hook-example-dialog';
+import { OpenInV0 } from '@/components/open-in-v0';
+
 import { cn } from '@/lib/utils';
-
-import { siteConfig } from '@/config/site';
-
-import { HookCodeDialog } from './hook-code-dialog';
-import { HookExampleDialog } from './hook-example-dialog';
-import { OpenInV0 } from './open-in-v0';
 
 type HookDetailsProps = {
   hook: RegistryItem;

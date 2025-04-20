@@ -3,16 +3,16 @@
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 
-import { Icons } from './icons';
-import { MagicCard } from './magicui/magic-card';
-import { Badge } from './ui/badge';
+import { Icons } from '@/components/icons';
+import { MagicCard } from '@/components/magicui/magic-card';
+import { Badge } from '@/components/ui/badge';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from './ui/card';
+} from '@/components/ui/card';
 
 type CategoryCard = {
   slug: string;

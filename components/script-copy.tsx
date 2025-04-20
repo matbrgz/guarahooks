@@ -1,16 +1,16 @@
 'use client';
 
+import { CopyButton } from '@/components/copy-button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
 import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
 
 import { useConfig } from '@/hooks/use-config';
 
-import CopyButton from './copy-button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-
 export function ScriptCopy({ name }: { name: string }) {
-  const [config, setConfig] = useConfig();
+  const [config] = useConfig();
 
   const packageManager = config.packageManager || 'pnpm';
 
