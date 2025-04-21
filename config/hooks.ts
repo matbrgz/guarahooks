@@ -18,25 +18,9 @@ export const categories: HookCategory[] = [
     slug: 'sensors',
     name: 'Sensors',
     description:
-      'Listen to changes in the interface and update your states and components.',
+      'Listen to changes in the browser environment and update you application accordingly.',
     icon: 'Signal',
-    hooks: [
-      {
-        name: 'use-window-size',
-      },
-      {
-        name: 'use-media',
-      },
-      {
-        name: 'use-mouse',
-      },
-      {
-        name: 'use-keypress',
-      },
-      {
-        name: 'use-orientation',
-      },
-    ],
+    hooks: [],
   },
   {
     slug: 'state-management',
@@ -44,39 +28,29 @@ export const categories: HookCategory[] = [
     description:
       'Easily manage the state of different types of data in your application.',
     icon: 'Swap',
-    hooks: [
-      {
-        name: 'use-toggle',
-      },
-      {
-        name: 'use-set',
-      },
-    ],
+    hooks: [],
   },
   {
-    slug: 'side-effects',
-    name: 'Side Effects',
+    slug: 'lifecycle',
+    name: 'Lifecycle',
     description:
-      'Trigger side effects in your application in a declarative and easy way.',
-    icon: 'Pages',
-    hooks: [
-      {
-        name: 'use-local-storage',
-      },
-      {
-        name: 'use-session-storage',
-      },
-      {
-        name: 'use-cookie',
-      },
-    ],
-  },
-  {
-    slug: 'lifecycles',
-    name: 'Lifecycles',
-    description:
-      'Handle the lifecycle of the components of your application with easy.',
+      'Handle the lifecycle of your React application in a declarative way.',
     icon: 'Refresh',
+    hooks: [],
+  },
+  {
+    slug: 'web-apis',
+    name: 'Web APIs',
+    description:
+      'Use the power of the browser to enhance your application in a easy way.',
+    icon: 'Alert',
+    hooks: [],
+  },
+  {
+    slug: 'user-interaction',
+    name: 'User Interaction',
+    description: 'Handle the user interactions in a declarative and easy way.',
+    icon: 'Alert',
     hooks: [],
   },
 ];
