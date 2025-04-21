@@ -6,6 +6,7 @@ import '@/assets/globals.css';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
+import { BlurredBlob } from '@/components/design/blurred-blob';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
@@ -64,6 +65,12 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={200}>
             <Header />
+            <BlurredBlob
+              className="-top-[25%] left-1/2 -translate-x-1/2 opacity-30"
+              colorFrom="#4F39F6"
+              colorTo="#EC003F"
+              size={{ width: 1200, height: 400 }}
+            />
             <main className={cn('z-10 grow flex flex-col', 'size-full')}>
               {children}
             </main>
