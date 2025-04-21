@@ -18,9 +18,9 @@ export function NavigationDesktop() {
         <li>
           <NavigationLink href="/hooks">Hooks</NavigationLink>
         </li>
-        <li>
+        {/* <li>
           <NavigationLink href="/showcase">Showcase</NavigationLink>
-        </li>
+        </li> */}
       </ul>
       <div className={cn('flex items-center gap-2 border-l pl-4')}>
         <Link

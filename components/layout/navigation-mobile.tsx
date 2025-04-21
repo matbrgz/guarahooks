@@ -48,9 +48,9 @@ export function NavigationMobile() {
           <li>
             <NavigationLink href="/">Hooks</NavigationLink>
           </li>
-          <li>
+          {/* <li>
             <NavigationLink href="/showcase">Showcase</NavigationLink>
-          </li>
+          </li> */}
         </ul>
         <SheetFooter>
           <div className={cn('flex items-center justify-end gap-2')}>
