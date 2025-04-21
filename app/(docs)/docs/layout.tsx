@@ -12,7 +12,7 @@ export default function DocsLayout({
   return (
     <section
       className={cn(
-        'size-full max-w-5xl grow',
+        'size-full max-w-7xl grow',
         'flex flex-row gap-4',
         'mx-auto my-4 lg:mt-8',
       )}
