@@ -12,7 +12,7 @@ export default function DocsLayout({
   return (
     <section
       className={cn(
-        'size-full max-w-7xl grow',
+        'size-full max-w-screen-2xl grow',
         'flex flex-row gap-4',
         'mx-auto my-4 lg:mt-8',
       )}
@@ -20,7 +20,7 @@ export default function DocsLayout({
       <DocsSidebar items={docsConfig.sidebarNav} />
       <div
         className={cn(
-          'flex-3/4',
+          'flex-4/5',
           'bg-card/30 backdrop-blur-md',
           'rounded-md border shadow-sm p-2 dark:shadow-none',
         )}

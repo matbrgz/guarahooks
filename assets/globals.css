@@ -178,7 +178,7 @@
 
 @layer utilities {
   .layout-container {
-    @apply size-full max-w-7xl;
+    @apply size-full max-w-screen-2xl;
     @apply flex flex-col;
     @apply mx-auto my-4 px-4 lg:mt-8;
   }

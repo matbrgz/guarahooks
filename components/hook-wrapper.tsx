@@ -1,0 +1,47 @@
+'use client';
+
+import React from 'react';
+
+import { RotateCcw } from 'lucide-react';
+
+import { OpenInV0 } from '@/components/open-in-v0';
+import { Button } from '@/components/ui/button';
+
+import { cn } from '@/lib/utils';
+
+interface HookWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
+  name: string;
+}
+
+export const HookWrapper = ({
+  className,
+  children,
+  name,
+}: HookWrapperProps) => {
+  const [key, setKey] = React.useState(0);
+
+  return (
+    <div
+      className={cn(
+        'max-w-screen relative rounded-xl border bg-background',
+        className,
+      )}
+      key={key}
+    >
+      <div className="flex items-center justify-end gap-2 p-4">
+        <OpenInV0 url={`https://h3-use.com/r/${name}.json`} />
+        <Button
+          onClick={() => setKey((prev) => prev + 1)}
+          className="flex items-center rounded-lg px-3 py-1"
+          variant="ghost"
+        >
+          <RotateCcw aria-label="restart-btn" size={16} />
+        </Button>
+      </div>
+
+      <div className="flex min-h-[350px] w-full items-center justify-center p-10">
+        {children}
+      </div>
+    </div>
+  );
+};

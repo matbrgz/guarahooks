@@ -21,7 +21,7 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
   return (
     <aside
       className={cn(
-        'flex-1/4',
+        'flex-1/5',
         'bg-card/30 backdrop-blur-md',
         'rounded-md border shadow-sm p-4 pr-2 dark:shadow-none',
       )}

@@ -14,7 +14,7 @@ export function Header() {
     >
       <section
         className={cn(
-          'max-w-7xl w-full mx-auto px-4 h-full',
+          'max-w-screen-2xl w-full mx-auto px-4 h-full',
           'bg-card/30 backdrop-blur-md',
           'flex items-center gap-4',
           'lg:border border-b rounded-md shadow-sm dark:shadow-none',
