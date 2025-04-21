@@ -66,7 +66,7 @@ export default function RootLayout({
           <TooltipProvider delayDuration={200}>
             <Header />
             <BlurredBlob
-              className="-top-[25%] left-1/2 -translate-x-1/2 opacity-30"
+              className="-top-[30%] left-1/2 -translate-x-1/2 opacity-30"
               colorFrom="#4F39F6"
               colorTo="#EC003F"
               size={{ width: 1200, height: 400 }}
