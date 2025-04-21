@@ -1,7 +1,7 @@
-import { Geist_Mono, Sora } from 'next/font/google';
+import { Geist_Mono, Inter } from 'next/font/google';
 
-const sora = Sora({
-  variable: '--font-sora',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
 });
 
@@ -10,4 +10,4 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export { sora, geistMono };
+export { inter, geistMono };

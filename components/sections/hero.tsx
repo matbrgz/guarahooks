@@ -31,7 +31,7 @@ export function Hero() {
       </hgroup>
       <div className={cn('flex items-center justify-center gap-4')}>
         <Link
-          href="/hooks"
+          href="/docs"
           className={cn(
             buttonVariants({ variant: 'rainbow', size: 'lg' }),
             'group hover:scale-[1.025]',

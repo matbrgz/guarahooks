@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 
-import { geistMono, sora } from '@/assets/fonts';
+import { geistMono, inter } from '@/assets/fonts';
 
 import '@/assets/globals.css';
 
@@ -58,7 +58,7 @@ export default function RootLayout({
       <body
         className={cn(
           'relative w-full min-h-dvh font-sans antialiased scroll-smooth flex flex-col overflow-x-hidden',
-          sora.variable,
+          inter.variable,
           geistMono.variable,
         )}
       >
