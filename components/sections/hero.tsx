@@ -1,19 +1,16 @@
 import Link from 'next/link';
 
 import { Icons } from '@/components/icons';
-import { RainbowButton } from '@/components/magicui/rainbow-button';
 import { buttonVariants } from '@/components/ui/button';
 
 import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
 
-import { BackgroundBeams } from '../acertinityui/background-beams';
-
 export function Hero() {
   return (
     <section
-      className={cn('flex flex-col items-center justify-center grow gap-4')}
+      className={cn('flex flex-col items-center justify-center grow gap-8')}
     >
       <hgroup
         className={cn(
@@ -24,7 +21,7 @@ export function Hero() {
         <h1 className={cn('text-5xl font-bold', 'max-w-[18ch]')}>
           Hooks Library for Software Engineers
         </h1>
-        <p className={cn('max-w-[44ch]')}>
+        <p className={cn('max-w-[34ch]')}>
           +50 free and open-source hooks build with{' '}
           <span className={cn('font-bold')}>React</span> and{' '}
           <span className={cn('font-bold')}>TypeScript</span>. Perfect for your
@@ -54,7 +51,6 @@ export function Hero() {
           <Icons.ChevronRight className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
       </div>
-      <BackgroundBeams className="absolute z-[-1] top-0 left-0 h-full w-full" />
     </section>
   );
 }

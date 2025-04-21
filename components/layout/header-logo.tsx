@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Badge } from '@/components/ui/badge';
+
 import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
-
-import { Badge } from '../ui/badge';
 
 export function HeaderLogo() {
   return (

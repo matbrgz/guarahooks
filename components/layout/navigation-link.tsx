@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
 
-import { buttonVariants } from '../ui/button';
+import { cn } from '@/lib/utils';
 
 export type NavigationLinkProps = {
   href: string;
@@ -21,7 +21,7 @@ export function NavigationLink({ href, children }: NavigationLinkProps) {
     <Link
       href={href}
       className={cn(
-        buttonVariants({ variant: 'link' }),
+        buttonVariants({ variant: 'link', size: 'sm' }),
         'text-muted-foreground',
         isActive && 'text-foreground',
       )}

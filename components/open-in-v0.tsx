@@ -1,5 +1,7 @@
 'use client';
 
+import { Icons } from '@/components/icons';
+import { buttonVariants } from '@/components/ui/button';
 import {
   Tooltip,
   TooltipContent,
@@ -7,9 +9,6 @@ import {
 } from '@/components/ui/tooltip';
 
 import { cn } from '@/lib/utils';
-
-import { Icons } from './icons';
-import { buttonVariants } from './ui/button';
 
 export function OpenInV0({ url }: { url: string }) {
   return (

@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
+import { BorderBeam } from '@/components/magicui/border-beam';
+import { buttonVariants } from '@/components/ui/button';
+
 import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
-
-import { BorderBeam } from './magicui/border-beam';
-import { buttonVariants } from './ui/button';
 
 export function HookCta() {
   return (

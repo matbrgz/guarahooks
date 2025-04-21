@@ -2,15 +2,11 @@
 
 import { RegistryItem } from 'shadcn/registry';
 
-import { siteConfig } from '@/config/site';
-
-import { useLoadCode } from '@/hooks/use-load-code';
-
-import { CodeBlock } from './code-block';
-import CopyButton from './copy-button';
-import { Icons } from './icons';
-import { ScriptCopy } from './script-copy';
-import { Button } from './ui/button';
+import { CodeBlock } from '@/components/code-block';
+import { CopyButton } from '@/components/copy-button';
+import { Icons } from '@/components/icons';
+import { ScriptCopy } from '@/components/script-copy';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -18,8 +14,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './ui/dialog';
-import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
+} from '@/components/ui/dialog';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+
+import { siteConfig } from '@/config/site';
+
+import { useLoadCode } from '@/hooks/use-load-code';
 
 type HookCodeDialogProps = {
   hook: RegistryItem;

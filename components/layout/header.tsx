@@ -1,8 +1,8 @@
-import { cn } from '@/lib/utils';
+import { HeaderLogo } from '@/components/layout/header-logo';
+import { NavigationDesktop } from '@/components/layout/navigation-desktop';
+import { NavigationMobile } from '@/components/layout/navigation-mobile';
 
-import { HeaderLogo } from './header-logo';
-import { NavigationDesktop } from './navigation-desktop';
-import { NavigationMobile } from './navigation-mobile';
+import { cn } from '@/lib/utils';
 
 export function Header() {
   return (

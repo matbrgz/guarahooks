@@ -1,10 +1,10 @@
 'use client';
 
+import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
@@ -12,9 +12,7 @@ import { cn } from '@/lib/utils';
 
 import { useCopy } from '@/hooks/use-copy';
 
-import { Icons } from './icons';
-
-const CopyButton = ({
+export const CopyButton = ({
   componentSource,
   className,
 }: {
@@ -63,5 +61,3 @@ const CopyButton = ({
     </div>
   );
 };
-
-export default CopyButton;
