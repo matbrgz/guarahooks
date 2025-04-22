@@ -22,17 +22,28 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
     <aside
       className={cn(
         'flex-1/5',
-        'bg-card/30 backdrop-blur-md',
-        'rounded-md border shadow-sm p-4 pr-2 dark:shadow-none',
+        'bg-background/50 backdrop-blur-md',
+        'border-x border-dashed shadow-sm dark:shadow-none',
+        'py-4',
       )}
     >
-      <ul className={cn('flex flex-col gap-2 items-start')}>
+      <ul className={cn('flex flex-col items-start')}>
         {items.map((item, index) => (
-          <li key={index} className={cn('flex flex-col gap-2 w-full')}>
+          <li
+            key={index}
+            className={cn(
+              'flex flex-col w-full',
+              'border-b border-dashed',
+              'pb-4',
+              // item.items && item.items.length > 0 ? 'pb-4' : 'pb-2',
+            )}
+          >
             <h4
               className={cn(
-                'rounded-md text-sm font-semibold w-full',
+                'text-sm font-semibold w-full',
                 'inline-flex items-center justify-between',
+                'border-b border-dashed',
+                'px-4 py-4',
               )}
             >
               {item.title}

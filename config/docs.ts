@@ -29,7 +29,6 @@ export const docsConfig: DocsConfig = {
         {
           title: 'useWindowSize',
           href: '/docs/hooks/useWindowSize',
-          label: 'New',
         },
         {
           title: 'useMedia',
@@ -47,7 +46,16 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: 'State Management',
-      items: [],
+      items: [
+        {
+          title: 'useToggle',
+          href: '/docs/hooks/useToggle',
+        },
+        {
+          title: 'useSet',
+          href: '/docs/hooks/useSet',
+        },
+      ],
     },
     {
       title: 'Lifecycle',
@@ -55,11 +63,29 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: 'Web APIs',
-      items: [],
+      items: [
+        {
+          title: 'useLocalStorage',
+          href: '/docs/hooks/useLocalStorage',
+        },
+        {
+          title: 'useSessionStorage',
+          href: '/docs/hooks/useSessionStorage',
+        },
+        {
+          title: 'useCookie',
+          href: '/docs/hooks/useCookie',
+        },
+      ],
     },
     {
       title: 'User Interaction',
-      items: [],
+      items: [
+        {
+          title: 'useKeypress',
+          href: '/docs/hooks/useKeypress',
+        },
+      ],
     },
   ],
 };

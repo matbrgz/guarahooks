@@ -15,7 +15,14 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
   if (items.length === 0) return null;
 
   return (
-    <div className={cn('relative', 'flex flex-col gap-1', 'pl-2', 'text-sm')}>
+    <div
+      className={cn(
+        'relative',
+        'flex flex-col gap-1',
+        'text-sm',
+        'pt-4 px-4 pl-2',
+      )}
+    >
       {items.map((item, index) =>
         item.href && !item.disabled ? (
           <Link
@@ -23,11 +30,12 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
             href={item.href}
             className={cn(
               'flex items-center justify-between',
-              'text-foreground px-2 rounded-md rounded-l-[4px] w-full py-1',
-              'group transition-transform duration-200',
+              'text-foreground px-2 py-1 rounded-md w-full',
+              'group transition-all duration-200',
+              'hover:bg-accent/50 hover:translate-x-0.5',
               item.disabled && 'cursor-not-allowed opacity-60',
               pathname === item.href &&
-                'bg-accent/60 font-medium text-accent-foreground',
+                'bg-accent/50 font-medium text-accent-foreground',
             )}
           >
             <span className={cn('relative shrink-0')}>{item.title}</span>
@@ -45,7 +53,7 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
             key={index}
             className={cn(
               'flex items-center justify-between',
-              'text-muted-foreground px-2 rounded-md rounded-l-[4px] w-full py-1',
+              'text-muted-foreground rounded-md w-full py-1',
               'group transition-transform duration-200',
               item.disabled && 'cursor-not-allowed opacity-60',
             )}

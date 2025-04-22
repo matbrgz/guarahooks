@@ -6,13 +6,18 @@ import { siteConfig } from '@/config/site';
 
 export function Footer() {
   return (
-    <footer className={cn('w-full h-16 z-10')}>
+    <footer
+      className={cn(
+        'w-full h-16 z-10',
+        'bg-background/50 backdrop-blur-md',
+        'border-t border-dashed',
+      )}
+    >
       <section
         className={cn(
-          'max-w-screen-2xl w-full mx-auto h-full px-4',
+          'max-w-screen-2xl size-full',
           'flex items-center justify-between',
-          'lg:border border-t rounded-t-md shadow-sm',
-          'bg-card/30 backdrop-blur-md',
+          'border-x border-dashed mx-auto px-4',
         )}
       >
         <p className="text-muted-foreground text-sm">
