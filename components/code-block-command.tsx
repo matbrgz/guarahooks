@@ -2,8 +2,6 @@
 
 import * as React from 'react';
 
-import { CheckIcon, ClipboardIcon } from 'lucide-react';
-
 import { copyToClipboardWithMeta } from '@/components/copy-button';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';

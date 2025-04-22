@@ -3,7 +3,6 @@
 import * as React from 'react';
 
 import { DropdownMenuTriggerProps } from '@radix-ui/react-dropdown-menu';
-import { CheckIcon, ClipboardIcon } from 'lucide-react';
 
 import { Icons } from '@/components/icons';
 import { Button, type ButtonProps } from '@/components/ui/button';
@@ -120,9 +119,9 @@ export function CopyWithClassNames({
           )}
         >
           {hasCopied ? (
-            <CheckIcon className="size-3" />
+            <Icons.Check className="size-3" />
           ) : (
-            <ClipboardIcon className="size-3" />
+            <Icons.Copy className="size-3" />
           )}
           <span className="sr-only">Copy</span>
         </Button>
@@ -182,9 +181,9 @@ export function CopyNpmCommandButton({
           )}
         >
           {hasCopied ? (
-            <CheckIcon className="size-3" />
+            <Icons.Check className="size-3" />
           ) : (
-            <ClipboardIcon className="size-3" />
+            <Icons.Copy className="size-3" />
           )}
           <span className="sr-only">Copy</span>
         </Button>

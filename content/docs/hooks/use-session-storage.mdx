@@ -1,0 +1,55 @@
+---
+title: useSessionStorage
+date: 2025-04-22
+description: Manages session storage with declarative methods.
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-session-storage-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-session-storage"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-session-storage" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop           | Type                       | Default | Description                                   |
+| -------------- | -------------------------- | ------- | --------------------------------------------- |
+| `key`          | `string`                   | -       | The key to store the value in session storage |
+| `initialValue` | `any`                      | -       | The initial value to store in session storage |
+| `options?`     | `UseSessionStorageOptions` | -       | The options for the hook                      |
+
+### Options
+
+| Prop           | Type                     | Default          | Description                           |
+| -------------- | ------------------------ | ---------------- | ------------------------------------- |
+| `serialize?`   | `(value: any) => string` | `JSON.stringify` | The function to serialize the value   |
+| `deserialize?` | `(value: string) => any` | `JSON.parse`     | The function to deserialize the value |

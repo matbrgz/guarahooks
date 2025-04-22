@@ -2,7 +2,9 @@ import { notFound } from 'next/navigation';
 
 import { allDocs } from 'content-collections';
 
+import { Contribute } from '@/components/contribute';
 import { Mdx } from '@/components/mdx-components';
+import { TableOfContents } from '@/components/table-of-contents';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,6 +13,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 
+import { getTableOfContents } from '@/lib/toc';
 import { cn } from '@/lib/utils';
 
 type DocsPageProps = {
@@ -40,11 +43,13 @@ export default async function DocsPage({ params }: DocsPageProps) {
     notFound();
   }
 
+  const toc = await getTableOfContents(doc.body.raw);
+
   return (
     <div className={cn('flex h-full')}>
       {/* Content */}
-      <article className={cn('grow')}>
-        <Breadcrumb className={cn('border-b border-dashed p-4')}>
+      <article className={cn('flex-[80%]')}>
+        <Breadcrumb className={cn('border-b border-dashed py-4 px-8')}>
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
@@ -55,7 +60,7 @@ export default async function DocsPage({ params }: DocsPageProps) {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <hgroup className={cn('p-4')}>
+        <hgroup className={cn('py-4 px-8')}>
           <h1 className={cn('scroll-m-20 text-4xl font-bold tracking-tight')}>
             {doc.title}
           </h1>
@@ -65,14 +70,22 @@ export default async function DocsPage({ params }: DocsPageProps) {
             </p>
           )}
         </hgroup>
-        <div className={cn('px-4 pb-4')}>
+        <div className={cn('px-8 pb-4 border-r border-dashed')}>
           <Mdx code={doc.body.code} />
         </div>
       </article>
       {/* Table Of Contents */}
       <div className={cn('sketch-pattern w-8')} />
-      <div className={cn('')}></div>
-      {/* <div className={cn('p-4')}></div> */}
+      <div
+        className={cn(
+          'flex flex-col gap-4',
+          'p-4 border-l border-dashed',
+          'flex-[20%]',
+        )}
+      >
+        <TableOfContents toc={toc} />
+        <Contribute doc={doc} />
+      </div>
     </div>
   );
 }

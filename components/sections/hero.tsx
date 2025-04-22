@@ -38,7 +38,7 @@ export function Hero() {
           )}
         >
           Browse Hooks
-          <Icons.ChevronRight className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
+          <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
         <Link
           href={`${siteConfig.links.github}/blob/main/CONTRIBUTING.md`}
@@ -48,7 +48,7 @@ export function Hero() {
           )}
         >
           Contribute
-          <Icons.ChevronRight className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
+          <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
       </div>
     </section>

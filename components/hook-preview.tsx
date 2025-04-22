@@ -1,12 +1,13 @@
 import * as React from 'react';
 
 import { HookWrapper } from '@/components/hook-wrapper';
-import { Icons } from '@/components/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import { cn } from '@/lib/utils';
 
 import { Index } from '@/__registry__';
+
+import { CodeBlock } from './code-block';
 
 interface HookPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
@@ -26,13 +27,14 @@ export function HookPreview({
   const Code = Codes[0];
 
   const Preview = React.useMemo(() => {
-    const Component = Index[name]?.component;
+    const Hook = Index[name]?.component;
 
-    if (!Component) {
-      console.error(`Component with name "${name}" not found in registry.`);
+    if (!Hook) {
+      console.error(`Hook with name "${name}" not found in registry.`);
+
       return (
         <p className="text-sm text-muted-foreground">
-          Component{' '}
+          Hook{' '}
           <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
             {name}
           </code>{' '}
@@ -41,7 +43,7 @@ export function HookPreview({
       );
     }
 
-    return <Component />;
+    return <Hook />;
   }, [name]);
 
   return (

@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import Link from 'next/link';
 
-import { ArrowRightIcon, Download } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { Icons } from '@/components/icons';
@@ -41,8 +40,8 @@ export default function RepoDownload({ url, free = false }: RepoDownloadProps) {
         className="not-prose group relative w-full gap-2"
       >
         {loading ? 'Downloading' : 'Free Download'}
-        {!loading && <Download className="size-4" />}
-        {loading && <Icons.spinner className="size-4 animate-spin" />}
+        {!loading && <Icons.Download className="size-4" />}
+        {loading && <Icons.Loader.One className="size-4 animate-spin" />}
       </Button>
     );
   }
@@ -59,7 +58,7 @@ export default function RepoDownload({ url, free = false }: RepoDownloadProps) {
       )}
     >
       Buy Now
-      <ArrowRightIcon className="size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
+      <Icons.Arrow.Left className="size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
     </Link>
   );
 }

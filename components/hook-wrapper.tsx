@@ -2,12 +2,12 @@
 
 import React from 'react';
 
-import { RotateCcw } from 'lucide-react';
-
 import { OpenInV0 } from '@/components/open-in-v0';
 import { Button } from '@/components/ui/button';
 
 import { cn } from '@/lib/utils';
+
+import { Icons } from './icons';
 
 interface HookWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
@@ -35,7 +35,7 @@ export const HookWrapper = ({
           className="flex items-center rounded-lg px-3 py-1"
           variant="ghost"
         >
-          <RotateCcw aria-label="restart-btn" size={16} />
+          <Icons.Refresh aria-label="restart-btn" className="size-4" />
         </Button>
       </div>
 

@@ -1,0 +1,47 @@
+---
+title: useMedia
+date: 2025-04-22
+description: Tracks the window's current media query.
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-media-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-media"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-media" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop            | Type      | Default     | Description                                      |
+| --------------- | --------- | ----------- | ------------------------------------------------ |
+| `query`         | `string`  | `undefined` | The media query to track. (required)             |
+| `defaultState?` | `boolean` | `undefined` | The default state of the media query. (optional) |

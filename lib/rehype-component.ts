@@ -22,7 +22,7 @@ export function rehypeComponent() {
     visit(tree, (node: UnistNode) => {
       const { value: srcPath } = getNodeAttributeByName(node, 'src') || {};
 
-      if (node.name === 'ComponentSource') {
+      if (node.name === 'HookSource') {
         const name = getNodeAttributeByName(node, 'name')?.value as string;
         const fileName = getNodeAttributeByName(node, 'fileName')?.value as
           | string
@@ -105,7 +105,7 @@ export function rehypeComponent() {
         }
       }
 
-      if (node.name === 'ComponentPreview' || node.name === 'BlockPreview') {
+      if (node.name === 'HookPreview' || node.name === 'BlockPreview') {
         const name = getNodeAttributeByName(node, 'name')?.value as string;
 
         if (!name) {

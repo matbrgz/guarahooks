@@ -2,11 +2,6 @@
 
 import { RefObject, useCallback, useEffect, useState } from 'react';
 
-/**
- * @param ref - The ref of the element to track the mouse position
- * @param trackOutside - Update state even outside the element
- * @param clampToZero - Clamps elX/elY to >= 0
- */
 export type UseMouseOptions = {
   ref: RefObject<HTMLElement>;
   trackOutside?: boolean;
