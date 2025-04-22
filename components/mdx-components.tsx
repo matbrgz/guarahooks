@@ -134,7 +134,7 @@ const components = {
     />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className="my-6 w-full overflow-y-auto rounded-lg border dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
+    <div className="my-6 w-full overflow-y-auto rounded-md border dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
       <table
         className={cn('my-0 w-full overflow-hidden', className)}
         {...props}
@@ -261,7 +261,7 @@ const components = {
       <>
         <pre
           className={cn(
-            'mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900',
+            'mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-md border bg-zinc-950 py-4 dark:bg-zinc-900',
             className,
           )}
           {...props}
@@ -278,10 +278,7 @@ const components = {
   },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
-      className={cn(
-        'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm',
-        className,
-      )}
+      className={cn('relative rounded bg-muted font-mono text-sm', className)}
       {...props}
     />
   ),

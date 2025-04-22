@@ -23,8 +23,7 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
       className={cn(
         'flex-1/5',
         'bg-background/50 backdrop-blur-md',
-        'border-x border-dashed shadow-sm dark:shadow-none',
-        'py-4',
+        'border-x border-dashed',
       )}
     >
       <ul className={cn('flex flex-col items-start')}>
@@ -35,7 +34,6 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
               'flex flex-col w-full',
               'border-b border-dashed',
               'pb-4',
-              // item.items && item.items.length > 0 ? 'pb-4' : 'pb-2',
             )}
           >
             <h4

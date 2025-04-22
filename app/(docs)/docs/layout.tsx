@@ -23,7 +23,7 @@ export default function DocsLayout({
         className={cn(
           'flex-4/5',
           'bg-background/50 backdrop-blur-md',
-          'border-x border-dashed shadow-sm p-2 dark:shadow-none',
+          'border-x border-dashed',
         )}
       >
         {children}
