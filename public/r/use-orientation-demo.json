@@ -4,11 +4,11 @@
   "type": "registry:example",
   "title": "UseOrientationDemo",
   "description": "use-orientation's hook in action.",
-  "registryDependencies": ["https://h3-use.com/r/use-orientation.json"],
+  "registryDependencies": ["card", "https://h3-use.com/r/use-orientation.json"],
   "files": [
     {
       "path": "registry/example/use-orientation-demo.tsx",
-      "content": "'use client';\n\nimport { useOrientation } from '@/hooks/h3-use/use-orientation';\n\nexport default function UseOrientationDemo() {\n  const orientation = useOrientation();\n\n  return (\n    <div className=\"p-8 max-w-md mx-auto font-sans bg-white rounded shadow mt-12 text-center\">\n      <h2 className=\"text-2xl font-bold mb-4\">useOrientation Demo</h2>\n      <p className=\"mb-2 text-gray-700\">\n        Current orientation: <b className=\"text-blue-600\">{orientation}</b>\n      </p>\n      {orientation === 'portrait' ? (\n        <p className=\"text-green-600\">You are in portrait mode 📱</p>\n      ) : (\n        <p className=\"text-purple-600\">You are in landscape mode 🖥️</p>\n      )}\n      <small className=\"text-gray-400 block mt-4\">\n        Try rotating your device or resizing the window.\n      </small>\n    </div>\n  );\n}\n",
+      "content": "'use client';\n\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from '@/components/ui/card';\n\nimport { useOrientation } from '@/hooks/h3-use/use-orientation';\n\nexport default function UseOrientationDemo() {\n  const orientation = useOrientation();\n\n  return (\n    <Card className=\"relative max-w-sm w-full\">\n      <CardHeader>\n        <CardTitle>useOrientation</CardTitle>\n        <CardDescription>\n          This component uses the <code>useOrientation</code> hook to get the\n          current orientation of the device.\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <p>Current orientation: {orientation}</p>\n        {orientation === 'portrait' ? (\n          <p className=\"text-green-600\">You are in portrait mode 📱</p>\n        ) : (\n          <p className=\"text-purple-600\">You are in landscape mode 🖥️</p>\n        )}\n      </CardContent>\n      <CardFooter>\n        <p className=\"text-sm text-muted-foreground\">\n          Try rotating your device or resizing the window.\n        </p>\n      </CardFooter>\n    </Card>\n  );\n}\n",
       "type": "registry:example",
       "target": "components/example/use-orientation-demo.tsx"
     }
