@@ -39,10 +39,6 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-orientation',
         },
         {
-          title: 'useKeypress',
-          href: '/docs/hooks/use-keypress',
-        },
-        {
           title: 'useMouse',
           href: '/docs/hooks/use-mouse',
         },
@@ -88,6 +84,14 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'useCopyToClipboard',
           href: '/docs/hooks/use-copy-to-clipboard',
+        },
+        {
+          title: 'useKeypress',
+          href: '/docs/hooks/use-keypress',
+        },
+        {
+          title: 'useDebounce',
+          href: '/docs/hooks/use-debounce',
         },
       ],
     },

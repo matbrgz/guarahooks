@@ -56,7 +56,7 @@
           "target": "hooks/h3-use/use-keypress.tsx"
         }
       ],
-      "categories": ["sensors"]
+      "categories": ["user-interaction"]
     },
     {
       "name": "use-orientation",
@@ -152,6 +152,20 @@
           "path": "registry/hooks/use-copy-to-clipboard.tsx",
           "type": "registry:hook",
           "target": "hooks/h3-use/use-copy-to-clipboard.tsx"
+        }
+      ],
+      "categories": ["user-interaction"]
+    },
+    {
+      "name": "use-debounce",
+      "type": "registry:hook",
+      "title": "UseDebounce",
+      "description": "Debounces a function.",
+      "files": [
+        {
+          "path": "registry/hooks/use-debounce.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-debounce.tsx"
         }
       ],
       "categories": ["user-interaction"]
@@ -350,6 +364,24 @@
           "path": "registry/example/use-copy-to-clipboard-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-copy-to-clipboard-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-debounce-demo",
+      "type": "registry:example",
+      "title": "UseDebounceDemo",
+      "description": "use-debounce's hook in action.",
+      "registryDependencies": [
+        "card",
+        "input",
+        "https://h3-use.com/r/use-debounce.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-debounce-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-debounce-demo.tsx"
         }
       ]
     }

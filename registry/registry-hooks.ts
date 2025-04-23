@@ -55,7 +55,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-keypress.tsx',
       },
     ],
-    categories: ['sensors'],
+    categories: ['user-interaction'],
   },
   {
     name: 'use-orientation',
@@ -151,6 +151,20 @@ export const hooks: Registry['items'] = [
         path: 'registry/hooks/use-copy-to-clipboard.tsx',
         type: 'registry:hook',
         target: 'hooks/h3-use/use-copy-to-clipboard.tsx',
+      },
+    ],
+    categories: ['user-interaction'],
+  },
+  {
+    name: 'use-debounce',
+    type: 'registry:hook',
+    title: 'UseDebounce',
+    description: 'Debounces a function.',
+    files: [
+      {
+        path: 'registry/hooks/use-debounce.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-debounce.tsx',
       },
     ],
     categories: ['user-interaction'],

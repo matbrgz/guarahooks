@@ -260,6 +260,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-debounce': {
+    name: 'use-debounce',
+    description: 'Debounces a function.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-debounce.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-debounce.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-debounce.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -542,6 +565,33 @@ export const Index: Record<string, any> = {
       const mod = await import(
         '@/registry/example/use-copy-to-clipboard-demo.tsx'
       );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-debounce-demo': {
+    name: 'use-debounce-demo',
+    description: "use-debounce's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'input',
+      'https://h3-use.com/r/use-debounce.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-debounce-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-debounce-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-debounce-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

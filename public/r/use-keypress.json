@@ -12,5 +12,5 @@
       "target": "hooks/h3-use/use-keypress.tsx"
     }
   ],
-  "categories": ["sensors"]
+  "categories": ["user-interaction"]
 }
