@@ -111,7 +111,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-local-storage.tsx',
       },
     ],
-    categories: ['side-effects'],
+    categories: ['storage'],
   },
   {
     name: 'use-session-storage',
@@ -125,7 +125,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-session-storage.tsx',
       },
     ],
-    categories: ['side-effects'],
+    categories: ['storage'],
   },
   {
     name: 'use-cookie',
@@ -139,7 +139,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-cookie.tsx',
       },
     ],
-    categories: ['side-effects'],
+    categories: ['storage'],
   },
   {
     name: 'use-copy-to-clipboard',
@@ -182,5 +182,19 @@ export const hooks: Registry['items'] = [
       },
     ],
     categories: ['user-interaction'],
+  },
+  {
+    name: 'use-on-mount',
+    type: 'registry:hook',
+    title: 'UseOnMount',
+    description: 'Executes a function only once when the component is mounted.',
+    files: [
+      {
+        path: 'registry/hooks/use-on-mount.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-on-mount.tsx',
+      },
+    ],
+    categories: ['lifecycle'],
   },
 ];

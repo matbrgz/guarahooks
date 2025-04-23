@@ -59,10 +59,15 @@ export const docsConfig: DashboardConfig = {
     },
     {
       title: 'Lifecycle',
-      items: [],
+      items: [
+        {
+          title: 'useOnMount',
+          href: '/docs/hooks/use-on-mount',
+        },
+      ],
     },
     {
-      title: 'Web APIs',
+      title: 'Storage Management',
       items: [
         {
           title: 'useLocalStorage',

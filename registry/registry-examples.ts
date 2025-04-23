@@ -224,4 +224,18 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-on-mount-demo',
+    type: 'registry:example',
+    title: 'UseOnMountDemo',
+    description: "use-on-mount's hook in action.",
+    registryDependencies: ['card', 'https://h3-use.com/r/use-on-mount.json'],
+    files: [
+      {
+        path: 'registry/example/use-on-mount-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-on-mount-demo.tsx',
+      },
+    ],
+  },
 ];

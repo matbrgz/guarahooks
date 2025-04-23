@@ -112,7 +112,7 @@
           "target": "hooks/h3-use/use-local-storage.tsx"
         }
       ],
-      "categories": ["side-effects"]
+      "categories": ["storage"]
     },
     {
       "name": "use-session-storage",
@@ -126,7 +126,7 @@
           "target": "hooks/h3-use/use-session-storage.tsx"
         }
       ],
-      "categories": ["side-effects"]
+      "categories": ["storage"]
     },
     {
       "name": "use-cookie",
@@ -140,7 +140,7 @@
           "target": "hooks/h3-use/use-cookie.tsx"
         }
       ],
-      "categories": ["side-effects"]
+      "categories": ["storage"]
     },
     {
       "name": "use-copy-to-clipboard",
@@ -183,6 +183,20 @@
         }
       ],
       "categories": ["user-interaction"]
+    },
+    {
+      "name": "use-on-mount",
+      "type": "registry:hook",
+      "title": "UseOnMount",
+      "description": "Executes a function only once when the component is mounted.",
+      "files": [
+        {
+          "path": "registry/hooks/use-on-mount.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-on-mount.tsx"
+        }
+      ],
+      "categories": ["lifecycle"]
     },
     {
       "name": "use-window-size-demo",
@@ -413,6 +427,23 @@
           "path": "registry/example/use-click-outside-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-click-outside-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-on-mount-demo",
+      "type": "registry:example",
+      "title": "UseOnMountDemo",
+      "description": "use-on-mount's hook in action.",
+      "registryDependencies": [
+        "card",
+        "https://h3-use.com/r/use-on-mount.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-on-mount-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-on-mount-demo.tsx"
         }
       ]
     }

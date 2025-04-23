@@ -12,5 +12,5 @@
       "target": "hooks/h3-use/use-session-storage.tsx"
     }
   ],
-  "categories": ["side-effects"]
+  "categories": ["storage"]
 }

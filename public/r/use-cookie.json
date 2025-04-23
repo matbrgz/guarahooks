@@ -12,5 +12,5 @@
       "target": "hooks/h3-use/use-cookie.tsx"
     }
   ],
-  "categories": ["side-effects"]
+  "categories": ["storage"]
 }

@@ -1,0 +1,46 @@
+---
+title: useOnMount
+date: 2025-04-23
+description: Execute a function only once when the component is mounted.
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-on-mount-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-on-mount"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-on-mount" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop       | Type            | Default    | Description                                            |
+| ---------- | --------------- | ---------- | ------------------------------------------------------ |
+| `callback` | `void function` | `() => {}` | The function to execute when the component is mounted. |
