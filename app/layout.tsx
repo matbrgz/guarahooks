@@ -65,12 +65,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={200}>
             <Header />
-            <main
-              className={cn(
-                'z-10 grow flex flex-col',
-                'size-full sketch-pattern',
-              )}
-            >
+            <main className={cn('z-10 grow flex flex-col', 'size-full')}>
               {children}
             </main>
             <Footer />

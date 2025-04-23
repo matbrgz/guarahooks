@@ -15,6 +15,7 @@ export default function DocsLayout({
         'size-full max-w-screen-2xl grow',
         'flex flex-row gap-8',
         'mx-auto',
+        'sketch-pattern',
       )}
     >
       <DocsSidebar items={docsConfig.sidebarNav} />
