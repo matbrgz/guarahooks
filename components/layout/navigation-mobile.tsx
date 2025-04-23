@@ -31,7 +31,7 @@ export function NavigationMobile() {
     >
       <HeaderLogo />
       <Sheet>
-        <SheetTrigger>
+        <SheetTrigger asChild>
           <Button variant="ghost" size="icon">
             <Icons.Menu className="size-5" />
           </Button>

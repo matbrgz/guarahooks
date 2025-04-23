@@ -53,8 +53,7 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
             key={index}
             className={cn(
               'flex items-center justify-between',
-              'text-muted-foreground rounded-md w-full py-1',
-              'group transition-transform duration-200',
+              'text-muted-foreground rounded-md w-full px-2 py-1',
               item.disabled && 'cursor-not-allowed opacity-60',
             )}
           >
