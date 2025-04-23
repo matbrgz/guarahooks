@@ -41,7 +41,13 @@ function useCookie<T = string>(
   const setCookie = useCallback(
     (val: T, options: CookieOptions = {}) => {
       if (!isBrowser) return;
-      let cookieStr = `${encodeURIComponent(key)}=${encodeURIComponent(JSON.stringify(val))}`;
+      let encodedValue: string;
+      if (typeof val === 'string') {
+        encodedValue = encodeURIComponent(val);
+      } else {
+        encodedValue = encodeURIComponent(JSON.stringify(val));
+      }
+      let cookieStr = `${encodeURIComponent(key)}=${encodedValue}`;
       if (options.path) cookieStr += `; path=${options.path}`;
       if (options.expires)
         cookieStr += `; expires=${options.expires instanceof Date ? options.expires.toUTCString() : options.expires}`;

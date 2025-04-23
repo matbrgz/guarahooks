@@ -1,21 +1,37 @@
 'use client';
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+
 import { useWindowSize } from '@/registry/hooks/use-window-size';
 
 export default function UseWindowSizeDemo() {
   const { width, height } = useWindowSize();
 
   return (
-    <div className="flex flex-col gap-2">
-      <p className="text-sm text-muted-foreground">
-        Resize the window to see the values changing.
-      </p>
-      <p className="text-sm text-muted-foreground">
-        Width: <span className="text-foreground">{width}</span>
-      </p>
-      <p className="text-sm text-muted-foreground">
-        Height: <span className="text-foreground">{height}</span>
-      </p>
-    </div>
+    <Card className="relative max-w-sm w-full">
+      <CardHeader>
+        <CardTitle>useWindowSize</CardTitle>
+        <CardDescription>
+          This component uses the <code>useWindowSize</code> hook to get the
+          current window size.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Width: {width}</p>
+        <p>Height: {height}</p>
+      </CardContent>
+      <CardFooter>
+        <p className="text-sm text-muted-foreground">
+          Resize the window to see the values changing.
+        </p>
+      </CardFooter>
+    </Card>
   );
 }

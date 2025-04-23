@@ -6,7 +6,7 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseWindowSizeDemo',
     description: "use-window-size's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-window-size.json'],
+    registryDependencies: ['card', 'https://h3-use.com/r/use-window-size.json'],
     files: [
       {
         path: 'registry/example/use-window-size-demo.tsx',
@@ -20,7 +20,7 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseMediaDemo',
     description: "use-media's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-media.json'],
+    registryDependencies: ['card', 'https://h3-use.com/r/use-media.json'],
     files: [
       {
         path: 'registry/example/use-media-demo.tsx',
@@ -34,7 +34,11 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseMouseDemo',
     description: "use-mouse's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-mouse.json'],
+    registryDependencies: [
+      'checkbox',
+      'card',
+      'https://h3-use.com/r/use-mouse.json',
+    ],
     files: [
       {
         path: 'registry/example/use-mouse-demo.tsx',
@@ -48,7 +52,7 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseKeypressDemo',
     description: "use-keypress's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-keypress.json'],
+    registryDependencies: ['card', 'https://h3-use.com/r/use-keypress.json'],
     files: [
       {
         path: 'registry/example/use-keypress-demo.tsx',
@@ -62,7 +66,7 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseOrientationDemo',
     description: "use-orientation's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-orientation.json'],
+    registryDependencies: ['card', 'https://h3-use.com/r/use-orientation.json'],
     files: [
       {
         path: 'registry/example/use-orientation-demo.tsx',
@@ -76,7 +80,11 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseToggleDemo',
     description: "use-toggle's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-toggle.json'],
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-toggle.json',
+    ],
     files: [
       {
         path: 'registry/example/use-toggle-demo.tsx',
@@ -90,7 +98,12 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseSetDemo',
     description: "use-set's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-set.json'],
+    registryDependencies: [
+      'card',
+      'button',
+      'input',
+      'https://h3-use.com/r/use-set.json',
+    ],
     files: [
       {
         path: 'registry/example/use-set-demo.tsx',
@@ -104,7 +117,12 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseLocalStorageDemo',
     description: "use-local-storage's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-local-storage.json'],
+    registryDependencies: [
+      'card',
+      'input',
+      'label',
+      'https://h3-use.com/r/use-local-storage.json',
+    ],
     files: [
       {
         path: 'registry/example/use-local-storage-demo.tsx',
@@ -118,7 +136,13 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseSessionStorageDemo',
     description: "use-session-storage's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-session-storage.json'],
+    registryDependencies: [
+      'card',
+      'button',
+      'input',
+      'label',
+      'https://h3-use.com/r/use-session-storage.json',
+    ],
     files: [
       {
         path: 'registry/example/use-session-storage-demo.tsx',

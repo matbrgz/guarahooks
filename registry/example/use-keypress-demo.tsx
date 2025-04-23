@@ -2,6 +2,15 @@
 
 import React, { useState } from 'react';
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+
 import { useKeypress } from '@/registry/hooks/use-keypress';
 
 export default function UseKeypressDemo() {
@@ -27,13 +36,26 @@ export default function UseKeypressDemo() {
   });
 
   return (
-    <div className="p-8 max-w-md mx-auto font-sans bg-white rounded shadow mt-12 text-center">
-      <h2 className="text-2xl font-bold mb-4">useKeypress Demo</h2>
-      <p className="mb-2 text-gray-700">{message}</p>
-      <p className="mb-4 text-gray-600">
-        Shortcut pressed <b className="text-blue-600">{count}</b> times.
-      </p>
-      <small className="text-gray-400">Press Ctrl+K to reset the count.</small>
-    </div>
+    <Card className="relative max-w-sm w-full">
+      <CardHeader>
+        <CardTitle>useKeypress</CardTitle>
+        <CardDescription>
+          This component uses the <code>useKeypress</code> hook to detect key
+          combinations.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-2">
+        <p className="text-sm">{message}</p>
+        <p className="text-sm">
+          Shortcut pressed{' '}
+          <span className="font-bold text-blue-600">{count}</span> times.
+        </p>
+      </CardContent>
+      <CardFooter>
+        <p className="text-muted-foreground text-sm">
+          Press Ctrl+K to reset the count.
+        </p>
+      </CardFooter>
+    </Card>
   );
 }

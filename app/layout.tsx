@@ -70,7 +70,7 @@ export default function RootLayout({
             </main>
             <Footer />
             <BlurredBlob
-              className="-top-[80%] left-1/2 -translate-x-1/2 opacity-30"
+              className="-top-[85%] left-1/2 -translate-x-1/2 opacity-30"
               colorFrom="#4F39F6"
               colorTo="#EC003F"
             />

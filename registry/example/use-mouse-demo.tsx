@@ -2,6 +2,16 @@
 
 import { RefObject, useRef, useState } from 'react';
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
+
 import { useMouse } from '@/registry/hooks/use-mouse';
 
 export default function UseMouseDemo() {
@@ -15,37 +25,49 @@ export default function UseMouseDemo() {
   });
 
   return (
-    <div className="w-full h-full flex flex-col gap-2 items-start" ref={ref}>
-      <div className="flex gap-4 mb-2">
-        <label>
-          <input
-            type="checkbox"
+    <Card className="relative max-w-md w-full" ref={ref}>
+      <CardHeader>
+        <CardTitle>useMouse</CardTitle>
+        <CardDescription>
+          This component uses the <code>useMouse</code> hook to track the mouse
+          position.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-2">
+        <div className="flex items-center gap-2">
+          <Checkbox
             checked={trackOutside}
-            onChange={() => setTrackOutside((v) => !v)}
+            onCheckedChange={() => setTrackOutside((v) => !v)}
           />
-          Track outside
-        </label>
-        <label>
-          <input
-            type="checkbox"
+          <label htmlFor="trackOutside">Track outside</label>
+        </div>
+        <div className="flex items-center gap-2">
+          <Checkbox
             checked={clampToZero}
-            onChange={() => setClampToZero((v) => !v)}
+            onCheckedChange={() => setClampToZero((v) => !v)}
           />
-          Clamp to zero
-        </label>
-      </div>
-      <p>
-        Mouse position in document - x:{docX} y:{docY}
-      </p>
-      <p>
-        Mouse position in element - x:{elX} y:{elY}
-      </p>
-      <div>
-        Element position- x:{posX} y:{posY}
-      </div>
-      <div>
-        Element dimensions - {elW}x{elH}
-      </div>
-    </div>
+          <label htmlFor="clampToZero">Clamp to zero</label>
+        </div>
+        <div className="space-y-2">
+          <p className="text-sm">
+            Mouse position in document - x:{docX} y:{docY}
+          </p>
+          <p className="text-sm">
+            Mouse position in element - x:{elX} y:{elY}
+          </p>
+          <p className="text-sm">
+            Element position- x:{posX} y:{posY}
+          </p>
+          <p className="text-sm">
+            Element dimensions - {elW}x{elH}
+          </p>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <p className="text-sm text-muted-foreground">
+          Try moving your mouse around the screen.
+        </p>
+      </CardFooter>
+    </Card>
   );
 }
