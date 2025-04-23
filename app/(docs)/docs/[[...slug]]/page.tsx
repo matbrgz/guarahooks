@@ -82,31 +82,37 @@ export default async function DocsPage({ params }: PageProps) {
       {/* Content */}
       <article
         className={cn(
-          'w-full lg:flex-[80%] border-r border-dashed',
+          'w-full lg:flex-[80%]',
           'bg-background/50 backdrop-blur-md',
+          'border-r border-dashed',
         )}
       >
+        {/* Breadcrumb */}
         <Breadcrumb className={cn('border-b border-dashed py-4 px-4 lg:px-8')}>
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
-            <BreadcrumbItem className="text-foreground">
+            <BreadcrumbItem className={cn('text-foreground')}>
               {doc.title}
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
+        {/* Title and Description */}
         <hgroup className={cn('py-4 px-8')}>
-          <h1 className={cn('scroll-m-20 text-4xl font-bold tracking-tight')}>
+          <h1
+            className={cn('scroll-m-20', 'text-4xl font-bold tracking-tight')}
+          >
             {doc.title}
           </h1>
           {doc.description && (
-            <p className="text-balance text-lg text-muted-foreground">
+            <p className={cn('text-balance text-lg text-muted-foreground')}>
               {doc.description}
             </p>
           )}
         </hgroup>
+        {/* Content */}
         <div className={cn('px-4 lg:px-8 pb-4')}>
           <Mdx code={doc.body.code} />
         </div>
@@ -114,9 +120,8 @@ export default async function DocsPage({ params }: PageProps) {
       {/* Table Of Contents */}
       <div
         className={cn(
-          'hidden lg:flex flex-col gap-4',
+          'hidden lg:flex lg:flex-[20%] flex-col gap-4',
           'p-4 border-l border-dashed',
-          'lg:flex-[20%]',
           'bg-background/50 backdrop-blur-md',
         )}
       >

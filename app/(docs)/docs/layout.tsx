@@ -12,8 +12,8 @@ export default function DocsLayout({
   return (
     <section
       className={cn(
-        'size-full max-w-screen-2xl grow',
-        'flex flex-row gap-8',
+        'size-full max-w-screen-2xl',
+        'flex flex-row gap-8 grow',
         'mx-auto',
         'sketch-pattern',
       )}
