@@ -78,10 +78,15 @@ export default async function DocsPage({ params }: PageProps) {
   const toc = await getTableOfContents(doc.body.raw);
 
   return (
-    <div className={cn('flex h-full')}>
+    <div className={cn('flex gap-8 h-full bg-transparent')}>
       {/* Content */}
-      <article className={cn('flex-[80%]')}>
-        <Breadcrumb className={cn('border-b border-dashed py-4 px-8')}>
+      <article
+        className={cn(
+          'lg:flex-[80%] border-r border-dashed',
+          'bg-background/50 backdrop-blur-md',
+        )}
+      >
+        <Breadcrumb className={cn('border-b border-dashed py-4 px-4 lg:px-8')}>
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
@@ -102,17 +107,17 @@ export default async function DocsPage({ params }: PageProps) {
             </p>
           )}
         </hgroup>
-        <div className={cn('px-8 pb-4 border-r border-dashed')}>
+        <div className={cn('px-4 lg:px-8 pb-4')}>
           <Mdx code={doc.body.code} />
         </div>
       </article>
       {/* Table Of Contents */}
-      <div className={cn('sketch-pattern w-8')} />
       <div
         className={cn(
-          'flex flex-col gap-4',
+          'hidden lg:flex flex-col gap-4',
           'p-4 border-l border-dashed',
-          'flex-[20%]',
+          'lg:flex-[20%]',
+          'bg-background/50 backdrop-blur-md',
         )}
       >
         <TableOfContents toc={toc} />

@@ -65,7 +65,12 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={200}>
             <Header />
-            <main className={cn('z-10 grow flex flex-col', 'size-full')}>
+            <main
+              className={cn(
+                'z-10 grow flex flex-col',
+                'size-full sketch-pattern',
+              )}
+            >
               {children}
             </main>
             <Footer />
@@ -75,12 +80,6 @@ export default function RootLayout({
               colorTo="#EC003F"
               size={{ width: 1200, height: 400 }}
             />
-            {/* <BlurredBlob
-              className="-bottom-[35%] left-1/2 -translate-x-1/2 opacity-30"
-              colorFrom="#4F39F6"
-              colorTo="#EC003F"
-              size={{ width: 1200, height: 400 }}
-            /> */}
             <Toaster richColors position="bottom-center" duration={3000} />
           </TooltipProvider>
         </ThemeProvider>

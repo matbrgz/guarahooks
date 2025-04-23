@@ -3,27 +3,33 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { buttonVariants } from '@/components/ui/button';
-
 import { cn } from '@/lib/utils';
 
-export type NavigationLinkProps = {
-  href: string;
+import { type NavItem } from '@/types/docs';
+
+type NavigationLinkProps = NavItem & {
   children: React.ReactNode;
 };
 
-export function NavigationLink({ href, children }: NavigationLinkProps) {
+export function NavigationLink({
+  href,
+  title,
+  disabled,
+  event,
+  children,
+}: NavigationLinkProps) {
   const pathname = usePathname();
-
-  const isActive = pathname === href;
 
   return (
     <Link
-      href={href}
+      href={href!}
+      aria-label={title}
       className={cn(
-        buttonVariants({ variant: 'link', size: 'sm' }),
-        'text-muted-foreground',
-        isActive && 'text-foreground',
+        'text-sm',
+        pathname?.startsWith(href!) || pathname.includes(href!)
+          ? 'text-foreground'
+          : 'text-foreground/60',
+        disabled && 'pointer-events-none text-muted-foreground',
       )}
     >
       {children}

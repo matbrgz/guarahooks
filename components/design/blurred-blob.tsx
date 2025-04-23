@@ -20,7 +20,7 @@ export function BlurredBlob({
 
   return (
     <div
-      className={cn('absolute z-[-1] size-full', className)}
+      className={cn('fixed inset-0 z-[-1] size-full', className)}
       style={{
         width,
         height,

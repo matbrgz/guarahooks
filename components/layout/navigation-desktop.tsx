@@ -1,26 +1,33 @@
 import Link from 'next/link';
 
 import { Icons } from '@/components/icons';
-import { NavigationLink } from '@/components/layout/navigation-link';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { buttonVariants } from '@/components/ui/button';
 
 import { cn } from '@/lib/utils';
 
+import { docsConfig } from '@/config/docs';
 import { siteConfig } from '@/config/site';
+
+import { NavigationLink } from './navigation-link';
 
 export function NavigationDesktop() {
   return (
     <section
-      className={cn('grow hidden lg:flex justify-end items-center gap-2')}
+      className={cn('grow hidden lg:flex justify-between items-center gap-2')}
     >
       <ul className={cn('flex items-center gap-2')}>
-        <li>
-          <NavigationLink href="/hooks">Hooks</NavigationLink>
-        </li>
-        {/* <li>
-          <NavigationLink href="/showcase">Showcase</NavigationLink>
-        </li> */}
+        {docsConfig.mainNav.map((item) => (
+          <li key={item.title}>
+            <NavigationLink
+              href={item.href!}
+              title={item.title}
+              disabled={item.disabled}
+            >
+              {item.title}
+            </NavigationLink>
+          </li>
+        ))}
       </ul>
       <div className={cn('flex items-center gap-2 border-l pl-4')}>
         <Link
