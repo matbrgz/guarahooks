@@ -19,13 +19,7 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
   if (items.length === 0) return null;
 
   return (
-    <aside
-      className={cn(
-        'hidden lg:block lg:flex-1/5',
-        'bg-background/50 backdrop-blur-md',
-        'border-x border-dashed',
-      )}
-    >
+    <>
       <ul className={cn('flex flex-col items-start')}>
         {items.map((item, index) => (
           <li
@@ -53,6 +47,6 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
           </li>
         ))}
       </ul>
-    </aside>
+    </>
   );
 }
