@@ -120,6 +120,7 @@ export default async function DocsPage({ params }: PageProps) {
       {/* Table Of Contents */}
       <div
         className={cn(
+          'fixed lg:sticky z-30 top-[72px] h-[calc(100vh-72px)]',
           'hidden lg:flex lg:flex-[20%] flex-col gap-4',
           'p-4 border-l border-dashed',
           'bg-background/50 backdrop-blur-md',
