@@ -16,17 +16,16 @@ import {
 import { getTableOfContents } from '@/lib/toc';
 import { cn } from '@/lib/utils';
 
-type DocsPageProps = {
-  params: {
-    slug: Promise<string[]>;
-  };
+import { siteConfig } from '@/config/site';
+
+type PageProps = {
+  params: Promise<{
+    slug?: string[];
+  }>;
 };
 
-async function getDocFromParams({ params }: DocsPageProps) {
-  const slugFromParams = (await params.slug) ?? ['index'];
-
-  const slug = slugFromParams.join('/');
-
+async function getDocFromParams({ params }: PageProps) {
+  const slug = (await params).slug?.join('/') || 'index';
   const doc = allDocs.find((doc) => doc.slugAsParams === slug);
 
   if (!doc) {
@@ -36,7 +35,40 @@ async function getDocFromParams({ params }: DocsPageProps) {
   return doc;
 }
 
-export default async function DocsPage({ params }: DocsPageProps) {
+export async function generateMetadata({ params }: PageProps) {
+  const doc = await getDocFromParams({ params });
+
+  if (!doc) {
+    return {};
+  }
+
+  return {
+    title: doc.title,
+    description: doc.description,
+    openGraph: {
+      title: doc.title,
+      description: doc.description,
+      type: 'article',
+      url: `${siteConfig.url}/${doc.slug}`,
+      images: [
+        {
+          url: doc.image,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      twitter: {
+        card: 'summary_large_image',
+        title: doc.title,
+        description: doc.description,
+        images: [doc.image],
+        creator: '@h3rmel',
+      },
+    },
+  };
+}
+
+export default async function DocsPage({ params }: PageProps) {
   const doc = await getDocFromParams({ params });
 
   if (!doc || !doc.published) {

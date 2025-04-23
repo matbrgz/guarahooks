@@ -32,7 +32,7 @@ export default function NotFound() {
       </hgroup>
       <div className={cn('flex items-center justify-center gap-2')}>
         <Button variant="secondary" onClick={() => router.back()}>
-          <Icons.ChevronLeft className="size-4" />
+          <Icons.Chevron.Left className="size-4" />
           Go Back
         </Button>
         <Link href="/" className={cn(buttonVariants({ variant: 'default' }))}>

@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 
 import { cn } from '@/lib/utils';
 
-import { NavItemWithChildren } from '@/types/docs.d';
+import { NavItemWithChildren } from '@/types/docs';
 
 export type DocsSidebarProps = {
   items: NavItemWithChildren[];

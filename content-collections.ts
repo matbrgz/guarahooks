@@ -49,6 +49,7 @@ const docs = defineCollection({
     published: z.boolean().default(true),
     date: z.string().optional(),
     toc: z.boolean().optional().default(true),
+    image: z.string().optional(),
   }),
   transform: async (document, context) => {
     const slugAsParams = document._meta.path

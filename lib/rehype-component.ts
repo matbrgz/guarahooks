@@ -4,9 +4,8 @@ import path from 'path';
 import { u } from 'unist-builder';
 import { visit } from 'unist-util-visit';
 
+import Registry from '@/registry.json';
 import { UnistNode, UnistTree } from '@/types/unist';
-
-import Registry from '../registry.json';
 
 export const styles = [
   {

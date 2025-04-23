@@ -16,7 +16,7 @@ import {
 import { Event, trackEvent } from '@/lib/events';
 import { cn } from '@/lib/utils';
 
-import { NpmCommands } from '@/types/unist.d';
+import { NpmCommands } from '@/types/unist';
 
 interface CopyButtonProps extends ButtonProps {
   value: string;
