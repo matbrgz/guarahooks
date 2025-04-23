@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 
 const getInitialState = (query: string, defaultState?: boolean): boolean => {

@@ -1,21 +1,24 @@
+'use client';
+
 import { useCallback, useState } from 'react';
 
-/**
- * Hook to control a boolean state with a toggler.
- *
- * @example
- * const [isOpen, toggle] = useToggle(false);
- *
- * <button onClick={toggle}>Toggle</button>
- */
 export function useToggle(
   initialValue: boolean = false,
+  onToggle?: (value: boolean) => void,
 ): [boolean, () => void] {
   const [value, setValue] = useState<boolean>(initialValue);
 
   const toggle = useCallback(() => {
-    setValue((prev) => !prev);
-  }, []);
+    setValue((prev) => {
+      const newValue = !prev;
+
+      if (onToggle) {
+        onToggle(newValue);
+      }
+
+      return newValue;
+    });
+  }, [onToggle]);
 
   return [value, toggle];
 }

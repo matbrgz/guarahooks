@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/example/use-toggle-demo.tsx",
-      "content": "import React from 'react';\n\nimport { useToggle } from '@/hooks/h3-use/use-toggle';\n\nexport default function UseToggleDemo() {\n  const [isOn, toggle] = useToggle(false);\n\n  return (\n    <div>\n      <p>\n        The state is: <strong>{isOn ? 'On' : 'Off'}</strong>\n      </p>\n      <button onClick={toggle}>{isOn ? 'Off' : 'On'}</button>\n    </div>\n  );\n}\n",
+      "content": "'use client';\n\nimport React from 'react';\n\nimport { useToggle } from '@/hooks/h3-use/use-toggle';\n\nexport default function UseToggleDemo() {\n  const [isOn, toggle] = useToggle(false);\n\n  return (\n    <div>\n      <p>\n        The state is: <strong>{isOn ? 'On' : 'Off'}</strong>\n      </p>\n      <button onClick={toggle}>{isOn ? 'Off' : 'On'}</button>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": "components/example/use-toggle-demo.tsx"
     }

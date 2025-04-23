@@ -4,11 +4,6 @@ import { useEffect, useState } from 'react';
 
 export type Orientation = 'portrait' | 'landscape';
 
-/**
- * Utility to get the current orientation from a window object.
- *
- * @param win - The window object (for testability/SSR safety)
- */
 function getOrientation(win?: typeof window): Orientation {
   if (!win) return 'portrait'; // Default for SSR
   return win.matchMedia('(orientation: portrait)').matches
@@ -16,14 +11,6 @@ function getOrientation(win?: typeof window): Orientation {
     : 'landscape';
 }
 
-/**
- * React hook to get the current device orientation ('portrait' or 'landscape').
- * Uses window.matchMedia for reactivity and cross-browser support.
- *
- * Handles fallback for browsers that do not support addEventListener on MediaQueryList.
- *
- * @example const orientation = useOrientation();
- */
 export function useOrientation(): Orientation {
   const [orientation, setOrientation] = useState<Orientation>(() =>
     getOrientation(typeof window !== 'undefined' ? window : undefined),

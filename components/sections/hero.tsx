@@ -31,14 +31,14 @@ export function Hero() {
       </hgroup>
       <div className={cn('flex items-center justify-center gap-4')}>
         <Link
-          href="/hooks"
+          href="/docs"
           className={cn(
             buttonVariants({ variant: 'rainbow', size: 'lg' }),
             'group hover:scale-[1.025]',
           )}
         >
           Browse Hooks
-          <Icons.ChevronRight className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
+          <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
         <Link
           href={`${siteConfig.links.github}/blob/main/CONTRIBUTING.md`}
@@ -48,7 +48,7 @@ export function Hero() {
           )}
         >
           Contribute
-          <Icons.ChevronRight className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
+          <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
       </div>
     </section>

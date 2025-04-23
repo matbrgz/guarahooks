@@ -1,0 +1,57 @@
+---
+title: useSet
+date: 2025-04-22
+description: Controls a Set state with declarative methods.
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-set-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-set"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-set" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Prop
+
+There is no props for this hook.
+
+## Data
+
+| Property   | Type                       | Description                         |
+| ---------- | -------------------------- | ----------------------------------- |
+| `set`      | `Set<T>`                   | The Set instance                    |
+| `add`      | `(item: T) => void`        | Adds an item to the Set             |
+| `delete`   | `(item: T) => void`        | Deletes an item from the Set        |
+| `has`      | `(item: T) => boolean`     | Checks if an item is in the Set     |
+| `clear`    | `() => void`               | Clears the Set                      |
+| `reset`    | `() => void`               | Resets the Set to the initial value |
+| `setValue` | `(newSet: Set<T>) => void` | Sets the Set to a new value         |
+| `getAll`   | `() => T[]`                | Returns all items in the Set        |

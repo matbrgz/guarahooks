@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 
-import { geistMono, sora } from '@/assets/fonts';
+import { geistMono, inter } from '@/assets/fonts';
 
 import '@/assets/globals.css';
 
@@ -58,23 +58,29 @@ export default function RootLayout({
       <body
         className={cn(
           'relative w-full min-h-dvh font-sans antialiased scroll-smooth flex flex-col overflow-x-hidden',
-          sora.variable,
+          inter.variable,
           geistMono.variable,
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={200}>
             <Header />
+            <main className={cn('z-10 grow flex flex-col', 'size-full')}>
+              {children}
+            </main>
+            <Footer />
             <BlurredBlob
               className="-top-[30%] left-1/2 -translate-x-1/2 opacity-30"
               colorFrom="#4F39F6"
               colorTo="#EC003F"
               size={{ width: 1200, height: 400 }}
             />
-            <main className={cn('z-10 grow flex flex-col', 'size-full')}>
-              {children}
-            </main>
-            <Footer />
+            {/* <BlurredBlob
+              className="-bottom-[35%] left-1/2 -translate-x-1/2 opacity-30"
+              colorFrom="#4F39F6"
+              colorTo="#EC003F"
+              size={{ width: 1200, height: 400 }}
+            /> */}
             <Toaster richColors position="bottom-center" duration={3000} />
           </TooltipProvider>
         </ThemeProvider>

@@ -8,16 +8,17 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky lg:top-4 top-0 left-0 right-0 z-50',
+        'sticky top-0 left-0 right-0 z-50',
         'w-full h-[72px]',
+        'bg-background/50 backdrop-blur-md',
+        'border-b border-dashed',
       )}
     >
       <section
         className={cn(
-          'max-w-5xl w-full mx-auto px-4 h-full',
-          'bg-card/30 backdrop-blur-md',
+          'max-w-screen-2xl size-full',
           'flex items-center gap-4',
-          'lg:border border-b rounded-md shadow-sm dark:shadow-none',
+          'border-x border-dashed mx-auto px-4',
         )}
       >
         <HeaderLogo />

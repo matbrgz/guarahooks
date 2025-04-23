@@ -1,3 +1,5 @@
+'use client';
+
 import { useOrientation } from '@/registry/hooks/use-orientation';
 
 export default function UseOrientationDemo() {

@@ -14,10 +14,12 @@ export type CookieOptions = {
  * Provides methods to get, set, and remove cookies.
  *
  * @param key The cookie key
+ * @param initialValue Optional initial value for the cookie
  * @returns [value, setCookie, removeCookie]
  */
 function useCookie<T = string>(
   key: string,
+  initialValue?: T,
 ): [T | undefined, (value: T, options?: CookieOptions) => void, () => void] {
   // Helper to check if running in browser
   const isBrowser = typeof document !== 'undefined';
@@ -34,17 +36,6 @@ function useCookie<T = string>(
       {} as Record<string, string>,
     );
   }, [isBrowser]);
-
-  // Get cookie value
-  const value = useMemo(() => {
-    const cookies = getCookies();
-    if (!(key in cookies)) return undefined;
-    try {
-      return JSON.parse(cookies[key]) as T;
-    } catch {
-      return cookies[key] as unknown as T;
-    }
-  }, [getCookies, key]);
 
   // Set cookie
   const setCookie = useCallback(
@@ -67,6 +58,25 @@ function useCookie<T = string>(
   const removeCookie = useCallback(() => {
     setCookie(undefined as unknown as T, { path: '/', expires: new Date(0) });
   }, [setCookie]);
+
+  // Get cookie value (and create if missing)
+  const value = useMemo(() => {
+    const cookies = getCookies();
+    if (!(key in cookies)) {
+      if (initialValue !== undefined) {
+        setCookie(initialValue);
+        return initialValue;
+      } else {
+        setCookie(undefined as unknown as T);
+        return undefined;
+      }
+    }
+    try {
+      return JSON.parse(cookies[key]) as T;
+    } catch {
+      return cookies[key] as unknown as T;
+    }
+  }, [getCookies, key, initialValue, setCookie]);
 
   return [value, setCookie, removeCookie];
 }
