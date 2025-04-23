@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 import { Icons } from '@/components/icons';
+import { DesktopLink } from '@/components/layout/desktop-link';
+import { HeaderLogo } from '@/components/layout/header-logo';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { buttonVariants } from '@/components/ui/button';
 
@@ -9,26 +11,30 @@ import { cn } from '@/lib/utils';
 import { docsConfig } from '@/config/docs';
 import { siteConfig } from '@/config/site';
 
-import { NavigationLink } from './navigation-link';
-
 export function NavigationDesktop() {
   return (
-    <section
-      className={cn('grow hidden lg:flex justify-between items-center gap-2')}
+    <div
+      className={cn(
+        'hidden lg:flex justify-between items-center gap-2',
+        'h-full',
+      )}
     >
+      <HeaderLogo />
+      {/* Links */}
       <ul className={cn('flex items-center gap-2')}>
         {docsConfig.mainNav.map((item) => (
           <li key={item.title}>
-            <NavigationLink
+            <DesktopLink
               href={item.href!}
               title={item.title}
               disabled={item.disabled}
             >
               {item.title}
-            </NavigationLink>
+            </DesktopLink>
           </li>
         ))}
       </ul>
+      {/* Socials */}
       <div className={cn('flex items-center gap-2 border-l pl-4')}>
         <Link
           href={siteConfig.links.github}
@@ -40,6 +46,6 @@ export function NavigationDesktop() {
         </Link>
         <ThemeToggle variant="ghost" />
       </div>
-    </section>
+    </div>
   );
 }

@@ -7,17 +7,17 @@ import { cn } from '@/lib/utils';
 
 import { type NavItem } from '@/types/docs';
 
-type NavigationLinkProps = NavItem & {
+type DesktopLinkProps = NavItem & {
   children: React.ReactNode;
 };
 
-export function NavigationLink({
+export function DesktopLink({
   href,
   title,
   disabled,
   event,
   children,
-}: NavigationLinkProps) {
+}: DesktopLinkProps) {
   const pathname = usePathname();
 
   return (

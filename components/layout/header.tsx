@@ -1,4 +1,3 @@
-import { HeaderLogo } from '@/components/layout/header-logo';
 import { NavigationDesktop } from '@/components/layout/navigation-desktop';
 import { NavigationMobile } from '@/components/layout/navigation-mobile';
 
@@ -17,11 +16,9 @@ export function Header() {
       <section
         className={cn(
           'max-w-screen-2xl size-full',
-          'flex items-center justify-between gap-4',
-          'border-x border-dashed mx-auto px-4',
+          'lg:border-x border-dashed mx-auto px-4',
         )}
       >
-        <HeaderLogo />
         <NavigationDesktop />
         <NavigationMobile />
       </section>
