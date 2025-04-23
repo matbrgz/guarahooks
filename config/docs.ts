@@ -93,6 +93,10 @@ export const docsConfig: DashboardConfig = {
           title: 'useDebounce',
           href: '/docs/hooks/use-debounce',
         },
+        {
+          title: 'useClickOutside',
+          href: '/docs/hooks/use-click-outside',
+        },
       ],
     },
   ],

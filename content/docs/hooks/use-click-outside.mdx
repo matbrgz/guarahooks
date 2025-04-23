@@ -1,0 +1,47 @@
+---
+title: useClickOutside
+date: 2025-04-23
+description: Detects clicks outside of a referenced element.
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-click-outside-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-click-outside"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-click-outside" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop             | Type        | Default | Description                                                  |
+| ---------------- | ----------- | ------- | ------------------------------------------------------------ |
+| `ref`            | `RefObject` | `null`  | The reference to the element to detect clicks outside of     |
+| `onClickOutside` | `function`  | `null`  | The function to call when a click outside the element occurs |

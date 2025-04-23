@@ -169,4 +169,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['user-interaction'],
   },
+  {
+    name: 'use-click-outside',
+    type: 'registry:hook',
+    title: 'UseClickOutside',
+    description: 'Detects clicks outside of a referenced element.',
+    files: [
+      {
+        path: 'registry/hooks/use-click-outside.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-click-outside.tsx',
+      },
+    ],
+    categories: ['user-interaction'],
+  },
 ];

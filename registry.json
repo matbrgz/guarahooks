@@ -171,6 +171,20 @@
       "categories": ["user-interaction"]
     },
     {
+      "name": "use-click-outside",
+      "type": "registry:hook",
+      "title": "UseClickOutside",
+      "description": "Detects clicks outside of a referenced element.",
+      "files": [
+        {
+          "path": "registry/hooks/use-click-outside.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-click-outside.tsx"
+        }
+      ],
+      "categories": ["user-interaction"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -382,6 +396,23 @@
           "path": "registry/example/use-debounce-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-debounce-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-click-outside-demo",
+      "type": "registry:example",
+      "title": "UseClickOutsideDemo",
+      "description": "use-click-outside's hook in action.",
+      "registryDependencies": [
+        "card",
+        "https://h3-use.com/r/use-click-outside.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-click-outside-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-click-outside-demo.tsx"
         }
       ]
     }

@@ -207,4 +207,21 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-click-outside-demo',
+    type: 'registry:example',
+    title: 'UseClickOutsideDemo',
+    description: "use-click-outside's hook in action.",
+    registryDependencies: [
+      'card',
+      'https://h3-use.com/r/use-click-outside.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-click-outside-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-click-outside-demo.tsx',
+      },
+    ],
+  },
 ];
