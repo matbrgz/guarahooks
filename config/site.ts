@@ -6,6 +6,7 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/h3rmel/h3-use',
     author: 'https://github.com/h3rmel',
+    twitter: 'https://x.com/isaach3rmel',
   },
   authorUrl: 'https://github.com/h3rmel',
   keywords: ['React', 'Next.js', 'Hooks', 'TypeScript', 'Type-safe'],

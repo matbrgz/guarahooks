@@ -37,6 +37,14 @@ export function NavigationDesktop() {
       {/* Socials */}
       <div className={cn('flex items-center gap-2 border-l pl-4')}>
         <Link
+          href={siteConfig.links.twitter}
+          className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}
+          target="_blank"
+          aria-label="Twitter"
+        >
+          <Icons.Twitter className="size-4 fill-current" />
+        </Link>
+        <Link
           href={siteConfig.links.github}
           className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}
           target="_blank"
