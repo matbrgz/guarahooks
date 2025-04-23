@@ -197,4 +197,19 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['lifecycle'],
   },
+  {
+    name: 'use-on-unmount',
+    type: 'registry:hook',
+    title: 'UseOnUnmount',
+    description:
+      'Executes a function only once when the component is unmounted.',
+    files: [
+      {
+        path: 'registry/hooks/use-on-unmount.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-on-unmount.tsx',
+      },
+    ],
+    categories: ['lifecycle'],
+  },
 ];

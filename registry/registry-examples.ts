@@ -238,4 +238,23 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-on-unmount-demo',
+    type: 'registry:example',
+    title: 'UseOnUnmountDemo',
+    description: "use-on-unmount's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'sonner',
+      'https://h3-use.com/r/use-on-unmount.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-on-unmount-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-on-unmount-demo.tsx',
+      },
+    ],
+  },
 ];

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-on-unmount",
+  "type": "registry:hook",
+  "title": "UseOnUnmount",
+  "description": "Executes a function only once when the component is unmounted.",
+  "files": [
+    {
+      "path": "registry/hooks/use-on-unmount.tsx",
+      "content": "'use client';\n\nimport { useEffect } from 'react';\n\nexport function useOnUnmount(callback: () => void): void {\n  useEffect(() => {\n    return () => {\n      callback();\n    };\n  }, []);\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/h3-use/use-on-unmount.tsx"
+    }
+  ],
+  "categories": ["lifecycle"]
+}

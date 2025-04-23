@@ -329,6 +329,30 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-on-unmount': {
+    name: 'use-on-unmount',
+    description:
+      'Executes a function only once when the component is unmounted.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-on-unmount.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-on-unmount.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-on-unmount.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -687,6 +711,34 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-on-mount-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-on-unmount-demo': {
+    name: 'use-on-unmount-demo',
+    description: "use-on-unmount's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'sonner',
+      'https://h3-use.com/r/use-on-unmount.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-on-unmount-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-on-unmount-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-on-unmount-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

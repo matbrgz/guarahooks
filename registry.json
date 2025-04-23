@@ -199,6 +199,20 @@
       "categories": ["lifecycle"]
     },
     {
+      "name": "use-on-unmount",
+      "type": "registry:hook",
+      "title": "UseOnUnmount",
+      "description": "Executes a function only once when the component is unmounted.",
+      "files": [
+        {
+          "path": "registry/hooks/use-on-unmount.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-on-unmount.tsx"
+        }
+      ],
+      "categories": ["lifecycle"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -444,6 +458,25 @@
           "path": "registry/example/use-on-mount-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-on-mount-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-on-unmount-demo",
+      "type": "registry:example",
+      "title": "UseOnUnmountDemo",
+      "description": "use-on-unmount's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "sonner",
+        "https://h3-use.com/r/use-on-unmount.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-on-unmount-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-on-unmount-demo.tsx"
         }
       ]
     }

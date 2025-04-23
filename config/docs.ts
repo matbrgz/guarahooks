@@ -64,6 +64,10 @@ export const docsConfig: DashboardConfig = {
           title: 'useOnMount',
           href: '/docs/hooks/use-on-mount',
         },
+        {
+          title: 'useOnUnmount',
+          href: '/docs/hooks/use-on-unmount',
+        },
       ],
     },
     {
