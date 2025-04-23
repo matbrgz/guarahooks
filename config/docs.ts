@@ -1,10 +1,10 @@
-import { DocsConfig } from '@/types/docs';
+import { DashboardConfig } from '@/types/docs';
 
-export const docsConfig: DocsConfig = {
+export const docsConfig: DashboardConfig = {
   mainNav: [
     {
       title: 'Hooks',
-      href: '/docs',
+      href: '/hooks',
     },
   ],
   sidebarNav: [

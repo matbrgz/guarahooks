@@ -17,7 +17,7 @@ export function Header() {
       <section
         className={cn(
           'max-w-screen-2xl size-full',
-          'flex items-center gap-4',
+          'flex items-center justify-between gap-4',
           'border-x border-dashed mx-auto px-4',
         )}
       >

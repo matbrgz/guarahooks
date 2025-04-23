@@ -13,19 +13,12 @@ export default function DocsLayout({
     <section
       className={cn(
         'size-full max-w-screen-2xl grow',
-        'flex flex-row',
+        'flex flex-row gap-8',
         'mx-auto',
       )}
     >
       <DocsSidebar items={docsConfig.sidebarNav} />
-      <div className="sketch-pattern w-8" />
-      <div
-        className={cn(
-          'flex-4/5',
-          'bg-background/50 backdrop-blur-md',
-          'border-x border-dashed',
-        )}
-      >
+      <div className={cn('lg:flex-4/5', 'border-x border-dashed')}>
         {children}
       </div>
     </section>
