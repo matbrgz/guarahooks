@@ -31,7 +31,7 @@ export function UseCopyToClipboardDemo() {
         <Input
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Digite algo para copiar..."
+          placeholder="Type something to copy..."
         />
         <div className="flex items-center gap-2">
           <Button onClick={() => copy(text)} disabled={!text}>

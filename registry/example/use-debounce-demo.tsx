@@ -44,7 +44,7 @@ export function UseDebounceDemo() {
           type="text"
           value={inputValue}
           onChange={handleChange}
-          placeholder="Digite algo..."
+          placeholder="Type something..."
           className="w-full"
         />
       </CardContent>
