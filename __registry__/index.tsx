@@ -237,6 +237,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-copy-to-clipboard': {
+    name: 'use-copy-to-clipboard',
+    description: 'Copies text to the clipboard.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-copy-to-clipboard.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-copy-to-clipboard.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-copy-to-clipboard.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -489,6 +512,36 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-cookie-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-copy-to-clipboard-demo': {
+    name: 'use-copy-to-clipboard-demo',
+    description: "use-copy-to-clipboard's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'input',
+      'https://h3-use.com/r/use-copy-to-clipboard.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-copy-to-clipboard-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-copy-to-clipboard-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/example/use-copy-to-clipboard-demo.tsx'
+      );
       const exportName =
         Object.keys(mod).find(
           (key) =>

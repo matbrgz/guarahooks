@@ -141,4 +141,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['side-effects'],
   },
+  {
+    name: 'use-copy-to-clipboard',
+    type: 'registry:hook',
+    title: 'UseCopyToClipboard',
+    description: 'Copies text to the clipboard.',
+    files: [
+      {
+        path: 'registry/hooks/use-copy-to-clipboard.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-copy-to-clipboard.tsx',
+      },
+    ],
+    categories: ['user-interaction'],
+  },
 ];

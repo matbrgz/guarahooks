@@ -1,6 +1,8 @@
+'use client';
+
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-type UseCopyReturn = {
+type UseCopyToClipboardReturn = {
   copied: boolean;
   copy: (text: string) => Promise<boolean>;
 };
@@ -24,15 +26,18 @@ function fallbackCopy(str: string): boolean {
     success = document.execCommand('copy');
   } catch {
     success = false;
+  } finally {
+    document.body.removeChild(textarea);
   }
 
-  document.body.removeChild(textarea);
   return success;
 }
 
-export function useCopy(duration: number = 1500): UseCopyReturn {
+export function useCopyToClipboard(
+  duration: number = 1500,
+): UseCopyToClipboardReturn {
   const [copied, setCopied] = useState<boolean>(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const copy = useCallback(
     async (text: string): Promise<boolean> => {
@@ -41,19 +46,15 @@ export function useCopy(duration: number = 1500): UseCopyReturn {
 
         if (navigator.clipboard && navigator.clipboard.writeText) {
           await navigator.clipboard.writeText(text);
-
           success = true;
         } else {
           success = fallbackCopy(text);
         }
 
         if (success) {
-          if (!copied) setCopied(true);
-
+          setCopied(true);
           if (timeoutRef.current) clearTimeout(timeoutRef.current);
-
           timeoutRef.current = setTimeout(() => setCopied(false), duration);
-
           return true;
         } else {
           throw new Error('Copy command failed');

@@ -170,4 +170,23 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-copy-to-clipboard-demo',
+    type: 'registry:example',
+    title: 'UseCopyToClipboardDemo',
+    description: "use-copy-to-clipboard's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'input',
+      'https://h3-use.com/r/use-copy-to-clipboard.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-copy-to-clipboard-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-copy-to-clipboard-demo.tsx',
+      },
+    ],
+  },
 ];

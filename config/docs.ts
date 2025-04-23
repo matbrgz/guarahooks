@@ -84,7 +84,12 @@ export const docsConfig: DashboardConfig = {
     },
     {
       title: 'User Interaction',
-      items: [],
+      items: [
+        {
+          title: 'useCopyToClipboard',
+          href: '/docs/hooks/use-copy-to-clipboard',
+        },
+      ],
     },
   ],
 };

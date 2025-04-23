@@ -143,6 +143,20 @@
       "categories": ["side-effects"]
     },
     {
+      "name": "use-copy-to-clipboard",
+      "type": "registry:hook",
+      "title": "UseCopyToClipboard",
+      "description": "Copies text to the clipboard.",
+      "files": [
+        {
+          "path": "registry/hooks/use-copy-to-clipboard.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-copy-to-clipboard.tsx"
+        }
+      ],
+      "categories": ["user-interaction"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -317,6 +331,25 @@
           "path": "registry/example/use-cookie-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-cookie-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-copy-to-clipboard-demo",
+      "type": "registry:example",
+      "title": "UseCopyToClipboardDemo",
+      "description": "use-copy-to-clipboard's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "input",
+        "https://h3-use.com/r/use-copy-to-clipboard.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-copy-to-clipboard-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-copy-to-clipboard-demo.tsx"
         }
       ]
     }
