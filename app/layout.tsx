@@ -70,10 +70,9 @@ export default function RootLayout({
             </main>
             <Footer />
             <BlurredBlob
-              className="-top-[30%] left-1/2 -translate-x-1/2 opacity-30"
+              className="-top-[80%] left-1/2 -translate-x-1/2 opacity-30"
               colorFrom="#4F39F6"
               colorTo="#EC003F"
-              size={{ width: 1200, height: 400 }}
             />
             <Toaster richColors position="bottom-center" duration={3000} />
           </TooltipProvider>

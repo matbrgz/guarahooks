@@ -4,30 +4,23 @@ export function BlurredBlob({
   className,
   colorFrom,
   colorTo,
-  size,
 }: {
   className?: string;
   colorFrom: string;
   colorTo: string;
-  size?: {
-    width: number;
-    height: number;
-  };
 }) {
   const background = `linear-gradient(${colorFrom}, ${colorTo})`;
-
-  const { width = 400, height = 400 } = size ?? {};
+  const borderRadius = '30% 70% 70% 30%/30% 30% 70% 70%';
 
   return (
     <div
-      className={cn('fixed inset-0 z-[-1] size-full', className)}
+      className={cn(
+        'fixed inset-0 z-[-1] w-full h-full blur-[70px] animate-[rotate_8s_linear_infinite]',
+        className,
+      )}
       style={{
-        width,
-        height,
-        filter: 'blur(70px)',
         backgroundImage: background,
-        animation: 'rotate 8s linear infinite',
-        borderRadius: '30% 70% 70% 30%/30% 30% 70% 70%',
+        borderRadius,
       }}
     />
   );

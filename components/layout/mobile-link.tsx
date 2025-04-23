@@ -3,13 +3,10 @@
 import Link, { LinkProps } from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
+import { Badge } from '@/components/ui/badge';
 import { SheetClose } from '@/components/ui/sheet';
 
 import { cn } from '@/lib/utils';
-
-import { NavItem } from '@/types/docs';
-
-import { Badge } from '../ui/badge';
 
 type MobileLinkProps = LinkProps & {
   onOpenChange?: (open: boolean) => void;
