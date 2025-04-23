@@ -82,7 +82,7 @@ export default async function DocsPage({ params }: PageProps) {
       {/* Content */}
       <article
         className={cn(
-          'lg:flex-[80%] border-r border-dashed',
+          'w-full lg:flex-[80%] border-r border-dashed',
           'bg-background/50 backdrop-blur-md',
         )}
       >

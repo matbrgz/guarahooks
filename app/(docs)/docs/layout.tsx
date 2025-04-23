@@ -19,7 +19,7 @@ export default function DocsLayout({
       )}
     >
       <DocsSidebar items={docsConfig.sidebarNav} />
-      <div className={cn('lg:flex-4/5', 'border-x border-dashed')}>
+      <div className={cn('w-full lg:flex-4/5', 'border-x border-dashed')}>
         {children}
       </div>
     </section>
