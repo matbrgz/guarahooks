@@ -16,9 +16,9 @@ export default function UseClickOutsideDemo() {
   });
 
   return (
-    <Card ref={cardRef} className="w-full max-w-sm shadow-lg">
+    <Card ref={cardRef} className="w-full max-w-sm relative">
       <CardHeader>
-        <CardTitle>useClickOutside Demo</CardTitle>
+        <CardTitle>useClickOutside</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <p className="text-sm">
