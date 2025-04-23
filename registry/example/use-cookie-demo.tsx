@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 
-import useCookie from '@/registry/hooks/use-cookie';
+import { useCookie } from '@/registry/hooks/use-cookie';
 
 export default function UseCookieDemo() {
   // useCookie hook for a demo cookie

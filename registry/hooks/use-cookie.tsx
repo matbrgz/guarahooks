@@ -17,7 +17,7 @@ export type CookieOptions = {
  * @param initialValue Optional initial value for the cookie
  * @returns [value, setCookie, removeCookie]
  */
-function useCookie<T = string>(
+export function useCookie<T = string>(
   key: string,
   initialValue?: T,
 ): [T | undefined, (value: T, options?: CookieOptions) => void, () => void] {
@@ -86,5 +86,3 @@ function useCookie<T = string>(
 
   return [value, setCookie, removeCookie];
 }
-
-export default useCookie;
