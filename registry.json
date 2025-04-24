@@ -227,15 +227,15 @@
       "categories": ["lifecycle"]
     },
     {
-      "name": "use-update-effect",
+      "name": "use-did-update",
       "type": "registry:hook",
-      "title": "UseUpdateEffect",
-      "description": "Executes a function when the component is updated.",
+      "title": "UseDidUpdate",
+      "description": "Executes a function when the component is updated, but not when it is mounted.",
       "files": [
         {
-          "path": "registry/hooks/use-update-effect.tsx",
+          "path": "registry/hooks/use-did-update.tsx",
           "type": "registry:hook",
-          "target": "hooks/h3-use/use-update-effect.tsx"
+          "target": "hooks/h3-use/use-did-update.tsx"
         }
       ],
       "categories": ["lifecycle"]
@@ -541,20 +541,20 @@
       ]
     },
     {
-      "name": "use-update-effect-demo",
+      "name": "use-did-update-demo",
       "type": "registry:example",
-      "title": "UseUpdateEffectDemo",
-      "description": "use-update-effect's hook in action.",
+      "title": "UseDidUpdateDemo",
+      "description": "use-did-update's hook in action.",
       "registryDependencies": [
         "card",
         "button",
-        "https://h3-use.com/r/use-update-effect.json"
+        "https://h3-use.com/r/use-did-update.json"
       ],
       "files": [
         {
-          "path": "registry/example/use-update-effect-demo.tsx",
+          "path": "registry/example/use-did-update-demo.tsx",
           "type": "registry:example",
-          "target": "components/example/use-update-effect-demo.tsx"
+          "target": "components/example/use-did-update-demo.tsx"
         }
       ]
     },

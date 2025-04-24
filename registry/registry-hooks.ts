@@ -227,15 +227,16 @@ export const hooks: Registry['items'] = [
     categories: ['lifecycle'],
   },
   {
-    name: 'use-update-effect',
+    name: 'use-did-update',
     type: 'registry:hook',
-    title: 'UseUpdateEffect',
-    description: 'Executes a function when the component is updated.',
+    title: 'UseDidUpdate',
+    description:
+      'Executes a function when the component is updated, but not when it is mounted.',
     files: [
       {
-        path: 'registry/hooks/use-update-effect.tsx',
+        path: 'registry/hooks/use-did-update.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-update-effect.tsx',
+        target: 'hooks/h3-use/use-did-update.tsx',
       },
     ],
     categories: ['lifecycle'],

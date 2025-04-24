@@ -11,22 +11,22 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-import { useUpdateEffect } from '@/registry/hooks/use-update-effect';
+import { useDidUpdate } from '@/registry/hooks/use-did-update';
 
-export default function UseUpdateEffectDemo() {
+export default function UseDidUpdateDemo() {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
 
-  useUpdateEffect(() => {
+  useDidUpdate(() => {
     setMessage(`O contador foi atualizado para ${count}`);
   }, [count]);
 
   return (
     <Card className="relative max-w-md w-full">
       <CardHeader>
-        <CardTitle>useUpdateEffect</CardTitle>
+        <CardTitle>useDidUpdate</CardTitle>
         <CardDescription>
-          This example uses the <code>useUpdateEffect</code> hook to execute a
+          This example uses the <code>useDidUpdate</code> hook to execute a
           function when the count state is updated.
         </CardDescription>
       </CardHeader>

@@ -376,20 +376,21 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  'use-update-effect': {
-    name: 'use-update-effect',
-    description: 'Executes a function when the component is updated.',
+  'use-did-update': {
+    name: 'use-did-update',
+    description:
+      'Executes a function when the component is updated, but not when it is mounted.',
     type: 'registry:hook',
     registryDependencies: undefined,
     files: [
       {
-        path: 'registry/hooks/use-update-effect.tsx',
+        path: 'registry/hooks/use-did-update.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-update-effect.tsx',
+        target: 'hooks/h3-use/use-did-update.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/hooks/use-update-effect.tsx');
+      const mod = await import('@/registry/hooks/use-did-update.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -848,24 +849,24 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  'use-update-effect-demo': {
-    name: 'use-update-effect-demo',
-    description: "use-update-effect's hook in action.",
+  'use-did-update-demo': {
+    name: 'use-did-update-demo',
+    description: "use-did-update's hook in action.",
     type: 'registry:example',
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-update-effect.json',
+      'https://h3-use.com/r/use-did-update.json',
     ],
     files: [
       {
-        path: 'registry/example/use-update-effect-demo.tsx',
+        path: 'registry/example/use-did-update-demo.tsx',
         type: 'registry:example',
-        target: 'components/example/use-update-effect-demo.tsx',
+        target: 'components/example/use-did-update-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/example/use-update-effect-demo.tsx');
+      const mod = await import('@/registry/example/use-did-update-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
