@@ -12,5 +12,5 @@
       "target": "hooks/h3-use/use-orientation.tsx"
     }
   ],
-  "categories": ["sensors"]
+  "categories": ["ui-and-dom"]
 }

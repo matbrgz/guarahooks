@@ -13,7 +13,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-window-size.tsx',
       },
     ],
-    categories: ['sensors'],
+    categories: ['ui-and-dom'],
   },
   {
     name: 'use-media',
@@ -27,7 +27,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-media.tsx',
       },
     ],
-    categories: ['sensors'],
+    categories: ['ui-and-dom'],
   },
   {
     name: 'use-mouse',
@@ -41,7 +41,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-mouse.tsx',
       },
     ],
-    categories: ['sensors'],
+    categories: ['ui-and-dom'],
   },
   {
     name: 'use-keypress',
@@ -55,7 +55,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-keypress.tsx',
       },
     ],
-    categories: ['user-interaction'],
+    categories: ['ui-and-dom'],
   },
   {
     name: 'use-orientation',
@@ -69,7 +69,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-orientation.tsx',
       },
     ],
-    categories: ['sensors'],
+    categories: ['ui-and-dom'],
   },
   {
     name: 'use-toggle',
@@ -83,7 +83,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-toggle.tsx',
       },
     ],
-    categories: ['state'],
+    categories: ['state-management'],
   },
   {
     name: 'use-set',
@@ -97,7 +97,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-set.tsx',
       },
     ],
-    categories: ['state'],
+    categories: ['state-management'],
   },
   {
     name: 'use-local-storage',
@@ -111,7 +111,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-local-storage.tsx',
       },
     ],
-    categories: ['storage'],
+    categories: ['state-management'],
   },
   {
     name: 'use-session-storage',
@@ -125,7 +125,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-session-storage.tsx',
       },
     ],
-    categories: ['storage'],
+    categories: ['state-management'],
   },
   {
     name: 'use-cookie',
@@ -139,7 +139,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-cookie.tsx',
       },
     ],
-    categories: ['storage'],
+    categories: ['state-management'],
   },
   {
     name: 'use-copy-to-clipboard',
@@ -153,7 +153,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-copy-to-clipboard.tsx',
       },
     ],
-    categories: ['user-interaction'],
+    categories: ['utilities'],
   },
   {
     name: 'use-debounce',
@@ -167,7 +167,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-debounce.tsx',
       },
     ],
-    categories: ['user-interaction'],
+    categories: ['state-management'],
   },
   {
     name: 'use-click-outside',
@@ -181,7 +181,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-click-outside.tsx',
       },
     ],
-    categories: ['user-interaction'],
+    categories: ['ui-and-dom'],
   },
   {
     name: 'use-on-mount',

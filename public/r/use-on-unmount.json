@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/hooks/use-on-unmount.tsx",
-      "content": "'use client';\n\nimport { useEffect } from 'react';\n\nexport function useOnUnmount(callback: () => void): void {\n  useEffect(() => {\n    return () => {\n      callback();\n    };\n  }, []);\n}\n",
+      "content": "'use client';\n\nimport { useEffect, useRef } from 'react';\n\nexport function useOnUnmount(callback: () => void): void {\n  const fnRef = useRef(callback);\n\n  fnRef.current = callback;\n\n  useEffect(() => {\n    return () => {\n      fnRef.current();\n    };\n  }, []);\n}\n",
       "type": "registry:hook",
       "target": "hooks/h3-use/use-on-unmount.tsx"
     }

@@ -12,5 +12,5 @@
       "target": "hooks/h3-use/use-copy-to-clipboard.tsx"
     }
   ],
-  "categories": ["user-interaction"]
+  "categories": ["utilities"]
 }

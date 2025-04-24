@@ -12,5 +12,5 @@
       "target": "hooks/h3-use/use-keypress.tsx"
     }
   ],
-  "categories": ["user-interaction"]
+  "categories": ["ui-and-dom"]
 }

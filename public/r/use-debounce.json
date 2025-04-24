@@ -12,5 +12,5 @@
       "target": "hooks/h3-use/use-debounce.tsx"
     }
   ],
-  "categories": ["user-interaction"]
+  "categories": ["state-management"]
 }

@@ -24,9 +24,16 @@ export const docsConfig: DashboardConfig = {
       ],
     },
     {
-      title: 'Sensors',
-
+      title: 'UI and DOM',
       items: [
+        {
+          title: 'useKeypress',
+          href: '/docs/hooks/use-keypress',
+        },
+        {
+          title: 'useClickOutside',
+          href: '/docs/hooks/use-click-outside',
+        },
         {
           title: 'useWindowSize',
           href: '/docs/hooks/use-window-size',
@@ -56,6 +63,31 @@ export const docsConfig: DashboardConfig = {
           title: 'useSet',
           href: '/docs/hooks/use-set',
         },
+        {
+          title: 'useDebounce',
+          href: '/docs/hooks/use-debounce',
+        },
+        {
+          title: 'useLocalStorage',
+          href: '/docs/hooks/use-local-storage',
+        },
+        {
+          title: 'useSessionStorage',
+          href: '/docs/hooks/use-session-storage',
+        },
+        {
+          title: 'useCookie',
+          href: '/docs/hooks/use-cookie',
+        },
+      ],
+    },
+    {
+      title: 'Utilities',
+      items: [
+        {
+          title: 'useCopyToClipboard',
+          href: '/docs/hooks/use-copy-to-clipboard',
+        },
       ],
     },
     {
@@ -72,44 +104,6 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'useUpdateEffect',
           href: '/docs/hooks/use-update-effect',
-        },
-      ],
-    },
-    {
-      title: 'Storage Management',
-      items: [
-        {
-          title: 'useLocalStorage',
-          href: '/docs/hooks/use-local-storage',
-        },
-        {
-          title: 'useSessionStorage',
-          href: '/docs/hooks/use-session-storage',
-        },
-        {
-          title: 'useCookie',
-          href: '/docs/hooks/use-cookie',
-        },
-      ],
-    },
-    {
-      title: 'User Interaction',
-      items: [
-        {
-          title: 'useCopyToClipboard',
-          href: '/docs/hooks/use-copy-to-clipboard',
-        },
-        {
-          title: 'useKeypress',
-          href: '/docs/hooks/use-keypress',
-        },
-        {
-          title: 'useDebounce',
-          href: '/docs/hooks/use-debounce',
-        },
-        {
-          title: 'useClickOutside',
-          href: '/docs/hooks/use-click-outside',
         },
       ],
     },
