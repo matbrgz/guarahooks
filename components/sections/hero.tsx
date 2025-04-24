@@ -10,7 +10,9 @@ import { siteConfig } from '@/config/site';
 export function Hero() {
   return (
     <section
-      className={cn('flex flex-col items-center justify-center grow gap-8')}
+      className={cn(
+        'z-10 flex flex-col items-center justify-center grow gap-8',
+      )}
     >
       <hgroup
         className={cn(

@@ -6,7 +6,6 @@ import '@/assets/globals.css';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import { BlurredBlob } from '@/components/design/blurred-blob';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
@@ -69,11 +68,6 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
-            <BlurredBlob
-              className="-top-[85%] left-1/2 -translate-x-1/2 opacity-30"
-              colorFrom="#4F39F6"
-              colorTo="#EC003F"
-            />
             <Toaster richColors position="bottom-center" duration={3000} />
           </TooltipProvider>
         </ThemeProvider>
