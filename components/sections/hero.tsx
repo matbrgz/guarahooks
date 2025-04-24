@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
+import { BlurredBlob } from '@/components/design/blurred-blob';
 import { Icons } from '@/components/icons';
+import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
 import { buttonVariants } from '@/components/ui/button';
 
 import { cn } from '@/lib/utils';
@@ -11,7 +13,7 @@ export function Hero() {
   return (
     <section
       className={cn(
-        'z-10 flex flex-col items-center justify-center grow gap-8',
+        'relative z-10 flex flex-col items-center justify-center grow gap-8 w-full h-screen',
       )}
     >
       <hgroup
@@ -53,6 +55,22 @@ export function Hero() {
           <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
       </div>
+      <AnimatedGridPattern
+        numSquares={30}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        strokeDasharray={'4 2'}
+        className={cn(
+          '[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]',
+          'inset-x-0',
+        )}
+      />
+      <BlurredBlob
+        className="lg:-top-[120%] -top-1/2 left-1/2 lg:-translate-x-1/8 lg:opacity-30 opacity-40 rotate-90 lg:rotate-270"
+        colorFrom="#EC003F"
+        colorTo="#4F39F6"
+      />
     </section>
   );
 }

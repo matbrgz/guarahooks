@@ -15,7 +15,7 @@ export function BlurredBlob({
   return (
     <div
       className={cn(
-        'fixed inset-0 z-[-1] w-full h-full blur-[70px] animate-[rotate_8s_linear_infinite]',
+        'absolute inset-0 z-[-1] w-full h-full blur-[70px] animate-[rotate_8s_linear_infinite]',
         className,
       )}
       style={{
