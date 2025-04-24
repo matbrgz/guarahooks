@@ -213,6 +213,20 @@
       "categories": ["lifecycle"]
     },
     {
+      "name": "use-update-effect",
+      "type": "registry:hook",
+      "title": "UseUpdateEffect",
+      "description": "Executes a function when the component is updated.",
+      "files": [
+        {
+          "path": "registry/hooks/use-update-effect.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-update-effect.tsx"
+        }
+      ],
+      "categories": ["lifecycle"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -477,6 +491,24 @@
           "path": "registry/example/use-on-unmount-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-on-unmount-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-update-effect-demo",
+      "type": "registry:example",
+      "title": "UseUpdateEffectDemo",
+      "description": "use-update-effect's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "https://h3-use.com/r/use-update-effect.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-update-effect-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-update-effect-demo.tsx"
         }
       ]
     }

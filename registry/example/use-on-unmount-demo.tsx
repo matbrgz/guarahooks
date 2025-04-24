@@ -22,7 +22,7 @@ function ChildComponent() {
   });
 
   return (
-    <div className="p-4 bg-blue-100 rounded shadow text-blue-900">
+    <div className="p-4 rounded-md bg-muted">
       <p>I am the child component. Click to unmount me!</p>
     </div>
   );

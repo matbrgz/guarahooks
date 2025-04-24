@@ -353,6 +353,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-update-effect': {
+    name: 'use-update-effect',
+    description: 'Executes a function when the component is updated.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-update-effect.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-update-effect.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-update-effect.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -739,6 +762,33 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-on-unmount-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-update-effect-demo': {
+    name: 'use-update-effect-demo',
+    description: "use-update-effect's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-update-effect.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-update-effect-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-update-effect-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-update-effect-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

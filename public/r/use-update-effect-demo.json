@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-update-effect-demo",
+  "type": "registry:example",
+  "title": "UseUpdateEffectDemo",
+  "description": "use-update-effect's hook in action.",
+  "registryDependencies": [
+    "card",
+    "button",
+    "https://h3-use.com/r/use-update-effect.json"
+  ],
+  "files": [
+    {
+      "path": "registry/example/use-update-effect-demo.tsx",
+      "content": "import React, { useState } from 'react';\n\nimport { Button } from '@/components/ui/button';\nimport { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';\n\nimport { useUpdateEffect } from '@/hooks/h3-use/use-update-effect';\n\nexport default function UseUpdateEffectDemo() {\n  const [count, setCount] = useState(0);\n  const [message, setMessage] = useState('');\n\n  useUpdateEffect(() => {\n    setMessage(`O contador foi atualizado para ${count}`);\n  }, [count]);\n\n  return (\n    <Card className=\"relative max-w-md w-full\">\n      <CardHeader>\n        <CardTitle>useUpdateEffect</CardTitle>\n      </CardHeader>\n      <CardContent className=\"space-y-4\">\n        <div className=\"flex flex-col items-center gap-4\">\n          <p className=\"text-2xl font-bold\">{count}</p>\n          <Button onClick={() => setCount((c) => c + 1)}>Increment</Button>\n          <p className=\"text-sm text-muted-foreground mt-2\">{message}</p>\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/example/use-update-effect-demo.tsx"
+    }
+  ]
+}

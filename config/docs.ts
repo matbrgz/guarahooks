@@ -68,6 +68,10 @@ export const docsConfig: DashboardConfig = {
           title: 'useOnUnmount',
           href: '/docs/hooks/use-on-unmount',
         },
+        {
+          title: 'useUpdateEffect',
+          href: '/docs/hooks/use-update-effect',
+        },
       ],
     },
     {

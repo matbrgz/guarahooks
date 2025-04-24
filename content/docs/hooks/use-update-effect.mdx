@@ -1,0 +1,49 @@
+---
+title: useUpdateEffect
+date: 2025-04-23
+description: Execute a function when the component is updated.
+author: h3rmel
+published: true
+---
+
+Observation: This hook is similar to `useEffect`, but it only runs when the component is updated, jumping the first execution.
+
+<HookPreview name="use-update-effect-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-update-effect"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-update-effect" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop       | Type             | Default    | Description                                              |
+| ---------- | ---------------- | ---------- | -------------------------------------------------------- |
+| `callback` | `void function`  | `() => {}` | The function to execute when the component is unmounted. |
+| `deps`     | `DependencyList` | `[]`       | The dependencies to watch for changes.                   |

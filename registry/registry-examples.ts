@@ -257,4 +257,22 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-update-effect-demo',
+    type: 'registry:example',
+    title: 'UseUpdateEffectDemo',
+    description: "use-update-effect's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-update-effect.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-update-effect-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-update-effect-demo.tsx',
+      },
+    ],
+  },
 ];
