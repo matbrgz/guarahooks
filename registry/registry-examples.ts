@@ -48,6 +48,23 @@ export const examples: Registry['items'] = [
     ],
   },
   {
+    name: 'use-click-outside-demo',
+    type: 'registry:example',
+    title: 'UseClickOutsideDemo',
+    description: "use-click-outside's hook in action.",
+    registryDependencies: [
+      'card',
+      'https://h3-use.com/r/use-click-outside.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-click-outside-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-click-outside-demo.tsx',
+      },
+    ],
+  },
+  {
     name: 'use-keypress-demo',
     type: 'registry:example',
     title: 'UseKeypressDemo',
@@ -208,19 +225,20 @@ export const examples: Registry['items'] = [
     ],
   },
   {
-    name: 'use-click-outside-demo',
+    name: 'use-debounce-state-demo',
     type: 'registry:example',
-    title: 'UseClickOutsideDemo',
-    description: "use-click-outside's hook in action.",
+    title: 'UseDebounceStateDemo',
+    description: "use-debounce-state's hook in action.",
     registryDependencies: [
       'card',
-      'https://h3-use.com/r/use-click-outside.json',
+      'input',
+      'https://h3-use.com/r/use-debounce-state.json',
     ],
     files: [
       {
-        path: 'registry/example/use-click-outside-demo.tsx',
+        path: 'registry/example/use-debounce-state-demo.tsx',
         type: 'registry:example',
-        target: 'components/example/use-click-outside-demo.tsx',
+        target: 'components/example/use-debounce-state-demo.tsx',
       },
     ],
   },

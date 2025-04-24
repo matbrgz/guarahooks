@@ -283,6 +283,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-debounce-state': {
+    name: 'use-debounce-state',
+    description: 'Debounce the state update.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-debounce-state.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-debounce-state.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-debounce-state.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-click-outside': {
     name: 'use-click-outside',
     description: 'Detects clicks outside of a referenced element.',
@@ -440,6 +463,32 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-mouse-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-click-outside-demo': {
+    name: 'use-click-outside-demo',
+    description: "use-click-outside's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'https://h3-use.com/r/use-click-outside.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-click-outside-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-click-outside-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-click-outside-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -696,23 +745,26 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  'use-click-outside-demo': {
-    name: 'use-click-outside-demo',
-    description: "use-click-outside's hook in action.",
+  'use-debounce-state-demo': {
+    name: 'use-debounce-state-demo',
+    description: "use-debounce-state's hook in action.",
     type: 'registry:example',
     registryDependencies: [
       'card',
-      'https://h3-use.com/r/use-click-outside.json',
+      'input',
+      'https://h3-use.com/r/use-debounce-state.json',
     ],
     files: [
       {
-        path: 'registry/example/use-click-outside-demo.tsx',
+        path: 'registry/example/use-debounce-state-demo.tsx',
         type: 'registry:example',
-        target: 'components/example/use-click-outside-demo.tsx',
+        target: 'components/example/use-debounce-state-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/example/use-click-outside-demo.tsx');
+      const mod = await import(
+        '@/registry/example/use-debounce-state-demo.tsx'
+      );
       const exportName =
         Object.keys(mod).find(
           (key) =>

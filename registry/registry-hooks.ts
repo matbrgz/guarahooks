@@ -170,6 +170,20 @@ export const hooks: Registry['items'] = [
     categories: ['state-management'],
   },
   {
+    name: 'use-debounce-state',
+    type: 'registry:hook',
+    title: 'UseDebounceState',
+    description: 'Debounce the state update.',
+    files: [
+      {
+        path: 'registry/hooks/use-debounce-state.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-debounce-state.tsx',
+      },
+    ],
+    categories: ['state-management'],
+  },
+  {
     name: 'use-click-outside',
     type: 'registry:hook',
     title: 'UseClickOutside',

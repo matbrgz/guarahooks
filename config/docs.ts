@@ -64,8 +64,12 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-set',
         },
         {
-          title: 'useDebounce',
-          href: '/docs/hooks/use-debounce',
+          title: 'useDebounceCallback',
+          href: '/docs/hooks/use-debounce-callback',
+        },
+        {
+          title: 'useDebounceState',
+          href: '/docs/hooks/use-debounce-state',
         },
         {
           title: 'useLocalStorage',
