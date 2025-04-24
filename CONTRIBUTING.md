@@ -49,8 +49,8 @@ Create the main hook in `registry/hooks/use-example-hook.tsx`
 ```typescript
 import React from 'react';
 
-export function useExampleHook() {
-  const [dummyState, setDummyState] = React.useState('dummy');
+export function useExampleHook(initialState: string) {
+  const [dummyState, setDummyState] = React.useState(initialState);
 
   return [dummyState, setDummyState];
 }
@@ -75,7 +75,77 @@ export function useExampleHookDemo() {
 }
 ```
 
-### 3. Update Registry
+### 3. Update Sidebar
+
+Update the `config/docs.ts` wity your new hook in the correct category.
+
+```typescript
+{
+  title: 'Example Hook',
+  href: '/docs/hooks/use-example-hook',
+  items: [],
+  label: 'New',
+}
+```
+
+### 4. Create Docs
+
+Create an MDX file for documenting your component in `content/docs/hooks/use-example-hook.mdx`
+
+````md
+---
+title: Example Hook
+date: 2025-04-23
+description: Example hook for h3/use
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-example-hook-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-example-hook"
+```
+
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-example-hook" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop           | Type     | Default | Description                           |
+| -------------- | -------- | ------- | ------------------------------------- |
+| `initialState` | `string` | `""`    | The initial state of the dummy state. |
+
+```
+````
+
+### 5. Update Registry
 
 Export you hook and example in the registry files:
 
@@ -131,28 +201,6 @@ export const examples: Registry['items'] = [
 ````
 
 Make sure to add any necessary dependencies, configurations or other properties as needed for your specific hook.
-
-### 4. Update Docs
-
-Update the `config/hooks.ts` wity your new hook in the correct category.
-
-```typescript
-
-export const categories: HookCategory[] = [
-  // ... existing categories and hooks ...
-  {
-    slug: 'examples',
-    name: 'Examples',
-    description: 'Teaching you how to add a hook in this amazing project!'
-    hooks: [
-      {
-        name: 'use-example-hook',
-      },
-    ],
-  }
-  // ... existing categories and hooks ...
-];
-```
 
 ### 5. Build Registry
 

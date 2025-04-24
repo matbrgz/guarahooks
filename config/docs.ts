@@ -25,6 +25,7 @@ export const docsConfig: DashboardConfig = {
     },
     {
       title: 'Sensors',
+
       items: [
         {
           title: 'useWindowSize',
