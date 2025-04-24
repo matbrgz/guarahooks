@@ -38,7 +38,9 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
                 'bg-accent/50 font-medium text-accent-foreground',
             )}
           >
-            <span className={cn('relative shrink-0')}>{item.title}</span>
+            <span className={cn('relative shrink-0 font-mono')}>
+              {item.title}
+            </span>
             <span
               className={cn(
                 'relative shrink-0',

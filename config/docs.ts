@@ -27,27 +27,27 @@ export const docsConfig: DashboardConfig = {
       title: 'UI and DOM',
       items: [
         {
-          title: 'useKeypress',
+          title: 'use-keypress',
           href: '/docs/hooks/use-keypress',
         },
         {
-          title: 'useClickOutside',
+          title: 'use-click-outside',
           href: '/docs/hooks/use-click-outside',
         },
         {
-          title: 'useWindowSize',
+          title: 'use-window-size',
           href: '/docs/hooks/use-window-size',
         },
         {
-          title: 'useMedia',
+          title: 'use-media',
           href: '/docs/hooks/use-media',
         },
         {
-          title: 'useOrientation',
+          title: 'use-orientation',
           href: '/docs/hooks/use-orientation',
         },
         {
-          title: 'useMouse',
+          title: 'use-mouse',
           href: '/docs/hooks/use-mouse',
         },
       ],
@@ -56,31 +56,31 @@ export const docsConfig: DashboardConfig = {
       title: 'State Management',
       items: [
         {
-          title: 'useToggle',
+          title: 'use-toggle',
           href: '/docs/hooks/use-toggle',
         },
         {
-          title: 'useSet',
+          title: 'use-set',
           href: '/docs/hooks/use-set',
         },
         {
-          title: 'useDebounceCallback',
+          title: 'use-debounce-callback',
           href: '/docs/hooks/use-debounce-callback',
         },
         {
-          title: 'useDebounceState',
+          title: 'use-debounce-state',
           href: '/docs/hooks/use-debounce-state',
         },
         {
-          title: 'useLocalStorage',
+          title: 'use-local-storage',
           href: '/docs/hooks/use-local-storage',
         },
         {
-          title: 'useSessionStorage',
+          title: 'use-session-storage',
           href: '/docs/hooks/use-session-storage',
         },
         {
-          title: 'useCookie',
+          title: 'use-cookie',
           href: '/docs/hooks/use-cookie',
         },
       ],
@@ -89,15 +89,15 @@ export const docsConfig: DashboardConfig = {
       title: 'Utilities',
       items: [
         {
-          title: 'useCopyToClipboard',
+          title: 'use-copy-to-clipboard',
           href: '/docs/hooks/use-copy-to-clipboard',
         },
         {
-          title: 'useOS',
+          title: 'use-os',
           href: '/docs/hooks/use-os',
         },
         {
-          title: 'useIdle',
+          title: 'use-idle',
           href: '/docs/hooks/use-idle',
         },
       ],
@@ -106,15 +106,15 @@ export const docsConfig: DashboardConfig = {
       title: 'Lifecycle',
       items: [
         {
-          title: 'useOnMount',
+          title: 'use-on-mount',
           href: '/docs/hooks/use-on-mount',
         },
         {
-          title: 'useOnUnmount',
+          title: 'use-on-unmount',
           href: '/docs/hooks/use-on-unmount',
         },
         {
-          title: 'useDidUpdate',
+          title: 'use-did-update',
           href: '/docs/hooks/use-did-update',
         },
       ],
