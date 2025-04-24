@@ -255,6 +255,20 @@
       "categories": ["utilities"]
     },
     {
+      "name": "use-idle",
+      "type": "registry:hook",
+      "title": "UseIdle",
+      "description": "Detects if the user is idle.",
+      "files": [
+        {
+          "path": "registry/hooks/use-idle.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-idle.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -569,6 +583,20 @@
           "path": "registry/example/use-os-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-os-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-idle-demo",
+      "type": "registry:example",
+      "title": "UseIdleDemo",
+      "description": "use-idle's hook in action.",
+      "registryDependencies": ["card", "https://h3-use.com/r/use-idle.json"],
+      "files": [
+        {
+          "path": "registry/example/use-idle-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-idle-demo.tsx"
         }
       ]
     }

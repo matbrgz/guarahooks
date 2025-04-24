@@ -1,0 +1,61 @@
+---
+title: useIdle
+date: 2025-04-23
+description: Returns true if the user is idle for a given timeout.
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-idle-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-idle"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-idle" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop       | Type             | Default | Description                 |
+| ---------- | ---------------- | ------- | --------------------------- |
+| `timeout`  | `number`         | 1000    | The timeout in milliseconds |
+| `options?` | `UseIdleOptions` | {}      | The options for the hook    |
+
+### Options
+
+| Prop            | Type       | Default          | Description                         |
+| --------------- | ---------- | ---------------- | ----------------------------------- |
+| `events?`       | `string[]` | `DEFAULT_EVENTS` | The events to listen to             |
+| `initialState?` | `boolean`  | `true`           | The initial state of the idle state |
+
+## Data
+
+| Prop    | Type         | Description                                    |
+| ------- | ------------ | ---------------------------------------------- |
+| `idle`  | `boolean`    | Whether the user is idle for the given timeout |
+| `reset` | `() => void` | Resets the idle state                          |

@@ -307,4 +307,18 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-idle-demo',
+    type: 'registry:example',
+    title: 'UseIdleDemo',
+    description: "use-idle's hook in action.",
+    registryDependencies: ['card', 'https://h3-use.com/r/use-idle.json'],
+    files: [
+      {
+        path: 'registry/example/use-idle-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-idle-demo.tsx',
+      },
+    ],
+  },
 ];

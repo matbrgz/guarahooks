@@ -255,4 +255,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-idle',
+    type: 'registry:hook',
+    title: 'UseIdle',
+    description: 'Detects if the user is idle.',
+    files: [
+      {
+        path: 'registry/hooks/use-idle.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-idle.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];

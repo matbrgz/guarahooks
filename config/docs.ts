@@ -96,6 +96,10 @@ export const docsConfig: DashboardConfig = {
           title: 'useOS',
           href: '/docs/hooks/use-os',
         },
+        {
+          title: 'useIdle',
+          href: '/docs/hooks/use-idle',
+        },
       ],
     },
     {
