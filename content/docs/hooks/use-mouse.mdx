@@ -59,3 +59,60 @@ npx shadcn@latest add "https://h3-use.com/r/use-mouse"
 | `elY`  | `number` | The Y position of the mouse in the element  |
 | `elH`  | `number` | The height of the element                   |
 | `elW`  | `number` | The width of the element                    |
+
+## Key Features & Details
+
+### Required Ref & Error Handling
+
+- The `ref` prop is required and must point to an `HTMLElement`.
+- In development, an error is logged if `ref` is missing or invalid.
+
+### State Updates & Event Handling
+
+- The hook listens to the `mousemove` event on the document.
+- State is only updated if any value changes, for performance.
+- If `trackOutside` is `false`, state only updates when the mouse is inside the element; if `true`, updates everywhere.
+- If `clampToZero` is `true`, `elX` and `elY` are clamped to zero or greater.
+
+### Returned Data
+
+- The hook returns an object with mouse position in the document, relative to the element, and element dimensions.
+
+### Cleanup
+
+- The event listener is removed automatically when the component unmounts.
+
+### Caveats & Best Practices
+
+- The hook is intended for use in the browser; on the server, it will always return zeros.
+- Ensure the `ref` is stable and points to a visible element.
+- If the element is not in the DOM, all values will be zero.
+- For best performance, avoid unnecessary re-renders by memoizing the ref.
+
+## Examples
+
+### Basic Usage
+
+```tsx
+const ref = useRef<HTMLDivElement>(null);
+const mouse = useMouse({ ref });
+return (
+  <div ref={ref}>
+    elX: {mouse.elX}, elY: {mouse.elY}
+  </div>
+);
+```
+
+### Track Mouse Outside Element
+
+```tsx
+const ref = useRef<HTMLDivElement>(null);
+const mouse = useMouse({ ref, trackOutside: true });
+```
+
+### Clamp Mouse Position to Zero
+
+```tsx
+const ref = useRef<HTMLDivElement>(null);
+const mouse = useMouse({ ref, clampToZero: true });
+```

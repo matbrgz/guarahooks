@@ -53,3 +53,59 @@ npx shadcn@latest add "https://h3-use.com/r/use-local-storage"
 | -------------- | ------------------------ | ---------------- | ------------------------------------- |
 | `serialize?`   | `(value: any) => string` | `JSON.stringify` | The function to serialize the value   |
 | `deserialize?` | `(value: string) => any` | `JSON.parse`     | The function to deserialize the value |
+
+## Key Features & Details
+
+### Cross-Tab Synchronization
+
+- The hook listens for `storage` events and updates the state if the value changes in another tab or window.
+
+### Serialization & Deserialization
+
+- By default, values are serialized with `JSON.stringify` and deserialized with `JSON.parse`.
+- You can provide custom `serialize` and `deserialize` functions for non-JSON data or advanced use cases.
+
+### Error Handling
+
+- If reading or writing to localStorage fails (e.g., quota exceeded, invalid JSON), the hook logs a warning and falls back to the initial value.
+
+### SSR & Initial Value
+
+- On the server, the hook always returns the initial value.
+- The initial value is only used if there is no value in localStorage for the given key.
+
+### Best Practices & Caveats
+
+- The hook is client-side only; on the server, it does not interact with localStorage.
+- Avoid storing sensitive data in localStorage.
+- Changing the `key` will re-read and update the value from localStorage.
+- For best performance, avoid creating new `serialize`/`deserialize` functions on every render (use `useCallback` or `useMemo` if needed).
+
+## Examples
+
+### Basic Usage
+
+```tsx
+const [value, setValue] = useLocalStorage('my-key', 'default');
+setValue('new value');
+```
+
+### With Custom Serialization
+
+```tsx
+const [value, setValue] = useLocalStorage(
+  'user',
+  { name: 'Alice' },
+  {
+    serialize: (v) => btoa(JSON.stringify(v)),
+    deserialize: (v) => JSON.parse(atob(v)),
+  },
+);
+```
+
+### Cross-Tab Sync
+
+```tsx
+const [theme, setTheme] = useLocalStorage('theme', 'light');
+// Changing theme in one tab will update it in all open tabs
+```

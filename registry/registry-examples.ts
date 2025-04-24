@@ -312,12 +312,35 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseIdleDemo',
     description: "use-idle's hook in action.",
-    registryDependencies: ['card', 'https://h3-use.com/r/use-idle.json'],
+    registryDependencies: [
+      'card',
+      'badge',
+      'button',
+      'https://h3-use.com/r/use-idle.json',
+    ],
     files: [
       {
         path: 'registry/example/use-idle-demo.tsx',
         type: 'registry:example',
         target: 'components/example/use-idle-demo.tsx',
+      },
+    ],
+  },
+  {
+    name: 'use-fullscreen-demo',
+    type: 'registry:example',
+    title: 'UseFullscreenDemo',
+    description: "use-fullscreen's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-fullscreen.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-fullscreen-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-fullscreen-demo.tsx',
       },
     ],
   },

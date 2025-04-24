@@ -52,3 +52,48 @@ npx shadcn@latest add "https://h3-use.com/r/use-debounce-state"
 | Prop      | Type      | Default | Description                                            |
 | --------- | --------- | ------- | ------------------------------------------------------ |
 | `leading` | `boolean` | `false` | Whether to update the state immediately on first call. |
+
+## Key Features & Details
+
+### Debounced State Update
+
+- State updates are debounced: only the last value set within the delay period will be applied.
+- The setter function accepts either a value or an updater function (like React's `setState`).
+
+### Leading Option
+
+- If `options.leading` is `true`, the state is updated immediately on the first call, then debounced for subsequent calls until the delay passes.
+- If `false` (default), the state is only updated after the delay.
+
+### Cleanup
+
+- Any pending timeout is cleared when the component unmounts or when a new value is set, preventing memory leaks or unexpected updates.
+
+### Best Practices & Caveats
+
+- The hook is client-side only.
+- For best performance, avoid creating new setter functions on every render.
+- If the component unmounts before the delay, the state will not update.
+- The hook returns a tuple: `[value, setDebouncedValue]`.
+
+## Examples
+
+### Basic Usage
+
+```tsx
+const [value, setValue] = useDebouncedState('', 300);
+setValue('new value');
+```
+
+### With Leading Option
+
+```tsx
+const [value, setValue] = useDebouncedState(0, 500, { leading: true });
+```
+
+### With Updater Function
+
+```tsx
+const [count, setCount] = useDebouncedState(0, 400);
+setCount((prev) => prev + 1);
+```

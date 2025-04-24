@@ -52,3 +52,49 @@ npx shadcn@latest add "https://h3-use.com/r/use-toggle"
 | -------- | ---------- | ---------------------------------------- |
 | `value`  | `boolean`  | The current value of the boolean state   |
 | `toggle` | `function` | The function to toggle the boolean state |
+
+## Key Features & Details
+
+### onToggle Callback
+
+- The `onToggle` callback is called every time the state changes, with the new value as its argument.
+- The callback is called after the state is updated.
+
+### Returned Values
+
+- The hook returns a tuple: `[value, toggle]`.
+- `value` is the current boolean state.
+- `toggle` is a function that toggles the state between `true` and `false`.
+
+### Initial Value
+
+- The `initialValue` prop sets the initial state (defaults to `false`).
+
+### Best Practices & Caveats
+
+- The hook is designed for toggling boolean state in React components.
+- For best performance, memoize the `onToggle` callback if it depends on other values.
+- The hook is client-side only.
+
+## Examples
+
+### Basic Usage
+
+```tsx
+const [on, toggle] = useToggle();
+return <button onClick={toggle}>{on ? 'ON' : 'OFF'}</button>;
+```
+
+### With Initial Value
+
+```tsx
+const [checked, toggle] = useToggle(true);
+```
+
+### With onToggle Callback
+
+```tsx
+const [active, toggle] = useToggle(false, (val) => {
+  console.log('Toggled to:', val);
+});
+```

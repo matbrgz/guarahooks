@@ -50,6 +50,10 @@ export const docsConfig: DashboardConfig = {
           title: 'use-mouse',
           href: '/docs/hooks/use-mouse',
         },
+        {
+          title: 'use-fullscreen',
+          href: '/docs/hooks/use-fullscreen',
+        },
       ],
     },
     {

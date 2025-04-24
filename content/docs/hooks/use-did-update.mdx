@@ -45,3 +45,54 @@ npx shadcn@latest add "https://h3-use.com/r/use-did-update"
 | ---------- | ---------------- | ---------- | -------------------------------------------------------- |
 | `callback` | `void function`  | `() => {}` | The function to execute when the component is unmounted. |
 | `deps`     | `DependencyList` | `[]`       | The dependencies to watch for changes.                   |
+
+## Key Features & Details
+
+### Update-Only Execution
+
+- The callback is executed only when the dependencies change **after** the initial mount.
+- The callback is **not** called on the initial mount.
+
+### Dependency Handling
+
+- The `deps` array works like in `useEffect`: the callback runs when any dependency changes.
+- If `deps` is omitted, the effect will run after every update (except the first mount).
+
+### Cleanup
+
+- The hook does not provide a built-in cleanup for the callback itself, but you can return a cleanup function from your callback just like in `useEffect`.
+
+### Best Practices & Caveats
+
+- The hook is client-side only; on the server, it does not run.
+- Use for side effects that should only run on updates, not on mount (e.g., reacting to prop or state changes).
+- If you need to run logic both on mount and update, use `useEffect` instead.
+
+## Examples
+
+### Basic Usage
+
+```tsx
+useDidUpdate(() => {
+  console.log('Component updated!');
+}, [value]);
+```
+
+### With Cleanup
+
+```tsx
+useDidUpdate(() => {
+  // Side effect
+  return () => {
+    // Cleanup logic
+  };
+}, [prop]);
+```
+
+### Without Dependencies (runs on every update except mount)
+
+```tsx
+useDidUpdate(() => {
+  // Runs after every update
+});
+```

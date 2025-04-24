@@ -57,3 +57,54 @@ npx shadcn@latest add "https://h3-use.com/r/use-cookie"
 | `domain`   | `string`  | `null`  | The domain of the cookie              |
 | `secure`   | `boolean` | `false` | Whether the cookie is secure          |
 | `sameSite` | `string`  | `null`  | The same-site attribute of the cookie |
+
+## Key Features & Details
+
+### Type Safety & Serialization
+
+- The hook supports any serializable value (strings, objects, etc.).
+- Non-string values are automatically serialized to JSON when setting the cookie and deserialized when reading.
+
+### Cookie Removal
+
+- The `removeCookie` function deletes the cookie by setting its expiration date to the past.
+
+### Error Handling
+
+- If reading or writing the cookie fails, the hook logs a warning and falls back to the initial value.
+
+### SSR & Initial Value
+
+- On the server, the hook always returns the initial value and does not interact with cookies.
+- The initial value is only used if the cookie does not exist.
+
+### Best Practices & Caveats
+
+- The hook is client-side only; on the server, it does not interact with cookies.
+- Avoid storing sensitive data in cookies.
+- Changing the `key` will re-read and update the value from the cookie.
+- For best performance, avoid creating new `initialValue` or options on every render (use `useMemo` if needed).
+- Some cookie options (e.g., `secure`, `sameSite`) may be required for cross-site or secure contexts.
+
+## Examples
+
+### Basic Usage
+
+```tsx
+const [value, setCookie, removeCookie] = useCookie('my-key', 'default');
+setCookie('new value');
+removeCookie();
+```
+
+### With Objects
+
+```tsx
+const [user, setUser, removeUser] = useCookie('user', { name: 'Alice' });
+setUser({ name: 'Bob' });
+```
+
+### With Cookie Options
+
+```tsx
+setCookie('value', { path: '/', maxAge: 3600, sameSite: 'lax' });
+```

@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-import { OS, useOS } from '../hooks/use-os';
+import { OS, useOS } from '@/registry/hooks/use-os';
 
 export default function UseOSDemo() {
   const os = useOS();

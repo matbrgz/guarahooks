@@ -44,3 +44,43 @@ npx shadcn@latest add "https://h3-use.com/r/use-on-unmount"
 | Prop       | Type            | Default    | Description                                              |
 | ---------- | --------------- | ---------- | -------------------------------------------------------- |
 | `callback` | `void function` | `() => {}` | The function to execute when the component is unmounted. |
+
+## Key Features & Details
+
+### Execution Timing
+
+- The callback is executed only once, immediately before the component is unmounted (on the client).
+- The callback will not run on re-renders or updates, only on unmount.
+
+### Callback Stability
+
+- The callback is not re-invoked if it changes between renders; only the initial callback is used.
+- For best results, use a stable callback (e.g., from `useCallback`) if it depends on props or state.
+
+### SSR & Client-Only
+
+- The hook is client-side only; on the server, the callback is never called.
+
+### Best Practices & Caveats
+
+- Use for cleanup logic, analytics, or side effects that should only run once on unmount.
+- Avoid side effects that depend on up-to-date props or state unless the callback is stable.
+
+## Examples
+
+### Basic Usage
+
+```tsx
+useOnUnmount(() => {
+  console.log('Component will unmount!');
+});
+```
+
+### With Stable Callback
+
+```tsx
+const onUnmount = useCallback(() => {
+  // Cleanup logic
+}, []);
+useOnUnmount(onUnmount);
+```

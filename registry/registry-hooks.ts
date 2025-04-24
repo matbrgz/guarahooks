@@ -269,4 +269,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-fullscreen',
+    type: 'registry:hook',
+    title: 'UseFullscreen',
+    description: 'Enters and exits fullscreen mode.',
+    files: [
+      {
+        path: 'registry/hooks/use-fullscreen.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-fullscreen.tsx',
+      },
+    ],
+    categories: ['ui-and-dom'],
+  },
 ];
