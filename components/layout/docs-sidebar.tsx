@@ -32,7 +32,7 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
           >
             <h4
               className={cn(
-                'text-sm font-semibold w-full',
+                'text font-semibold w-full',
                 'inline-flex items-center justify-between',
                 'border-b border-dashed',
                 'px-4 py-4',
