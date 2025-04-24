@@ -240,4 +240,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['lifecycle'],
   },
+  {
+    name: 'use-os',
+    type: 'registry:hook',
+    title: 'UseOS',
+    description: "Detects the user's operating system.",
+    files: [
+      {
+        path: 'registry/hooks/use-os.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-os.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];

@@ -92,6 +92,10 @@ export const docsConfig: DashboardConfig = {
           title: 'useCopyToClipboard',
           href: '/docs/hooks/use-copy-to-clipboard',
         },
+        {
+          title: 'useOS',
+          href: '/docs/hooks/use-os',
+        },
       ],
     },
     {

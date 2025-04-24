@@ -1,0 +1,50 @@
+---
+title: useOS
+date: 2025-04-24
+description: Detects the user's operating system.
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-os-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-os"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-copy-to-clipboard" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+This hook does not accept any props.
+
+## Data
+
+This hook returns a string that represents the user's operating system.
+
+The possible values are: `macos`, `ios`, `windows`, `android`, `linux`, and `undetermined`.

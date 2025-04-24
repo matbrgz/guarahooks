@@ -399,6 +399,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-os': {
+    name: 'use-os',
+    description: "Detects the user's operating system.",
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-os.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-os.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-os.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -843,6 +866,29 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-update-effect-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-os-demo': {
+    name: 'use-os-demo',
+    description: "use-os's hook in action.",
+    type: 'registry:example',
+    registryDependencies: ['card', 'https://h3-use.com/r/use-os.json'],
+    files: [
+      {
+        path: 'registry/example/use-os-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-os-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-os-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

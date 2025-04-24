@@ -293,4 +293,18 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-os-demo',
+    type: 'registry:example',
+    title: 'UseOSDemo',
+    description: "use-os's hook in action.",
+    registryDependencies: ['card', 'https://h3-use.com/r/use-os.json'],
+    files: [
+      {
+        path: 'registry/example/use-os-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-os-demo.tsx',
+      },
+    ],
+  },
 ];
