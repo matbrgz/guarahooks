@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <section
       className={cn(
-        'relative z-10 flex flex-col items-center justify-center grow gap-8 w-full h-screen',
+        'relative flex flex-col items-center justify-center grow gap-8 w-full h-screen',
       )}
     >
       <hgroup
@@ -33,7 +33,7 @@ export function Hero() {
           powered.
         </p>
       </hgroup>
-      <div className={cn('flex items-center justify-center gap-4')}>
+      <div className={cn('z-10 flex items-center justify-center gap-4')}>
         <Link
           href="/docs"
           className={cn(
