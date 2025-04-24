@@ -260,20 +260,20 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  'use-debounce': {
-    name: 'use-debounce',
-    description: 'Debounces a function.',
+  'use-debounce-callback': {
+    name: 'use-debounce-callback',
+    description: 'Debounce the call of a function.',
     type: 'registry:hook',
     registryDependencies: undefined,
     files: [
       {
-        path: 'registry/hooks/use-debounce.tsx',
+        path: 'registry/hooks/use-debounce-callback.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-debounce.tsx',
+        target: 'hooks/h3-use/use-debounce-callback.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/hooks/use-debounce.tsx');
+      const mod = await import('@/registry/hooks/use-debounce-callback.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -667,24 +667,26 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  'use-debounce-demo': {
-    name: 'use-debounce-demo',
-    description: "use-debounce's hook in action.",
+  'use-debounce-callback-demo': {
+    name: 'use-debounce-callback-demo',
+    description: "use-debounce-callback's hook in action.",
     type: 'registry:example',
     registryDependencies: [
       'card',
       'input',
-      'https://h3-use.com/r/use-debounce.json',
+      'https://h3-use.com/r/use-debounce-callback.json',
     ],
     files: [
       {
-        path: 'registry/example/use-debounce-demo.tsx',
+        path: 'registry/example/use-debounce-callback-demo.tsx',
         type: 'registry:example',
-        target: 'components/example/use-debounce-demo.tsx',
+        target: 'components/example/use-debounce-callback-demo.tsx',
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import('@/registry/example/use-debounce-demo.tsx');
+      const mod = await import(
+        '@/registry/example/use-debounce-callback-demo.tsx'
+      );
       const exportName =
         Object.keys(mod).find(
           (key) =>

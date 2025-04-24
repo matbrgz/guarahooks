@@ -156,15 +156,15 @@ export const hooks: Registry['items'] = [
     categories: ['utilities'],
   },
   {
-    name: 'use-debounce',
+    name: 'use-debounce-callback',
     type: 'registry:hook',
-    title: 'UseDebounce',
-    description: 'Debounces a function.',
+    title: 'UseDebounceCallback',
+    description: 'Debounce the call of a function.',
     files: [
       {
-        path: 'registry/hooks/use-debounce.tsx',
+        path: 'registry/hooks/use-debounce-callback.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-debounce.tsx',
+        target: 'hooks/h3-use/use-debounce-callback.tsx',
       },
     ],
     categories: ['state-management'],

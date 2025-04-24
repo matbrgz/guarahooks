@@ -190,20 +190,20 @@ export const examples: Registry['items'] = [
     ],
   },
   {
-    name: 'use-debounce-demo',
+    name: 'use-debounce-callback-demo',
     type: 'registry:example',
-    title: 'UseDebounceDemo',
-    description: "use-debounce's hook in action.",
+    title: 'UseDebounceCallbackDemo',
+    description: "use-debounce-callback's hook in action.",
     registryDependencies: [
       'card',
       'input',
-      'https://h3-use.com/r/use-debounce.json',
+      'https://h3-use.com/r/use-debounce-callback.json',
     ],
     files: [
       {
-        path: 'registry/example/use-debounce-demo.tsx',
+        path: 'registry/example/use-debounce-callback-demo.tsx',
         type: 'registry:example',
-        target: 'components/example/use-debounce-demo.tsx',
+        target: 'components/example/use-debounce-callback-demo.tsx',
       },
     ],
   },

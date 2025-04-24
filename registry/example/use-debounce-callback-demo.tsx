@@ -12,9 +12,9 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 
-import { useDebounce } from '@/registry/hooks/use-debounce';
+import { useDebounceCallback } from '@/registry/hooks/use-debounce-callback';
 
-export function UseDebounceDemo() {
+export function UseDebounceCallbackDemo() {
   const [inputValue, setInputValue] = useState('');
   const [debouncedValue, setDebouncedValue] = useState('');
 
@@ -22,7 +22,7 @@ export function UseDebounceDemo() {
     setDebouncedValue(value);
   }, []);
 
-  const debouncedUpdate = useDebounce(updateDebouncedValue, 500);
+  const debouncedUpdate = useDebounceCallback(updateDebouncedValue, 500);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -33,10 +33,10 @@ export function UseDebounceDemo() {
   return (
     <Card className="max-w-md w-full relative">
       <CardHeader>
-        <CardTitle>useDebounce</CardTitle>
+        <CardTitle>useDebounceCallback</CardTitle>
         <CardDescription>
-          This component uses the <code>useDebounce</code> hook to debounce the
-          input value.
+          This component uses the <code>useDebounceCallback</code> hook to
+          debounce the callback function to control the input value.
         </CardDescription>
       </CardHeader>
       <CardContent>
