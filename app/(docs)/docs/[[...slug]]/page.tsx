@@ -78,7 +78,7 @@ export default async function DocsPage({ params }: PageProps) {
   const toc = await getTableOfContents(doc.body.raw);
 
   return (
-    <div className={cn('flex gap-8 h-full bg-transparent')}>
+    <div className={cn('flex h-full bg-transparent')}>
       {/* Content */}
       <article
         className={cn(
@@ -122,7 +122,7 @@ export default async function DocsPage({ params }: PageProps) {
         className={cn(
           'fixed lg:sticky z-30 top-[72px] h-[calc(100vh-72px)]',
           'hidden lg:flex lg:flex-[20%] flex-col gap-4',
-          'p-4 border-l border-dashed',
+          'p-4',
           'bg-background/50 backdrop-blur-md',
         )}
       >

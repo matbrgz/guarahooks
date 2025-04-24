@@ -13,9 +13,9 @@ export default function DocsLayout({
     <section
       className={cn(
         'size-full max-w-screen-2xl',
-        'flex flex-row gap-8 grow',
+        'flex flex-rowgrow',
         'mx-auto',
-        'sketch-pattern',
+        // 'sketch-pattern',
       )}
     >
       <aside
@@ -23,7 +23,7 @@ export default function DocsLayout({
           'fixed lg:sticky z-30 top-[72px] h-[calc(100vh-72px)]',
           'hidden lg:block lg:flex-1/5',
           'bg-background/50 backdrop-blur-md',
-          'border-x border-dashed',
+          'border-l border-dashed',
         )}
       >
         <div className={cn('no-scrollbar h-full overflow-auto')}>
