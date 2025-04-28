@@ -60,7 +60,7 @@ export function NavigationMobile() {
             </SheetClose>
           </SheetHeader>
           {/* Content */}
-          <ScrollArea className={cn('h-screen')}>
+          <ScrollArea className={cn('h-[calc(100dvh-64px)]')}>
             {/* Main Navigation */}
             <ul
               className={cn(

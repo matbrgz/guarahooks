@@ -11,15 +11,17 @@ import { siteConfig } from '@/config/site';
 
 export function Hero() {
   return (
-    <section
+    <div
       className={cn(
-        'relative flex flex-col items-center justify-center grow gap-8 w-full h-screen',
+        'relative flex flex-col items-center justify-center grow gap-8 w-full h-[100dvh-72px]',
       )}
     >
       <hgroup
         className={cn(
           'text-center',
+          'z-10',
           'flex flex-col items-center justify-center gap-4',
+          'px-4 lg:px-0',
         )}
       >
         <h1 className={cn('text-5xl font-bold', 'max-w-[18ch]')}>
@@ -33,7 +35,12 @@ export function Hero() {
           powered.
         </p>
       </hgroup>
-      <div className={cn('z-10 flex items-center justify-center gap-4')}>
+      <div
+        className={cn(
+          'z-10 flex items-center justify-center gap-4',
+          'px-4 lg:px-0',
+        )}
+      >
         <Link
           href="/docs"
           className={cn(
@@ -71,6 +78,6 @@ export function Hero() {
         colorFrom="#EC003F"
         colorTo="#4F39F6"
       />
-    </section>
+    </div>
   );
 }

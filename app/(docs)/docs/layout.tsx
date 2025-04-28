@@ -13,9 +13,8 @@ export default function DocsLayout({
     <section
       className={cn(
         'size-full max-w-screen-2xl',
-        'flex flex-rowgrow',
+        'flex flex-row grow',
         'mx-auto',
-        // 'sketch-pattern',
       )}
     >
       <aside
