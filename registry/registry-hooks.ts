@@ -283,4 +283,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['ui-and-dom'],
   },
+  {
+    name: 'use-notifications',
+    type: 'registry:hook',
+    title: 'UseNotifications',
+    description: 'Manages browser notifications.',
+    files: [
+      {
+        path: 'registry/hooks/use-notifications.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-notifications.tsx',
+      },
+    ],
+    categories: ['ui-and-dom'],
+  },
 ];

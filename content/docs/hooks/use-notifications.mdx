@@ -1,0 +1,194 @@
+---
+title: useNotifications
+date: 2025-04-28
+description: Manages browser notifications with support for various notification features and fallbacks.
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-notifications-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-notifications"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-notifications" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+The `useNotifications` hook returns an object with the following properties:
+
+| Property            | Type                                                     | Description                                          |
+| ------------------- | -------------------------------------------------------- | ---------------------------------------------------- |
+| `permission`        | `'default' \| 'granted' \| 'denied'`                     | Current notification permission status.              |
+| `isSupported`       | `boolean`                                                | Whether the browser supports the Notifications API.  |
+| `isSecureContext`   | `boolean`                                                | Whether the current context is secure (HTTPS).       |
+| `supportsActions`   | `boolean`                                                | Whether the browser supports notification actions.   |
+| `supportsBadge`     | `boolean`                                                | Whether the browser supports notification badges.    |
+| `supportsImage`     | `boolean`                                                | Whether the browser supports notification images.    |
+| `supportsVibrate`   | `boolean`                                                | Whether the browser supports notification vibration. |
+| `supportsSound`     | `boolean`                                                | Whether the browser supports notification sounds.    |
+| `requestPermission` | `() => Promise<NotificationPermission>`                  | Function to request notification permission.         |
+| `showNotification`  | `(title: string, options?: NotificationOptions) => void` | Function to show a notification.                     |
+
+### NotificationOptions
+
+The `showNotification` function accepts an optional `options` parameter with the following properties:
+
+| Property             | Type                                                    | Description                                                                                                               |
+| -------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `body`               | `string`                                                | The body text of the notification.                                                                                        |
+| `icon`               | `string`                                                | The URL of an icon to display in the notification.                                                                        |
+| `image`              | `string`                                                | The URL of an image to display in the notification.                                                                       |
+| `badge`              | `string`                                                | The URL of an image used to represent the notification when there is not enough space to display the notification itself. |
+| `tag`                | `string`                                                | An ID for a given notification that allows you to find, replace, or remove the notification.                              |
+| `data`               | `unknown`                                               | Arbitrary data that you want to associate with the notification.                                                          |
+| `requireInteraction` | `boolean`                                               | Whether the notification should remain active until the user clicks or dismisses it.                                      |
+| `silent`             | `boolean`                                               | Whether the notification should be silent.                                                                                |
+| `sound`              | `string`                                                | The URL of an audio file to play with the notification.                                                                   |
+| `vibrate`            | `number \| number[]`                                    | A vibration pattern for devices with vibration hardware.                                                                  |
+| `dir`                | `'auto' \| 'ltr' \| 'rtl'`                              | The direction of the notification's text.                                                                                 |
+| `lang`               | `string`                                                | The notification's language.                                                                                              |
+| `renotify`           | `boolean`                                               | Whether the user should be notified after a new notification replaces an old one.                                         |
+| `sticky`             | `boolean`                                               | Whether the notification should be sticky.                                                                                |
+| `timestamp`          | `number`                                                | The time at which the notification was created.                                                                           |
+| `actions`            | `Array<{action: string, title: string, icon?: string}>` | Actions to display in the notification.                                                                                   |
+
+## Usage
+
+```tsx
+import { useNotifications } from '@/hooks/use-notifications';
+
+function NotificationComponent() {
+  const {
+    permission,
+    requestPermission,
+    showNotification,
+    isSupported,
+    isSecureContext,
+    supportsActions,
+    // ... other properties
+  } = useNotifications();
+
+  const handleRequestPermission = async () => {
+    try {
+      await requestPermission();
+    } catch (error) {
+      console.error('Failed to request permission:', error);
+    }
+  };
+
+  const handleShowNotification = () => {
+    showNotification('New Message', {
+      body: 'You have a new message from John',
+      icon: '/path/to/icon.png',
+      badge: '/path/to/badge.png',
+      actions: [
+        {
+          action: 'view',
+          title: 'View Message',
+        },
+      ],
+    });
+  };
+
+  return (
+    <div>
+      {!isSupported && <p>Your browser does not support notifications</p>}
+
+      {!isSecureContext && <p>Notifications require HTTPS</p>}
+
+      {permission === 'default' && (
+        <button onClick={handleRequestPermission}>Request Permission</button>
+      )}
+
+      {permission === 'granted' && (
+        <button onClick={handleShowNotification}>Show Notification</button>
+      )}
+    </div>
+  );
+}
+```
+
+## Browser Support
+
+The Notifications API is supported in most modern browsers, but with varying levels of feature support:
+
+- Chrome: Full support
+- Firefox: Full support
+- Safari: Partial support (some features may not be available)
+- Edge: Full support
+- Opera: Full support
+
+Note that the API requires a secure context (HTTPS) to work, except for localhost.
+
+## Fallback Strategies
+
+When the Notifications API is not supported or not available, consider implementing a fallback UI notification system:
+
+```tsx
+function UINotification({
+  title,
+  message,
+}: {
+  title: string;
+  message: string;
+}) {
+  return (
+    <div className="fixed top-4 right-4 bg-white shadow-lg rounded-lg p-4">
+      <h3>{title}</h3>
+      <p>{message}</p>
+    </div>
+  );
+}
+
+function NotificationComponent() {
+  const { isSupported, showNotification } = useNotifications();
+
+  const showNotificationWithFallback = (title: string, message: string) => {
+    if (isSupported) {
+      showNotification(title, { body: message });
+    } else {
+      return <UINotification title={title} message={message} />;
+    }
+  };
+
+  // ...
+}
+```
+
+## Best Practices
+
+1. Always check for browser support before using the hook
+2. Request permission only after a user interaction
+3. Provide clear feedback about the notification permission status
+4. Implement fallback UI notifications for unsupported browsers
+5. Use appropriate icons and badges to improve notification visibility
+6. Consider the user's context when showing notifications
+7. Handle notification errors gracefully
+8. Clean up notifications when they're no longer needed

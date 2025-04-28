@@ -469,6 +469,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-notifications': {
+    name: 'use-notifications',
+    description: 'Manages browser notifications.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-notifications.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-notifications.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-notifications.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -991,6 +1014,36 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-fullscreen-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-notifications-demo': {
+    name: 'use-notifications-demo',
+    description: "use-notifications's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'alert',
+      'button',
+      'badge',
+      'lucide-react',
+      'https://h3-use.com/r/use-notifications.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-notifications-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-notifications-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-notifications-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

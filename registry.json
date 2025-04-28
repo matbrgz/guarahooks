@@ -283,6 +283,20 @@
       "categories": ["ui-and-dom"]
     },
     {
+      "name": "use-notifications",
+      "type": "registry:hook",
+      "title": "UseNotifications",
+      "description": "Manages browser notifications.",
+      "files": [
+        {
+          "path": "registry/hooks/use-notifications.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-notifications.tsx"
+        }
+      ],
+      "categories": ["ui-and-dom"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -634,6 +648,27 @@
           "path": "registry/example/use-fullscreen-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-fullscreen-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-notifications-demo",
+      "type": "registry:example",
+      "title": "UseNotificationsDemo",
+      "description": "use-notifications's hook in action.",
+      "registryDependencies": [
+        "card",
+        "alert",
+        "button",
+        "badge",
+        "lucide-react",
+        "https://h3-use.com/r/use-notifications.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-notifications-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-notifications-demo.tsx"
         }
       ]
     }
