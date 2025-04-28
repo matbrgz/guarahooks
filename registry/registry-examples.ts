@@ -344,4 +344,25 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-notifications-demo',
+    type: 'registry:example',
+    title: 'UseNotificationsDemo',
+    description: "use-notifications's hook in action.",
+    registryDependencies: [
+      'card',
+      'alert',
+      'button',
+      'badge',
+      'lucide-react',
+      'https://h3-use.com/r/use-notifications.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-notifications-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-notifications-demo.tsx',
+      },
+    ],
+  },
 ];

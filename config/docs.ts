@@ -54,6 +54,10 @@ export const docsConfig: DashboardConfig = {
           title: 'use-fullscreen',
           href: '/docs/hooks/use-fullscreen',
         },
+        {
+          title: 'use-notifications',
+          href: '/docs/hooks/use-notifications',
+        },
       ],
     },
     {
