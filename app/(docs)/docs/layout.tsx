@@ -13,12 +13,12 @@ export default function DocsLayout({
     <section
       className={cn(
         'size-full max-w-screen-2xl',
-        'flex flex-rowgrow',
+        'flex flex-row grow',
         'mx-auto',
-        // 'sketch-pattern',
       )}
     >
       <aside
+        id="docs-sidebar"
         className={cn(
           'fixed lg:sticky z-30 top-[72px] h-[calc(100vh-72px)]',
           'hidden lg:block lg:flex-1/5',

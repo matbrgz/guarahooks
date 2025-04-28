@@ -56,7 +56,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'relative w-full min-h-dvh font-sans antialiased scroll-smooth flex flex-col overflow-x-hidden',
+          'relative size-full min-h-dvh font-sans antialiased scroll-smooth flex flex-col',
           inter.variable,
           geistMono.variable,
         )}
@@ -64,7 +64,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={200}>
             <Header />
-            <main className={cn('z-10 grow flex flex-col', 'size-full')}>
+            <main className={cn('grow flex flex-col', 'size-full')}>
               {children}
             </main>
             <Footer />

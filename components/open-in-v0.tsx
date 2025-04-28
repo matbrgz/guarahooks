@@ -17,7 +17,6 @@ export function OpenInV0({ url }: { url: string }) {
         <a
           className={cn(
             buttonVariants({
-              variant: 'ghost',
               size: 'icon',
             }),
           )}

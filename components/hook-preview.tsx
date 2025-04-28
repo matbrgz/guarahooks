@@ -1,13 +1,12 @@
 import * as React from 'react';
 
 import { HookWrapper } from '@/components/hook-wrapper';
+import { Icons } from '@/components/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import { cn } from '@/lib/utils';
 
 import { Index } from '@/__registry__';
-
-import { CodeBlock } from './code-block';
 
 interface HookPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
@@ -78,7 +77,7 @@ export function HookPreview({
             <React.Suspense
               fallback={
                 <div className="flex items-center text-sm text-muted-foreground">
-                  {/* <Icons.spinner className="mr-2 size-4 animate-spin" /> */}
+                  <Icons.Loader.One className="mr-2 size-4 animate-spin" />
                   Loading...
                 </div>
               }
