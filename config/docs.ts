@@ -27,6 +27,10 @@ export const docsConfig: DashboardConfig = {
       title: 'UI and DOM',
       items: [
         {
+          title: 'use-window-size',
+          href: '/docs/hooks/use-window-size',
+        },
+        {
           title: 'use-keypress',
           href: '/docs/hooks/use-keypress',
         },
@@ -34,10 +38,7 @@ export const docsConfig: DashboardConfig = {
           title: 'use-click-outside',
           href: '/docs/hooks/use-click-outside',
         },
-        {
-          title: 'use-window-size',
-          href: '/docs/hooks/use-window-size',
-        },
+
         {
           title: 'use-media',
           href: '/docs/hooks/use-media',

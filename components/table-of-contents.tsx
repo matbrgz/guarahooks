@@ -48,7 +48,7 @@ export function TableOfContents({ toc }: TocProps) {
   }
 
   return (
-    <div className="space-y-2">
+    <div>
       <p className="font-medium">On This Page</p>
       <Tree tree={refinedToc} activeItem={activeHeading} />
     </div>
@@ -105,7 +105,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
             <a
               href={item.url}
               className={cn(
-                'inline-block no-underline transition-colors hover:text-foreground',
+                'inline-block text-sm no-underline transition-colors hover:text-foreground',
                 item.url === `#${activeItem}`
                   ? 'font-medium text-foreground'
                   : 'text-muted-foreground',

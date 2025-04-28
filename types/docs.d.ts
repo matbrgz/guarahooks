@@ -4,6 +4,7 @@ export type NavItem = {
   disabled?: boolean;
   label?: string;
   event?: string;
+  external?: boolean;
 };
 
 export interface NavItemWithChildren extends NavItem {
