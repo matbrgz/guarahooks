@@ -284,6 +284,20 @@ export const hooks: Registry['items'] = [
     categories: ['ui-and-dom'],
   },
   {
+    name: 'use-confirm',
+    type: 'registry:hook',
+    title: 'UseConfirm',
+    description: 'Manages a confirmation dialog.',
+    files: [
+      {
+        path: 'registry/hooks/use-confirm.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-confirm.tsx',
+      },
+    ],
+    categories: ['ui-and-dom'],
+  },
+  {
     name: 'use-notifications',
     type: 'registry:hook',
     title: 'UseNotifications',

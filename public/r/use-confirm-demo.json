@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-confirm-demo",
+  "type": "registry:example",
+  "title": "UseConfirmDemo",
+  "description": "use-confirm's hook in action.",
+  "registryDependencies": [
+    "card",
+    "button",
+    "https://h3-use.com/r/use-confirm.json"
+  ],
+  "files": [
+    {
+      "path": "registry/example/use-confirm-demo.tsx",
+      "content": "'use client';\n\nimport React from 'react';\n\nimport { Button } from '@/components/ui/button';\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from '@/components/ui/card';\n\nimport { ConfirmationStatus, useConfirm } from '@/hooks/h3-use/use-confirm';\n\nexport default function UseConfirmDemo() {\n  const { status, confirm, cancel, reset } = useConfirm();\n\n  const getStatusMessage = (status: ConfirmationStatus) => {\n    switch (status) {\n      case 'idle':\n        return 'Waiting for action...';\n      case 'confirming':\n        return 'Are you sure?';\n      case 'confirmed':\n        return 'Action confirmed!';\n      case 'cancelled':\n        return 'Action cancelled!';\n    }\n  };\n\n  return (\n    <Card className=\"relative max-w-sm w-full\">\n      <CardHeader>\n        <CardTitle>useConfirm</CardTitle>\n        <CardDescription>\n          This component uses the <code>useConfirm</code> hook to handle user\n          confirmation actions.\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <p>\n          Status: <strong>{getStatusMessage(status)}</strong>\n        </p>\n      </CardContent>\n      <CardFooter className=\"flex gap-2\">\n        {status === 'idle' && <Button onClick={confirm}>Delete Item</Button>}\n        {status === 'confirming' && (\n          <>\n            <Button variant=\"destructive\" onClick={confirm}>\n              Yes, Delete\n            </Button>\n            <Button variant=\"outline\" onClick={cancel}>\n              Cancel\n            </Button>\n          </>\n        )}\n        {(status === 'confirmed' || status === 'cancelled') && (\n          <Button onClick={reset}>Reset</Button>\n        )}\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/example/use-confirm-demo.tsx"
+    }
+  ]
+}

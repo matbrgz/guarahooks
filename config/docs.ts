@@ -55,6 +55,10 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-fullscreen',
         },
         {
+          title: 'use-confirm',
+          href: '/docs/hooks/use-confirm',
+        },
+        {
           title: 'use-notifications',
           href: '/docs/hooks/use-notifications',
         },
