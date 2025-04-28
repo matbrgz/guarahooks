@@ -1,0 +1,87 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## Main Structure
+
+```tree
+.
+├── .cursor/
+├── .git/
+├── .next/
+├── __registry__/
+├── app/
+│   ├── (docs)/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── not-found.tsx
+│   └── icon.png
+├── assets/
+├── components/
+│   ├── command-menu.tsx
+│   ├── icons.tsx
+│   ├── layout/
+│   ├── table-of-contents.tsx
+│   ├── ui/
+│   ├── code-block-wrapper.tsx
+│   ├── hook-preview.tsx
+│   ├── hook-wrapper.tsx
+│   ├── open-in-v0.tsx
+│   ├── sections/
+│   ├── magicui/
+│   ├── mdx-components.tsx
+│   ├── contribute.tsx
+│   ├── repo-download.tsx
+│   ├── tech-stack.tsx
+│   ├── template-preview.tsx
+│   ├── callout.tsx
+│   ├── code-block-command.tsx
+│   ├── copy-button.tsx
+│   ├── design/
+│   ├── hook-source.tsx
+│   ├── page-banner.tsx
+│   ├── page-grid.tsx
+│   ├── theme/
+│   └── code-block.tsx
+├── config/
+├── content/
+├── hooks/
+├── lib/
+│   ├── events.ts
+│   ├── github.ts
+│   ├── rehype-component.ts
+│   ├── rehype-npm-command.ts
+│   ├── toc.ts
+│   ├── hooks.ts
+│   └── utils.ts
+├── public/
+├── registry/
+├── types/
+├── .content-collections/
+├── .github/
+├── .husky/
+├── .vscode/
+├── scripts/
+├── node_modules/
+├── registry.json
+└── ... (config files)
+```
+
+## File Naming and Organization
+
+- Use kebab case for route directories (e.g., `api/hello-world/route`)
+- Use PascalCase for components (e.g. `components/Button.tsx`)
+- Shadcn components are in `components/ui`
+- All other components are in `components/`
+- If a component can be used in many places, place it in the `components` folder
+
+## New Pages
+
+- Create new pages at: `app/(www)/PAGE_NAME/page.tsx`
+  Pages are Server components for direct data loading
+- Components with `onClick` must be client components with `use client` directive
+
+## Utility Functions
+
+Create utility functions in `utils/` folder for reusable logic
