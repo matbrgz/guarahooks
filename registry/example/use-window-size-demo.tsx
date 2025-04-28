@@ -12,7 +12,10 @@ import {
 import { useWindowSize } from '@/registry/hooks/use-window-size';
 
 export default function UseWindowSizeDemo() {
-  const { width, height } = useWindowSize();
+  const { width, height } = useWindowSize({
+    initialWidth: 1024,
+    initialHeight: 768,
+  });
 
   return (
     <Card className="relative max-w-sm w-full">
