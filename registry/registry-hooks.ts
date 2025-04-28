@@ -325,4 +325,19 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-disclosure',
+    type: 'registry:hook',
+    title: 'UseDisclosure',
+    description:
+      'Manages boolean state for UI components like dialogs, modals, and popovers.',
+    files: [
+      {
+        path: 'registry/hooks/use-disclosure.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-disclosure.tsx',
+      },
+    ],
+    categories: ['state-management'],
+  },
 ];
