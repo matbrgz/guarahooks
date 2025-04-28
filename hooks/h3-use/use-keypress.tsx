@@ -2,6 +2,15 @@
 
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
+/**
+ *
+ * @property combo - The key or combination to listen for (e.g., 's', 'ctrl+s', 'shift+enter'). Modifiers: ctrl, alt, shift, meta (case-insensitive, order-insensitive).
+ * @property callback - The callback to be called when the key or combination is pressed.
+ * @property preventDefault - If true, the event will be prevented from propagating (default: false).
+ * @property target - The target element to listen for the key or combination (default: window).
+ *
+ * For best performance, pass a stable reference (e.g., from useRef) as target. Changing the target frequently will cause listeners to be re-attached.
+ */
 interface UseKeyboardOptions {
   combo: string | string[];
   callback: (event: KeyboardEvent) => void;
@@ -9,6 +18,10 @@ interface UseKeyboardOptions {
   target?: HTMLElement | null;
 }
 
+/**
+ * Normalizes a key combination string to a canonical form for comparison.
+ * @example 'Ctrl+S' => 'ctrl+s', 'shift+Ctrl+S' => 'ctrl+shift+s'
+ */
 function normalizeCombo(combo: string): string {
   const parts = combo
     .toLowerCase()
@@ -32,6 +45,13 @@ function normalizeCombo(combo: string): string {
   return [...mods, ...keys].join('+');
 }
 
+/**
+ * Checks if a KeyboardEvent matches a normalized key combination string.
+ *
+ * @param event KeyboardEvent
+ * @param normalizedCombo string (e.g., 'ctrl+s')
+ * @returns boolean
+ */
 function eventMatchesCombo(
   event: KeyboardEvent,
   normalizedCombo: string,
@@ -60,6 +80,12 @@ function eventMatchesCombo(
   return key === comboKey;
 }
 
+/**
+ * React hook to listen for keyboard events for a specific key or combination.
+ *
+ * @example useKeyboard({ combo: 'ctrl+s', callback: (e) => { ... } });
+ * @example useKeyboard({ combo: ['ctrl+s', 'meta+s'], callback: ... });
+ */
 export function useKeypress({
   combo,
   callback,
