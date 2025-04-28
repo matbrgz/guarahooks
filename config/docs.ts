@@ -113,6 +113,10 @@ export const docsConfig: DashboardConfig = {
           title: 'use-idle',
           href: '/docs/hooks/use-idle',
         },
+        {
+          title: 'use-page-leave',
+          href: '/docs/hooks/use-page-leave',
+        },
       ],
     },
     {
