@@ -81,6 +81,7 @@ export default async function DocsPage({ params }: PageProps) {
     <div className={cn('flex h-full bg-transparent')}>
       {/* Content */}
       <article
+        id="docs-content"
         className={cn(
           'w-full lg:flex-[80%]',
           'bg-background/50 backdrop-blur-md',
@@ -119,6 +120,7 @@ export default async function DocsPage({ params }: PageProps) {
       </article>
       {/* Table Of Contents */}
       <div
+        id="docs-toc"
         className={cn(
           'fixed lg:sticky z-30 top-[72px] h-[calc(100vh-72px)]',
           'hidden lg:flex lg:flex-[20%] flex-col gap-4',

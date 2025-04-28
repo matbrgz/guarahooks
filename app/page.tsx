@@ -1,4 +1,5 @@
 import { Hero } from '@/components/sections/hero';
+import { HooksDemo } from '@/components/sections/hooks-demo';
 
 import { cn } from '@/lib/utils';
 
@@ -10,7 +11,7 @@ export default function Home() {
       )}
     >
       <Hero />
-      {/* <HooksDemo /> */}
+      <HooksDemo />
     </section>
   );
 }

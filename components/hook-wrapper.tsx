@@ -32,7 +32,7 @@ export const HookWrapper = ({
         <OpenInV0 url={`https://h3-use.com/r/${name}.json`} />
         <Button
           onClick={() => setKey((prev) => prev + 1)}
-          className="flex items-center rounded-lg px-3 py-1"
+          size="icon"
           variant="ghost"
         >
           <Icons.Refresh aria-label="restart-btn" className="size-4" />

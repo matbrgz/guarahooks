@@ -29,8 +29,7 @@ export default function UseDebounceStateDemo() {
         <CardTitle>useDebounceState</CardTitle>
         <CardDescription>
           This component uses the <code>useDebounceState</code> hook to debounce
-          the state update. The debounced value updates 1s after you stop
-          typing.
+          the state update.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -58,6 +57,9 @@ export default function UseDebounceStateDemo() {
             {debouncedValue}
           </span>
         </div>
+        <span className="text-sm text-muted-foreground mt-2">
+          The debounced value updates 1s after you stop typing.
+        </span>
       </CardFooter>
     </Card>
   );

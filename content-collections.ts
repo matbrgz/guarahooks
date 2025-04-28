@@ -39,6 +39,30 @@ const prettyCodeOptions: Options = {
   },
 };
 
+const pages = defineCollection({
+  name: 'Page',
+  directory: 'content/pages',
+  include: '**/*.mdx',
+  schema: (z) => ({
+    title: z.string(),
+    description: z.string(),
+  }),
+  transform: async (document, context) => {
+    const body = await compileMDX(context, document, {
+      remarkPlugins: [codeImport, remarkGfm],
+    });
+    return {
+      ...document,
+      slug: `/${document._meta.path}`,
+      slugAsParams: document._meta.path,
+      body: {
+        raw: document.content,
+        code: body,
+      },
+    };
+  },
+});
+
 const docs = defineCollection({
   name: 'Docs',
   directory: 'content/docs',
@@ -140,5 +164,5 @@ const docs = defineCollection({
 });
 
 export default defineConfig({
-  collections: [docs],
+  collections: [docs, pages],
 });

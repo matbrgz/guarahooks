@@ -12,8 +12,11 @@ import { siteConfig } from '@/config/site';
 export function Hero() {
   return (
     <div
+      id="hooks-hero"
       className={cn(
-        'relative flex flex-col items-center justify-center grow gap-8 w-full h-[100dvh-72px]',
+        'relative w-full h-[calc(100dvh-72px)]',
+        'flex flex-col items-center justify-center grow gap-8',
+        'border-b border-dashed',
       )}
     >
       <hgroup

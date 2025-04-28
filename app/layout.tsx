@@ -56,7 +56,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'relative w-full min-h-dvh font-sans antialiased scroll-smooth flex flex-col',
+          'relative size-full min-h-dvh font-sans antialiased scroll-smooth flex flex-col',
           inter.variable,
           geistMono.variable,
         )}
