@@ -311,6 +311,20 @@
       "categories": ["ui-and-dom"]
     },
     {
+      "name": "use-page-leave",
+      "type": "registry:hook",
+      "title": "UsePageLeave",
+      "description": "Detects when the user tries to leave the page.",
+      "files": [
+        {
+          "path": "registry/hooks/use-page-leave.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-page-leave.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -701,6 +715,25 @@
           "path": "registry/example/use-notifications-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-notifications-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-page-leave-demo",
+      "type": "registry:example",
+      "title": "UsePageLeaveDemo",
+      "description": "use-page-leave's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "badge",
+        "https://h3-use.com/r/use-page-leave.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-page-leave-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-page-leave-demo.tsx"
         }
       ]
     }

@@ -383,4 +383,23 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-page-leave-demo',
+    type: 'registry:example',
+    title: 'UsePageLeaveDemo',
+    description: "use-page-leave's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'badge',
+      'https://h3-use.com/r/use-page-leave.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-page-leave-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-page-leave-demo.tsx',
+      },
+    ],
+  },
 ];

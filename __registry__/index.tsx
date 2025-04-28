@@ -515,6 +515,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-page-leave': {
+    name: 'use-page-leave',
+    description: 'Detects when the user tries to leave the page.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-page-leave.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-page-leave.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-page-leave.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -1094,6 +1117,34 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-notifications-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-page-leave-demo': {
+    name: 'use-page-leave-demo',
+    description: "use-page-leave's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'badge',
+      'https://h3-use.com/r/use-page-leave.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-page-leave-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-page-leave-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-page-leave-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

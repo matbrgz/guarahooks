@@ -311,4 +311,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['ui-and-dom'],
   },
+  {
+    name: 'use-page-leave',
+    type: 'registry:hook',
+    title: 'UsePageLeave',
+    description: 'Detects when the user tries to leave the page.',
+    files: [
+      {
+        path: 'registry/hooks/use-page-leave.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-page-leave.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];
