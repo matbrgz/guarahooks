@@ -345,6 +345,24 @@ export const examples: Registry['items'] = [
     ],
   },
   {
+    name: 'use-confirm-demo',
+    type: 'registry:example',
+    title: 'UseConfirmDemo',
+    description: "use-confirm's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-confirm.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-confirm-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-confirm-demo.tsx',
+      },
+    ],
+  },
+  {
     name: 'use-notifications-demo',
     type: 'registry:example',
     title: 'UseNotificationsDemo',

@@ -469,6 +469,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-confirm': {
+    name: 'use-confirm',
+    description: 'Manages a confirmation dialog.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-confirm.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-confirm.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-confirm.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-notifications': {
     name: 'use-notifications',
     description: 'Manages browser notifications.',
@@ -1014,6 +1037,33 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-fullscreen-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-confirm-demo': {
+    name: 'use-confirm-demo',
+    description: "use-confirm's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-confirm.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-confirm-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-confirm-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-confirm-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
