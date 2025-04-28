@@ -1,0 +1,142 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Guide for Creating Hooks in h3-use
+
+This guide provides a complete step-by-step process for creating new hooks following the project's pattern.
+
+## File Structure
+
+### 1. Hook File
+Create in [registry/hooks/use-{name}.tsx](mdc:registry/hooks/use-disclosure.tsx):
+```typescript
+'use client';
+
+import { useCallback, useState } from 'react';
+
+// Types
+interface Props {}
+interface Return {}
+
+export function useHook(): Return {
+  // Implementation
+}
+```
+
+### 2. Example File
+Create in [registry/example/use-{name}-demo.tsx](mdc:registry/example/use-disclosure-demo.tsx):
+```typescript
+'use client';
+
+import React from 'react';
+import { ShadcnComponents } from '@/components/ui/...';
+```
+
+### 3. Documentation File
+Create in [content/docs/hooks/use-{name}.mdx](mdc:content/docs/hooks/use-disclosure.mdx):
+```markdown
+---
+title: useHook
+date: YYYY-MM-DD
+description: Hook description
+author: h3rmel
+published: true
+---
+```
+
+## Required Updates
+
+### 1. Hook Registry
+Update [registry/registry-hooks.ts](mdc:registry/registry-hooks.ts):
+```typescript
+{
+  name: 'use-hook',
+  type: 'registry:hook',
+  title: 'UseHook',
+  description: 'Description',
+  files: [{
+    path: 'registry/hooks/use-hook.tsx',
+    type: 'registry:hook',
+    target: 'hooks/h3-use/use-hook.tsx',
+  }],
+  categories: ['category'],
+}
+```
+
+### 2. Example Registry
+Update [registry/registry-examples.ts](mdc:registry/registry-examples.ts):
+```typescript
+{
+  name: 'use-hook-demo',
+  type: 'registry:example',
+  title: 'UseHookDemo',
+  description: "use-hook's hook in action.",
+  registryDependencies: [
+    'used-components',
+    'https://h3-use.com/r/use-hook.json',
+  ],
+  files: [{
+    path: 'registry/example/use-hook-demo.tsx',
+    type: 'registry:example',
+    target: 'components/example/use-hook-demo.tsx',
+  }],
+}
+```
+
+### 3. Documentation Sidebar
+Update [config/docs.ts](mdc:config/docs.ts) adding to the appropriate category:
+```typescript
+{
+  title: 'use-hook',
+  href: '/docs/hooks/use-hook',
+}
+```
+
+## Available Categories
+- `ui-and-dom`: Hooks related to UI and DOM manipulation
+- `state-management`: Hooks for state management
+- `utilities`: Utility hooks
+- `lifecycle`: Component lifecycle related hooks
+
+## Implementation Checklist
+
+### Hook
+- [ ] Use 'use client'
+- [ ] Implement with TypeScript
+- [ ] Use useCallback for functions
+- [ ] Use useRef for callbacks
+- [ ] Ensure type-safety
+- [ ] Optimize performance
+- [ ] Follow React best practices
+- [ ] Follow Clean Code principles
+
+### Example
+- [ ] Use Shadcn/ui components
+- [ ] Use Tailwind CSS
+- [ ] Demonstrate all features
+- [ ] Use @/ imports
+- [ ] Add necessary comments
+
+### Documentation
+- [ ] Complete frontmatter
+- [ ] Hook preview
+- [ ] Installation instructions
+- [ ] Props table
+- [ ] TypeScript types
+- [ ] Return value
+- [ ] Key features
+- [ ] Usage examples
+
+## Build and Verification
+After all changes, run:
+```bash
+pnpm build:registry
+pnpm build:docs
+```
+
+## Reference Examples
+- Hook: [use-disclosure.tsx](mdc:registry/hooks/use-disclosure.tsx)
+- Example: [use-disclosure-demo.tsx](mdc:registry/example/use-disclosure-demo.tsx)
+- Documentation: [use-disclosure.mdx](mdc:content/docs/hooks/use-disclosure.mdx)

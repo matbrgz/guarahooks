@@ -73,6 +73,10 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-toggle',
         },
         {
+          title: 'use-disclosure',
+          href: '/docs/hooks/use-disclosure',
+        },
+        {
           title: 'use-set',
           href: '/docs/hooks/use-set',
         },

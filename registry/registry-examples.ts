@@ -402,4 +402,23 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-disclosure-demo',
+    type: 'registry:example',
+    title: 'UseDisclosureDemo',
+    description: "use-disclosure's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'dialog',
+      'https://h3-use.com/r/use-disclosure.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-disclosure-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-disclosure-demo.tsx',
+      },
+    ],
+  },
 ];
