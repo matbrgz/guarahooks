@@ -1,3 +1,5 @@
+'use client';
+
 import { Registry } from 'shadcn/registry';
 
 export const hooks: Registry['items'] = [
@@ -396,5 +398,19 @@ export const hooks: Registry['items'] = [
       },
     ],
     categories: ['state-management'],
+  },
+  {
+    name: 'use-event-listener',
+    type: 'registry:hook',
+    title: 'UseEventListener',
+    description: 'Manages DOM event listeners with proper cleanup.',
+    files: [
+      {
+        path: 'registry/hooks/use-event-listener.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-event-listener.tsx',
+      },
+    ],
+    categories: ['ui-and-dom'],
   },
 ];

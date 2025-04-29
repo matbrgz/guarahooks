@@ -12,5 +12,5 @@
       "target": "hooks/h3-use/use-cookie.tsx"
     }
   ],
-  "categories": ["state-management"]
+  "categories": ["utilities"]
 }

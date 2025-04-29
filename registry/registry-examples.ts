@@ -494,4 +494,23 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-event-listener-demo',
+    type: 'registry:example',
+    title: 'UseEventListenerDemo',
+    description: "use-event-listener's hook in action.",
+    registryDependencies: [
+      'card',
+      'badge',
+      'button',
+      'https://h3-use.com/r/use-event-listener.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-event-listener-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-event-listener-demo.tsx',
+      },
+    ],
+  },
 ];

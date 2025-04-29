@@ -51,6 +51,10 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-mouse',
         },
         {
+          title: 'use-event-listener',
+          href: '/docs/hooks/use-event-listener',
+        },
+        {
           title: 'use-fullscreen',
           href: '/docs/hooks/use-fullscreen',
         },
