@@ -383,4 +383,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-pagination',
+    type: 'registry:hook',
+    title: 'UsePagination',
+    description: 'Hook for controlling list pagination.',
+    files: [
+      {
+        path: 'registry/hooks/use-pagination.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-pagination.tsx',
+      },
+    ],
+    categories: ['state-management'],
+  },
 ];

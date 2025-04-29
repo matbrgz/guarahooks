@@ -381,6 +381,20 @@
       "categories": ["utilities"]
     },
     {
+      "name": "use-pagination",
+      "type": "registry:hook",
+      "title": "UsePagination",
+      "description": "Hook for controlling list pagination.",
+      "files": [
+        {
+          "path": "registry/hooks/use-pagination.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-pagination.tsx"
+        }
+      ],
+      "categories": ["state-management"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -864,6 +878,24 @@
           "path": "registry/example/use-fetch-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-fetch-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-pagination-demo",
+      "type": "registry:example",
+      "title": "UsePaginationDemo",
+      "description": "use-pagination's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "https://h3-use.com/r/use-pagination.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-pagination-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-pagination-demo.tsx"
         }
       ]
     }

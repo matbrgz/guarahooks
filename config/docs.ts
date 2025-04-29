@@ -107,6 +107,10 @@ export const docsConfig: DashboardConfig = {
           title: 'use-cookie',
           href: '/docs/hooks/use-cookie',
         },
+        {
+          title: 'use-pagination',
+          href: '/docs/hooks/use-pagination',
+        },
       ],
     },
     {

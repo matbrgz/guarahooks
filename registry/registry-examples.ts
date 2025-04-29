@@ -476,4 +476,22 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-pagination-demo',
+    type: 'registry:example',
+    title: 'UsePaginationDemo',
+    description: "use-pagination's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-pagination.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-pagination-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-pagination-demo.tsx',
+      },
+    ],
+  },
 ];
