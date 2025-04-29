@@ -339,6 +339,20 @@
       "categories": ["state-management"]
     },
     {
+      "name": "use-mutation-observer",
+      "type": "registry:hook",
+      "title": "UseMutationObserver",
+      "description": "Observes changes to the DOM using the Mutation Observer API",
+      "files": [
+        {
+          "path": "registry/hooks/use-mutation-observer.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-mutation-observer.tsx"
+        }
+      ],
+      "categories": ["ui-and-dom"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -767,6 +781,24 @@
           "path": "registry/example/use-disclosure-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-disclosure-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-mutation-observer-demo",
+      "type": "registry:example",
+      "title": "UseMutationObserverDemo",
+      "description": "use-mutation-observer's hook in action.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "https://h3-use.com/r/use-mutation-observer.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-mutation-observer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-mutation-observer-demo.tsx"
         }
       ]
     }

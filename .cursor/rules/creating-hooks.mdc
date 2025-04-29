@@ -10,11 +10,13 @@ This guide provides a complete step-by-step process for creating new hooks follo
 ## File Structure
 
 ### 1. Hook File
-Create in [registry/hooks/use-{name}.tsx](mdc:registry/hooks/use-disclosure.tsx):
-```typescript
-'use client';
 
-import { useCallback, useState } from 'react';
+Create in `@/registry/hooks/use-{name}.tsx`:
+
+```typescript
+"use client";
+
+import { useCallback, useState } from "react";
 
 // Types
 interface Props {}
@@ -26,17 +28,21 @@ export function useHook(): Return {
 ```
 
 ### 2. Example File
-Create in [registry/example/use-{name}-demo.tsx](mdc:registry/example/use-disclosure-demo.tsx):
-```typescript
-'use client';
 
-import React from 'react';
-import { ShadcnComponents } from '@/components/ui/...';
+Create in `@/registry/example/use-{name}-demo.tsx`:
+
+```typescript
+"use client";
+
+import React from "react";
+import { ShadcnComponents } from "@/components/ui/...";
 ```
 
 ### 3. Documentation File
-Create in [content/docs/hooks/use-{name}.mdx](mdc:content/docs/hooks/use-disclosure.mdx):
-```markdown
+
+Create in `@/content/docs/hooks/use-{name}.mdx`:
+
+````markdown
 ---
 title: useHook
 date: YYYY-MM-DD
@@ -44,12 +50,127 @@ description: Hook description
 author: h3rmel
 published: true
 ---
+
+<HookPreview name="use-{name}-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-{name}"
 ```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-{name}" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop       | Type                   | Default   | Description                                 |
+| ---------- | ---------------------- | --------- | ------------------------------------------- |
+| `propName` | `Type`                 | `default` | Description of the prop                     |
+
+### Options
+
+If the hook has configuration options, document them here:
+
+| Prop       | Type                   | Default   | Description                                 |
+| ---------- | ---------------------- | --------- | ------------------------------------------- |
+| `option`   | `Type`                 | `default` | Description of the option                   |
+
+## Data
+
+The hook returns an object with the following properties:
+
+| Property   | Type       | Description                                  |
+| ---------- | ---------- | -------------------------------------------- |
+| `property` | `Type`     | Description of the returned property         |
+
+## Key Features & Details
+
+### Browser Support
+
+Document browser support if relevant:
+
+- Chrome: Support status
+- Firefox: Support status
+- Safari: Support status
+- Edge: Support status
+- Opera: Support status
+
+### Cross-Browser Compatibility
+
+- List of cross-browser considerations
+- How the hook handles different browsers
+- Any fallbacks or polyfills used
+
+### Performance Considerations
+
+- Performance implications
+- Memory usage
+- Cleanup requirements
+- Optimization tips
+
+### Best Practices & Caveats
+
+1. First best practice
+2. Second best practice
+3. Third best practice
+4. Fourth best practice
+5. Fifth best practice
+
+## Examples
+
+### Basic Usage
+
+```tsx
+// Basic usage example
+```
+
+### Advanced Usage
+
+```tsx
+// Advanced usage example
+```
+
+### With Options
+
+```tsx
+// Example with options
+```
+
+## Related
+
+- [Related Documentation Link](mdc:https:/example.com)
+- [Related API Documentation](mdc:https:/example.com)
+````
 
 ## Required Updates
 
 ### 1. Hook Registry
-Update [registry/registry-hooks.ts](mdc:registry/registry-hooks.ts):
+
+Update `@/registry/hooks`:
+
 ```typescript
 {
   name: 'use-hook',
@@ -66,7 +187,9 @@ Update [registry/registry-hooks.ts](mdc:registry/registry-hooks.ts):
 ```
 
 ### 2. Example Registry
-Update [registry/registry-examples.ts](mdc:registry/registry-examples.ts):
+
+Update `@/registry/registry-examples.ts`:
+
 ```typescript
 {
   name: 'use-hook-demo',
@@ -86,7 +209,9 @@ Update [registry/registry-examples.ts](mdc:registry/registry-examples.ts):
 ```
 
 ### 3. Documentation Sidebar
-Update [config/docs.ts](mdc:config/docs.ts) adding to the appropriate category:
+
+Update `@/config/docs.ts` adding to the appropriate category:
+
 ```typescript
 {
   title: 'use-hook',
@@ -95,6 +220,7 @@ Update [config/docs.ts](mdc:config/docs.ts) adding to the appropriate category:
 ```
 
 ## Available Categories
+
 - `ui-and-dom`: Hooks related to UI and DOM manipulation
 - `state-management`: Hooks for state management
 - `utilities`: Utility hooks
@@ -103,6 +229,7 @@ Update [config/docs.ts](mdc:config/docs.ts) adding to the appropriate category:
 ## Implementation Checklist
 
 ### Hook
+
 - [ ] Use 'use client'
 - [ ] Implement with TypeScript
 - [ ] Use useCallback for functions
@@ -113,6 +240,7 @@ Update [config/docs.ts](mdc:config/docs.ts) adding to the appropriate category:
 - [ ] Follow Clean Code principles
 
 ### Example
+
 - [ ] Use Shadcn/ui components
 - [ ] Use Tailwind CSS
 - [ ] Demonstrate all features
@@ -120,23 +248,31 @@ Update [config/docs.ts](mdc:config/docs.ts) adding to the appropriate category:
 - [ ] Add necessary comments
 
 ### Documentation
+
 - [ ] Complete frontmatter
 - [ ] Hook preview
 - [ ] Installation instructions
 - [ ] Props table
-- [ ] TypeScript types
-- [ ] Return value
-- [ ] Key features
+- [ ] Options table (if applicable)
+- [ ] Return value table
+- [ ] Key features and details
+- [ ] Browser support (if applicable)
+- [ ] Performance considerations
+- [ ] Best practices
 - [ ] Usage examples
+- [ ] Related resources
 
 ## Build and Verification
+
 After all changes, run:
+
 ```bash
 pnpm build:registry
 pnpm build:docs
 ```
 
 ## Reference Examples
-- Hook: [use-disclosure.tsx](mdc:registry/hooks/use-disclosure.tsx)
-- Example: [use-disclosure-demo.tsx](mdc:registry/example/use-disclosure-demo.tsx)
-- Documentation: [use-disclosure.mdx](mdc:content/docs/hooks/use-disclosure.mdx)
+
+- Hook: [use-notifications.tsx](mdc:registry/hooks/use-notifications.tsx)
+- Example: [use-notifications-demo.tsx](mdc:registry/example/use-notifications-demo.tsx)
+- Documentation: [use-notifications.mdx](mdc:content/docs/hooks/use-notifications.mdx)

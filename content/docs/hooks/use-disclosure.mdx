@@ -55,15 +55,14 @@ interface DisclosureCallbacks {
 }
 ```
 
-## Return Value
+## Data
 
-The hook returns a tuple with two elements:
-
-1. `isOpen`: The current state of the disclosure
-2. An object containing control functions:
-   - `open`: Function to open the disclosure
-   - `close`: Function to close the disclosure
-   - `toggle`: Function to toggle the disclosure state
+| Property | Type         | Description                             |
+| -------- | ------------ | --------------------------------------- |
+| `isOpen` | `boolean`    | The current state of the disclosure     |
+| `open`   | `() => void` | Function to open the disclosure         |
+| `close`  | `() => void` | Function to close the disclosure        |
+| `toggle` | `() => void` | Function to toggle the disclosure state |
 
 ## Key Features & Details
 

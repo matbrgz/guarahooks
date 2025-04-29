@@ -38,7 +38,6 @@ export const docsConfig: DashboardConfig = {
           title: 'use-click-outside',
           href: '/docs/hooks/use-click-outside',
         },
-
         {
           title: 'use-media',
           href: '/docs/hooks/use-media',
@@ -62,6 +61,10 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-notifications',
           href: '/docs/hooks/use-notifications',
+        },
+        {
+          title: 'use-mutation-observer',
+          href: '/docs/hooks/use-mutation-observer',
         },
       ],
     },

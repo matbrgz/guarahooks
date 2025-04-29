@@ -53,23 +53,6 @@ npx shadcn@latest add "https://h3-use.com/r/use-fullscreen"
 | `enter`        | `() => void` | Function to enter fullscreen mode.              |
 | `exit`         | `() => void` | Function to exit fullscreen mode.               |
 
-## Usage
-
-```tsx
-import { useRef } from 'react';
-
-import { useFullscreen } from '@/registry/hooks/use-fullscreen';
-
-const boxRef = useRef<HTMLDivElement>(null);
-const [isFullscreen, enter, exit] = useFullscreen(boxRef);
-```
-
-- Call `enter()` to make the element fullscreen.
-- Call `exit()` to exit fullscreen mode.
-- `isFullscreen` will be `true` if the element is currently fullscreen.
-
-If you pass `null` as the ref, the entire page will enter fullscreen mode.
-
 ## Notes
 
 - The hook is cross-browser compatible and uses the appropriate vendor-prefixed Fullscreen API methods.

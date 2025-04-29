@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-mutation-observer",
+  "type": "registry:hook",
+  "title": "UseMutationObserver",
+  "description": "Observes changes to the DOM using the Mutation Observer API",
+  "files": [
+    {
+      "path": "registry/hooks/use-mutation-observer.tsx",
+      "content": "'use client';\n\nimport { useCallback, useEffect, useRef } from 'react';\n\n// Types\ninterface UseMutationObserverProps {\n  target: HTMLElement | null;\n  options?: MutationObserverInit;\n  callback: MutationCallback;\n}\n\nexport function useMutationObserver({\n  target,\n  options = {\n    attributes: true,\n    childList: true,\n    subtree: true,\n  },\n  callback,\n}: UseMutationObserverProps) {\n  const observerRef = useRef<MutationObserver | null>(null);\n\n  const disconnect = useCallback(() => {\n    if (observerRef.current) {\n      observerRef.current.disconnect();\n      observerRef.current = null;\n    }\n  }, []);\n\n  useEffect(() => {\n    if (!target) return;\n\n    // Disconnect previous observer if exists\n    disconnect();\n\n    // Create new observer\n    observerRef.current = new MutationObserver(callback);\n    observerRef.current.observe(target, options);\n\n    // Cleanup on unmount\n    return () => {\n      disconnect();\n    };\n  }, [target, options, callback, disconnect]);\n\n  return {\n    disconnect,\n  };\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/h3-use/use-mutation-observer.tsx"
+    }
+  ],
+  "categories": ["ui-and-dom"]
+}

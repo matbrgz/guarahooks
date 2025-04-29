@@ -1,7 +1,7 @@
 ---
 title: useNotifications
-date: 2025-04-28
-description: Manages browser notifications with support for various notification features and fallbacks.
+date: 2024-03-19
+description: A React hook for managing browser notifications with comprehensive feature detection and fallback support
 author: h3rmel
 published: true
 ---
@@ -41,103 +41,49 @@ npx shadcn@latest add "https://h3-use.com/r/use-notifications"
 
 ## Props
 
-The `useNotifications` hook returns an object with the following properties:
+The hook returns an object with the following properties:
 
-| Property            | Type                                                     | Description                                          |
-| ------------------- | -------------------------------------------------------- | ---------------------------------------------------- |
-| `permission`        | `'default' \| 'granted' \| 'denied'`                     | Current notification permission status.              |
-| `isSupported`       | `boolean`                                                | Whether the browser supports the Notifications API.  |
-| `isSecureContext`   | `boolean`                                                | Whether the current context is secure (HTTPS).       |
-| `supportsActions`   | `boolean`                                                | Whether the browser supports notification actions.   |
-| `supportsBadge`     | `boolean`                                                | Whether the browser supports notification badges.    |
-| `supportsImage`     | `boolean`                                                | Whether the browser supports notification images.    |
-| `supportsVibrate`   | `boolean`                                                | Whether the browser supports notification vibration. |
-| `supportsSound`     | `boolean`                                                | Whether the browser supports notification sounds.    |
-| `requestPermission` | `() => Promise<NotificationPermission>`                  | Function to request notification permission.         |
-| `showNotification`  | `(title: string, options?: NotificationOptions) => void` | Function to show a notification.                     |
+| Property            | Type                                                     | Description                                         |
+| ------------------- | -------------------------------------------------------- | --------------------------------------------------- |
+| `permission`        | `'default' \| 'granted' \| 'denied'`                     | Current notification permission status              |
+| `isSupported`       | `boolean`                                                | Whether the browser supports the Notifications API  |
+| `isSecureContext`   | `boolean`                                                | Whether the current context is secure (HTTPS)       |
+| `supportsActions`   | `boolean`                                                | Whether the browser supports notification actions   |
+| `supportsBadge`     | `boolean`                                                | Whether the browser supports notification badges    |
+| `supportsImage`     | `boolean`                                                | Whether the browser supports notification images    |
+| `supportsVibrate`   | `boolean`                                                | Whether the browser supports notification vibration |
+| `supportsSound`     | `boolean`                                                | Whether the browser supports notification sounds    |
+| `requestPermission` | `() => Promise<NotificationPermission>`                  | Function to request notification permission         |
+| `showNotification`  | `(title: string, options?: NotificationOptions) => void` | Function to show a notification                     |
 
-### NotificationOptions
+### Options
 
-The `showNotification` function accepts an optional `options` parameter with the following properties:
+The `showNotification` function accepts an optional `options` parameter:
 
-| Property             | Type                                                    | Description                                                                                                               |
-| -------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `body`               | `string`                                                | The body text of the notification.                                                                                        |
-| `icon`               | `string`                                                | The URL of an icon to display in the notification.                                                                        |
-| `image`              | `string`                                                | The URL of an image to display in the notification.                                                                       |
-| `badge`              | `string`                                                | The URL of an image used to represent the notification when there is not enough space to display the notification itself. |
-| `tag`                | `string`                                                | An ID for a given notification that allows you to find, replace, or remove the notification.                              |
-| `data`               | `unknown`                                               | Arbitrary data that you want to associate with the notification.                                                          |
-| `requireInteraction` | `boolean`                                               | Whether the notification should remain active until the user clicks or dismisses it.                                      |
-| `silent`             | `boolean`                                               | Whether the notification should be silent.                                                                                |
-| `sound`              | `string`                                                | The URL of an audio file to play with the notification.                                                                   |
-| `vibrate`            | `number \| number[]`                                    | A vibration pattern for devices with vibration hardware.                                                                  |
-| `dir`                | `'auto' \| 'ltr' \| 'rtl'`                              | The direction of the notification's text.                                                                                 |
-| `lang`               | `string`                                                | The notification's language.                                                                                              |
-| `renotify`           | `boolean`                                               | Whether the user should be notified after a new notification replaces an old one.                                         |
-| `sticky`             | `boolean`                                               | Whether the notification should be sticky.                                                                                |
-| `timestamp`          | `number`                                                | The time at which the notification was created.                                                                           |
-| `actions`            | `Array<{action: string, title: string, icon?: string}>` | Actions to display in the notification.                                                                                   |
+| Property             | Type                                                    | Description                                                                                 |
+| -------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `body`               | `string`                                                | The body text of the notification                                                           |
+| `icon`               | `string`                                                | The URL of an icon to display in the notification                                           |
+| `image`              | `string`                                                | The URL of an image to display in the notification                                          |
+| `badge`              | `string`                                                | The URL of an image used to represent the notification when there is not enough space       |
+| `tag`                | `string`                                                | An ID for a given notification that allows you to find, replace, or remove the notification |
+| `data`               | `unknown`                                               | Arbitrary data that you want to associate with the notification                             |
+| `requireInteraction` | `boolean`                                               | Whether the notification should remain active until the user clicks or dismisses it         |
+| `silent`             | `boolean`                                               | Whether the notification should be silent                                                   |
+| `sound`              | `string`                                                | The URL of an audio file to play with the notification                                      |
+| `vibrate`            | `number \| number[]`                                    | A vibration pattern for devices with vibration hardware                                     |
+| `dir`                | `'auto' \| 'ltr' \| 'rtl'`                              | The direction of the notification's text                                                    |
+| `lang`               | `string`                                                | The notification's language                                                                 |
+| `renotify`           | `boolean`                                               | Whether the user should be notified after a new notification replaces an old one            |
+| `sticky`             | `boolean`                                               | Whether the notification should be sticky                                                   |
+| `timestamp`          | `number`                                                | The time at which the notification was created                                              |
+| `actions`            | `Array<{action: string, title: string, icon?: string}>` | Actions to display in the notification                                                      |
 
-## Usage
+## Key Features & Details
 
-```tsx
-import { useNotifications } from '@/hooks/use-notifications';
+### Browser Support
 
-function NotificationComponent() {
-  const {
-    permission,
-    requestPermission,
-    showNotification,
-    isSupported,
-    isSecureContext,
-    supportsActions,
-    // ... other properties
-  } = useNotifications();
-
-  const handleRequestPermission = async () => {
-    try {
-      await requestPermission();
-    } catch (error) {
-      console.error('Failed to request permission:', error);
-    }
-  };
-
-  const handleShowNotification = () => {
-    showNotification('New Message', {
-      body: 'You have a new message from John',
-      icon: '/path/to/icon.png',
-      badge: '/path/to/badge.png',
-      actions: [
-        {
-          action: 'view',
-          title: 'View Message',
-        },
-      ],
-    });
-  };
-
-  return (
-    <div>
-      {!isSupported && <p>Your browser does not support notifications</p>}
-
-      {!isSecureContext && <p>Notifications require HTTPS</p>}
-
-      {permission === 'default' && (
-        <button onClick={handleRequestPermission}>Request Permission</button>
-      )}
-
-      {permission === 'granted' && (
-        <button onClick={handleShowNotification}>Show Notification</button>
-      )}
-    </div>
-  );
-}
-```
-
-## Browser Support
-
-The Notifications API is supported in most modern browsers, but with varying levels of feature support:
+The Notifications API is supported in most modern browsers with varying feature support:
 
 - Chrome: Full support
 - Firefox: Full support
@@ -145,44 +91,23 @@ The Notifications API is supported in most modern browsers, but with varying lev
 - Edge: Full support
 - Opera: Full support
 
-Note that the API requires a secure context (HTTPS) to work, except for localhost.
+Note: The API requires a secure context (HTTPS) to work, except for localhost.
 
-## Fallback Strategies
+### Feature Detection
 
-When the Notifications API is not supported or not available, consider implementing a fallback UI notification system:
+- The hook automatically detects browser support for various notification features
+- Provides boolean flags for each supported feature
+- Handles cases where certain features might not be available
+- Gracefully degrades functionality based on browser capabilities
 
-```tsx
-function UINotification({
-  title,
-  message,
-}: {
-  title: string;
-  message: string;
-}) {
-  return (
-    <div className="fixed top-4 right-4 bg-white shadow-lg rounded-lg p-4">
-      <h3>{title}</h3>
-      <p>{message}</p>
-    </div>
-  );
-}
+### Permission Management
 
-function NotificationComponent() {
-  const { isSupported, showNotification } = useNotifications();
+- Tracks the current permission status
+- Provides a function to request permission
+- Handles permission changes across browser tabs
+- Manages permission state persistence
 
-  const showNotificationWithFallback = (title: string, message: string) => {
-    if (isSupported) {
-      showNotification(title, { body: message });
-    } else {
-      return <UINotification title={title} message={message} />;
-    }
-  };
-
-  // ...
-}
-```
-
-## Best Practices
+### Best Practices & Caveats
 
 1. Always check for browser support before using the hook
 2. Request permission only after a user interaction
@@ -192,3 +117,69 @@ function NotificationComponent() {
 6. Consider the user's context when showing notifications
 7. Handle notification errors gracefully
 8. Clean up notifications when they're no longer needed
+
+## Examples
+
+### Basic Usage
+
+```tsx
+const { permission, requestPermission, showNotification } = useNotifications();
+
+const handleShowNotification = () => {
+  showNotification('New Message', {
+    body: 'You have a new message from John',
+    icon: '/path/to/icon.png',
+  });
+};
+```
+
+### With Feature Detection
+
+```tsx
+const { isSupported, supportsActions, supportsBadge, showNotification } =
+  useNotifications();
+
+const handleShowNotification = () => {
+  showNotification('New Message', {
+    body: 'You have a new message from John',
+    icon: '/path/to/icon.png',
+    badge: supportsBadge ? '/path/to/badge.png' : undefined,
+    actions: supportsActions
+      ? [
+          {
+            action: 'view',
+            title: 'View Message',
+          },
+        ]
+      : undefined,
+  });
+};
+```
+
+### With Permission Management
+
+```tsx
+const { permission, requestPermission } = useNotifications();
+
+const handleRequestPermission = async () => {
+  try {
+    await requestPermission();
+  } catch (error) {
+    console.error('Failed to request permission:', error);
+  }
+};
+```
+
+## Common Use Cases
+
+1. **Real-time Updates**: Notify users of new messages or events
+2. **Background Tasks**: Alert users when long-running tasks complete
+3. **System Alerts**: Inform users about system status or errors
+4. **User Engagement**: Remind users about important actions or deadlines
+5. **Multi-tab Coordination**: Synchronize state across multiple tabs
+
+## Related
+
+- [MDN Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
+- [Web Push Notifications](https://web.dev/push-notifications-overview/)
+- [Notification API Browser Support](https://caniuse.com/notifications)

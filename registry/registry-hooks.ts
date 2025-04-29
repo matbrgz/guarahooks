@@ -340,4 +340,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['state-management'],
   },
+  {
+    name: 'use-mutation-observer',
+    type: 'registry:hook',
+    title: 'UseMutationObserver',
+    description: 'Observes changes to the DOM using the Mutation Observer API',
+    files: [
+      {
+        path: 'registry/hooks/use-mutation-observer.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-mutation-observer.tsx',
+      },
+    ],
+    categories: ['ui-and-dom'],
+  },
 ];

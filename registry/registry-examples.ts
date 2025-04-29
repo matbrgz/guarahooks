@@ -421,4 +421,22 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-mutation-observer-demo',
+    type: 'registry:example',
+    title: 'UseMutationObserverDemo',
+    description: "use-mutation-observer's hook in action.",
+    registryDependencies: [
+      'button',
+      'card',
+      'https://h3-use.com/r/use-mutation-observer.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-mutation-observer-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-mutation-observer-demo.tsx',
+      },
+    ],
+  },
 ];
