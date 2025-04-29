@@ -41,23 +41,19 @@ npx shadcn@latest add "https://h3-use.com/r/use-mutation-observer"
 
 ## Props
 
-| Prop       | Type                   | Default   | Description                                 |
-| ---------- | ---------------------- | --------- | ------------------------------------------- |
-| `target`   | `HTMLElement \| null`  | -         | The DOM element to observe                  |
-| `callback` | `MutationCallback`     | -         | Function called when mutations are observed |
-| `options`  | `MutationObserverInit` | See below | Configuration for the mutation observer     |
+| Prop       | Type                         | Default   | Description                                 |
+| ---------- | ---------------------------- | --------- | ------------------------------------------- |
+| `target`   | `React.RefObject<T \| null>` | -         | The DOM element to observe                  |
+| `options`  | `MutationObserverInit`       | See below | Configuration for the mutation observer     |
+| `callback` | `MutationCallback`           | -         | Function called when mutations are observed |
 
 ### Options
 
-| Prop                    | Type       | Default | Description                                                               |
-| ----------------------- | ---------- | ------- | ------------------------------------------------------------------------- |
-| `attributes`            | `boolean`  | `true`  | Whether to observe attribute changes                                      |
-| `childList`             | `boolean`  | `true`  | Whether to observe child node changes                                     |
-| `subtree`               | `boolean`  | `true`  | Whether to observe changes in the entire subtree of the target element    |
-| `characterData`         | `boolean`  | `false` | Whether to observe changes to the character data of text nodes            |
-| `attributeOldValue`     | `boolean`  | `false` | Whether to record the previous value of attributes when they change       |
-| `characterDataOldValue` | `boolean`  | `false` | Whether to record the previous value of character data when it changes    |
-| `attributeFilter`       | `string[]` | `[]`    | Array of attribute names to observe (only used if `attributes` is `true`) |
+| Prop         | Type      | Default | Description                                                            |
+| ------------ | --------- | ------- | ---------------------------------------------------------------------- |
+| `attributes` | `boolean` | `true`  | Whether to observe attribute changes                                   |
+| `childList`  | `boolean` | `true`  | Whether to observe child node changes                                  |
+| `subtree`    | `boolean` | `true`  | Whether to observe changes in the entire subtree of the target element |
 
 ## Data
 
@@ -109,10 +105,10 @@ The Mutation Observer API is well-supported across modern browsers:
 
 ```tsx
 const [mutations, setMutations] = useState<MutationRecord[]>([]);
-const targetRef = useRef<HTMLDivElement>(null);
+const targetRef = useRef<HTMLDivElement | null>(null);
 
-useMutationObserver({
-  target: targetRef.current,
+useMutationObserver<HTMLDivElement>({
+  target: targetRef,
   callback: (mutationsList) => {
     setMutations((prev) => [...prev, ...mutationsList]);
   },
@@ -124,8 +120,8 @@ return <div ref={targetRef}>Target Element</div>;
 ### With Custom Options
 
 ```tsx
-useMutationObserver({
-  target: targetRef.current,
+useMutationObserver<HTMLDivElement>({
+  target: targetRef,
   callback: (mutationsList) => {
     // Handle mutations
   },
@@ -133,7 +129,6 @@ useMutationObserver({
     attributes: true,
     childList: false,
     subtree: false,
-    attributeFilter: ['class', 'style'],
   },
 });
 ```
@@ -141,8 +136,8 @@ useMutationObserver({
 ### With Disconnect
 
 ```tsx
-const { disconnect } = useMutationObserver({
-  target: targetRef.current,
+const { disconnect } = useMutationObserver<HTMLDivElement>({
+  target: targetRef,
   callback: (mutationsList) => {
     // Handle mutations
   },
@@ -158,11 +153,11 @@ disconnect();
 import { useMutationObserver } from '@/hooks/use-mutation-observer';
 
 function MyComponent() {
-  const targetRef = useRef<HTMLDivElement>(null);
+  const targetRef = useRef<HTMLDivElement | null>(null);
   const [mutations, setMutations] = useState<MutationRecord[]>([]);
 
-  useMutationObserver({
-    target: targetRef.current,
+  useMutationObserver<HTMLDivElement>({
+    target: targetRef,
     callback: (mutationsList) => {
       setMutations((prev) => [...prev, ...mutationsList]);
     },

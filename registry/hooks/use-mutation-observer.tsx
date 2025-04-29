@@ -3,13 +3,13 @@
 import { useCallback, useEffect, useRef } from 'react';
 
 // Types
-interface UseMutationObserverProps {
-  target: HTMLElement | null;
+type UseMutationObserverProps<T extends HTMLElement = HTMLElement> = {
+  target: React.RefObject<T | null>;
   options?: MutationObserverInit;
   callback: MutationCallback;
-}
+};
 
-export function useMutationObserver({
+export function useMutationObserver<T extends HTMLElement = HTMLElement>({
   target,
   options = {
     attributes: true,
@@ -17,8 +17,9 @@ export function useMutationObserver({
     subtree: true,
   },
   callback,
-}: UseMutationObserverProps) {
+}: UseMutationObserverProps<T>) {
   const observerRef = useRef<MutationObserver | null>(null);
+  const prevTargetRef = useRef<T | null>(null);
 
   const disconnect = useCallback(() => {
     if (observerRef.current) {
@@ -28,16 +29,16 @@ export function useMutationObserver({
   }, []);
 
   useEffect(() => {
-    if (!target) return;
+    const node = target.current;
+    if (!node) return;
 
-    // Disconnect previous observer if exists
-    disconnect();
+    if (prevTargetRef.current !== node) {
+      disconnect();
+      prevTargetRef.current = node;
+    }
 
-    // Create new observer
     observerRef.current = new MutationObserver(callback);
-    observerRef.current.observe(target, options);
-
-    // Cleanup on unmount
+    observerRef.current.observe(node, options);
     return () => {
       disconnect();
     };

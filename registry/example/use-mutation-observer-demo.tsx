@@ -14,12 +14,12 @@ import {
 import { useMutationObserver } from '@/registry/hooks/use-mutation-observer';
 
 export function UseMutationObserverDemo() {
-  const targetRef = useRef<HTMLDivElement>(null);
+  const targetRef = useRef<HTMLDivElement | null>(null);
   const [mutations, setMutations] = useState<MutationRecord[]>([]);
   const [count, setCount] = useState(0);
 
-  useMutationObserver({
-    target: targetRef.current,
+  useMutationObserver<HTMLDivElement>({
+    target: targetRef,
     callback: (mutationsList) => {
       setMutations((prev) => [...prev, ...mutationsList]);
       setCount((prev) => prev + mutationsList.length);
@@ -62,7 +62,7 @@ export function UseMutationObserverDemo() {
 
         <div className="space-y-2">
           <h3 className="font-medium">Mutation Count: {count}</h3>
-          <div className="max-h-[200px] overflow-auto space-y-2">
+          <div className="max-h-[200px] overflow-auto">
             {mutations.map((mutation, index) => (
               <div key={index} className="p-2 text-sm rounded">
                 <p>Type: {mutation.type}</p>
