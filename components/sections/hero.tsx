@@ -12,6 +12,8 @@ import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 
 export function Hero() {
+  const hooksCount = getHooksCount();
+
   return (
     <div
       id="hooks-hero"
@@ -74,7 +76,7 @@ export function Hero() {
           'text-sm text-muted-foreground',
         )}
       >
-        Currently with {getHooksCount()} hooks
+        Currently with {hooksCount} hooks
       </p>
       <AnimatedGridPattern
         numSquares={30}

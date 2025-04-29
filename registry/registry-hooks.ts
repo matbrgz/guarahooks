@@ -1,5 +1,3 @@
-'use client';
-
 import { Registry } from 'shadcn/registry';
 
 export const hooks: Registry['items'] = [
