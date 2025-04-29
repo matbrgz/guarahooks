@@ -18,7 +18,7 @@ export default function UseDidUpdateDemo() {
   const [message, setMessage] = useState('');
 
   useDidUpdate(() => {
-    setMessage(`O contador foi atualizado para ${count}`);
+    setMessage(`The count was updated to ${count}`);
   }, [count]);
 
   return (

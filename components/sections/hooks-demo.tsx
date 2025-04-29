@@ -26,7 +26,7 @@ export function HooksDemo() {
       )}
     >
       <div className={cn('max-w-5xl', 'py-16 lg:px-8 mx-auto')}>
-        <hgroup className={cn('mb-4')}>
+        <hgroup className={cn('mb-4 space-y-2')}>
           <h2 className={cn('text-center text-5xl font-bold tracking-tighter')}>
             Hooks Demo
           </h2>
