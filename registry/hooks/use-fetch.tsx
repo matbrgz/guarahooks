@@ -10,6 +10,7 @@ export interface UseFetchResult<T> {
   loading: boolean;
   refetch: () => void;
   abort: () => void;
+  aborted: boolean;
 }
 
 export function useFetch<T = unknown>(
@@ -19,6 +20,7 @@ export function useFetch<T = unknown>(
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [aborted, setAborted] = useState<boolean>(false);
 
   const abortController = useRef<AbortController | null>(null);
   const isMounted = useRef(true);
@@ -39,6 +41,7 @@ export function useFetch<T = unknown>(
 
     setLoading(true);
     setError(null);
+    setAborted(false);
 
     try {
       const response = await fetch(url, { ...options, signal });
@@ -56,7 +59,7 @@ export function useFetch<T = unknown>(
       return json;
     } catch (err) {
       if ((err as any).name === 'AbortError') {
-        // Request was aborted, do nothing
+        setAborted(true);
       } else if (isMounted.current) {
         setError(err as Error);
         setData(null);
@@ -79,7 +82,8 @@ export function useFetch<T = unknown>(
 
   const abort = useCallback(() => {
     abortController.current?.abort();
+    setAborted(true);
   }, []);
 
-  return { data, error, loading, refetch, abort };
+  return { data, error, loading, refetch, abort, aborted };
 }
