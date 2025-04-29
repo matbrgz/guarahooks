@@ -6,6 +6,7 @@ import { Icons } from '@/components/icons';
 import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
 import { buttonVariants } from '@/components/ui/button';
 
+import { getHooksCount } from '@/lib/hooks';
 import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
@@ -67,6 +68,14 @@ export function Hero() {
         </Link>
       </div>
       <ScrollIndicator className={cn('absolute bottom-8')} />
+      <p
+        className={cn(
+          'absolute bottom-8 right-8',
+          'text-sm text-muted-foreground',
+        )}
+      >
+        Currently with {getHooksCount()} hooks
+      </p>
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}

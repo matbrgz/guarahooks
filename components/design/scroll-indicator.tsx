@@ -21,7 +21,7 @@ export function ScrollIndicator({ className }: { className?: string }) {
           y: [0, 24],
         }}
         transition={{
-          duration: 2,
+          duration: 1.5,
           repeat: Number.POSITIVE_INFINITY,
           repeatType: 'loop',
           repeatDelay: 0.5,
