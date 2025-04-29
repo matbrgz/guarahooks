@@ -353,6 +353,20 @@
       "categories": ["ui-and-dom"]
     },
     {
+      "name": "use-fetch",
+      "type": "registry:hook",
+      "title": "UseFetch",
+      "description": "Abstracts the Fetch API with loading, error, and data state management.",
+      "files": [
+        {
+          "path": "registry/hooks/use-fetch.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-fetch.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -799,6 +813,24 @@
           "path": "registry/example/use-mutation-observer-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-mutation-observer-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-fetch-demo",
+      "type": "registry:example",
+      "title": "UseFetchDemo",
+      "description": "use-fetch's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "https://h3-use.com/r/use-fetch.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-fetch-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-fetch-demo.tsx"
         }
       ]
     }

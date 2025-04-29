@@ -585,6 +585,30 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-fetch': {
+    name: 'use-fetch',
+    description:
+      'Abstracts the Fetch API with loading, error, and data state management.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-fetch.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-fetch.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-fetch.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -1249,6 +1273,33 @@ export const Index: Record<string, any> = {
       const mod = await import(
         '@/registry/example/use-mutation-observer-demo.tsx'
       );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-fetch-demo': {
+    name: 'use-fetch-demo',
+    description: "use-fetch's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-fetch.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-fetch-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-fetch-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-fetch-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

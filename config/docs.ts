@@ -124,6 +124,10 @@ export const docsConfig: DashboardConfig = {
           title: 'use-page-leave',
           href: '/docs/hooks/use-page-leave',
         },
+        {
+          title: 'use-fetch',
+          href: '/docs/hooks/use-fetch',
+        },
       ],
     },
     {

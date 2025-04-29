@@ -1,0 +1,121 @@
+---
+title: useFetch
+date: 2024-07-05
+description: A React hook to abstract the Fetch API with loading, error, and data state management
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-fetch-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-fetch"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-fetch" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop       | Type              | Default     | Description                          |
+| ---------- | ----------------- | ----------- | ------------------------------------ |
+| `url`      | `string`          | `undefined` | The endpoint URL to fetch data from. |
+| `options?` | `UseFetchOptions` | `undefined` | Optional Fetch API settings.         |
+
+## Data
+
+| Property  | Type            | Description                               |
+| --------- | --------------- | ----------------------------------------- |
+| `data`    | `T \| null`     | The fetched data or null on error.        |
+| `error`   | `Error \| null` | Error object if the request fails.        |
+| `loading` | `boolean`       | Whether the request is in progress.       |
+| `refetch` | `() => void`    | Function to re-trigger the fetch request. |
+| `abort`   | `() => void`    | Cancels the current in-flight request.    |
+
+## Key Features & Details
+
+- Generic and type-safe response with TypeScript.
+- Automatic JSON parsing and HTTP error handling.
+- Built-in loading and error state management.
+- Cleanup to prevent state updates on unmounted components.
+- Supports dynamic URL and options updates.
+
+### Performance Considerations
+
+- Avoid passing new `options` objects on every render to prevent unnecessary refetches.
+
+### Best Practices & Caveats
+
+1. Ensure the `url` parameter is stable or memoized.
+2. Manage authentication headers and tokens via `options` when needed.
+3. Use `JSON.stringify(options)` sparingly for large payloads to avoid overhead.
+
+## Examples
+
+### Basic GET Request
+
+```tsx
+const { data, error, loading, refetch } = useFetch<Post[]>(
+  'https://api.example.com/posts',
+);
+```
+
+### POST Request
+
+```tsx
+const { data, error, loading } = useFetch<ResponseData>(
+  'https://api.example.com/items',
+  {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: 'New Item' }),
+  },
+);
+```
+
+### Manual Refetch
+
+```tsx
+<Button onClick={refetch}>Refetch Data</Button>
+```
+
+### Abort Request
+
+```tsx
+const { loading, abort } = useFetch<any>('https://api.example.com/data');
+
+return (
+  <Button onClick={abort} disabled={!loading}>
+    Abort Request
+  </Button>
+);
+```
+
+## Related
+
+- [MDN Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Using Fetch - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)

@@ -354,4 +354,19 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['ui-and-dom'],
   },
+  {
+    name: 'use-fetch',
+    type: 'registry:hook',
+    title: 'UseFetch',
+    description:
+      'Abstracts the Fetch API with loading, error, and data state management.',
+    files: [
+      {
+        path: 'registry/hooks/use-fetch.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-fetch.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];
