@@ -22,6 +22,10 @@ export const getHooksExamplesByNames = (names: string[]): RegistryItem[] => {
     .filter((hook): hook is RegistryItem => Boolean(hook));
 };
 
+export const getHooksCount = (): number => {
+  return hooks.length;
+};
+
 export const convertRegistryPaths = (content: string): string => {
   return content
     .replace(/@\/registry\/hooks/g, '@/hooks/h3-use')

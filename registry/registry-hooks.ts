@@ -153,7 +153,7 @@ export const hooks: Registry['items'] = [
         target: 'hooks/h3-use/use-cookie.tsx',
       },
     ],
-    categories: ['state-management'],
+    categories: ['utilities'],
   },
   {
     name: 'use-copy-to-clipboard',

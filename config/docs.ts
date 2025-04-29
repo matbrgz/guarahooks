@@ -104,10 +104,6 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-session-storage',
         },
         {
-          title: 'use-cookie',
-          href: '/docs/hooks/use-cookie',
-        },
-        {
           title: 'use-pagination',
           href: '/docs/hooks/use-pagination',
         },
@@ -135,6 +131,10 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-fetch',
           href: '/docs/hooks/use-fetch',
+        },
+        {
+          title: 'use-cookie',
+          href: '/docs/hooks/use-cookie',
         },
       ],
     },
