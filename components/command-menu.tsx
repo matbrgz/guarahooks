@@ -59,7 +59,7 @@ export function CommandMenu({ ...props }: DialogProps) {
         variant="outline"
         size="sm"
         className={cn(
-          'relative w-full md:w-40 lg:w-64',
+          'relative w-48 md:w-40 lg:w-64',
           'text-sm font-normal',
           'text-muted-foreground bg-card',
           'justify-start sm:pr-12',
@@ -74,7 +74,7 @@ export function CommandMenu({ ...props }: DialogProps) {
         <kbd
           className={cn(
             'absolute top-1 right-1',
-            'hidden sm:flex items-center gap-1.5',
+            'flex items-center gap-1.5',
             'bg-muted rounded-[6px] border py-0.5 px-2',
             'font-mono text-xs font-medium',
             'pointer-events-none select-none opacity-100',

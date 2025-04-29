@@ -156,7 +156,7 @@ export default function UseNotificationsDemo() {
           </Alert>
         )}
       </CardContent>
-      <CardFooter className="flex gap-2">
+      <CardFooter className="flex lg:flex-row items-start flex-col gap-2">
         <Button
           onClick={handleRequestPermission}
           disabled={!isSupported || !isSecureContext}

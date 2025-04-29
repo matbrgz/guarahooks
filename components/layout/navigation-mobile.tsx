@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
+import { CommandMenu } from '@/components/command-menu';
 import { Icons } from '@/components/icons';
 import { HeaderLogo } from '@/components/layout/header-logo';
 import { MobileLink } from '@/components/layout/mobile-link';
-import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Sheet,
@@ -30,6 +32,7 @@ export function NavigationMobile() {
       )}
     >
       <HeaderLogo />
+      <CommandMenu />
       {/* Navigation Sheet */}
       <Sheet>
         <SheetTrigger asChild>
@@ -60,14 +63,35 @@ export function NavigationMobile() {
             </SheetClose>
           </SheetHeader>
           {/* Content */}
+
           <ScrollArea className={cn('h-[calc(100dvh-64px)]')}>
+            <div className={cn('flex gap-2', 'p-4', 'border-b border-dashed')}>
+              <Link
+                href={siteConfig.links.twitter}
+                className={cn(
+                  buttonVariants({ variant: 'secondary', size: 'icon' }),
+                  'size-10',
+                )}
+                target="_blank"
+                aria-label="Twitter"
+              >
+                <Icons.Twitter className="size-4 fill-current" />
+              </Link>
+              <Link
+                href={siteConfig.links.github}
+                className={cn(
+                  buttonVariants({ variant: 'secondary', size: 'icon' }),
+                  'size-10',
+                )}
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <Icons.Github className="size-4" />
+              </Link>
+              <ThemeToggle variant="secondary" className="size-10" />
+            </div>
             {/* Main Navigation */}
-            <ul
-              className={cn(
-                'flex flex-col gap-y-2',
-                'p-4 border-b border-dashed',
-              )}
-            >
+            <ul className={cn('flex flex-col gap-y-2', 'p-4')}>
               {docsConfig.mainNav.map((item) => (
                 <Link key={item.href} href={item.href!} aria-label={item.title}>
                   {item.title}

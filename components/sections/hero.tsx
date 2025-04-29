@@ -40,7 +40,7 @@ export function Hero() {
       </hgroup>
       <div
         className={cn(
-          'z-10 flex items-center justify-center gap-4',
+          'z-10 flex flex-col lg:flex-row lg:items-center justify-center gap-4 w-3/4',
           'px-4 lg:px-0',
         )}
       >
@@ -48,7 +48,7 @@ export function Hero() {
           href="/docs"
           className={cn(
             buttonVariants({ variant: 'rainbow', size: 'lg' }),
-            'group hover:scale-[1.025]',
+            'group hover:scale-[1.025] w-full',
           )}
         >
           Browse Hooks
@@ -58,7 +58,7 @@ export function Hero() {
           href={`${siteConfig.links.github}/blob/main/CONTRIBUTING.md`}
           className={cn(
             buttonVariants({ variant: 'rainbow-outline', size: 'lg' }),
-            'group hover:scale-[1.025]',
+            'group hover:scale-[1.025] w-full',
           )}
         >
           Contribute

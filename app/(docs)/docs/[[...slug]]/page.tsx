@@ -85,7 +85,7 @@ export default async function DocsPage({ params }: PageProps) {
         className={cn(
           'w-full lg:flex-[80%]',
           'bg-background/50 backdrop-blur-md',
-          'border-r border-dashed',
+          'lg:border-r border-dashed',
         )}
       >
         {/* Breadcrumb */}
@@ -101,7 +101,7 @@ export default async function DocsPage({ params }: PageProps) {
           </BreadcrumbList>
         </Breadcrumb>
         {/* Title and Description */}
-        <hgroup className={cn('py-4 px-8')}>
+        <hgroup className={cn('py-4 px-4 lg:px-8')}>
           <h1
             className={cn('scroll-m-20', 'text-4xl font-bold tracking-tight')}
           >
