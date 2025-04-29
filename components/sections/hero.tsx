@@ -48,7 +48,7 @@ export function Hero() {
           href="/docs"
           className={cn(
             buttonVariants({ variant: 'rainbow', size: 'lg' }),
-            'group hover:scale-[1.025] w-full',
+            'group hover:scale-[1.025]',
           )}
         >
           Browse Hooks
@@ -58,7 +58,7 @@ export function Hero() {
           href={`${siteConfig.links.github}/blob/main/CONTRIBUTING.md`}
           className={cn(
             buttonVariants({ variant: 'rainbow-outline', size: 'lg' }),
-            'group hover:scale-[1.025] w-full',
+            'group hover:scale-[1.025]',
           )}
         >
           Contribute
