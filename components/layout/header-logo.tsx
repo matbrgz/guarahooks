@@ -13,10 +13,6 @@ export function HeaderLogo() {
         alt={`${siteConfig.name}'s logo`}
         width={32}
         height={32}
-        className={cn(
-          'transition-transform duration-500',
-          'group-hover:rotate-[360deg]',
-        )}
       />
       <h1 className={cn('text-base tracking-wide')}>{siteConfig.name}</h1>
     </Link>

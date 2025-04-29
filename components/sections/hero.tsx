@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { BlurredBlob } from '@/components/design/blurred-blob';
+import { ScrollIndicator } from '@/components/design/scroll-indicator';
 import { Icons } from '@/components/icons';
 import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
 import { buttonVariants } from '@/components/ui/button';
@@ -31,7 +32,7 @@ export function Hero() {
           Hooks Library for Software Engineers
         </h1>
         <p className={cn('max-w-[34ch]')}>
-          +50 free and open-source hooks build with{' '}
+          Free and open-source hooks build with{' '}
           <span className={cn('font-bold')}>React</span> and{' '}
           <span className={cn('font-bold')}>TypeScript</span>. Perfect for your
           next application. <span className={cn('font-bold')}>Shadcn</span>{' '}
@@ -65,6 +66,7 @@ export function Hero() {
           <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
       </div>
+      <ScrollIndicator className={cn('absolute bottom-8')} />
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}
