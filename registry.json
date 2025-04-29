@@ -101,6 +101,20 @@
       "categories": ["state-management"]
     },
     {
+      "name": "use-map",
+      "type": "registry:hook",
+      "title": "UseMap",
+      "description": "Manages a Map of key/value pairs with ease.",
+      "files": [
+        {
+          "path": "registry/hooks/use-map.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-map.tsx"
+        }
+      ],
+      "categories": ["state-management"]
+    },
+    {
       "name": "use-local-storage",
       "type": "registry:hook",
       "title": "UseLocalStorage",
@@ -500,6 +514,25 @@
           "path": "registry/example/use-set-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-set-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-map-demo",
+      "type": "registry:example",
+      "title": "UseMapDemo",
+      "description": "use-map's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "input",
+        "https://h3-use.com/r/use-map.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-map-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-map-demo.tsx"
         }
       ]
     },

@@ -100,6 +100,20 @@ export const hooks: Registry['items'] = [
     categories: ['state-management'],
   },
   {
+    name: 'use-map',
+    type: 'registry:hook',
+    title: 'UseMap',
+    description: 'Manages a Map of key/value pairs with ease.',
+    files: [
+      {
+        path: 'registry/hooks/use-map.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-map.tsx',
+      },
+    ],
+    categories: ['state-management'],
+  },
+  {
     name: 'use-local-storage',
     type: 'registry:hook',
     title: 'UseLocalStorage',

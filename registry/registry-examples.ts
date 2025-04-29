@@ -130,6 +130,25 @@ export const examples: Registry['items'] = [
     ],
   },
   {
+    name: 'use-map-demo',
+    type: 'registry:example',
+    title: 'UseMapDemo',
+    description: "use-map's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'input',
+      'https://h3-use.com/r/use-map.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-map-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-map-demo.tsx',
+      },
+    ],
+  },
+  {
     name: 'use-local-storage-demo',
     type: 'registry:example',
     title: 'UseLocalStorageDemo',

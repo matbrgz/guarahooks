@@ -168,6 +168,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-map': {
+    name: 'use-map',
+    description: 'Manages a Map of key/value pairs with ease.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-map.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-map.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-map.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-local-storage': {
     name: 'use-local-storage',
     description: 'Synchronizes a value with localStorage.',
@@ -800,6 +823,34 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-set-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-map-demo': {
+    name: 'use-map-demo',
+    description: "use-map's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'input',
+      'https://h3-use.com/r/use-map.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-map-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-map-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-map-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

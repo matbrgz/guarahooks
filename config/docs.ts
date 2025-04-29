@@ -84,6 +84,10 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-set',
         },
         {
+          title: 'use-map',
+          href: '/docs/hooks/use-map',
+        },
+        {
           title: 'use-debounce-callback',
           href: '/docs/hooks/use-debounce-callback',
         },
