@@ -110,7 +110,7 @@ export default function UseAxiosDemoComponent() {
       )}
 
       {successMessage && (
-        <Alert className="bg-green-50 border-green-600 text-green-800">
+        <Alert className="bg-green-500/50 border-green-600 text-green-800">
           <CheckCircle2 className="h-4 w-4 text-green-600" />
           <AlertTitle>Success</AlertTitle>
           <AlertDescription>{successMessage}</AlertDescription>
