@@ -69,14 +69,18 @@ export function Hero() {
           <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
       </div>
-      <ScrollIndicator className={cn('absolute bottom-8')} />
+      <ScrollIndicator
+        className={cn(
+          'absolute left-8 lg:left-1/2 lg:-translate-x-1/2 bottom-8',
+        )}
+      />
       <p
         className={cn(
           'absolute bottom-8 right-8',
           'text-sm text-muted-foreground',
         )}
       >
-        Currently with {hooksCount} hooks
+        Currently with {hooksCount} hooks.
       </p>
       <AnimatedGridPattern
         numSquares={30}
