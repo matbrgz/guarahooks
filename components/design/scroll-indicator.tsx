@@ -10,7 +10,7 @@ export function ScrollIndicator({ className }: { className?: string }) {
       className={cn(
         'h-12 w-6',
         'flex justify-center',
-        'border border-primary/30 rounded-lg py-2',
+        'border-2 border-primary/30 rounded-lg py-2',
         className,
       )}
     >
