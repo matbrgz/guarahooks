@@ -3,6 +3,7 @@ import type { NextConfig } from 'next';
 import { withContentCollections } from '@content-collections/next';
 
 const nextConfig: NextConfig = {
+  reactStrictMode: false,
   /* config options here */
   async redirects() {
     return [

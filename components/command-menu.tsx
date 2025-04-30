@@ -42,7 +42,6 @@ export function CommandMenu({ ...props }: DialogProps) {
         return;
       }
 
-      e.preventDefault();
       setOpen((open) => !open);
     },
     preventDefault: true,
