@@ -678,6 +678,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-axios': {
+    name: 'use-axios',
+    description: 'A customizable hook for making HTTP requests with Axios',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-axios.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-axios.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-axios.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -1454,6 +1477,37 @@ export const Index: Record<string, any> = {
       const mod = await import(
         '@/registry/example/use-event-listener-demo.tsx'
       );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-axios-demo': {
+    name: 'use-axios-demo',
+    description: "use-axios's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'input',
+      'button',
+      'label',
+      'alert',
+      'lucide-react',
+      'https://h3-use.com/r/use-axios.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-axios-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-axios-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-axios-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

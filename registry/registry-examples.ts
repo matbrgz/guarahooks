@@ -513,4 +513,26 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-axios-demo',
+    type: 'registry:example',
+    title: 'UseAxiosDemo',
+    description: "use-axios's hook in action.",
+    registryDependencies: [
+      'card',
+      'input',
+      'button',
+      'label',
+      'alert',
+      'lucide-react',
+      'https://h3-use.com/r/use-axios.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-axios-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-axios-demo.tsx',
+      },
+    ],
+  },
 ];

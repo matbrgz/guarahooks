@@ -137,6 +137,10 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-fetch',
         },
         {
+          title: 'use-axios',
+          href: '/docs/hooks/use-axios',
+        },
+        {
           title: 'use-cookie',
           href: '/docs/hooks/use-cookie',
         },

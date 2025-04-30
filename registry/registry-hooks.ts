@@ -411,4 +411,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['ui-and-dom'],
   },
+  {
+    name: 'use-axios',
+    type: 'registry:hook',
+    title: 'UseAxios',
+    description: 'A customizable hook for making HTTP requests with Axios',
+    files: [
+      {
+        path: 'registry/hooks/use-axios.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-axios.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];

@@ -1,0 +1,236 @@
+---
+title: useAxios
+date: 2023-08-20
+description: A customizable hook for making HTTP requests with Axios
+author: h3rmel
+published: true
+---
+
+<HookPreview name="use-axios-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://h3-use.com/r/use-axios"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<HookSource name="use-axios" />
+
+<Step>Install the required dependencies.</Step>
+
+```bash
+pnpm add axios
+```
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop      | Type                     | Default | Description                        |
+| --------- | ------------------------ | ------- | ---------------------------------- |
+| `baseURL` | `string`                 | `""`    | Base URL for axios instance        |
+| `headers` | `Record<string, string>` | `{}`    | Default headers for axios instance |
+| `timeout` | `number`                 | `10000` | Default timeout in milliseconds    |
+| `config`  | `AxiosRequestConfig`     | `{}`    | Additional axios configuration     |
+
+## Data
+
+The hook returns an object with the following properties:
+
+| Property     | Type                                                                                           | Description                              |
+| ------------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `instance`   | `AxiosInstance`                                                                                | Axios instance that can be used directly |
+| `loading`    | `boolean`                                                                                      | Loading state for requests               |
+| `error`      | `AxiosError \| null`                                                                           | Error from the most recent request       |
+| `data`       | `any`                                                                                          | Data from the most recent request        |
+| `get`        | `<T = any>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`             | Execute a GET request                    |
+| `post`       | `<T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a POST request                   |
+| `put`        | `<T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PUT request                    |
+| `delete`     | `<T = any>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`             | Execute a DELETE request                 |
+| `patch`      | `<T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PATCH request                  |
+| `resetError` | `() => void`                                                                                   | Reset error state                        |
+
+## Key Features & Details
+
+The `useAxios` hook provides a convenient wrapper around the Axios HTTP client, optimized for use in React applications.
+
+### Browser Support
+
+- Chrome: Full support
+- Firefox: Full support
+- Safari: Full support
+- Edge: Full support
+- Opera: Full support
+
+### Cross-Browser Compatibility
+
+- Uses Promise-based API which is supported in all modern browsers
+- For older browsers, you may need to include a Promise polyfill
+- Follows standard HTTP request/response patterns
+
+### Performance Considerations
+
+- Uses React useRef to maintain a single Axios instance across renders
+- Cleans up resources when component unmounts
+- Provides loading state to avoid unnecessary re-renders
+- Includes error handling to prevent uncaught exceptions
+
+### Best Practices & Caveats
+
+1. Always handle promise rejections with try/catch or .catch()
+2. For large data sets, consider pagination or lazy loading
+3. Use the `timeout` property to prevent long-running requests
+4. Set appropriate request headers for content type and authentication
+5. For typed responses, use generics (e.g., `get<UserType>('/users')`)
+
+## Examples
+
+### Basic Usage
+
+```tsx
+import { useAxios } from '@/hooks/use-axios';
+
+function UserProfile() {
+  const { get, loading, error, data } = useAxios({
+    baseURL: 'https://api.example.com',
+  });
+
+  useEffect(() => {
+    get('/user/profile');
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  return (
+    <div>
+      <h1>{data?.name}</h1>
+      <p>{data?.email}</p>
+    </div>
+  );
+}
+```
+
+### POST Request with Form Data
+
+```tsx
+import { useAxios } from '@/hooks/use-axios';
+
+function CreateUser() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const { post, loading, error } = useAxios({
+    baseURL: 'https://api.example.com',
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await post('/users', { name, email });
+      console.log('User created:', response.data);
+    } catch (err) {
+      console.error('Failed to create user');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Name"
+      />
+      <input
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+      />
+      <button type="submit" disabled={loading}>
+        {loading ? 'Creating...' : 'Create User'}
+      </button>
+      {error && <div>Error: {error.message}</div>}
+    </form>
+  );
+}
+```
+
+### With Authentication Headers
+
+```tsx
+import { useAxios } from '@/hooks/use-axios';
+
+function SecureComponent() {
+  const token = 'your-auth-token';
+
+  const { get, data, loading } = useAxios({
+    baseURL: 'https://api.example.com',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  useEffect(() => {
+    get('/secure-endpoint');
+  }, []);
+
+  return loading ? <div>Loading...</div> : <div>{JSON.stringify(data)}</div>;
+}
+```
+
+### Error Handling
+
+```tsx
+import { useAxios } from '@/hooks/use-axios';
+
+function ErrorHandlingComponent() {
+  const { get, error, resetError } = useAxios();
+
+  const fetchWithErrorHandling = async () => {
+    try {
+      await get('https://non-existent-api.com/data');
+    } catch (err) {
+      console.error('Caught in component:', err.message);
+      // Error is also available in the error state
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={fetchWithErrorHandling}>Fetch Data</button>
+      {error && (
+        <div>
+          <p>Error: {error.message}</p>
+          <button onClick={resetError}>Clear Error</button>
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+## Related
+
+- [Axios Documentation](https://axios-http.com/docs/intro)
+- [React Hooks Documentation](https://reactjs.org/docs/hooks-intro.html)
+- [HTTP MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP)

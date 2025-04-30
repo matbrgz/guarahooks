@@ -409,6 +409,20 @@
       "categories": ["ui-and-dom"]
     },
     {
+      "name": "use-axios",
+      "type": "registry:hook",
+      "title": "UseAxios",
+      "description": "A customizable hook for making HTTP requests with Axios",
+      "files": [
+        {
+          "path": "registry/hooks/use-axios.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-axios.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -929,6 +943,28 @@
           "path": "registry/example/use-event-listener-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-event-listener-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-axios-demo",
+      "type": "registry:example",
+      "title": "UseAxiosDemo",
+      "description": "use-axios's hook in action.",
+      "registryDependencies": [
+        "card",
+        "input",
+        "button",
+        "label",
+        "alert",
+        "lucide-react",
+        "https://h3-use.com/r/use-axios.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-axios-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-axios-demo.tsx"
         }
       ]
     }
