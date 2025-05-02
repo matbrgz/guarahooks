@@ -1,6 +1,11 @@
 'use client';
 
-import { AlertCircle, Bell, CheckCircle2, XCircle } from 'lucide-react';
+import {
+  AlertCircleIcon,
+  BellIcon,
+  CheckCircle2Icon,
+  XCircleIcon,
+} from 'lucide-react';
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
@@ -58,7 +63,7 @@ export default function UseNotificationsDemo() {
     <Card className="relative max-w-2xl w-full">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Bell className="h-5 w-5" />
+          <BellIcon className="h-5 w-5" />
           useNotifications
         </CardTitle>
         <CardDescription>
@@ -112,11 +117,11 @@ export default function UseNotificationsDemo() {
             }
           >
             {permission === 'granted' ? (
-              <CheckCircle2 className="mr-1 h-3 w-3" />
+              <CheckCircle2Icon className="mr-1 h-3 w-3" />
             ) : permission === 'denied' ? (
-              <XCircle className="mr-1 h-3 w-3" />
+              <XCircleIcon className="mr-1 h-3 w-3" />
             ) : (
-              <AlertCircle className="mr-1 h-3 w-3" />
+              <AlertCircleIcon className="mr-1 h-3 w-3" />
             )}
             {permission.charAt(0).toUpperCase() + permission.slice(1)}
           </Badge>
@@ -124,7 +129,7 @@ export default function UseNotificationsDemo() {
 
         {!isSupported && (
           <Alert variant="destructive">
-            <AlertCircle className="h-4 w-4" />
+            <AlertCircleIcon className="h-4 w-4" />
             <AlertTitle>Not Supported</AlertTitle>
             <AlertDescription>
               Your browser does not support the Notifications API. Consider
@@ -135,7 +140,7 @@ export default function UseNotificationsDemo() {
 
         {!isSecureContext && (
           <Alert variant="destructive">
-            <AlertCircle className="h-4 w-4" />
+            <AlertCircleIcon className="h-4 w-4" />
             <AlertTitle>Not Secure</AlertTitle>
             <AlertDescription>
               The Notifications API requires a secure context (HTTPS). Please
@@ -146,7 +151,7 @@ export default function UseNotificationsDemo() {
 
         {supportsActions && (
           <Alert variant="default">
-            <AlertCircle className="h-4 w-4" />
+            <AlertCircleIcon className="h-4 w-4" />
             <AlertTitle>Actions Support</AlertTitle>
             <AlertDescription>
               Note: Notification actions are only supported when using a Service

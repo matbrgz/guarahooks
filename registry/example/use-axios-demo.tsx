@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { AlertCircleIcon, CheckCircle2Icon, Loader2Icon } from 'lucide-react';
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
@@ -83,7 +83,7 @@ export default function UseAxiosDemoComponent() {
           >
             {loading ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Loading...
+                <Loader2Icon className="mr-2 h-4 w-4 animate-spin" /> Loading...
               </>
             ) : (
               'Send GET Request'
@@ -94,7 +94,7 @@ export default function UseAxiosDemoComponent() {
 
       {error && (
         <Alert variant="destructive">
-          <AlertCircle className="h-4 w-4" />
+          <AlertCircleIcon className="h-4 w-4" />
           <AlertTitle>Error</AlertTitle>
           <AlertDescription>
             {error.message}
@@ -111,7 +111,7 @@ export default function UseAxiosDemoComponent() {
 
       {successMessage && (
         <Alert className="bg-green-500/50 border-green-600 text-green-800">
-          <CheckCircle2 className="h-4 w-4 text-green-600" />
+          <CheckCircle2Icon className="h-4 w-4 text-green-600" />
           <AlertTitle>Success</AlertTitle>
           <AlertDescription>{successMessage}</AlertDescription>
         </Alert>
