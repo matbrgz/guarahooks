@@ -425,4 +425,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-page-title',
+    type: 'registry:hook',
+    title: 'UsePageTitle',
+    description: 'Modifies the page title dynamically.',
+    files: [
+      {
+        path: 'registry/hooks/use-page-title.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-page-title.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];

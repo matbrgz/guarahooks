@@ -144,6 +144,10 @@ export const docsConfig: DashboardConfig = {
           title: 'use-cookie',
           href: '/docs/hooks/use-cookie',
         },
+        {
+          title: 'use-page-title',
+          href: '/docs/hooks/use-page-title',
+        },
       ],
     },
     {

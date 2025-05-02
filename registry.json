@@ -423,6 +423,20 @@
       "categories": ["utilities"]
     },
     {
+      "name": "use-page-title",
+      "type": "registry:hook",
+      "title": "UsePageTitle",
+      "description": "Modifies the page title dynamically.",
+      "files": [
+        {
+          "path": "registry/hooks/use-page-title.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-page-title.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -965,6 +979,26 @@
           "path": "registry/example/use-axios-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-axios-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-page-title-demo",
+      "type": "registry:example",
+      "title": "UsePageTitleDemo",
+      "description": "use-page-title's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "input",
+        "label",
+        "https://h3-use.com/r/use-page-title.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-page-title-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-page-title-demo.tsx"
         }
       ]
     }

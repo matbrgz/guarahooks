@@ -535,4 +535,24 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-page-title-demo',
+    type: 'registry:example',
+    title: 'UsePageTitleDemo',
+    description: "use-page-title's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'input',
+      'label',
+      'https://h3-use.com/r/use-page-title.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-page-title-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-page-title-demo.tsx',
+      },
+    ],
+  },
 ];

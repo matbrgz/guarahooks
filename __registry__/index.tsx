@@ -701,6 +701,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-page-title': {
+    name: 'use-page-title',
+    description: 'Modifies the page title dynamically.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-page-title.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-page-title.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-page-title.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -1508,6 +1531,35 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-axios-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-page-title-demo': {
+    name: 'use-page-title-demo',
+    description: "use-page-title's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'input',
+      'label',
+      'https://h3-use.com/r/use-page-title.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-page-title-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-page-title-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-page-title-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>
