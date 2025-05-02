@@ -7,5 +7,12 @@
     "next.config.ts": "next-env.d.ts, components.json",
     "eslint.config.mjs": "prettier.config.mjs, lint-staged.config.mjs, postcss.config.mjs, commitlint.config.mjs",
     "README.md": "*.md"
-  }
+  },
+  // Prevent wrong imports
+  "typescript.preferences.autoImportSpecifierExcludeRegexes": [
+    "@radix-ui",
+    "next/router",
+    "next/dist",
+    "^lucide-react/dist/lucide-react.suffixed$"
+  ]
 }
