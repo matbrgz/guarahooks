@@ -69,10 +69,12 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-mutation-observer',
           href: '/docs/hooks/use-mutation-observer',
+          label: 'New',
         },
         {
           title: 'use-resize-observer',
           href: '/docs/hooks/use-resize-observer',
+          label: 'New',
         },
       ],
     },
@@ -114,6 +116,7 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-pagination',
           href: '/docs/hooks/use-pagination',
+          label: 'New',
         },
       ],
     },
@@ -151,6 +154,7 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-page-title',
           href: '/docs/hooks/use-page-title',
+          label: 'New',
         },
       ],
     },

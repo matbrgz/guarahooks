@@ -39,7 +39,7 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
               )}
             >
               {item.title}
-              {item.label && <Badge variant="new">{item.label}</Badge>}
+              {item.label && <Badge variant="sidebar">{item.label}</Badge>}
             </h4>
             {item.items && item.items.length > 0 && (
               <DocsSidebarItem items={item.items} pathname={pathname} />

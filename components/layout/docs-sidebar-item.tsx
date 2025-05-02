@@ -30,7 +30,7 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
             href={item.href}
             className={cn(
               'flex items-center justify-between',
-              'text-foreground px-2 py-1 rounded-md w-full',
+              'text-foreground pl-2 pr-1.5 py-1 rounded-md w-full',
               'group transition-all duration-200',
               'hover:bg-accent/50 hover:translate-x-0.5',
               item.disabled && 'cursor-not-allowed opacity-60',
@@ -47,7 +47,7 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
                 'inline-flex items-center gap-1',
               )}
             >
-              {item.label && <Badge variant="new">{item.label}</Badge>}
+              {item.label && <Badge variant="sidebar">{item.label}</Badge>}
             </span>
           </Link>
         ) : (
@@ -55,7 +55,7 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
             key={index}
             className={cn(
               'flex items-center justify-between',
-              'text-muted-foreground rounded-md w-full px-2 py-1',
+              'text-muted-foreground rounded-md w-full pl-2 pr-1.5 py-1',
               item.disabled && 'cursor-not-allowed opacity-60',
             )}
           >
@@ -66,7 +66,7 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
                 'inline-flex items-center gap-1',
               )}
             >
-              {item.label && <Badge variant="new">{item.label}</Badge>}
+              {item.label && <Badge variant="sidebar">{item.label}</Badge>}
             </span>
           </span>
         ),
