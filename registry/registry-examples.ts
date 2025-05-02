@@ -459,6 +459,24 @@ export const examples: Registry['items'] = [
     ],
   },
   {
+    name: 'use-resize-observer-demo',
+    type: 'registry:example',
+    title: 'UseResizeObserverDemo',
+    description: "use-resize-observer's hook in action.",
+    registryDependencies: [
+      'button',
+      'card',
+      'https://h3-use.com/r/use-resize-observer.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-resize-observer-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-resize-observer-demo.tsx',
+      },
+    ],
+  },
+  {
     name: 'use-fetch-demo',
     type: 'registry:example',
     title: 'UseFetchDemo',

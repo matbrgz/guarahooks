@@ -70,6 +70,10 @@ export const docsConfig: DashboardConfig = {
           title: 'use-mutation-observer',
           href: '/docs/hooks/use-mutation-observer',
         },
+        {
+          title: 'use-resize-observer',
+          href: '/docs/hooks/use-resize-observer',
+        },
       ],
     },
     {

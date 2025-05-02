@@ -608,6 +608,30 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-resize-observer': {
+    name: 'use-resize-observer',
+    description:
+      'Observes size changes of an element using the Resize Observer API',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-resize-observer.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-resize-observer.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-resize-observer.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-fetch': {
     name: 'use-fetch',
     description:
@@ -1415,6 +1439,35 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import(
         '@/registry/example/use-mutation-observer-demo.tsx'
+      );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-resize-observer-demo': {
+    name: 'use-resize-observer-demo',
+    description: "use-resize-observer's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'button',
+      'card',
+      'https://h3-use.com/r/use-resize-observer.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-resize-observer-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-resize-observer-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/example/use-resize-observer-demo.tsx'
       );
       const exportName =
         Object.keys(mod).find(

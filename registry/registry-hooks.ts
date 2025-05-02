@@ -369,6 +369,21 @@ export const hooks: Registry['items'] = [
     categories: ['ui-and-dom'],
   },
   {
+    name: 'use-resize-observer',
+    type: 'registry:hook',
+    title: 'UseResizeObserver',
+    description:
+      'Observes size changes of an element using the Resize Observer API',
+    files: [
+      {
+        path: 'registry/hooks/use-resize-observer.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-resize-observer.tsx',
+      },
+    ],
+    categories: ['ui-and-dom'],
+  },
+  {
     name: 'use-fetch',
     type: 'registry:hook',
     title: 'UseFetch',
