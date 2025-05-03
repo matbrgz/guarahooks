@@ -163,6 +163,11 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-timeout',
           label: 'New',
         },
+        {
+          title: 'use-battery-status',
+          href: '/docs/hooks/use-battery-status',
+          label: 'New',
+        },
       ],
     },
     {

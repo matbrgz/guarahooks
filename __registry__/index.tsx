@@ -794,6 +794,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-battery-status': {
+    name: 'use-battery-status',
+    description: 'Access system Battery Status via the Battery Status API.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-battery-status.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-battery-status.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-battery-status.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -1713,6 +1736,35 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-timeout-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-battery-status-demo': {
+    name: 'use-battery-status-demo',
+    description: "use-battery-status's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'badge',
+      'https://h3-use.com/r/use-battery-status.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-battery-status-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-battery-status-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/example/use-battery-status-demo.tsx'
+      );
       const exportName =
         Object.keys(mod).find(
           (key) =>

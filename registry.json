@@ -479,6 +479,20 @@
       "categories": ["utilities"]
     },
     {
+      "name": "use-battery-status",
+      "type": "registry:hook",
+      "title": "UseBatteryStatus",
+      "description": "Access system Battery Status via the Battery Status API.",
+      "files": [
+        {
+          "path": "registry/hooks/use-battery-status.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-battery-status.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -1095,6 +1109,24 @@
           "path": "registry/example/use-timeout-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-timeout-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-battery-status-demo",
+      "type": "registry:example",
+      "title": "UseBatteryStatusDemo",
+      "description": "use-battery-status's hook in action.",
+      "registryDependencies": [
+        "card",
+        "badge",
+        "https://h3-use.com/r/use-battery-status.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-battery-status-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-battery-status-demo.tsx"
         }
       ]
     }

@@ -482,4 +482,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-battery-status',
+    type: 'registry:hook',
+    title: 'UseBatteryStatus',
+    description: 'Access system Battery Status via the Battery Status API.',
+    files: [
+      {
+        path: 'registry/hooks/use-battery-status.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-battery-status.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];

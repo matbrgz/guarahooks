@@ -609,4 +609,22 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-battery-status-demo',
+    type: 'registry:example',
+    title: 'UseBatteryStatusDemo',
+    description: "use-battery-status's hook in action.",
+    registryDependencies: [
+      'card',
+      'badge',
+      'https://h3-use.com/r/use-battery-status.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-battery-status-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-battery-status-demo.tsx',
+      },
+    ],
+  },
 ];
