@@ -591,4 +591,22 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-timeout-demo',
+    type: 'registry:example',
+    title: 'UseTimeoutDemo',
+    description: "use-timeout's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-timeout.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-timeout-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-timeout-demo.tsx',
+      },
+    ],
+  },
 ];

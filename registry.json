@@ -465,6 +465,20 @@
       "categories": ["utilities"]
     },
     {
+      "name": "use-timeout",
+      "type": "registry:hook",
+      "title": "UseTimeout",
+      "description": "Executes a callback after a specified delay.",
+      "files": [
+        {
+          "path": "registry/hooks/use-timeout.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-timeout.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -1063,6 +1077,24 @@
           "path": "registry/example/use-interval-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-interval-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-timeout-demo",
+      "type": "registry:example",
+      "title": "UseTimeoutDemo",
+      "description": "use-timeout's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "https://h3-use.com/r/use-timeout.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-timeout-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-timeout-demo.tsx"
         }
       ]
     }

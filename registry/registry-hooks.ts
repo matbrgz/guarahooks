@@ -468,4 +468,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-timeout',
+    type: 'registry:hook',
+    title: 'UseTimeout',
+    description: 'Executes a callback after a specified delay.',
+    files: [
+      {
+        path: 'registry/hooks/use-timeout.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-timeout.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];

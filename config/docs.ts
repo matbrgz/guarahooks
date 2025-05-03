@@ -158,6 +158,11 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-interval',
           label: 'New',
         },
+        {
+          title: 'use-timeout',
+          href: '/docs/hooks/use-timeout',
+          label: 'New',
+        },
       ],
     },
     {
