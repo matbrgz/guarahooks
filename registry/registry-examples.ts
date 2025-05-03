@@ -573,4 +573,22 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-interval-demo',
+    type: 'registry:example',
+    title: 'UseIntervalDemo',
+    description: "use-interval's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-interval.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-interval-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-interval-demo.tsx',
+      },
+    ],
+  },
 ];

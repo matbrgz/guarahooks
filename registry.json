@@ -451,6 +451,20 @@
       "categories": ["utilities"]
     },
     {
+      "name": "use-interval",
+      "type": "registry:hook",
+      "title": "UseInterval",
+      "description": "Runs a callback at specified intervals.",
+      "files": [
+        {
+          "path": "registry/hooks/use-interval.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-interval.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -1031,6 +1045,24 @@
           "path": "registry/example/use-page-title-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-page-title-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-interval-demo",
+      "type": "registry:example",
+      "title": "UseIntervalDemo",
+      "description": "use-interval's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "https://h3-use.com/r/use-interval.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-interval-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-interval-demo.tsx"
         }
       ]
     }

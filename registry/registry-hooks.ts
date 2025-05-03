@@ -454,4 +454,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-interval',
+    type: 'registry:hook',
+    title: 'UseInterval',
+    description: 'Runs a callback at specified intervals.',
+    files: [
+      {
+        path: 'registry/hooks/use-interval.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-interval.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];
