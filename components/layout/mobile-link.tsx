@@ -45,7 +45,7 @@ export function MobileLink({
         <span
           className={cn('relative shrink-0', 'inline-flex items-center gap-1')}
         >
-          {label && <Badge variant="new">{label}</Badge>}
+          {label && <Badge variant="sidebar">{label}</Badge>}
         </span>
       </Link>
     </SheetClose>
