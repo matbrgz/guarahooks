@@ -627,4 +627,22 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-geolocation-demo',
+    type: 'registry:example',
+    title: 'UseGeolocationDemo',
+    description: "use-geolocation's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-geolocation.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-geolocation-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-geolocation-demo.tsx',
+      },
+    ],
+  },
 ];

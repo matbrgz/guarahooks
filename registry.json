@@ -493,6 +493,20 @@
       "categories": ["utilities"]
     },
     {
+      "name": "use-geolocation",
+      "type": "registry:hook",
+      "title": "UseGeolocation",
+      "description": "Declarative wrapper for the Geolocation API.",
+      "files": [
+        {
+          "path": "registry/hooks/use-geolocation.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-geolocation.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -1127,6 +1141,24 @@
           "path": "registry/example/use-battery-status-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-battery-status-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-geolocation-demo",
+      "type": "registry:example",
+      "title": "UseGeolocationDemo",
+      "description": "use-geolocation's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "https://h3-use.com/r/use-geolocation.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-geolocation-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-geolocation-demo.tsx"
         }
       ]
     }

@@ -73,7 +73,6 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-resize-observer',
           href: '/docs/hooks/use-resize-observer',
-          label: 'New',
         },
       ],
     },
@@ -166,6 +165,11 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-battery-status',
           href: '/docs/hooks/use-battery-status',
+          label: 'New',
+        },
+        {
+          title: 'use-geolocation',
+          href: '/docs/hooks/use-geolocation',
           label: 'New',
         },
       ],

@@ -496,4 +496,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-geolocation',
+    type: 'registry:hook',
+    title: 'UseGeolocation',
+    description: 'Declarative wrapper for the Geolocation API.',
+    files: [
+      {
+        path: 'registry/hooks/use-geolocation.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-geolocation.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
 ];
