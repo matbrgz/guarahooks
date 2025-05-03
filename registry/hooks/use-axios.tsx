@@ -11,82 +11,40 @@ import axios, {
 
 // Types
 export interface UseAxiosProps {
-  /**
-   * Base URL for axios instance
-   */
   baseURL?: string;
-  /**
-   * Default headers for axios instance
-   */
   headers?: Record<string, string>;
-  /**
-   * Default timeout in milliseconds
-   */
   timeout?: number;
-  /**
-   * Initial config for axios instance
-   */
   config?: AxiosRequestConfig;
 }
 
 export interface UseAxiosReturn {
-  /**
-   * Axios instance that can be used directly
-   */
   instance: AxiosInstance;
-  /**
-   * Loading state for requests
-   */
   loading: boolean;
-  /**
-   * Error from the most recent request
-   */
   error: AxiosError | null;
-  /**
-   * Data from the most recent request
-   */
   data: any;
-  /**
-   * Execute a GET request
-   */
   get: <T = any>(
     url: string,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
-  /**
-   * Execute a POST request
-   */
   post: <T = any>(
     url: string,
     data?: any,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
-  /**
-   * Execute a PUT request
-   */
   put: <T = any>(
     url: string,
     data?: any,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
-  /**
-   * Execute a DELETE request
-   */
   delete: <T = any>(
     url: string,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
-  /**
-   * Execute a PATCH request
-   */
   patch: <T = any>(
     url: string,
     data?: any,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
-  /**
-   * Reset error state
-   */
   resetError: () => void;
 }
 
