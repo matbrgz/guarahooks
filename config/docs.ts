@@ -75,6 +75,11 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-resize-observer',
         },
         {
+          title: 'use-scroll-position',
+          href: '/docs/hooks/use-scroll-position',
+          label: 'New',
+        },
+        {
           title: 'use-intersection-observer',
           href: '/docs/hooks/use-intersection-observer',
           label: 'New',

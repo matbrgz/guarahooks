@@ -540,4 +540,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['lifecycle'],
   },
+  {
+    name: 'use-scroll-position',
+    type: 'registry:hook',
+    title: 'UseScrollPosition',
+    description: 'Tracks the current scroll position of the page.',
+    files: [
+      {
+        path: 'registry/hooks/use-scroll-position.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-scroll-position.tsx',
+      },
+    ],
+    categories: ['ui-and-dom'],
+  },
 ];

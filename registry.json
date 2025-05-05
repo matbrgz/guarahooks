@@ -535,6 +535,20 @@
       "categories": ["lifecycle"]
     },
     {
+      "name": "use-scroll-position",
+      "type": "registry:hook",
+      "title": "UseScrollPosition",
+      "description": "Tracks the current scroll position of the page.",
+      "files": [
+        {
+          "path": "registry/hooks/use-scroll-position.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-scroll-position.tsx"
+        }
+      ],
+      "categories": ["ui-and-dom"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -1223,6 +1237,23 @@
           "path": "registry/example/use-isomorphic-layout-effect-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-isomorphic-layout-effect-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-scroll-position-demo",
+      "type": "registry:example",
+      "title": "UseScrollPositionDemo",
+      "description": "use-scroll-position's hook in action.",
+      "registryDependencies": [
+        "card",
+        "https://h3-use.com/r/use-scroll-position.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-scroll-position-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-scroll-position-demo.tsx"
         }
       ]
     }

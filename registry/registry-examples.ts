@@ -681,4 +681,21 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-scroll-position-demo',
+    type: 'registry:example',
+    title: 'UseScrollPositionDemo',
+    description: "use-scroll-position's hook in action.",
+    registryDependencies: [
+      'card',
+      'https://h3-use.com/r/use-scroll-position.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-scroll-position-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-scroll-position-demo.tsx',
+      },
+    ],
+  },
 ];

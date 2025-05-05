@@ -892,6 +892,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-scroll-position': {
+    name: 'use-scroll-position',
+    description: 'Tracks the current scroll position of the page.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-scroll-position.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-scroll-position.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-scroll-position.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -1924,6 +1947,34 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import(
         '@/registry/example/use-isomorphic-layout-effect-demo.tsx'
+      );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-scroll-position-demo': {
+    name: 'use-scroll-position-demo',
+    description: "use-scroll-position's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'https://h3-use.com/r/use-scroll-position.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-scroll-position-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-scroll-position-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/example/use-scroll-position-demo.tsx'
       );
       const exportName =
         Object.keys(mod).find(
