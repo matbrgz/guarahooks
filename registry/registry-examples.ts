@@ -477,6 +477,24 @@ export const examples: Registry['items'] = [
     ],
   },
   {
+    name: 'use-intersection-observer-demo',
+    type: 'registry:example',
+    title: 'UseIntersectionObserverDemo',
+    description: "use-intersection-observer's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-intersection-observer.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-intersection-observer-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-intersection-observer-demo.tsx',
+      },
+    ],
+  },
+  {
     name: 'use-fetch-demo',
     type: 'registry:example',
     title: 'UseFetchDemo',

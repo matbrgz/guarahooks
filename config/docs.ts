@@ -74,6 +74,11 @@ export const docsConfig: DashboardConfig = {
           title: 'use-resize-observer',
           href: '/docs/hooks/use-resize-observer',
         },
+        {
+          title: 'use-intersection-observer',
+          href: '/docs/hooks/use-intersection-observer',
+          label: 'New',
+        },
       ],
     },
     {
@@ -155,12 +160,10 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-interval',
           href: '/docs/hooks/use-interval',
-          label: 'New',
         },
         {
           title: 'use-timeout',
           href: '/docs/hooks/use-timeout',
-          label: 'New',
         },
         {
           title: 'use-battery-status',
@@ -192,6 +195,7 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-isomorphic-layout-effect',
           href: '/docs/hooks/use-isomorphic-layout-effect',
+          label: 'New',
         },
       ],
     },

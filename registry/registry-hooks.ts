@@ -72,6 +72,21 @@ export const hooks: Registry['items'] = [
     categories: ['ui-and-dom'],
   },
   {
+    name: 'use-intersection-observer',
+    type: 'registry:hook',
+    title: 'UseIntersectionObserver',
+    description:
+      'Observes when an element intersects the viewport or a root element.',
+    files: [
+      {
+        path: 'registry/hooks/use-intersection-observer.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-intersection-observer.tsx',
+      },
+    ],
+    categories: ['ui-and-dom'],
+  },
+  {
     name: 'use-toggle',
     type: 'registry:hook',
     title: 'UseToggle',

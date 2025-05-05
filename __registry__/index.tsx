@@ -122,6 +122,32 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-intersection-observer': {
+    name: 'use-intersection-observer',
+    description:
+      'Observes when an element intersects the viewport or a root element.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-intersection-observer.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-intersection-observer.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/hooks/use-intersection-observer.tsx'
+      );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-toggle': {
     name: 'use-toggle',
     description: 'Controls a boolean state with a toggler.',
@@ -1586,6 +1612,35 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import(
         '@/registry/example/use-resize-observer-demo.tsx'
+      );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-intersection-observer-demo': {
+    name: 'use-intersection-observer-demo',
+    description: "use-intersection-observer's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-intersection-observer.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-intersection-observer-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-intersection-observer-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/example/use-intersection-observer-demo.tsx'
       );
       const exportName =
         Object.keys(mod).find(

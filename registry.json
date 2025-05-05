@@ -73,6 +73,20 @@
       "categories": ["ui-and-dom"]
     },
     {
+      "name": "use-intersection-observer",
+      "type": "registry:hook",
+      "title": "UseIntersectionObserver",
+      "description": "Observes when an element intersects the viewport or a root element.",
+      "files": [
+        {
+          "path": "registry/hooks/use-intersection-observer.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-intersection-observer.tsx"
+        }
+      ],
+      "categories": ["ui-and-dom"]
+    },
+    {
       "name": "use-toggle",
       "type": "registry:hook",
       "title": "UseToggle",
@@ -1004,6 +1018,24 @@
           "path": "registry/example/use-resize-observer-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-resize-observer-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-intersection-observer-demo",
+      "type": "registry:example",
+      "title": "UseIntersectionObserverDemo",
+      "description": "use-intersection-observer's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "https://h3-use.com/r/use-intersection-observer.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-intersection-observer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-intersection-observer-demo.tsx"
         }
       ]
     },
