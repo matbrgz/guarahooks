@@ -19,7 +19,7 @@ const badgeVariants = cva(
         outline:
           'text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground',
         sidebar:
-          'text-foreground bg-emerald-500/40 border-emerald-500 py-0 px-2 tracking-wide font-light rounded-[6px]',
+          'text-foreground bg-emerald-500/40 border-emerald-500 py-0 px-1 text-[10px] tracking-wide font-light rounded-[6px]',
       },
     },
     defaultVariants: {

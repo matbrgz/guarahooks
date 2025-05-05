@@ -21,7 +21,7 @@ export default function DocsLayout({
         id="docs-sidebar"
         className={cn(
           'fixed lg:sticky z-30 top-[72px] h-[calc(100vh-72px)]',
-          'hidden lg:block lg:flex-1/5',
+          'hidden lg:block lg:flex-[22.5%]',
           'bg-background/50 backdrop-blur-md',
           'border-l border-dashed',
         )}
