@@ -189,6 +189,10 @@ export const docsConfig: DashboardConfig = {
           title: 'use-did-update',
           href: '/docs/hooks/use-did-update',
         },
+        {
+          title: 'use-isomorphic-layout-effect',
+          href: '/docs/hooks/use-isomorphic-layout-effect',
+        },
       ],
     },
   ],

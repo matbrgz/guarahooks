@@ -840,6 +840,32 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-isomorphic-layout-effect': {
+    name: 'use-isomorphic-layout-effect',
+    description:
+      'A hook that uses useLayoutEffect on the client and falls back to useEffect on the server to avoid SSR warnings.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-isomorphic-layout-effect.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-isomorphic-layout-effect.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/hooks/use-isomorphic-layout-effect.tsx'
+      );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -1815,6 +1841,35 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-geolocation-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-isomorphic-layout-effect-demo': {
+    name: 'use-isomorphic-layout-effect-demo',
+    description: "use-isomorphic-layout-effect's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-isomorphic-layout-effect.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-isomorphic-layout-effect-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-isomorphic-layout-effect-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/example/use-isomorphic-layout-effect-demo.tsx'
+      );
       const exportName =
         Object.keys(mod).find(
           (key) =>

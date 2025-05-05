@@ -510,4 +510,19 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['utilities'],
   },
+  {
+    name: 'use-isomorphic-layout-effect',
+    type: 'registry:hook',
+    title: 'UseIsomorphicLayoutEffect',
+    description:
+      'A hook that uses useLayoutEffect on the client and falls back to useEffect on the server to avoid SSR warnings.',
+    files: [
+      {
+        path: 'registry/hooks/use-isomorphic-layout-effect.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-isomorphic-layout-effect.tsx',
+      },
+    ],
+    categories: ['lifecycle'],
+  },
 ];

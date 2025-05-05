@@ -645,4 +645,22 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-isomorphic-layout-effect-demo',
+    type: 'registry:example',
+    title: 'UseIsomorphicLayoutEffectDemo',
+    description: "use-isomorphic-layout-effect's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-isomorphic-layout-effect.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-isomorphic-layout-effect-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-isomorphic-layout-effect-demo.tsx',
+      },
+    ],
+  },
 ];
