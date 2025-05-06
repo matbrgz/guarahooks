@@ -43,6 +43,8 @@ export const metadata: Metadata = {
         alt: siteConfig.name,
       },
     ],
+    siteName: siteConfig.name,
+    url: siteConfig.url,
   },
   metadataBase: new URL(siteConfig.url),
   creator: 'h3rmel',
