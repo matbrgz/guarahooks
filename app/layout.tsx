@@ -8,7 +8,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
-import { PostHogProvider } from '@/components/post-hog-provider';
+import { PHProvider } from '@/components/post-hog-provider';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -62,7 +62,7 @@ export default function RootLayout({
           geistMono.variable,
         )}
       >
-        <PostHogProvider>
+        <PHProvider>
           <ThemeProvider attribute="class" defaultTheme="dark">
             <TooltipProvider delayDuration={200}>
               <Header />
@@ -74,7 +74,7 @@ export default function RootLayout({
               <SpeedInsights />
             </TooltipProvider>
           </ThemeProvider>
-        </PostHogProvider>
+        </PHProvider>
       </body>
     </html>
   );
