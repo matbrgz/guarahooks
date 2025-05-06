@@ -8,6 +8,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
+import { PostHogProvider } from '@/components/post-hog-provider';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -61,17 +62,19 @@ export default function RootLayout({
           geistMono.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <TooltipProvider delayDuration={200}>
-            <Header />
-            <main className={cn('grow flex flex-col', 'size-full')}>
-              {children}
-            </main>
-            <Footer />
-            <Toaster richColors position="bottom-center" duration={3000} />
-          </TooltipProvider>
-        </ThemeProvider>
-        <SpeedInsights />
+        <PostHogProvider>
+          <ThemeProvider attribute="class" defaultTheme="dark">
+            <TooltipProvider delayDuration={200}>
+              <Header />
+              <main className={cn('grow flex flex-col', 'size-full')}>
+                {children}
+              </main>
+              <Footer />
+              <Toaster richColors position="bottom-center" duration={3000} />
+              <SpeedInsights />
+            </TooltipProvider>
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   );
