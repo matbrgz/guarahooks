@@ -698,4 +698,22 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-scroll-lock-demo',
+    type: 'registry:example',
+    title: 'UseScrollLockDemo',
+    description: 'Demonstrates useScrollLock hook',
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-scroll-lock.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-scroll-lock-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-scroll-lock-demo.tsx',
+      },
+    ],
+  },
 ];

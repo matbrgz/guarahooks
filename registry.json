@@ -549,6 +549,20 @@
       "categories": ["ui-and-dom"]
     },
     {
+      "name": "use-scroll-lock",
+      "type": "registry:hook",
+      "title": "UseScrollLock",
+      "description": "Lock and unlock scrolling on an element or the page",
+      "files": [
+        {
+          "path": "registry/hooks/use-scroll-lock.tsx",
+          "type": "registry:hook",
+          "target": "hooks/h3-use/use-scroll-lock.tsx"
+        }
+      ],
+      "categories": ["ui-and-dom"]
+    },
+    {
       "name": "use-window-size-demo",
       "type": "registry:example",
       "title": "UseWindowSizeDemo",
@@ -1254,6 +1268,24 @@
           "path": "registry/example/use-scroll-position-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-scroll-position-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-scroll-lock-demo",
+      "type": "registry:example",
+      "title": "UseScrollLockDemo",
+      "description": "Demonstrates useScrollLock hook",
+      "registryDependencies": [
+        "card",
+        "button",
+        "https://h3-use.com/r/use-scroll-lock.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-scroll-lock-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-scroll-lock-demo.tsx"
         }
       ]
     }

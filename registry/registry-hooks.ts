@@ -554,4 +554,18 @@ export const hooks: Registry['items'] = [
     ],
     categories: ['ui-and-dom'],
   },
+  {
+    name: 'use-scroll-lock',
+    type: 'registry:hook',
+    title: 'UseScrollLock',
+    description: 'Lock and unlock scrolling on an element or the page',
+    files: [
+      {
+        path: 'registry/hooks/use-scroll-lock.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-scroll-lock.tsx',
+      },
+    ],
+    categories: ['ui-and-dom'],
+  },
 ];

@@ -915,6 +915,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  'use-scroll-lock': {
+    name: 'use-scroll-lock',
+    description: 'Lock and unlock scrolling on an element or the page',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-scroll-lock.tsx',
+        type: 'registry:hook',
+        target: 'hooks/h3-use/use-scroll-lock.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-scroll-lock.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size-demo': {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
@@ -1976,6 +1999,33 @@ export const Index: Record<string, any> = {
       const mod = await import(
         '@/registry/example/use-scroll-position-demo.tsx'
       );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-scroll-lock-demo': {
+    name: 'use-scroll-lock-demo',
+    description: 'Demonstrates useScrollLock hook',
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'https://h3-use.com/r/use-scroll-lock.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-scroll-lock-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-scroll-lock-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-scroll-lock-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

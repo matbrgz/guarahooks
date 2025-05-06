@@ -84,6 +84,11 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/hooks/use-intersection-observer',
           label: 'New',
         },
+        {
+          title: 'use-scroll-lock',
+          href: '/docs/hooks/use-scroll-lock',
+          label: 'New',
+        },
       ],
     },
     {
