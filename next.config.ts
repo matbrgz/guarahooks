@@ -5,7 +5,6 @@ import { withContentCollections } from '@content-collections/next';
 const nextConfig: NextConfig = {
   output: process.env.NODE_ENV === 'production' ? 'standalone' : undefined,
   reactStrictMode: false,
-  swcMinify: true,
   experimental: {
     optimizeCss: true,
   },
