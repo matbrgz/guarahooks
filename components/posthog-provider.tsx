@@ -38,6 +38,10 @@ function PostHogPageView(): null {
 
       posthog.capture('$pageview', { $current_url: url });
     }
+
+    return () => {
+      posthog.capture('$pageleave');
+    };
   }, [pathname, searchParams, posthog]);
 
   return null;
