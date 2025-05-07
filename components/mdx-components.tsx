@@ -5,6 +5,9 @@ import { useMDXComponent } from '@content-collections/mdx/react';
 
 import { Callout } from '@/components/callout';
 import { CodeBlockCommand } from '@/components/code-block-command';
+import { CopyButton } from '@/components/copy-button';
+import { HookPreview } from '@/components/hook-preview';
+import { HookSource } from '@/components/hook-source';
 import RepoDownload from '@/components/repo-download';
 import TechStack from '@/components/tech-stack';
 import TemplatePreview from '@/components/template-preview';
@@ -16,11 +19,8 @@ import {
 } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
+import { Event } from '@/lib/events';
 import { cn } from '@/lib/utils';
-
-import { CopyButton } from './copy-button';
-import { HookPreview } from './hook-preview';
-import { HookSource } from './hook-source';
 
 const CustomLink = (props: any) => {
   const href = props.href;
@@ -231,6 +231,7 @@ const components = {
     __bunCommand__,
     __withMeta__,
     __src__,
+    __event__,
     __name__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & {
@@ -241,6 +242,7 @@ const components = {
     __bunCommand__?: string;
     __withMeta__?: boolean;
     __src__?: string;
+    __event__?: Event['name'];
     __name__?: string;
   }) => {
     const isNpmCommand =
@@ -270,6 +272,7 @@ const components = {
           <CopyButton
             value={__rawString__}
             src={__src__}
+            event={__event__}
             className={cn('absolute right-4 top-4', __withMeta__ && 'top-16')}
           />
         )}

@@ -1,16 +1,8 @@
-// TODO: add posthog
-// import posthog from "posthog-js";
-
+import posthog from 'posthog-js';
 import { z } from 'zod';
 
 const eventSchema = z.object({
-  name: z.enum([
-    'copy_npm_command',
-    'copy_usage_code',
-    'copy_source_code',
-    // "copy_primitive_code",
-    // "copy_theme_code",
-  ]),
+  name: z.enum(['copy_npm_command', 'copy_usage_code', 'copy_source_code']),
   // declare type AllowedPropertyValues = string | number | boolean | null
   properties: z
     .record(z.union([z.string(), z.number(), z.boolean(), z.null()]))
@@ -21,8 +13,9 @@ export type Event = z.infer<typeof eventSchema>;
 
 export function trackEvent(input: Event): void {
   const event = eventSchema.parse(input);
+
   if (event) {
-    console.log(event);
-    // posthog.capture(event.name, event.properties);
+    console.info(event);
+    posthog.capture(event.name, event.properties);
   }
 }

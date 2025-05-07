@@ -32,6 +32,7 @@ export function CodeBlockCommand({
   }, [hasCopied]);
 
   const packageManager = config.packageManager || 'pnpm';
+
   const tabs = React.useMemo(() => {
     return {
       pnpm: __pnpmCommand__,

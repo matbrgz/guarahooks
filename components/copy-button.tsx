@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-import { Event, trackEvent } from '@/lib/events.deprecated';
+import { Event, trackEvent } from '@/lib/events';
 import { cn } from '@/lib/utils';
 
 import { NpmCommands } from '@/types/unist';
