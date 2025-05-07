@@ -31,7 +31,7 @@ export function Hero() {
           'px-4 lg:px-0',
         )}
       >
-        <h1 className={cn('text-5xl font-bold', 'max-w-[18ch]')}>
+        <h1 className={cn('text-6xl font-bold', 'max-w-[18ch]')}>
           Hooks Library for Software Engineers
         </h1>
         <p className={cn('max-w-[34ch]')}>
