@@ -61,7 +61,7 @@ export function Hero() {
         <Link
           href={`${siteConfig.links.github}/blob/main/CONTRIBUTING.md`}
           className={cn(
-            buttonVariants({ variant: 'rainbow-outline', size: 'lg' }),
+            buttonVariants({ variant: 'rainbow-secondary', size: 'lg' }),
             'group hover:scale-[1.025]',
           )}
         >
