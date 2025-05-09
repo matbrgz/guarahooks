@@ -37,17 +37,21 @@ export function useScrollLock<T extends HTMLElement = HTMLElement>(
   }, []);
 
   const lock = useCallback(() => {
-    const target = getTarget();
-    originalOverflow.current = target.style.overflow;
-    target.style.overflow = 'hidden';
-    setIsLocked(true);
-  }, [getTarget]);
+    if (!isLocked) {
+      const target = getTarget();
+      originalOverflow.current = target.style.overflow;
+      target.style.overflow = 'hidden';
+      setIsLocked(true);
+    }
+  }, [getTarget, isLocked]);
 
   const unlock = useCallback(() => {
-    const target = getTarget();
-    target.style.overflow = originalOverflow.current;
-    setIsLocked(false);
-  }, [getTarget]);
+    if (isLocked) {
+      const target = getTarget();
+      target.style.overflow = originalOverflow.current;
+      setIsLocked(false);
+    }
+  }, [getTarget, isLocked]);
 
   const toggle = useCallback(() => {
     isLocked ? unlock() : lock();
