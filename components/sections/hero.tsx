@@ -5,14 +5,34 @@ import { ScrollIndicator } from '@/components/design/scroll-indicator';
 import { Icons } from '@/components/icons';
 import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
 import { buttonVariants } from '@/components/ui/button';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 import { getHooksCount } from '@/lib/hooks';
 import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
 
-export function Hero() {
+import { NumberTicker } from '../magicui/number-ticker';
+
+export async function Hero() {
   const hooksCount = getHooksCount();
+  let githubStars = 50;
+
+  try {
+    const response = await fetch('https://api.github.com/repos/h3rmel/h3-use');
+
+    if (response.ok) {
+      const data = await response.json();
+
+      githubStars = data.stargazers_count || 0;
+    }
+  } catch (error) {
+    console.error('Error fetching GitHub stars:', error);
+  }
 
   return (
     <div
@@ -58,16 +78,27 @@ export function Hero() {
           Browse Hooks
           <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
-        <Link
-          href={`${siteConfig.links.github}/blob/main/CONTRIBUTING.md`}
-          className={cn(
-            buttonVariants({ variant: 'rainbow-secondary', size: 'lg' }),
-            'group hover:scale-[1.025]',
-          )}
-        >
-          Contribute
-          <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
-        </Link>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Link
+              className={cn(
+                buttonVariants({ variant: 'rainbow-secondary', size: 'lg' }),
+                'group hover:scale-[1.025] gap-2',
+              )}
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="hidden lg:inline-block">Give it a star!</span>
+              <Icons.Star className="size-4 group-hover:scale-[1.25] duration-200 transition-transform" />
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">
+            <p className="text-sm text-accent-foreground">
+              Currently with <NumberTicker value={githubStars} /> stars.
+            </p>
+          </TooltipContent>
+        </Tooltip>
       </div>
       <ScrollIndicator
         className={cn(
