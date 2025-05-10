@@ -89,7 +89,7 @@ export async function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="hidden lg:inline-block">Give it a star!</span>
+              <span>Give it a star!</span>
               <Icons.Star className="size-4 group-hover:scale-[1.25] duration-200 transition-transform" />
             </Link>
           </TooltipTrigger>
