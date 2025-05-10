@@ -52,6 +52,14 @@ export function CommandMenu({ ...props }: DialogProps) {
     command();
   }, []);
 
+  function renderIcon(title: string) {
+    if (title === 'Getting Started') {
+      return <Icons.FileText className="size-3" />;
+    }
+
+    return <Icons.Hook className="size-3 mb-px" />;
+  }
+
   return (
     <>
       <Button
@@ -97,7 +105,7 @@ export function CommandMenu({ ...props }: DialogProps) {
                     runCommand(() => router.push(navItem.href as string));
                   }}
                 >
-                  <Icons.File className="mr-2 size-4" />
+                  <Icons.Link className="mr-2 size-4" />
                   {navItem.title}
                 </CommandItem>
               ))}
@@ -113,7 +121,7 @@ export function CommandMenu({ ...props }: DialogProps) {
                   }}
                 >
                   <div className="mr-2 flex size-4 items-center justify-center">
-                    <Icons.Circle className="size-3" />
+                    {renderIcon(group.title)}
                   </div>
                   {navItem.title}
                 </CommandItem>
