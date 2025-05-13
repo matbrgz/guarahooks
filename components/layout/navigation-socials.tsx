@@ -11,7 +11,6 @@ import { siteConfig } from '@/config/site';
 export function NavigationSocials() {
   return (
     <div className={cn('lg:flex items-center gap-2', 'hidden')}>
-      <hr className={cn('h-[72px] ml-4 mr-2 my-0 border-l border-dashed')} />
       <Link
         href={siteConfig.links.twitter}
         className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}

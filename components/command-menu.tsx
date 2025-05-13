@@ -64,25 +64,27 @@ export function CommandMenu({ ...props }: DialogProps) {
     <>
       <Button
         variant="outline"
-        size="sm"
+        size="search"
         className={cn(
-          'relative w-48 md:w-40 lg:w-64',
+          'relative w-48 md:w-40 lg:w-80',
           'text-sm font-normal',
-          'text-muted-foreground bg-card',
-          'justify-start sm:pr-12',
+          'text-muted-foreground bg-background',
+          'justify-start',
+          // 'justify-start sm:pr-12',
         )}
         onClick={() => setOpen(true)}
         {...props}
       >
+        <Icons.Search className="size-4" />
         <span className={cn('hidden lg:inline-flex')}>
           Search documentation...
         </span>
         <span className={cn('inline-flex lg:hidden')}>Search...</span>
         <kbd
           className={cn(
-            'absolute top-1 right-1',
+            'ml-auto',
             'flex items-center gap-1.5',
-            'bg-muted rounded-[6px] border py-0.5 px-2',
+            'bg-muted rounded-[4px] border py-0.5 px-2',
             'font-mono text-xs font-medium',
             'pointer-events-none select-none opacity-100',
           )}

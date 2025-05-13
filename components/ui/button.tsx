@@ -31,6 +31,7 @@ const buttonVariants = cva(
         sm: 'h-8 rounded-sm gap-1.5 py-1.5 px-3',
         lg: 'h-10 rounded-sm px-8',
         icon: 'size-9',
+        search: 'h-9 pl-2 pr-1.5',
       },
     },
     defaultVariants: {
