@@ -12,19 +12,13 @@ import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
-}
-
-export async function generateStaticParams(): Promise<PageProps['params'][]> {
-  return allShowcases.map((page) => ({
-    slug: page.slugAsParams.split('/'),
-  }));
+  }>;
 }
 
 async function getPageFromParams(params: PageProps['params']) {
-  const slug = params?.slug?.join('/');
+  const slug = (await params).slug?.join('/') || 'h3-use';
   const page = allShowcases.find((page) => page.slugAsParams === slug);
 
   if (!page) {
