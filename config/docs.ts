@@ -6,6 +6,10 @@ export const docsConfig: DashboardConfig = {
       title: 'Hooks',
       href: '/hooks',
     },
+    {
+      title: 'Showcase',
+      href: '/showcase',
+    },
   ],
   sidebarNav: [
     {
