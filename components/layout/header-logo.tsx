@@ -7,7 +7,7 @@ import { siteConfig } from '@/config/site';
 
 export function HeaderLogo() {
   return (
-    <Link href="/" className={cn('flex items-center gap-2')}>
+    <Link href="/" className={cn('flex items-center gap-2 mr-auto lg:mr-0')}>
       <Image
         src="/logo.svg"
         alt={`${siteConfig.name}'s logo`}

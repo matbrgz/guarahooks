@@ -54,33 +54,7 @@ export function NavigationMobile() {
           </SheetClose>
         </SheetHeader>
         {/* Content */}
-
-        <ScrollArea className={cn('h-[calc(100dvh-64px)]')}>
-          <div className={cn('flex gap-2', 'p-4', 'border-b border-dashed')}>
-            <Link
-              href={siteConfig.links.twitter}
-              className={cn(
-                buttonVariants({ variant: 'secondary', size: 'icon' }),
-                'size-10',
-              )}
-              target="_blank"
-              aria-label="Twitter"
-            >
-              <Icons.Twitter className="size-4 fill-current" />
-            </Link>
-            <Link
-              href={siteConfig.links.github}
-              className={cn(
-                buttonVariants({ variant: 'secondary', size: 'icon' }),
-                'size-10',
-              )}
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <Icons.Github className="size-4" />
-            </Link>
-            <ThemeToggle variant="secondary" className="size-10" />
-          </div>
+        <ScrollArea className={cn('h-[calc(100dvh-68px)]')}>
           {/* Main Navigation */}
           <ul className={cn('flex flex-col gap-y-2', 'p-4')}>
             {docsConfig.mainNav.map((item) => (
@@ -108,6 +82,38 @@ export function NavigationMobile() {
               </div>
             ))}
           </ul>
+          {/* Socials */}
+          <div
+            className={cn(
+              'flex justify-end gap-2',
+              'px-4 py-4',
+              'border-t border-dashed',
+            )}
+          >
+            <Link
+              href={siteConfig.links.twitter}
+              className={cn(
+                buttonVariants({ variant: 'outline', size: 'icon' }),
+                'size-10',
+              )}
+              target="_blank"
+              aria-label="Twitter"
+            >
+              <Icons.Twitter className="size-4 fill-current" />
+            </Link>
+            <Link
+              href={siteConfig.links.github}
+              className={cn(
+                buttonVariants({ variant: 'outline', size: 'icon' }),
+                'size-10',
+              )}
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <Icons.Github className="size-4" />
+            </Link>
+            <ThemeToggle variant="outline" className="size-10" />
+          </div>
         </ScrollArea>
       </SheetContent>
     </Sheet>

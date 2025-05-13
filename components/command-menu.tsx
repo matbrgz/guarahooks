@@ -66,11 +66,10 @@ export function CommandMenu({ ...props }: DialogProps) {
         variant="outline"
         size="search"
         className={cn(
-          'relative w-48 md:w-40 lg:w-80',
+          'relative md:w-40 lg:w-80',
           'text-sm font-normal',
           'text-muted-foreground bg-background',
-          'justify-start',
-          // 'justify-start sm:pr-12',
+          'lg:justify-start',
         )}
         onClick={() => setOpen(true)}
         {...props}
@@ -79,11 +78,10 @@ export function CommandMenu({ ...props }: DialogProps) {
         <span className={cn('hidden lg:inline-flex')}>
           Search documentation...
         </span>
-        <span className={cn('inline-flex lg:hidden')}>Search...</span>
         <kbd
           className={cn(
-            'ml-auto',
-            'flex items-center gap-1.5',
+            'hidden ml-auto',
+            'lg:flex items-center gap-1.5',
             'bg-muted rounded-[4px] border py-0.5 px-2',
             'font-mono text-xs font-medium',
             'pointer-events-none select-none opacity-100',

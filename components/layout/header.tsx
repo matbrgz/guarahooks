@@ -21,7 +21,7 @@ export function Header() {
         className={cn(
           'max-w-screen-2xl size-full h-16',
           'lg:border-x border-dashed mx-auto px-4',
-          'flex items-center justify-between',
+          'flex items-center lg:justify-between gap-4 lg:gap-0',
           'relative',
         )}
       >
