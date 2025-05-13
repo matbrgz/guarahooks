@@ -220,6 +220,27 @@ pnpm lint:fix
 
 Make sure to run these two commands before committing your changes.
 
+## Adding a Showcase
+
+### 1. Create the MDX file
+
+Create the MDX file for your showcase at `content/showcases/website-name.mdx`:
+
+```md
+---
+title: website-name.com
+description: Website description
+image: /showcase/website-name.png
+href: https://website-name.com
+featured: true
+affiliation: YC S25, raised $10M
+---
+```
+
+### 2. Update your image
+
+Upload an banner image of you website in `public/showcase/website-name.png`
+
 ## Ask for Help
 
 For any help or questions, please open a new GitHub issue.
