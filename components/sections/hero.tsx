@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import Link from 'next/link';
 
 import { BlurredBlob } from '@/components/design/blurred-blob';
@@ -11,6 +13,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
+import { getGithubStars } from '@/lib/github';
 import { getHooksCount } from '@/lib/hooks';
 import { cn } from '@/lib/utils';
 
@@ -20,19 +23,7 @@ import { NumberTicker } from '../magicui/number-ticker';
 
 export async function Hero() {
   const hooksCount = getHooksCount();
-  let githubStars = 50;
-
-  try {
-    const response = await fetch('https://api.github.com/repos/h3rmel/h3-use');
-
-    if (response.ok) {
-      const data = await response.json();
-
-      githubStars = data.stargazers_count || 0;
-    }
-  } catch (error) {
-    console.error('Error fetching GitHub stars:', error);
-  }
+  const githubStars = await getGithubStars();
 
   return (
     <div
@@ -94,9 +85,17 @@ export async function Hero() {
             </Link>
           </TooltipTrigger>
           <TooltipContent side="bottom">
-            <p className="text-sm text-accent-foreground">
-              Currently with <NumberTicker value={githubStars} /> stars.
-            </p>
+            <Suspense
+              fallback={
+                <p className="text-sm text-accent-foreground">
+                  Counting stars...
+                </p>
+              }
+            >
+              <p className="text-sm text-accent-foreground">
+                Currently with <NumberTicker value={githubStars} /> stars.
+              </p>
+            </Suspense>
           </TooltipContent>
         </Tooltip>
       </div>
