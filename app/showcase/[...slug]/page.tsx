@@ -37,7 +37,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const url = 'https://h3.use';
+  const url = 'https://guarahooks.com';
 
   const ogUrl = new URL(`${url}/og`);
   ogUrl.searchParams.set('heading', page.title);
@@ -98,7 +98,11 @@ export default async function PagePage({ params }: PageProps) {
             >
               {page.title}
             </Link>{' '}
-            uses GuaraHooks to build their app.
+            uses{' '}
+            <span className="text-foreground">
+              guara<span className={cn('font-bold')}>hooks</span>
+            </span>{' '}
+            to build their app.
           </h3>
         </hgroup>
         <ShowcaseCard
