@@ -4,6 +4,9 @@ import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
 
+const guara = siteConfig.name.slice(0, 5);
+const hooks = siteConfig.name.slice(5);
+
 export function Footer() {
   return (
     <footer
@@ -21,7 +24,8 @@ export function Footer() {
         )}
       >
         <p className="text-muted-foreground text-sm">
-          &copy; {new Date().getFullYear()} {siteConfig.name}
+          &copy; {new Date().getFullYear()} {guara}
+          <span className="font-bold">{hooks}</span>
         </p>
         <p className="text-muted-foreground text-sm">
           Brought to you by{' '}
@@ -30,7 +34,7 @@ export function Footer() {
             className="underline"
             target="_blank"
           >
-            hermel
+            h3rmel
           </Link>
           .
         </p>
