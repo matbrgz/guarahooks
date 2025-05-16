@@ -17,9 +17,9 @@ import { Label } from '@/components/ui/label';
 import { usePageTitle } from '@/registry/hooks/use-page-title';
 
 export default function UsePageTitleDemo() {
-  const [title, setTitle] = useState('H3-use');
+  const [title, setTitle] = useState('guarahooks');
   const { setTitle: updatePageTitle, resetTitle } = usePageTitle({
-    suffix: 'h3-use',
+    suffix: 'guarahooks',
     separator: ' - ',
   });
 

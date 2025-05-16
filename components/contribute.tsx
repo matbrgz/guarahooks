@@ -14,7 +14,7 @@ export function Contribute({ doc }: { doc: Doc }) {
       icon: Icons.Bug,
       href: getGitHubIssueUrl({
         owner: 'h3rmel',
-        repo: 'h3-use',
+        repo: 'guarahooks',
         title: `[bug]: ${doc.slug}`,
         labels: ['bug', 'documentation'],
         template: 'bug_report.md',
@@ -25,7 +25,7 @@ export function Contribute({ doc }: { doc: Doc }) {
       icon: Icons.Lightbulb,
       href: getGitHubIssueUrl({
         owner: 'h3rmel',
-        repo: 'h3-use',
+        repo: 'guarahooks',
         title: `[feat]: ${doc.slug}`,
         labels: ['enhancement'],
         template: 'feature_request.md',

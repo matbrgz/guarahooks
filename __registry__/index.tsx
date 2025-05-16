@@ -16,7 +16,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-window-size.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-window-size.tsx',
+        target: 'hooks/guarahooks/use-window-size.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -39,7 +39,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-media.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-media.tsx',
+        target: 'hooks/guarahooks/use-media.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -62,7 +62,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-mouse.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-mouse.tsx',
+        target: 'hooks/guarahooks/use-mouse.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -85,7 +85,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-keypress.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-keypress.tsx',
+        target: 'hooks/guarahooks/use-keypress.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -108,7 +108,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-orientation.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-orientation.tsx',
+        target: 'hooks/guarahooks/use-orientation.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -132,7 +132,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-intersection-observer.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-intersection-observer.tsx',
+        target: 'hooks/guarahooks/use-intersection-observer.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -157,7 +157,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-toggle.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-toggle.tsx',
+        target: 'hooks/guarahooks/use-toggle.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -180,7 +180,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-set.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-set.tsx',
+        target: 'hooks/guarahooks/use-set.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -203,7 +203,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-map.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-map.tsx',
+        target: 'hooks/guarahooks/use-map.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -226,7 +226,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-local-storage.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-local-storage.tsx',
+        target: 'hooks/guarahooks/use-local-storage.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -249,7 +249,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-session-storage.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-session-storage.tsx',
+        target: 'hooks/guarahooks/use-session-storage.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -272,7 +272,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-cookie.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-cookie.tsx',
+        target: 'hooks/guarahooks/use-cookie.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -295,7 +295,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-copy-to-clipboard.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-copy-to-clipboard.tsx',
+        target: 'hooks/guarahooks/use-copy-to-clipboard.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -318,7 +318,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-debounce-callback.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-debounce-callback.tsx',
+        target: 'hooks/guarahooks/use-debounce-callback.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -341,7 +341,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-debounce-state.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-debounce-state.tsx',
+        target: 'hooks/guarahooks/use-debounce-state.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -364,7 +364,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-click-outside.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-click-outside.tsx',
+        target: 'hooks/guarahooks/use-click-outside.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -387,7 +387,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-on-mount.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-on-mount.tsx',
+        target: 'hooks/guarahooks/use-on-mount.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -411,7 +411,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-on-unmount.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-on-unmount.tsx',
+        target: 'hooks/guarahooks/use-on-unmount.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -435,7 +435,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-did-update.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-did-update.tsx',
+        target: 'hooks/guarahooks/use-did-update.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -458,7 +458,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-os.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-os.tsx',
+        target: 'hooks/guarahooks/use-os.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -481,7 +481,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-idle.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-idle.tsx',
+        target: 'hooks/guarahooks/use-idle.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -504,7 +504,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-fullscreen.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-fullscreen.tsx',
+        target: 'hooks/guarahooks/use-fullscreen.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -527,7 +527,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-confirm.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-confirm.tsx',
+        target: 'hooks/guarahooks/use-confirm.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -550,7 +550,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-notifications.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-notifications.tsx',
+        target: 'hooks/guarahooks/use-notifications.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -573,7 +573,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-page-leave.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-page-leave.tsx',
+        target: 'hooks/guarahooks/use-page-leave.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -597,7 +597,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-disclosure.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-disclosure.tsx',
+        target: 'hooks/guarahooks/use-disclosure.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -620,7 +620,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-mutation-observer.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-mutation-observer.tsx',
+        target: 'hooks/guarahooks/use-mutation-observer.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -644,7 +644,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-resize-observer.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-resize-observer.tsx',
+        target: 'hooks/guarahooks/use-resize-observer.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -668,7 +668,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-fetch.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-fetch.tsx',
+        target: 'hooks/guarahooks/use-fetch.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -691,7 +691,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-pagination.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-pagination.tsx',
+        target: 'hooks/guarahooks/use-pagination.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -714,7 +714,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-event-listener.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-event-listener.tsx',
+        target: 'hooks/guarahooks/use-event-listener.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -737,7 +737,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-axios.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-axios.tsx',
+        target: 'hooks/guarahooks/use-axios.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -760,7 +760,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-page-title.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-page-title.tsx',
+        target: 'hooks/guarahooks/use-page-title.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -783,7 +783,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-interval.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-interval.tsx',
+        target: 'hooks/guarahooks/use-interval.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -806,7 +806,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-timeout.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-timeout.tsx',
+        target: 'hooks/guarahooks/use-timeout.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -829,7 +829,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-battery-status.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-battery-status.tsx',
+        target: 'hooks/guarahooks/use-battery-status.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -852,7 +852,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-geolocation.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-geolocation.tsx',
+        target: 'hooks/guarahooks/use-geolocation.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -876,7 +876,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-isomorphic-layout-effect.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-isomorphic-layout-effect.tsx',
+        target: 'hooks/guarahooks/use-isomorphic-layout-effect.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -901,7 +901,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-scroll-position.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-scroll-position.tsx',
+        target: 'hooks/guarahooks/use-scroll-position.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -924,7 +924,7 @@ export const Index: Record<string, any> = {
       {
         path: 'registry/hooks/use-scroll-lock.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-scroll-lock.tsx',
+        target: 'hooks/guarahooks/use-scroll-lock.tsx',
       },
     ],
     component: React.lazy(async () => {
@@ -942,7 +942,10 @@ export const Index: Record<string, any> = {
     name: 'use-window-size-demo',
     description: "use-window-size's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['card', 'https://h3-use.com/r/use-window-size.json'],
+    registryDependencies: [
+      'card',
+      'https://guarahooks.com/r/use-window-size.json',
+    ],
     files: [
       {
         path: 'registry/example/use-window-size-demo.tsx',
@@ -965,7 +968,7 @@ export const Index: Record<string, any> = {
     name: 'use-media-demo',
     description: "use-media's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['card', 'https://h3-use.com/r/use-media.json'],
+    registryDependencies: ['card', 'https://guarahooks.com/r/use-media.json'],
     files: [
       {
         path: 'registry/example/use-media-demo.tsx',
@@ -991,7 +994,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'checkbox',
       'card',
-      'https://h3-use.com/r/use-mouse.json',
+      'https://guarahooks.com/r/use-mouse.json',
     ],
     files: [
       {
@@ -1017,7 +1020,7 @@ export const Index: Record<string, any> = {
     type: 'registry:example',
     registryDependencies: [
       'card',
-      'https://h3-use.com/r/use-click-outside.json',
+      'https://guarahooks.com/r/use-click-outside.json',
     ],
     files: [
       {
@@ -1041,7 +1044,10 @@ export const Index: Record<string, any> = {
     name: 'use-keypress-demo',
     description: "use-keypress's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['card', 'https://h3-use.com/r/use-keypress.json'],
+    registryDependencies: [
+      'card',
+      'https://guarahooks.com/r/use-keypress.json',
+    ],
     files: [
       {
         path: 'registry/example/use-keypress-demo.tsx',
@@ -1064,7 +1070,10 @@ export const Index: Record<string, any> = {
     name: 'use-orientation-demo',
     description: "use-orientation's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['card', 'https://h3-use.com/r/use-orientation.json'],
+    registryDependencies: [
+      'card',
+      'https://guarahooks.com/r/use-orientation.json',
+    ],
     files: [
       {
         path: 'registry/example/use-orientation-demo.tsx',
@@ -1090,7 +1099,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-toggle.json',
+      'https://guarahooks.com/r/use-toggle.json',
     ],
     files: [
       {
@@ -1118,7 +1127,7 @@ export const Index: Record<string, any> = {
       'card',
       'button',
       'input',
-      'https://h3-use.com/r/use-set.json',
+      'https://guarahooks.com/r/use-set.json',
     ],
     files: [
       {
@@ -1146,7 +1155,7 @@ export const Index: Record<string, any> = {
       'card',
       'button',
       'input',
-      'https://h3-use.com/r/use-map.json',
+      'https://guarahooks.com/r/use-map.json',
     ],
     files: [
       {
@@ -1174,7 +1183,7 @@ export const Index: Record<string, any> = {
       'card',
       'input',
       'label',
-      'https://h3-use.com/r/use-local-storage.json',
+      'https://guarahooks.com/r/use-local-storage.json',
     ],
     files: [
       {
@@ -1203,7 +1212,7 @@ export const Index: Record<string, any> = {
       'button',
       'input',
       'label',
-      'https://h3-use.com/r/use-session-storage.json',
+      'https://guarahooks.com/r/use-session-storage.json',
     ],
     files: [
       {
@@ -1233,7 +1242,7 @@ export const Index: Record<string, any> = {
       'card',
       'input',
       'button',
-      'https://h3-use.com/r/use-cookie.json',
+      'https://guarahooks.com/r/use-cookie.json',
     ],
     files: [
       {
@@ -1261,7 +1270,7 @@ export const Index: Record<string, any> = {
       'card',
       'button',
       'input',
-      'https://h3-use.com/r/use-copy-to-clipboard.json',
+      'https://guarahooks.com/r/use-copy-to-clipboard.json',
     ],
     files: [
       {
@@ -1290,7 +1299,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'input',
-      'https://h3-use.com/r/use-debounce-callback.json',
+      'https://guarahooks.com/r/use-debounce-callback.json',
     ],
     files: [
       {
@@ -1319,7 +1328,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'input',
-      'https://h3-use.com/r/use-debounce-state.json',
+      'https://guarahooks.com/r/use-debounce-state.json',
     ],
     files: [
       {
@@ -1345,7 +1354,10 @@ export const Index: Record<string, any> = {
     name: 'use-on-mount-demo',
     description: "use-on-mount's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['card', 'https://h3-use.com/r/use-on-mount.json'],
+    registryDependencies: [
+      'card',
+      'https://guarahooks.com/r/use-on-mount.json',
+    ],
     files: [
       {
         path: 'registry/example/use-on-mount-demo.tsx',
@@ -1372,7 +1384,7 @@ export const Index: Record<string, any> = {
       'card',
       'button',
       'sonner',
-      'https://h3-use.com/r/use-on-unmount.json',
+      'https://guarahooks.com/r/use-on-unmount.json',
     ],
     files: [
       {
@@ -1399,7 +1411,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-did-update.json',
+      'https://guarahooks.com/r/use-did-update.json',
     ],
     files: [
       {
@@ -1423,7 +1435,7 @@ export const Index: Record<string, any> = {
     name: 'use-os-demo',
     description: "use-os's hook in action.",
     type: 'registry:example',
-    registryDependencies: ['card', 'https://h3-use.com/r/use-os.json'],
+    registryDependencies: ['card', 'https://guarahooks.com/r/use-os.json'],
     files: [
       {
         path: 'registry/example/use-os-demo.tsx',
@@ -1450,7 +1462,7 @@ export const Index: Record<string, any> = {
       'card',
       'badge',
       'button',
-      'https://h3-use.com/r/use-idle.json',
+      'https://guarahooks.com/r/use-idle.json',
     ],
     files: [
       {
@@ -1477,7 +1489,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-fullscreen.json',
+      'https://guarahooks.com/r/use-fullscreen.json',
     ],
     files: [
       {
@@ -1504,7 +1516,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-confirm.json',
+      'https://guarahooks.com/r/use-confirm.json',
     ],
     files: [
       {
@@ -1534,7 +1546,7 @@ export const Index: Record<string, any> = {
       'button',
       'badge',
       'lucide-react',
-      'https://h3-use.com/r/use-notifications.json',
+      'https://guarahooks.com/r/use-notifications.json',
     ],
     files: [
       {
@@ -1562,7 +1574,7 @@ export const Index: Record<string, any> = {
       'card',
       'button',
       'badge',
-      'https://h3-use.com/r/use-page-leave.json',
+      'https://guarahooks.com/r/use-page-leave.json',
     ],
     files: [
       {
@@ -1590,7 +1602,7 @@ export const Index: Record<string, any> = {
       'card',
       'button',
       'dialog',
-      'https://h3-use.com/r/use-disclosure.json',
+      'https://guarahooks.com/r/use-disclosure.json',
     ],
     files: [
       {
@@ -1617,7 +1629,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'button',
       'card',
-      'https://h3-use.com/r/use-mutation-observer.json',
+      'https://guarahooks.com/r/use-mutation-observer.json',
     ],
     files: [
       {
@@ -1646,7 +1658,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'button',
       'card',
-      'https://h3-use.com/r/use-resize-observer.json',
+      'https://guarahooks.com/r/use-resize-observer.json',
     ],
     files: [
       {
@@ -1675,7 +1687,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-intersection-observer.json',
+      'https://guarahooks.com/r/use-intersection-observer.json',
     ],
     files: [
       {
@@ -1704,7 +1716,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-fetch.json',
+      'https://guarahooks.com/r/use-fetch.json',
     ],
     files: [
       {
@@ -1731,7 +1743,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-pagination.json',
+      'https://guarahooks.com/r/use-pagination.json',
     ],
     files: [
       {
@@ -1759,7 +1771,7 @@ export const Index: Record<string, any> = {
       'card',
       'badge',
       'button',
-      'https://h3-use.com/r/use-event-listener.json',
+      'https://guarahooks.com/r/use-event-listener.json',
     ],
     files: [
       {
@@ -1792,7 +1804,7 @@ export const Index: Record<string, any> = {
       'label',
       'alert',
       'lucide-react',
-      'https://h3-use.com/r/use-axios.json',
+      'https://guarahooks.com/r/use-axios.json',
     ],
     files: [
       {
@@ -1821,7 +1833,7 @@ export const Index: Record<string, any> = {
       'button',
       'input',
       'label',
-      'https://h3-use.com/r/use-page-title.json',
+      'https://guarahooks.com/r/use-page-title.json',
     ],
     files: [
       {
@@ -1848,7 +1860,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-interval.json',
+      'https://guarahooks.com/r/use-interval.json',
     ],
     files: [
       {
@@ -1875,7 +1887,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-timeout.json',
+      'https://guarahooks.com/r/use-timeout.json',
     ],
     files: [
       {
@@ -1902,7 +1914,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'badge',
-      'https://h3-use.com/r/use-battery-status.json',
+      'https://guarahooks.com/r/use-battery-status.json',
     ],
     files: [
       {
@@ -1931,7 +1943,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-geolocation.json',
+      'https://guarahooks.com/r/use-geolocation.json',
     ],
     files: [
       {
@@ -1958,7 +1970,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-isomorphic-layout-effect.json',
+      'https://guarahooks.com/r/use-isomorphic-layout-effect.json',
     ],
     files: [
       {
@@ -1986,7 +1998,7 @@ export const Index: Record<string, any> = {
     type: 'registry:example',
     registryDependencies: [
       'card',
-      'https://h3-use.com/r/use-scroll-position.json',
+      'https://guarahooks.com/r/use-scroll-position.json',
     ],
     files: [
       {
@@ -2015,7 +2027,7 @@ export const Index: Record<string, any> = {
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-scroll-lock.json',
+      'https://guarahooks.com/r/use-scroll-lock.json',
     ],
     files: [
       {

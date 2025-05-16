@@ -6,7 +6,10 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseWindowSizeDemo',
     description: "use-window-size's hook in action.",
-    registryDependencies: ['card', 'https://h3-use.com/r/use-window-size.json'],
+    registryDependencies: [
+      'card',
+      'https://guarahooks.com/r/use-window-size.json',
+    ],
     files: [
       {
         path: 'registry/example/use-window-size-demo.tsx',
@@ -20,7 +23,7 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseMediaDemo',
     description: "use-media's hook in action.",
-    registryDependencies: ['card', 'https://h3-use.com/r/use-media.json'],
+    registryDependencies: ['card', 'https://guarahooks.com/r/use-media.json'],
     files: [
       {
         path: 'registry/example/use-media-demo.tsx',
@@ -37,7 +40,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'checkbox',
       'card',
-      'https://h3-use.com/r/use-mouse.json',
+      'https://guarahooks.com/r/use-mouse.json',
     ],
     files: [
       {
@@ -54,7 +57,7 @@ export const examples: Registry['items'] = [
     description: "use-click-outside's hook in action.",
     registryDependencies: [
       'card',
-      'https://h3-use.com/r/use-click-outside.json',
+      'https://guarahooks.com/r/use-click-outside.json',
     ],
     files: [
       {
@@ -69,7 +72,10 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseKeypressDemo',
     description: "use-keypress's hook in action.",
-    registryDependencies: ['card', 'https://h3-use.com/r/use-keypress.json'],
+    registryDependencies: [
+      'card',
+      'https://guarahooks.com/r/use-keypress.json',
+    ],
     files: [
       {
         path: 'registry/example/use-keypress-demo.tsx',
@@ -83,7 +89,10 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseOrientationDemo',
     description: "use-orientation's hook in action.",
-    registryDependencies: ['card', 'https://h3-use.com/r/use-orientation.json'],
+    registryDependencies: [
+      'card',
+      'https://guarahooks.com/r/use-orientation.json',
+    ],
     files: [
       {
         path: 'registry/example/use-orientation-demo.tsx',
@@ -100,7 +109,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-toggle.json',
+      'https://guarahooks.com/r/use-toggle.json',
     ],
     files: [
       {
@@ -119,7 +128,7 @@ export const examples: Registry['items'] = [
       'card',
       'button',
       'input',
-      'https://h3-use.com/r/use-set.json',
+      'https://guarahooks.com/r/use-set.json',
     ],
     files: [
       {
@@ -138,7 +147,7 @@ export const examples: Registry['items'] = [
       'card',
       'button',
       'input',
-      'https://h3-use.com/r/use-map.json',
+      'https://guarahooks.com/r/use-map.json',
     ],
     files: [
       {
@@ -157,7 +166,7 @@ export const examples: Registry['items'] = [
       'card',
       'input',
       'label',
-      'https://h3-use.com/r/use-local-storage.json',
+      'https://guarahooks.com/r/use-local-storage.json',
     ],
     files: [
       {
@@ -177,7 +186,7 @@ export const examples: Registry['items'] = [
       'button',
       'input',
       'label',
-      'https://h3-use.com/r/use-session-storage.json',
+      'https://guarahooks.com/r/use-session-storage.json',
     ],
     files: [
       {
@@ -196,7 +205,7 @@ export const examples: Registry['items'] = [
       'card',
       'input',
       'button',
-      'https://h3-use.com/r/use-cookie.json',
+      'https://guarahooks.com/r/use-cookie.json',
     ],
     files: [
       {
@@ -215,7 +224,7 @@ export const examples: Registry['items'] = [
       'card',
       'button',
       'input',
-      'https://h3-use.com/r/use-copy-to-clipboard.json',
+      'https://guarahooks.com/r/use-copy-to-clipboard.json',
     ],
     files: [
       {
@@ -233,7 +242,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'input',
-      'https://h3-use.com/r/use-debounce-callback.json',
+      'https://guarahooks.com/r/use-debounce-callback.json',
     ],
     files: [
       {
@@ -251,7 +260,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'input',
-      'https://h3-use.com/r/use-debounce-state.json',
+      'https://guarahooks.com/r/use-debounce-state.json',
     ],
     files: [
       {
@@ -266,7 +275,10 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseOnMountDemo',
     description: "use-on-mount's hook in action.",
-    registryDependencies: ['card', 'https://h3-use.com/r/use-on-mount.json'],
+    registryDependencies: [
+      'card',
+      'https://guarahooks.com/r/use-on-mount.json',
+    ],
     files: [
       {
         path: 'registry/example/use-on-mount-demo.tsx',
@@ -284,7 +296,7 @@ export const examples: Registry['items'] = [
       'card',
       'button',
       'sonner',
-      'https://h3-use.com/r/use-on-unmount.json',
+      'https://guarahooks.com/r/use-on-unmount.json',
     ],
     files: [
       {
@@ -302,7 +314,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-did-update.json',
+      'https://guarahooks.com/r/use-did-update.json',
     ],
     files: [
       {
@@ -317,7 +329,7 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseOSDemo',
     description: "use-os's hook in action.",
-    registryDependencies: ['card', 'https://h3-use.com/r/use-os.json'],
+    registryDependencies: ['card', 'https://guarahooks.com/r/use-os.json'],
     files: [
       {
         path: 'registry/example/use-os-demo.tsx',
@@ -335,7 +347,7 @@ export const examples: Registry['items'] = [
       'card',
       'badge',
       'button',
-      'https://h3-use.com/r/use-idle.json',
+      'https://guarahooks.com/r/use-idle.json',
     ],
     files: [
       {
@@ -353,7 +365,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-fullscreen.json',
+      'https://guarahooks.com/r/use-fullscreen.json',
     ],
     files: [
       {
@@ -371,7 +383,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-confirm.json',
+      'https://guarahooks.com/r/use-confirm.json',
     ],
     files: [
       {
@@ -392,7 +404,7 @@ export const examples: Registry['items'] = [
       'button',
       'badge',
       'lucide-react',
-      'https://h3-use.com/r/use-notifications.json',
+      'https://guarahooks.com/r/use-notifications.json',
     ],
     files: [
       {
@@ -411,7 +423,7 @@ export const examples: Registry['items'] = [
       'card',
       'button',
       'badge',
-      'https://h3-use.com/r/use-page-leave.json',
+      'https://guarahooks.com/r/use-page-leave.json',
     ],
     files: [
       {
@@ -430,7 +442,7 @@ export const examples: Registry['items'] = [
       'card',
       'button',
       'dialog',
-      'https://h3-use.com/r/use-disclosure.json',
+      'https://guarahooks.com/r/use-disclosure.json',
     ],
     files: [
       {
@@ -448,7 +460,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'button',
       'card',
-      'https://h3-use.com/r/use-mutation-observer.json',
+      'https://guarahooks.com/r/use-mutation-observer.json',
     ],
     files: [
       {
@@ -466,7 +478,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'button',
       'card',
-      'https://h3-use.com/r/use-resize-observer.json',
+      'https://guarahooks.com/r/use-resize-observer.json',
     ],
     files: [
       {
@@ -484,7 +496,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-intersection-observer.json',
+      'https://guarahooks.com/r/use-intersection-observer.json',
     ],
     files: [
       {
@@ -502,7 +514,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-fetch.json',
+      'https://guarahooks.com/r/use-fetch.json',
     ],
     files: [
       {
@@ -520,7 +532,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-pagination.json',
+      'https://guarahooks.com/r/use-pagination.json',
     ],
     files: [
       {
@@ -539,7 +551,7 @@ export const examples: Registry['items'] = [
       'card',
       'badge',
       'button',
-      'https://h3-use.com/r/use-event-listener.json',
+      'https://guarahooks.com/r/use-event-listener.json',
     ],
     files: [
       {
@@ -561,7 +573,7 @@ export const examples: Registry['items'] = [
       'label',
       'alert',
       'lucide-react',
-      'https://h3-use.com/r/use-axios.json',
+      'https://guarahooks.com/r/use-axios.json',
     ],
     files: [
       {
@@ -581,7 +593,7 @@ export const examples: Registry['items'] = [
       'button',
       'input',
       'label',
-      'https://h3-use.com/r/use-page-title.json',
+      'https://guarahooks.com/r/use-page-title.json',
     ],
     files: [
       {
@@ -599,7 +611,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-interval.json',
+      'https://guarahooks.com/r/use-interval.json',
     ],
     files: [
       {
@@ -617,7 +629,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-timeout.json',
+      'https://guarahooks.com/r/use-timeout.json',
     ],
     files: [
       {
@@ -635,7 +647,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'badge',
-      'https://h3-use.com/r/use-battery-status.json',
+      'https://guarahooks.com/r/use-battery-status.json',
     ],
     files: [
       {
@@ -653,7 +665,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-geolocation.json',
+      'https://guarahooks.com/r/use-geolocation.json',
     ],
     files: [
       {
@@ -671,7 +683,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-isomorphic-layout-effect.json',
+      'https://guarahooks.com/r/use-isomorphic-layout-effect.json',
     ],
     files: [
       {
@@ -688,7 +700,7 @@ export const examples: Registry['items'] = [
     description: "use-scroll-position's hook in action.",
     registryDependencies: [
       'card',
-      'https://h3-use.com/r/use-scroll-position.json',
+      'https://guarahooks.com/r/use-scroll-position.json',
     ],
     files: [
       {
@@ -706,7 +718,7 @@ export const examples: Registry['items'] = [
     registryDependencies: [
       'card',
       'button',
-      'https://h3-use.com/r/use-scroll-lock.json',
+      'https://guarahooks.com/r/use-scroll-lock.json',
     ],
     files: [
       {

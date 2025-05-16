@@ -19,7 +19,7 @@ export function Showcase() {
           Showcase
         </h2>
         <h3 className="mx-auto text-balance text-center text-lg font-medium tracking-tight text-muted-foreground">
-          Companies and indie-hackers choose h3/use to build their apps.
+          Companies and indie-hackers choose GuaraHooks to build their apps.
         </h3>
       </hgroup>
       <div className="relative max-w-screen-xl mx-auto flex flex-col">

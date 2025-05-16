@@ -43,7 +43,7 @@ export function getGitHubIssueUrl(params: GitHubIssueUrlParams): string {
 }
 
 export function getGithubFileUrl(slug: string) {
-  return `https://github.com/h3rmel/h3-use/blob/main/content${
+  return `https://github.com/h3rmel/guarahooks/blob/main/content${
     slug === '/docs' ? '/docs/index' : slug
   }.mdx`;
 }
@@ -52,17 +52,20 @@ export async function getGithubStars() {
   let stars = 100;
 
   try {
-    const response = await fetch('https://api.github.com/repos/h3rmel/h3-use', {
-      headers: process.env.GITHUB_TOKEN
-        ? {
-            Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-            'Content-Type': 'application/json',
-          }
-        : {},
-      next: {
-        revalidate: 3600,
+    const response = await fetch(
+      'https://api.github.com/repos/h3rmel/guarahooks',
+      {
+        headers: process.env.GITHUB_TOKEN
+          ? {
+              Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+              'Content-Type': 'application/json',
+            }
+          : {},
+        next: {
+          revalidate: 3600,
+        },
       },
-    });
+    );
 
     if (response.ok) {
       const data = await response.json();

@@ -9,8 +9,8 @@ import { examples } from '../registry/registry-examples';
 import { hooks } from '../registry/registry-hooks';
 
 const registry: Registry = {
-  name: 'h3/use',
-  homepage: 'https://h3-use.com/',
+  name: 'GuaraHooks',
+  homepage: 'https://guarahooks.com/',
   items: [...hooks, ...examples],
 };
 
@@ -114,7 +114,7 @@ async function buildRegistry() {
     });
   });
 
-  // 2. Replace `@/registry/hooks/` with `@/hooks/h3-use/` in all files
+  // 2. Replace `@/registry/hooks/` with `@/hooks/guarahooks/` in all files
   const files = await fs.readdir(path.join(process.cwd(), 'public/r'));
 
   await Promise.all(
@@ -126,12 +126,12 @@ async function buildRegistry() {
 
       const registryItem = JSON.parse(content);
 
-      // Replace `@/registry/h3-use/` in files
+      // Replace `@/registry/guarahooks/` in files
       registryItem.files = registryItem.files?.map((file) => {
         if (file.content?.includes('@/registry/hooks')) {
           file.content = file.content?.replaceAll(
             '@/registry/hooks',
-            '@/hooks/h3-use',
+            '@/hooks/guarahooks',
           );
         }
         return file;

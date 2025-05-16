@@ -9,7 +9,7 @@
       "path": "registry/hooks/use-update-effect.tsx",
       "content": "'use client';\n\nimport { DependencyList, EffectCallback, useEffect, useRef } from 'react';\n\nexport function useUpdateEffect(effect: EffectCallback, deps?: DependencyList) {\n  const isFirst = useRef(true);\n\n  useEffect(() => {\n    if (isFirst.current) {\n      isFirst.current = false;\n      return;\n    }\n    return effect();\n  }, deps);\n}\n",
       "type": "registry:hook",
-      "target": "hooks/h3-use/use-update-effect.tsx"
+      "target": "hooks/guarahooks/use-update-effect.tsx"
     }
   ],
   "categories": ["lifecycle"]

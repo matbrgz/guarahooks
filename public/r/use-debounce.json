@@ -9,7 +9,7 @@
       "path": "registry/hooks/use-debounce.tsx",
       "content": "'use client';\n\nimport { useCallback, useEffect, useRef } from 'react';\n\nexport function useDebounce<T extends (...args: any[]) => void>(\n  callback: T,\n  delay: number,\n): (...args: Parameters<T>) => void {\n  const callbackRef = useRef<T>(callback);\n  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);\n\n  useEffect(() => {\n    callbackRef.current = callback;\n  }, [callback]);\n\n  const debouncedFn = useCallback(\n    (...args: Parameters<T>) => {\n      if (timeoutRef.current) {\n        clearTimeout(timeoutRef.current);\n      }\n      timeoutRef.current = setTimeout(() => {\n        callbackRef.current(...args);\n      }, delay);\n    },\n    [delay],\n  );\n\n  // Clear the timeout when the component unmounts\n  useEffect(() => {\n    return () => {\n      if (timeoutRef.current) {\n        clearTimeout(timeoutRef.current);\n      }\n    };\n  }, []);\n\n  return debouncedFn;\n}\n",
       "type": "registry:hook",
-      "target": "hooks/h3-use/use-debounce.tsx"
+      "target": "hooks/guarahooks/use-debounce.tsx"
     }
   ],
   "categories": ["state-management"]

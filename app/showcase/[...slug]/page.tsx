@@ -18,7 +18,7 @@ interface PageProps {
 }
 
 async function getPageFromParams(params: PageProps['params']) {
-  const slug = (await params).slug?.join('/') || 'h3-use';
+  const slug = (await params).slug?.join('/') || 'guarahooks';
   const page = allShowcases.find((page) => page.slugAsParams === slug);
 
   if (!page) {
@@ -98,7 +98,7 @@ export default async function PagePage({ params }: PageProps) {
             >
               {page.title}
             </Link>{' '}
-            uses h3/use to build their app.
+            uses GuaraHooks to build their app.
           </h3>
         </hgroup>
         <ShowcaseCard

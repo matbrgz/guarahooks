@@ -1,24 +1,24 @@
-# Contributing to h3/use
+# Contributing to GuaraHooks
 
-Thank you for your interest in contributing to h3/use! We appreciate your support and look forward to your contributions. This guide will help you understand the directory structure and provide detailed instructions on how to add a new hook to h3/use.
+Thank you for your interest in contributing to GuaraHooks! We appreciate your support and look forward to your contributions. This guide will help you understand the directory structure and provide detailed instructions on how to add a new hook to GuaraHooks.
 
 ## Getting Started
 
 Fork and clone the repository.
 
 1. **Fork this repository**  
-   Click [here](https://github.com/h3rmel/h3-use/fork) to fork the repository.
+   Click [here](https://github.com/h3rmel/guarahooks/fork) to fork the repository.
 
 2. **Clone your forked repository to your local machine**
 
    ```bash
-   git clone https://github.com/<YOUR_USERNAME>/h3-use.git
+   git clone https://github.com/<YOUR_USERNAME>/guarahooks.git
    ```
 
 3. **Navigate to the project directory**
 
    ```bash
-   cd h3-use
+   cd guarahooks
    ```
 
 4. **Create a new branch for your changes**
@@ -40,7 +40,7 @@ Fork and clone the repository.
 
 ## Adding a new Hook
 
-To add a new Hook to h3/use, you will need to modify and add several files. Follow this steps.
+To add a new Hook to GuaraHooks, you will need to modify and add several files. Follow this steps.
 
 ### 1. Create Hook
 
@@ -96,7 +96,7 @@ Create an MDX file for documenting your component in `content/docs/hooks/use-exa
 ---
 title: Example Hook
 date: 2025-04-23
-description: Example hook for h3/use
+description: Example hook for GuaraHooks
 author: h3rmel
 published: true
 ---
@@ -114,7 +114,7 @@ published: true
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add "https://h3-use.com/r/use-example-hook"
+npx shadcn@latest add "https://guarahooks.com/r/use-example-hook"
 ```
 
 ```
@@ -159,12 +159,12 @@ export const hooks: Registry['items'] = [
     type: 'registry:hook',
     title: 'UseExampleHook',
     description:
-      'An hook to explain in step-by-step how to add a hook to h3/use.',
+      'An hook to explain in step-by-step how to add a hook to GuaraHooks.',
     files: [
       {
         path: 'registry/hooks/use-example-hook.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-example-hook.tsx',
+        target: 'hooks/guarahooks/use-example-hook.tsx',
       },
     ],
   },
@@ -184,7 +184,7 @@ export const examples: Registry['items'] = [
     type: 'registry:example',
     title: 'UseExampleSize Demo',
     description: "use-example-hook's hook in action.",
-    registryDependencies: ['https://h3-use.com/r/use-example-hook.json'],
+    registryDependencies: ['https://guarahooks.com/r/use-example-hook.json'],
     files: [
       {
         path: 'registry/example/use-example-hook-demo.tsx',

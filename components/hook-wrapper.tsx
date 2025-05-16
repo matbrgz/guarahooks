@@ -29,7 +29,7 @@ export const HookWrapper = ({
       key={key}
     >
       <div className="flex items-center justify-end gap-2 p-4">
-        <OpenInV0 url={`https://h3-use.com/r/${name}.json`} />
+        <OpenInV0 url={`https://guarahooks.com/r/${name}.json`} />
         <Button
           onClick={() => setKey((prev) => prev + 1)}
           size="icon"

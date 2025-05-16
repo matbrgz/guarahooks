@@ -9,7 +9,7 @@
       "path": "registry/hooks/use-isomorphic-layout-effect.tsx",
       "content": "'use client';\n\nimport {\n  DependencyList,\n  EffectCallback,\n  useEffect,\n  useLayoutEffect,\n} from 'react';\n\nexport function useIsomorphicLayoutEffect(\n  effect: EffectCallback,\n  deps?: DependencyList,\n): void {\n  const isBrowser =\n    typeof window !== 'undefined' && typeof window.document !== 'undefined';\n\n  const useIsomorphicEffect = isBrowser ? useLayoutEffect : useEffect;\n\n  useIsomorphicEffect(effect, deps);\n}\n",
       "type": "registry:hook",
-      "target": "hooks/h3-use/use-isomorphic-layout-effect.tsx"
+      "target": "hooks/guarahooks/use-isomorphic-layout-effect.tsx"
     }
   ],
   "categories": ["lifecycle"]

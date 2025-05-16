@@ -9,7 +9,7 @@
       "path": "registry/hooks/use-click-outside.tsx",
       "content": "'use client';\n\nimport { useEffect, useRef } from 'react';\n\nexport function useClickOutside<T extends HTMLElement>(\n  ref: React.RefObject<T | null>,\n  onClickOutside: (event: MouseEvent | TouchEvent) => void,\n) {\n  const callbackRef = useRef(onClickOutside);\n  useEffect(() => {\n    callbackRef.current = onClickOutside;\n  }, [onClickOutside]);\n\n  useEffect(() => {\n    function handleEvent(event: MouseEvent | TouchEvent) {\n      const el = ref.current;\n      if (!el || !(event.target instanceof Node) || el.contains(event.target))\n        return;\n      callbackRef.current(event);\n    }\n\n    document.addEventListener('mousedown', handleEvent, true);\n    document.addEventListener('touchstart', handleEvent, true);\n    return () => {\n      document.removeEventListener('mousedown', handleEvent, true);\n      document.removeEventListener('touchstart', handleEvent, true);\n    };\n  }, []);\n}\n",
       "type": "registry:hook",
-      "target": "hooks/h3-use/use-click-outside.tsx"
+      "target": "hooks/guarahooks/use-click-outside.tsx"
     }
   ],
   "categories": ["ui-and-dom"]

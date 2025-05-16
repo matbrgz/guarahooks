@@ -28,6 +28,6 @@ export const getHooksCount = (): number => {
 
 export const convertRegistryPaths = (content: string): string => {
   return content
-    .replace(/@\/registry\/hooks/g, '@/hooks/h3-use')
+    .replace(/@\/registry\/hooks/g, '@/hooks/guarahooks')
     .replace(/@\/registry\/example/g, '@/components/examples');
 };

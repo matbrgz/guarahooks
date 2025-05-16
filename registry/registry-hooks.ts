@@ -10,7 +10,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-window-size.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-window-size.tsx',
+        target: 'hooks/guarahooks/use-window-size.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -24,7 +24,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-media.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-media.tsx',
+        target: 'hooks/guarahooks/use-media.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -38,7 +38,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-mouse.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-mouse.tsx',
+        target: 'hooks/guarahooks/use-mouse.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -52,7 +52,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-keypress.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-keypress.tsx',
+        target: 'hooks/guarahooks/use-keypress.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -66,7 +66,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-orientation.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-orientation.tsx',
+        target: 'hooks/guarahooks/use-orientation.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -81,7 +81,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-intersection-observer.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-intersection-observer.tsx',
+        target: 'hooks/guarahooks/use-intersection-observer.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -95,7 +95,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-toggle.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-toggle.tsx',
+        target: 'hooks/guarahooks/use-toggle.tsx',
       },
     ],
     categories: ['state-management'],
@@ -109,7 +109,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-set.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-set.tsx',
+        target: 'hooks/guarahooks/use-set.tsx',
       },
     ],
     categories: ['state-management'],
@@ -123,7 +123,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-map.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-map.tsx',
+        target: 'hooks/guarahooks/use-map.tsx',
       },
     ],
     categories: ['state-management'],
@@ -137,7 +137,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-local-storage.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-local-storage.tsx',
+        target: 'hooks/guarahooks/use-local-storage.tsx',
       },
     ],
     categories: ['state-management'],
@@ -151,7 +151,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-session-storage.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-session-storage.tsx',
+        target: 'hooks/guarahooks/use-session-storage.tsx',
       },
     ],
     categories: ['state-management'],
@@ -165,7 +165,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-cookie.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-cookie.tsx',
+        target: 'hooks/guarahooks/use-cookie.tsx',
       },
     ],
     categories: ['utilities'],
@@ -179,7 +179,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-copy-to-clipboard.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-copy-to-clipboard.tsx',
+        target: 'hooks/guarahooks/use-copy-to-clipboard.tsx',
       },
     ],
     categories: ['utilities'],
@@ -193,7 +193,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-debounce-callback.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-debounce-callback.tsx',
+        target: 'hooks/guarahooks/use-debounce-callback.tsx',
       },
     ],
     categories: ['state-management'],
@@ -207,7 +207,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-debounce-state.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-debounce-state.tsx',
+        target: 'hooks/guarahooks/use-debounce-state.tsx',
       },
     ],
     categories: ['state-management'],
@@ -221,7 +221,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-click-outside.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-click-outside.tsx',
+        target: 'hooks/guarahooks/use-click-outside.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -235,7 +235,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-on-mount.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-on-mount.tsx',
+        target: 'hooks/guarahooks/use-on-mount.tsx',
       },
     ],
     categories: ['lifecycle'],
@@ -250,7 +250,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-on-unmount.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-on-unmount.tsx',
+        target: 'hooks/guarahooks/use-on-unmount.tsx',
       },
     ],
     categories: ['lifecycle'],
@@ -265,7 +265,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-did-update.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-did-update.tsx',
+        target: 'hooks/guarahooks/use-did-update.tsx',
       },
     ],
     categories: ['lifecycle'],
@@ -279,7 +279,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-os.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-os.tsx',
+        target: 'hooks/guarahooks/use-os.tsx',
       },
     ],
     categories: ['utilities'],
@@ -293,7 +293,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-idle.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-idle.tsx',
+        target: 'hooks/guarahooks/use-idle.tsx',
       },
     ],
     categories: ['utilities'],
@@ -307,7 +307,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-fullscreen.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-fullscreen.tsx',
+        target: 'hooks/guarahooks/use-fullscreen.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -321,7 +321,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-confirm.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-confirm.tsx',
+        target: 'hooks/guarahooks/use-confirm.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -335,7 +335,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-notifications.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-notifications.tsx',
+        target: 'hooks/guarahooks/use-notifications.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -349,7 +349,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-page-leave.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-page-leave.tsx',
+        target: 'hooks/guarahooks/use-page-leave.tsx',
       },
     ],
     categories: ['utilities'],
@@ -364,7 +364,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-disclosure.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-disclosure.tsx',
+        target: 'hooks/guarahooks/use-disclosure.tsx',
       },
     ],
     categories: ['state-management'],
@@ -378,7 +378,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-mutation-observer.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-mutation-observer.tsx',
+        target: 'hooks/guarahooks/use-mutation-observer.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -393,7 +393,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-resize-observer.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-resize-observer.tsx',
+        target: 'hooks/guarahooks/use-resize-observer.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -408,7 +408,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-fetch.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-fetch.tsx',
+        target: 'hooks/guarahooks/use-fetch.tsx',
       },
     ],
     categories: ['utilities'],
@@ -422,7 +422,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-pagination.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-pagination.tsx',
+        target: 'hooks/guarahooks/use-pagination.tsx',
       },
     ],
     categories: ['state-management'],
@@ -436,7 +436,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-event-listener.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-event-listener.tsx',
+        target: 'hooks/guarahooks/use-event-listener.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -450,7 +450,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-axios.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-axios.tsx',
+        target: 'hooks/guarahooks/use-axios.tsx',
       },
     ],
     categories: ['utilities'],
@@ -464,7 +464,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-page-title.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-page-title.tsx',
+        target: 'hooks/guarahooks/use-page-title.tsx',
       },
     ],
     categories: ['utilities'],
@@ -478,7 +478,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-interval.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-interval.tsx',
+        target: 'hooks/guarahooks/use-interval.tsx',
       },
     ],
     categories: ['utilities'],
@@ -492,7 +492,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-timeout.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-timeout.tsx',
+        target: 'hooks/guarahooks/use-timeout.tsx',
       },
     ],
     categories: ['utilities'],
@@ -506,7 +506,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-battery-status.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-battery-status.tsx',
+        target: 'hooks/guarahooks/use-battery-status.tsx',
       },
     ],
     categories: ['utilities'],
@@ -520,7 +520,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-geolocation.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-geolocation.tsx',
+        target: 'hooks/guarahooks/use-geolocation.tsx',
       },
     ],
     categories: ['utilities'],
@@ -535,7 +535,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-isomorphic-layout-effect.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-isomorphic-layout-effect.tsx',
+        target: 'hooks/guarahooks/use-isomorphic-layout-effect.tsx',
       },
     ],
     categories: ['lifecycle'],
@@ -549,7 +549,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-scroll-position.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-scroll-position.tsx',
+        target: 'hooks/guarahooks/use-scroll-position.tsx',
       },
     ],
     categories: ['ui-and-dom'],
@@ -563,7 +563,7 @@ export const hooks: Registry['items'] = [
       {
         path: 'registry/hooks/use-scroll-lock.tsx',
         type: 'registry:hook',
-        target: 'hooks/h3-use/use-scroll-lock.tsx',
+        target: 'hooks/guarahooks/use-scroll-lock.tsx',
       },
     ],
     categories: ['ui-and-dom'],

@@ -31,12 +31,6 @@ export function Header() {
         <NavigationMobile />
       </section>
       <NavigationDesktop />
-      {/* <section
-        className={cn(
-          'max-w-screen-2xl size-full',
-          'lg:border-x border-dashed mx-auto px-4',
-        )}
-      ></section> */}
     </header>
   );
 }

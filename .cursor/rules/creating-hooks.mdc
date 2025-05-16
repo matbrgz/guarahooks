@@ -3,7 +3,7 @@ description:
 globs: 
 alwaysApply: false
 ---
-# Guide for Creating Hooks in h3-use
+# Guide for Creating Hooks in guarahooks
 
 This guide provides a complete step-by-step process for creating new hooks following the project's pattern.
 
@@ -64,7 +64,7 @@ published: true
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add "https://h3-use.com/r/use-{name}"
+npx shadcn@latest add "https://guarahooks.com/r/use-{name}"
 ```
 
 </TabsContent>
@@ -180,7 +180,7 @@ Update `@/registry/hooks`:
   files: [{
     path: 'registry/hooks/use-hook.tsx',
     type: 'registry:hook',
-    target: 'hooks/h3-use/use-hook.tsx',
+    target: 'hooks/guarahooks/use-hook.tsx',
   }],
   categories: ['category'],
 }
@@ -198,7 +198,7 @@ Update `@/registry/registry-examples.ts`:
   description: "use-hook's hook in action.",
   registryDependencies: [
     'used-components',
-    'https://h3-use.com/r/use-hook.json',
+    'https://guarahooks.com/r/use-hook.json',
   ],
   files: [{
     path: 'registry/example/use-hook-demo.tsx',
