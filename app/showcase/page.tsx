@@ -20,7 +20,7 @@ export default function ShowcasePage() {
           Showcase
         </h2>
         <h3 className="mx-auto mb-8 text-balance text-center text-lg font-medium tracking-tight text-muted-foreground">
-          Companies and indie-hackers choose GuaraHooks to build their apps.
+          Companies and indie-hackers choose guarahooks to build their apps.
         </h3>
       </hgroup>
       <div

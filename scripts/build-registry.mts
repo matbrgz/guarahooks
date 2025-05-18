@@ -9,7 +9,7 @@ import { examples } from '../registry/registry-examples';
 import { hooks } from '../registry/registry-hooks';
 
 const registry: Registry = {
-  name: 'GuaraHooks',
+  name: 'guarahooks',
   homepage: 'https://guarahooks.com/',
   items: [...hooks, ...examples],
 };

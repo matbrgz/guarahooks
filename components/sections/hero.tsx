@@ -66,7 +66,7 @@ export async function Hero() {
             'group hover:scale-[1.025]',
           )}
         >
-          Browse Hooks
+          Get Started
           <Icons.Chevron.Right className="size-4 group-hover:translate-x-1 duration-200 transition-transform" />
         </Link>
         <Tooltip>

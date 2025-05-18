@@ -1,6 +1,6 @@
-# Contributing to GuaraHooks
+# Contributing to guarahooks
 
-Thank you for your interest in contributing to GuaraHooks! We appreciate your support and look forward to your contributions. This guide will help you understand the directory structure and provide detailed instructions on how to add a new hook to GuaraHooks.
+Thank you for your interest in contributing to guarahooks! We appreciate your support and look forward to your contributions. This guide will help you understand the directory structure and provide detailed instructions on how to add a new hook to guarahooks.
 
 ## Getting Started
 
@@ -40,7 +40,7 @@ Fork and clone the repository.
 
 ## Adding a new Hook
 
-To add a new Hook to GuaraHooks, you will need to modify and add several files. Follow this steps.
+To add a new Hook to guarahooks, you will need to modify and add several files. Follow this steps.
 
 ### 1. Create Hook
 
@@ -96,7 +96,7 @@ Create an MDX file for documenting your component in `content/docs/hooks/use-exa
 ---
 title: Example Hook
 date: 2025-04-23
-description: Example hook for GuaraHooks
+description: Example hook for guarahooks
 author: h3rmel
 published: true
 ---
@@ -159,7 +159,7 @@ export const hooks: Registry['items'] = [
     type: 'registry:hook',
     title: 'UseExampleHook',
     description:
-      'An hook to explain in step-by-step how to add a hook to GuaraHooks.',
+      'An hook to explain in step-by-step how to add a hook to guarahooks.',
     files: [
       {
         path: 'registry/hooks/use-example-hook.tsx',

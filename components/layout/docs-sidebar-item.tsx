@@ -30,7 +30,7 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
             href={item.href}
             className={cn(
               'flex items-center justify-between',
-              'text-foreground pl-2 pr-1.5 py-1 rounded-md w-full',
+              'text-foreground pl-2 pr-1.5 py-1 rounded-lg w-full',
               'group transition-all duration-200',
               'hover:bg-accent/50 hover:translate-x-0.5',
               item.disabled && 'cursor-not-allowed opacity-60',
