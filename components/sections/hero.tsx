@@ -29,7 +29,7 @@ export async function Hero() {
     <div
       id="hooks-hero"
       className={cn(
-        'relative w-full h-[calc(100dvh-104px)]',
+        'relative w-full h-[calc(100dvh-64px)] lg:h-[calc(100dvh-104px)]',
         'flex flex-col items-center justify-center grow gap-8',
         'border-b border-dashed',
       )}
@@ -42,7 +42,7 @@ export async function Hero() {
           'px-4 lg:px-0',
         )}
       >
-        <h1 className={cn('text-6xl font-bold', 'max-w-[18ch]')}>
+        <h1 className={cn('text-5xl lg:text-6xl font-bold', 'max-w-[18ch]')}>
           Hooks Library for Software Engineers
         </h1>
         <p className={cn('max-w-[34ch]')}>
@@ -112,6 +112,11 @@ export async function Hero() {
       >
         Currently with {hooksCount} hooks.
       </p>
+      <BlurredBlob
+        className="lg:-top-[90%] -top-1/2 left-1/2 lg:-translate-x-1/2 lg:opacity-30 opacity-40"
+        colorFrom="#EC003F"
+        colorTo="#4F39F6"
+      />
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}
@@ -119,14 +124,9 @@ export async function Hero() {
         repeatDelay={1}
         strokeDasharray={'4 2'}
         className={cn(
-          '[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]',
+          '[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]',
           'inset-x-0',
         )}
-      />
-      <BlurredBlob
-        className="lg:-top-[120%] -top-1/2 left-1/2 lg:-translate-x-1/8 lg:opacity-30 opacity-40 rotate-90 lg:rotate-270"
-        colorFrom="#EC003F"
-        colorTo="#4F39F6"
       />
     </div>
   );
