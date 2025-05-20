@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+
+import confetti from 'canvas-confetti';
 
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
@@ -14,25 +15,43 @@ import {
 import { useKeypress } from '@/registry/hooks/use-keypress';
 
 export default function UseKeypressDemo() {
-  const [message, setMessage] = useState(
-    'Press Ctrl+M (Windows/Linux) or Cmd+M (Mac)',
-  );
-  const [count, setCount] = useState(0);
+  const popStars = () => {
+    const defaults = {
+      spread: 360,
+      ticks: 50,
+      gravity: 0,
+      decay: 0.94,
+      startVelocity: 30,
+      colors: ['#FFE400', '#FFBD00', '#E89400', '#FFCA6C', '#FDFFB8'],
+    };
+
+    const shoot = () => {
+      confetti({
+        ...defaults,
+        particleCount: 40,
+        scalar: 1.2,
+        shapes: ['star'],
+      });
+
+      confetti({
+        ...defaults,
+        particleCount: 10,
+        scalar: 0.75,
+        shapes: ['circle'],
+      });
+    };
+
+    setTimeout(shoot, 0);
+    setTimeout(shoot, 100);
+    setTimeout(shoot, 200);
+  };
 
   useKeypress({
     combo: ['ctrl+m', 'meta+m'],
     callback: (e) => {
-      setCount((c) => c + 1);
-      setMessage('Shortcut detected! (Ctrl+M or Cmd+M)');
+      popStars();
     },
     preventDefault: true,
-  });
-
-  useKeypress({
-    combo: 'ctrl+k',
-    callback: () => {
-      setCount(0);
-    },
   });
 
   return (
@@ -45,17 +64,8 @@ export default function UseKeypressDemo() {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-2">
-        <p className="text-sm">{message}</p>
-        <p className="text-sm">
-          Shortcut pressed{' '}
-          <span className="font-bold text-blue-600">{count}</span> times.
-        </p>
+        <p>Press Ctrl+M (Windows/Linux) or Cmd+M (Mac) to see some magic.</p>
       </CardContent>
-      <CardFooter>
-        <p className="text-muted-foreground text-sm">
-          Press Ctrl+K to reset the count.
-        </p>
-      </CardFooter>
     </Card>
   );
 }

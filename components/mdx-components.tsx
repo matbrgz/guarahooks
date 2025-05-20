@@ -22,6 +22,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Event } from '@/lib/events';
 import { cn } from '@/lib/utils';
 
+import { BlurFade } from './magicui/blur-fade';
+
 const CustomLink = (props: any) => {
   const href = props.href;
 
@@ -51,6 +53,7 @@ const components = {
   TemplatePreview,
   Image,
   HookPreview,
+  BlurFade: BlurFade,
   HookSource: (props: any) => <HookSource {...props} />,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1

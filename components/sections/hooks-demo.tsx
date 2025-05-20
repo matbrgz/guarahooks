@@ -22,10 +22,10 @@ export function HooksDemo() {
       id="hooks-demo"
       className={cn(
         'max-w-screen-2xl w-full',
-        'border-x border-dashed px-4 lg:px-0',
+        'border-dashed px-4 py-16 lg:px-0',
       )}
     >
-      <div className={cn('max-w-5xl', 'pb-16 lg:px-8 mx-auto')}>
+      <div className={cn('max-w-5xl', 'lg:px-8 mx-auto')}>
         <hgroup className={cn('mb-4 space-y-2')}>
           <h2 className={cn('text-center text-5xl font-bold tracking-tighter')}>
             Hooks Demo
