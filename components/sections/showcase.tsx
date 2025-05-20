@@ -9,10 +9,7 @@ export function Showcase() {
   return (
     <section
       id="showcase"
-      className={cn(
-        'max-w-screen-2xl w-full',
-        'border-x border-dashed px-4 py-16 lg:px-0',
-      )}
+      className={cn('max-w-screen-2xl w-full', 'px-4 py-16 lg:px-0')}
     >
       <hgroup className={cn('mb-8')}>
         <h2 className="mb-2 text-center text-5xl font-bold leading-[1.2] tracking-tighter text-foreground">
