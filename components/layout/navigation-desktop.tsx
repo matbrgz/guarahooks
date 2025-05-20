@@ -9,7 +9,7 @@ export function NavigationDesktop() {
     <ul
       className={cn(
         'max-w-screen-2xl size-full h-10',
-        'lg:border-x lg:border-t border-dashed mx-auto',
+        'lg:border-x lg:border-t  mx-auto',
         'lg:flex items-center gap-4',
         'hidden',
       )}

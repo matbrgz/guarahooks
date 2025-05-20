@@ -85,11 +85,11 @@ export default async function DocsPage({ params }: PageProps) {
         className={cn(
           'w-full lg:flex-[80%]',
           'bg-background/50 backdrop-blur-md',
-          'lg:border-r border-dashed',
+          'lg:border-r ',
         )}
       >
         {/* Breadcrumb */}
-        <Breadcrumb className={cn('border-b border-dashed py-4 px-4 lg:px-8')}>
+        <Breadcrumb className={cn('border-b  py-4 px-4 lg:px-8')}>
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>

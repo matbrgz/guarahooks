@@ -31,7 +31,7 @@ export async function Hero() {
       className={cn(
         'relative w-full h-[calc(100dvh-64px)] lg:h-[calc(100dvh-104px)]',
         'flex flex-col items-center justify-center grow gap-8',
-        'border-b border-dashed',
+        'border-b ',
       )}
     >
       <hgroup
@@ -122,7 +122,6 @@ export async function Hero() {
         maxOpacity={0.1}
         duration={3}
         repeatDelay={1}
-        strokeDasharray={'4 2'}
         className={cn(
           '[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]',
           'inset-x-0',

@@ -13,14 +13,14 @@ export function Footer() {
       className={cn(
         'w-full h-16 z-10',
         'bg-background/50 backdrop-blur-md',
-        'border-t border-dashed',
+        'border-t ',
       )}
     >
       <section
         className={cn(
           'max-w-screen-2xl size-full',
           'flex items-center justify-between',
-          'border-x border-dashed mx-auto px-4',
+          'border-x  mx-auto px-4',
         )}
       >
         <p className="text-muted-foreground text-sm">

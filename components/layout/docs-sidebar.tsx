@@ -24,17 +24,13 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
         {items.map((item, index) => (
           <li
             key={index}
-            className={cn(
-              'flex flex-col w-full',
-              'border-b border-dashed',
-              'pb-4',
-            )}
+            className={cn('flex flex-col w-full', 'border-b ', 'pb-4')}
           >
             <h4
               className={cn(
                 'text-sm font-semibold w-full',
                 'inline-flex items-center justify-between',
-                'border-b border-dashed',
+                'border-b ',
                 'px-4 py-4',
               )}
             >

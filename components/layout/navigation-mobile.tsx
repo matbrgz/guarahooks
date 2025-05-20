@@ -31,12 +31,12 @@ export function NavigationMobile() {
           <Icons.Menu className="size-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent className={cn('gap-0 border-dashed')}>
+      <SheetContent className={cn('gap-0 ')}>
         {/* Header */}
         <SheetHeader
           className={cn(
             'flex flex-row items-center justify-between',
-            'px-4 py-4 border-b border-dashed',
+            'px-4 py-4 border-b ',
           )}
         >
           <div className="sr-only">
@@ -67,7 +67,7 @@ export function NavigationMobile() {
           <ul className={cn('flex flex-col gap-y-2')}>
             {docsConfig.sidebarNav.map((item) => (
               <div className={cn('flex flex-col gap-y-2')} key={item.title}>
-                <h4 className={cn('font-medium', 'border-y border-dashed p-4')}>
+                <h4 className={cn('font-medium', 'border-y  p-4')}>
                   {item.title}
                 </h4>
                 <ul className={cn('flex flex-col gap-y-2', 'p-4')}>
@@ -84,11 +84,7 @@ export function NavigationMobile() {
           </ul>
           {/* Socials */}
           <div
-            className={cn(
-              'flex justify-end gap-2',
-              'px-4 py-4',
-              'border-t border-dashed',
-            )}
+            className={cn('flex justify-end gap-2', 'px-4 py-4', 'border-t ')}
           >
             <Link
               href={siteConfig.links.twitter}

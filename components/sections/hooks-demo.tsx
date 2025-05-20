@@ -20,10 +20,7 @@ export function HooksDemo() {
   return (
     <div
       id="hooks-demo"
-      className={cn(
-        'max-w-screen-2xl w-full',
-        'border-dashed px-4 py-16 lg:px-0',
-      )}
+      className={cn('max-w-screen-2xl w-full', ' px-4 py-16 lg:px-0')}
     >
       <div className={cn('max-w-5xl', 'lg:px-8 mx-auto')}>
         <hgroup className={cn('mb-4 space-y-2')}>
