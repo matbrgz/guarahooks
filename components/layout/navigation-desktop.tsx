@@ -6,14 +6,7 @@ import { docsConfig } from '@/config/docs';
 
 export function NavigationDesktop() {
   return (
-    <ul
-      className={cn(
-        'max-w-screen-2xl size-full h-10',
-        'lg:border-x lg:border-t  mx-auto',
-        'lg:flex items-center gap-4',
-        'hidden',
-      )}
-    >
+    <ul className={cn('lg:flex items-center gap-2', 'hidden')}>
       {docsConfig.mainNav.map((item) => (
         <li
           key={item.title}

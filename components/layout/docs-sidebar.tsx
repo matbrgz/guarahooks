@@ -2,8 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 
+import { Icons } from '@/components/icons';
 import { DocsSidebarItem } from '@/components/layout/docs-sidebar-item';
-import { Badge } from '@/components/ui/badge';
 
 import { cn } from '@/lib/utils';
 
@@ -18,31 +18,34 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
 
   if (items.length === 0) return null;
 
+  function renderIcon(icon: keyof typeof Icons | undefined) {
+    if (!icon) return null;
+    const IconComponent = Icons[icon];
+    if (typeof IconComponent === 'function') {
+      return <IconComponent className="size-4" />;
+    }
+    return null;
+  }
+
   return (
-    <>
-      <ul className={cn('flex flex-col items-start')}>
-        {items.map((item, index) => (
-          <li
-            key={index}
-            className={cn('flex flex-col w-full', 'border-b ', 'pb-4')}
-          >
-            <h4
-              className={cn(
-                'text-sm font-semibold w-full',
-                'inline-flex items-center justify-between',
-                'border-b ',
-                'px-4 py-4',
-              )}
-            >
-              {item.title}
-              {item.label && <Badge variant="sidebar">{item.label}</Badge>}
-            </h4>
-            {item.items && item.items.length > 0 && (
-              <DocsSidebarItem items={item.items} pathname={pathname} />
+    <ul className={cn('flex flex-col items-start gap-4', 'pr-4')}>
+      {items.map((item, index) => (
+        <li key={index} className={cn('flex flex-col gap-2 w-full')}>
+          <h4
+            className={cn(
+              'inline-flex gap-2 items-center',
+              'text-sm',
+              'p-1.5 pl-4 border rounded-lg',
             )}
-          </li>
-        ))}
-      </ul>
-    </>
+          >
+            {renderIcon(item.icon)}
+            <span>{item.title}</span>
+          </h4>
+          {item.items && item.items.length > 0 && (
+            <DocsSidebarItem items={item.items} pathname={pathname} />
+          )}
+        </li>
+      ))}
+    </ul>
   );
 }

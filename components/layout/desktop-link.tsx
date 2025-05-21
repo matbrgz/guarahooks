@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
 
 import { type NavItem } from '@/types/docs';
 
+import { buttonVariants } from '../ui/button';
+
 type DesktopLinkProps = NavItem & {
   children: React.ReactNode;
 };
@@ -25,13 +27,10 @@ export function DesktopLink({
       href={href!}
       aria-label={title}
       className={cn(
-        'h-full w-auto flex items-center justify-center',
-        'px-4 border-b border-transparent',
-        'text-sm',
-        pathname?.startsWith(href!) || pathname.includes(href!)
-          ? 'text-foreground border-indigo-500'
-          : 'text-foreground/60 border-transparent',
-        disabled && 'pointer-events-none text-muted-foreground',
+        buttonVariants({ variant: 'ghost', size: 'sm' }),
+        pathname.startsWith(href!) || pathname.includes(href!)
+          ? 'text-foreground'
+          : 'text-muted-foreground',
       )}
     >
       {children}

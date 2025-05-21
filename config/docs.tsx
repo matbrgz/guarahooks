@@ -25,10 +25,16 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/installation',
           items: [],
         },
+        {
+          title: 'Resources',
+          href: '/docs/resources',
+          items: [],
+        },
       ],
     },
     {
       title: 'UI and DOM',
+      icon: 'Pages',
       items: [
         {
           title: 'use-window-size',
@@ -97,6 +103,7 @@ export const docsConfig: DashboardConfig = {
     },
     {
       title: 'State Management',
+      icon: 'Swap',
       items: [
         {
           title: 'use-toggle',
@@ -138,6 +145,7 @@ export const docsConfig: DashboardConfig = {
     },
     {
       title: 'Utilities',
+      icon: 'Tools',
       items: [
         {
           title: 'use-copy-to-clipboard',
@@ -193,6 +201,7 @@ export const docsConfig: DashboardConfig = {
     },
     {
       title: 'Lifecycle',
+      icon: 'Refresh',
       items: [
         {
           title: 'use-on-mount',

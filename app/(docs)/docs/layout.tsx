@@ -13,24 +13,23 @@ export default function DocsLayout({
     <section
       className={cn(
         'size-full max-w-screen-2xl',
-        'flex flex-row grow',
+        'flex flex-row grow gap-4',
         'mx-auto',
       )}
     >
       <aside
         id="docs-sidebar"
         className={cn(
-          'fixed lg:sticky z-30 top-[104px] h-[calc(100vh-104px)]',
-          'hidden lg:block lg:flex-[22.5%]',
-          'bg-background/50 backdrop-blur-md',
-          'border-l ',
+          'fixed lg:sticky top-[80px] h-[calc(100vh-64px)]',
+          'hidden lg:block lg:flex-[22%]',
+          'my-4',
         )}
       >
         <div className={cn('no-scrollbar h-full overflow-auto')}>
           <DocsSidebar items={docsConfig.sidebarNav} />
         </div>
       </aside>
-      <div className={cn('w-full lg:flex-4/5', 'lg:border-x ')}>{children}</div>
+      <div className={cn('w-full lg:flex-[78%]')}>{children}</div>
     </section>
   );
 }

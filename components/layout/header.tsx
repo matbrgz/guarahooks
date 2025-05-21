@@ -21,16 +21,20 @@ export function Header() {
         className={cn(
           'max-w-screen-2xl size-full h-16',
           'lg:border-x  mx-auto px-4',
-          'flex items-center lg:justify-between gap-4 lg:gap-0',
+          'flex items-center justify-between gap-4 lg:gap-0',
           'relative',
         )}
       >
-        <HeaderLogo />
-        <CommandMenu />
-        <NavigationSocials />
-        <NavigationMobile />
+        <div className={cn('flex items-center gap-4')}>
+          <HeaderLogo />
+          <NavigationDesktop />
+        </div>
+        <div className={cn('flex items-center gap-4')}>
+          <CommandMenu />
+          <NavigationSocials />
+          <NavigationMobile />
+        </div>
       </section>
-      <NavigationDesktop />
     </header>
   );
 }

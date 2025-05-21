@@ -78,18 +78,17 @@ export default async function DocsPage({ params }: PageProps) {
   const toc = await getTableOfContents(doc.body.raw);
 
   return (
-    <div className={cn('flex h-full bg-transparent')}>
+    <div className={cn('flex gap-4 h-full bg-transparent')}>
       {/* Content */}
       <article
         id="docs-content"
         className={cn(
-          'w-full lg:flex-[80%]',
-          'bg-background/50 backdrop-blur-md',
-          'lg:border-r ',
+          'border my-4 rounded-md',
+          'bg-card/30 backdrop-blur-md flex:3/4',
         )}
       >
         {/* Breadcrumb */}
-        <Breadcrumb className={cn('border-b  py-4 px-4 lg:px-8')}>
+        <Breadcrumb className={cn('border-b py-4 px-8')}>
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
@@ -101,20 +100,20 @@ export default async function DocsPage({ params }: PageProps) {
           </BreadcrumbList>
         </Breadcrumb>
         {/* Title and Description */}
-        <hgroup className={cn('py-4 px-4 lg:px-8')}>
+        <hgroup className={cn('border-b py-4 px-8')}>
           <h1
             className={cn('scroll-m-20', 'text-4xl font-bold tracking-tight')}
           >
             {doc.title}
           </h1>
           {doc.description && (
-            <p className={cn('max-w-[60ch] text-lg text-muted-foreground')}>
+            <p className={cn('text-base text-muted-foreground')}>
               {doc.description}
             </p>
           )}
         </hgroup>
         {/* Content */}
-        <div className={cn('px-4 lg:px-8 pb-4')}>
+        <div className={cn('py-4 px-8 pb-0')}>
           <Mdx code={doc.body.code} />
         </div>
       </article>
@@ -122,10 +121,10 @@ export default async function DocsPage({ params }: PageProps) {
       <div
         id="docs-toc"
         className={cn(
-          'fixed lg:sticky z-30 top-[104px] h-[calc(100vh-104px)]',
-          'hidden lg:flex lg:flex-[20%] flex-col gap-4',
-          'p-4',
-          'bg-background/50 backdrop-blur-md',
+          'fixed lg:sticky z-50 top-[80px] h-[calc(100vh-64px)]',
+          'hidden lg:flex flex-col h-fit lg:flex-1/4',
+          'mt-4',
+          'border rounded-md bg-card/30 backdrop-blur-md',
         )}
       >
         <TableOfContents toc={toc} />

@@ -39,7 +39,7 @@ export function Contribute({ doc }: { doc: Doc }) {
   ];
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 p-4">
       <p className="font-medium">Contribute</p>
       <ul className="m-0 list-none">
         {contributeLinks.map((link, index) => (
