@@ -83,6 +83,7 @@ export default async function DocsPage({ params }: PageProps) {
       <article
         id="docs-content"
         className={cn(
+          'w-full',
           'border my-4 rounded-md',
           'bg-card/30 backdrop-blur-md flex:3/4',
         )}
