@@ -1,7 +1,11 @@
 import { checkbox } from '@inquirer/prompts';
 
-import { logger } from './logger';
-import { getAllCategories, groupHooksByCategory, type Hook } from './registry';
+import { logger } from '@/src/utils/logger';
+import {
+  getAllCategories,
+  groupHooksByCategory,
+  type Hook,
+} from '@/src/utils/registry';
 
 interface CheckboxChoice {
   name: string;
