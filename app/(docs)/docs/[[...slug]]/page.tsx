@@ -122,7 +122,7 @@ export default async function DocsPage({ params }: PageProps) {
       <div
         id="docs-toc"
         className={cn(
-          'fixed lg:sticky z-50 top-[128px] h-[calc(100vh-112px)]',
+          'fixed lg:sticky z-50 top-[80px] h-[calc(100vh-112px)]',
           'hidden lg:flex flex-col h-fit w-full lg:w-1/4',
           'mt-4',
           'border rounded-md bg-card/30 backdrop-blur-md',
