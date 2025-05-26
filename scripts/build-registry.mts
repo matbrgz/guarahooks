@@ -14,6 +14,9 @@ const registry: Registry = {
   items: [...hooks, ...examples],
 };
 
+// ------------------------------------------------------
+// Build the registry index.
+// ------------------------------------------------------
 async function buildRegistryIndex() {
   let index = `/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -71,6 +74,9 @@ export const Index: Record<string, any> = {`;
   await fs.writeFile(path.join(process.cwd(), '__registry__/index.tsx'), index);
 }
 
+// ------------------------------------------------------
+// Build the registry json file.
+// ------------------------------------------------------
 async function buildRegistryJsonFile() {
   // 1. Fix the path for registry items.
   const fixedRegistry = {
@@ -90,14 +96,17 @@ async function buildRegistryJsonFile() {
     }),
   };
 
-  // 2. Write the content of the registry to `registry.json`
-  rimraf.sync(path.join(process.cwd(), `registry.json`));
+  // 2. Write the content of the registry to `public/r/registry.json`
+  rimraf.sync(path.join(process.cwd(), `public/r/registry.json`));
   await fs.writeFile(
-    path.join(process.cwd(), `registry.json`),
+    path.join(process.cwd(), `public/r/registry.json`),
     JSON.stringify(fixedRegistry, null, 2),
   );
 }
 
+// ------------------------------------------------------
+// Build the registry.
+// ------------------------------------------------------
 async function buildRegistry() {
   // 1. Build the registry
   await new Promise((resolve, reject) => {

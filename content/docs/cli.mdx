@@ -1,0 +1,34 @@
+---
+title: CLI
+description: Use the guarahooks CLI to add hooks to your project.
+---
+
+## `add`
+
+Use the `add` command to add hook and dependencies to your project.
+
+```bash
+npx guara-cli add [hook]
+```
+
+### Options
+
+```txt
+Usage: guara-cli add [options] [hooks...]
+
+add a hook to your project
+
+Arguments:
+  hooks         the hooks to add or a url to the hook.
+
+Options:
+  -y, --yes           skip confirmation prompt. (default: false)
+  -o, --overwrite     overwrite existing files. (default: false)
+  -c, --cwd <cwd>     the working directory. defaults to the current directory. (default: "/Users/shadcn/Desktop")
+  -a, --all           add all available hooks (default: false)
+  -p, --path <path>   the path to add the hook to.
+  -s, --silent        mute output. (default: false)
+  --src-dir           use the src directory when creating a new project. (default: false)
+  --no-src-dir        do not use the src directory when creating a new project.
+  -h, --help          display help for command
+```

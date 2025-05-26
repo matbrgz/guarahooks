@@ -1,0 +1,55 @@
+'use client';
+
+import Link from 'next/link';
+
+import posthog from 'posthog-js';
+
+import { Icons } from '@/components/icons';
+
+import { cn } from '@/lib/utils';
+
+// import { cn } from '@/lib/utils';
+
+export function Banner() {
+  return (
+    <section
+      className={cn(
+        'relative top-0',
+        'bg-amber-600 text-white',
+        'group transition-all duration-300',
+        'py-3 md:py-0',
+      )}
+    >
+      <div
+        className={cn(
+          'container md:h-12',
+          'flex flex-col md:flex-row items-center justify-center gap-4',
+          'mx-auto',
+        )}
+      >
+        <Link
+          href="/docs/cli"
+          onClick={() => posthog.capture('banner_cta_clicked')}
+          className="inline-flex text-xs leading-normal md:text-sm"
+        >
+          <span className="font-medium">
+            ✨ Introducing you to the CLI ⚙️ - Manage your hooks with ease.
+          </span>
+          <Icons.Chevron.Right
+            className={cn(
+              'size-5 ml-1',
+              'transition-all duration-300 ease-out group-hover:translate-x-1',
+            )}
+          />
+        </Link>
+      </div>
+      <hr
+        className={cn(
+          'absolute bottom-0',
+          'h-px w-full m-0',
+          'bg-neutral-200/30',
+        )}
+      />
+    </section>
+  );
+}

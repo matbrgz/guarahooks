@@ -6,6 +6,7 @@ import '@/assets/globals.css';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
+import { Banner } from '@/components/layout/banner';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { PostHogProvider } from '@/components/posthog-provider';
@@ -67,6 +68,7 @@ export default function RootLayout({
         <PostHogProvider>
           <ThemeProvider attribute="class" defaultTheme="dark">
             <TooltipProvider delayDuration={200}>
+              <Banner />
               <Header />
               <main className={cn('grow flex flex-col', 'size-full')}>
                 {children}
