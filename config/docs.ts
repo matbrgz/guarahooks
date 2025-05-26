@@ -29,6 +29,7 @@ export const docsConfig: DashboardConfig = {
           title: 'CLI',
           href: '/docs/cli',
           items: [],
+          label: 'New',
         },
         {
           title: 'Resources',
