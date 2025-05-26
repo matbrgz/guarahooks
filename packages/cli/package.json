@@ -1,6 +1,6 @@
 {
   "name": "guara-cli",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Add hooks to your project.",
   "main": "index.js",
   "publishConfig": {
@@ -30,9 +30,10 @@
     "dev": "tsup --watch",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
-    "release:patch": "pnpm build && pnpm version patch && pnpm publish",
-    "release:minor": "pnpm build && pnpm version minor && pnpm publish",
-    "release:major": "pnpm build && pnpm version major && pnpm publish"
+    "prerelease": "git add . && (git diff --staged --quiet || git commit -m \"chore: prepare for release\")",
+    "release:patch": "pnpm prerelease && pnpm build && pnpm version patch && pnpm publish",
+    "release:minor": "pnpm prerelease && pnpm build && pnpm version minor && pnpm publish",
+    "release:major": "pnpm prerelease && pnpm build && pnpm version major && pnpm publish"
   },
   "devDependencies": {
     "@types/node": "^22.15.21",
