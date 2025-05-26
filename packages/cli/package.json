@@ -1,6 +1,6 @@
 {
   "name": "guara-cli",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Add hooks to your project.",
   "main": "index.js",
   "publishConfig": {
@@ -8,13 +8,13 @@
   },
   "license": "MIT",
   "author": {
-    "name": "shadcn",
-    "url": "https://twitter.com/shadcn"
+    "name": "h3rmel",
+    "url": "https://twitter.com/isaach3rmel"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shadcn/ui.git",
-    "directory": "packages/shadcn"
+    "url": "https://github.com/h3rmel/guarahooks.git",
+    "directory": "packages/guara-cli"
   },
   "files": [
     "dist"
@@ -25,6 +25,8 @@
     "custom hooks",
     "react hooks"
   ],
+  "exports": "./dist/index.js",
+  "bin": "./dist/index.js",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
