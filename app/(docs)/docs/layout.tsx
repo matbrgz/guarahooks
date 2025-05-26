@@ -20,7 +20,7 @@ export default function DocsLayout({
       <aside
         id="docs-sidebar"
         className={cn(
-          'fixed lg:sticky top-[80px] h-[calc(100vh-64px)]',
+          'fixed lg:sticky top-[128px] h-[calc(100vh-112px)]',
           'hidden lg:block lg:flex-[22%]',
           'my-4',
         )}

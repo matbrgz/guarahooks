@@ -85,7 +85,7 @@ export default async function DocsPage({ params }: PageProps) {
         className={cn(
           'w-full',
           'border my-4 rounded-md',
-          'bg-card/30 backdrop-blur-md flex:3/4',
+          'bg-card/30 backdrop-blur-md w-3/4',
         )}
       >
         {/* Breadcrumb */}
@@ -114,7 +114,7 @@ export default async function DocsPage({ params }: PageProps) {
           )}
         </hgroup>
         {/* Content */}
-        <div className={cn('py-4 px-8 pb-0')}>
+        <div className={cn('py-4 px-8')}>
           <Mdx code={doc.body.code} />
         </div>
       </article>
@@ -122,8 +122,8 @@ export default async function DocsPage({ params }: PageProps) {
       <div
         id="docs-toc"
         className={cn(
-          'fixed lg:sticky z-50 top-[80px] h-[calc(100vh-64px)]',
-          'hidden lg:flex flex-col h-fit lg:flex-1/4',
+          'fixed lg:sticky z-50 top-[128px] h-[calc(100vh-112px)]',
+          'hidden lg:flex flex-col h-fit w-full lg:w-1/4',
           'mt-4',
           'border rounded-md bg-card/30 backdrop-blur-md',
         )}

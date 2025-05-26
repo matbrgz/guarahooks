@@ -49,7 +49,7 @@ export function TableOfContents({ toc }: TocProps) {
 
   return (
     <div className="border-b">
-      <p className="font-medium border-b p-4">On This Page</p>
+      <p className="font-medium border-b p-4 text-sm">On This Page</p>
       <div className="p-4">
         <Tree tree={refinedToc} activeItem={activeHeading} />
       </div>

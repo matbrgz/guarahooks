@@ -29,7 +29,7 @@ export async function Hero() {
     <div
       id="hooks-hero"
       className={cn(
-        'relative w-full h-[calc(100dvh-64px)]',
+        'relative w-full h-[calc(100dvh-112px)]',
         'flex flex-col items-center justify-center grow gap-8',
         'border-b ',
       )}
