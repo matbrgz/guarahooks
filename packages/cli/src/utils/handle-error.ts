@@ -4,6 +4,14 @@ import { z } from 'zod';
 import { logger } from '@/src/utils/logger';
 
 export function handleError(error: unknown) {
+  // Handle SIGINT (Ctrl+C) silently
+  if (
+    error instanceof Error &&
+    error.message.includes('User force closed the prompt with SIGINT')
+  ) {
+    process.exit(0);
+  }
+
   logger.error(
     'Something went wrong. Please check the error below for more information:',
   );

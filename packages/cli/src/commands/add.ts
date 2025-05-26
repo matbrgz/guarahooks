@@ -58,6 +58,7 @@ export const add = new Command()
 
       if (!options.silent) {
         logger.info('Fetching available hooks...');
+        logger.break();
       }
 
       // Fetch registry data
