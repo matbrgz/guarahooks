@@ -1,6 +1,7 @@
 import { Command } from 'commander';
 
 import { add } from '@/src/commands/add';
+import { init } from '@/src/commands/init';
 
 import packageJson from '../package.json';
 
@@ -21,7 +22,7 @@ async function main() {
     );
 
   // Add commands
-  program.addCommand(add);
+  program.addCommand(init).addCommand(add);
 
   program.parse();
 }
