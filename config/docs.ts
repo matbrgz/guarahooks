@@ -93,17 +93,14 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-scroll-position',
           href: '/docs/hooks/use-scroll-position',
-          label: 'New',
         },
         {
           title: 'use-intersection-observer',
           href: '/docs/hooks/use-intersection-observer',
-          label: 'New',
         },
         {
           title: 'use-scroll-lock',
           href: '/docs/hooks/use-scroll-lock',
-          label: 'New',
         },
       ],
     },
@@ -154,6 +151,11 @@ export const docsConfig: DashboardConfig = {
       icon: 'Tools',
       items: [
         {
+          title: 'use-abort-controller',
+          href: '/docs/hooks/use-abort-controller',
+          label: 'New',
+        },
+        {
           title: 'use-copy-to-clipboard',
           href: '/docs/hooks/use-copy-to-clipboard',
         },
@@ -196,12 +198,10 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-battery-status',
           href: '/docs/hooks/use-battery-status',
-          label: 'New',
         },
         {
           title: 'use-geolocation',
           href: '/docs/hooks/use-geolocation',
-          label: 'New',
         },
       ],
     },
@@ -224,7 +224,6 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-isomorphic-layout-effect',
           href: '/docs/hooks/use-isomorphic-layout-effect',
-          label: 'New',
         },
       ],
     },

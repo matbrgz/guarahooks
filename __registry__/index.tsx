@@ -7,6 +7,30 @@
 import * as React from 'react';
 
 export const Index: Record<string, any> = {
+  'use-abort-controller': {
+    name: 'use-abort-controller',
+    description:
+      'Provides AbortController functionality for canceling asynchronous operations.',
+    type: 'registry:hook',
+    registryDependencies: undefined,
+    files: [
+      {
+        path: 'registry/hooks/use-abort-controller.tsx',
+        type: 'registry:hook',
+        target: 'hooks/guarahooks/use-abort-controller.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/hooks/use-abort-controller.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
   'use-window-size': {
     name: 'use-window-size',
     description: "Tracks the current window's dimensions.",
@@ -929,6 +953,36 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/hooks/use-scroll-lock.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-abort-controller-demo': {
+    name: 'use-abort-controller-demo',
+    description: "use-abort-controller's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'button',
+      'card',
+      'badge',
+      'https://guarahooks.com/r/use-abort-controller.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-abort-controller-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-abort-controller-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/example/use-abort-controller-demo.tsx'
+      );
       const exportName =
         Object.keys(mod).find(
           (key) =>
