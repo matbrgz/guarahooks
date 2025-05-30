@@ -17,7 +17,7 @@ async function main() {
     .version(
       packageJson.version || '1.0.0',
       '-v, --version',
-      'display version number.',
+      'display version number',
     );
 
   // Add commands

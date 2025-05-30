@@ -28,25 +28,25 @@ export const addOptionsSchema = z.object({
 export const add = new Command()
   .command('add')
   .description('Add a hook to your project')
-  .argument('[hooks...]', 'the hooks to add or a url to the hook.')
-  .option('-y, --yes', 'skip confirmation prompt.', false)
-  .option('-o, --overwrite', 'overwrite existing files.', false)
+  .argument('[hooks...]', 'the hooks to add or a url to the hook')
+  .option('-y, --yes', 'skip confirmation prompt', false)
+  .option('-o, --overwrite', 'overwrite existing files', false)
   .option(
     '-c, --cwd <cwd>',
-    'the working directory. defaults to the current directory.',
+    'the working directory. defaults to the current directory',
     process.cwd(),
   )
   .option('-a, --all', 'add all available hooks', false)
-  .option('-p, --path <path>', 'the path to add the hook to.')
-  .option('-s, --silent', 'mute output.', false)
+  .option('-p, --path <path>', 'the path to add the hook to')
+  .option('-s, --silent', 'mute output', false)
   .option(
     '--src-dir',
-    'use the src directory when creating a new project.',
+    'use the src directory when creating a new project',
     false,
   )
   .option(
     '--no-src-dir',
-    'do not use the src directory when creating a new project.',
+    'do not use the src directory when creating a new project',
   )
   .action(async (hooks, opts) => {
     try {
@@ -66,7 +66,7 @@ export const add = new Command()
       const availableHooks = filterHooks(registryItems);
 
       if (availableHooks.length === 0) {
-        logger.warn('No hooks available in the registry.');
+        logger.warn('No hooks available in the registry');
         return;
       }
 
@@ -86,7 +86,7 @@ export const add = new Command()
       }
 
       if (selectedHooks.length === 0) {
-        logger.info('No hooks selected.');
+        logger.info('No hooks selected');
         return;
       }
 
@@ -102,7 +102,7 @@ export const add = new Command()
         });
 
         if (!shouldInstall) {
-          logger.info('Installation cancelled.');
+          logger.info('Installation cancelled');
           return;
         }
       }
