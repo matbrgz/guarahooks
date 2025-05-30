@@ -2,6 +2,21 @@ import { Registry } from 'shadcn/registry';
 
 export const hooks: Registry['items'] = [
   {
+    name: 'use-abort-controller',
+    type: 'registry:hook',
+    title: 'UseAbortController',
+    description:
+      'Provides AbortController functionality for canceling asynchronous operations.',
+    files: [
+      {
+        path: 'registry/hooks/use-abort-controller.tsx',
+        type: 'registry:hook',
+        target: 'hooks/guarahooks/use-abort-controller.tsx',
+      },
+    ],
+    categories: ['utilities'],
+  },
+  {
     name: 'use-window-size',
     type: 'registry:hook',
     title: 'UseWindowSize',

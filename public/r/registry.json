@@ -3,6 +3,20 @@
   "homepage": "https://guarahooks.com/",
   "items": [
     {
+      "name": "use-abort-controller",
+      "type": "registry:hook",
+      "title": "UseAbortController",
+      "description": "Provides AbortController functionality for canceling asynchronous operations.",
+      "files": [
+        {
+          "path": "registry/hooks/use-abort-controller.tsx",
+          "type": "registry:hook",
+          "target": "hooks/guarahooks/use-abort-controller.tsx"
+        }
+      ],
+      "categories": ["utilities"]
+    },
+    {
       "name": "use-window-size",
       "type": "registry:hook",
       "title": "UseWindowSize",
@@ -561,6 +575,25 @@
         }
       ],
       "categories": ["ui-and-dom"]
+    },
+    {
+      "name": "use-abort-controller-demo",
+      "type": "registry:example",
+      "title": "UseAbortControllerDemo",
+      "description": "use-abort-controller's hook in action.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "badge",
+        "https://guarahooks.com/r/use-abort-controller.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-abort-controller-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-abort-controller-demo.tsx"
+        }
+      ]
     },
     {
       "name": "use-window-size-demo",

@@ -2,6 +2,25 @@ import { Registry } from 'shadcn/registry';
 
 export const examples: Registry['items'] = [
   {
+    name: 'use-abort-controller-demo',
+    type: 'registry:example',
+    title: 'UseAbortControllerDemo',
+    description: "use-abort-controller's hook in action.",
+    registryDependencies: [
+      'button',
+      'card',
+      'badge',
+      'https://guarahooks.com/r/use-abort-controller.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-abort-controller-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-abort-controller-demo.tsx',
+      },
+    ],
+  },
+  {
     name: 'use-window-size-demo',
     type: 'registry:example',
     title: 'UseWindowSizeDemo',
