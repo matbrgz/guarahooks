@@ -220,6 +220,10 @@
     @apply mt-[-4px] ml-[-50px];
     content: counter(steps);
   }
+
+  .steps > p {
+    @apply mb-6;
+  }
 }
 
 ::view-transition-old(root),

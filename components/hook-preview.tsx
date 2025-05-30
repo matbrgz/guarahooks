@@ -55,14 +55,14 @@ export function HookPreview({
     >
       <Tabs defaultValue="preview" className="relative mr-auto w-full">
         {!preview && (
-          <div className="flex items-center justify-between pb-3">
+          <div className="flex items-center justify-between">
             <TabsList>
               <TabsTrigger value="preview">Preview</TabsTrigger>
               <TabsTrigger value="code">Code</TabsTrigger>
             </TabsList>
           </div>
         )}
-        <TabsContent value="preview" className="relative rounded-md">
+        <TabsContent value="preview">
           <HookWrapper name={name}>
             <React.Suspense
               fallback={

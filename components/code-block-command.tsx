@@ -64,9 +64,9 @@ export function CodeBlockCommand({
   }
 
   return (
-    <div className="relative w-full mt-6 max-h-[650px] overflow-hidden rounded-md border border-zinc-800 bg-zinc-950 dark:bg-zinc-900">
+    <div className="relative w-full max-h-[650px] overflow-hidden border rounded-md bg-zinc-950 dark:bg-zinc-900">
       <Tabs
-        className="w-full"
+        className="w-full border-none gap-0"
         defaultValue={packageManager}
         onValueChange={(value) => {
           console.log('value', value, packageManager);
@@ -100,7 +100,7 @@ export function CodeBlockCommand({
             <TabsContent
               key={key}
               value={key}
-              className="mt-0 bg-background dark:bg-zinc-900 text-foreground"
+              className="mt-0 p-0 bg-background dark:bg-zinc-900 text-foreground"
             >
               <pre className="px-4 py-5 overflow-x-auto">
                 <code

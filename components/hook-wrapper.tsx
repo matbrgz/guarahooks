@@ -23,7 +23,7 @@ export const HookWrapper = ({
   return (
     <div
       className={cn(
-        'max-w-screen relative rounded-xl border bg-background',
+        'max-w-screen relative rounded-[8px] border bg-background',
         className,
       )}
       key={key}
