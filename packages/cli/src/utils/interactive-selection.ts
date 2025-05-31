@@ -62,7 +62,7 @@ function buildChoices(
     // Add hooks in this category
     hooksByCategory[category].forEach((hook) => {
       choices.push({
-        name: `   ${hook.name} - ${hook.description}`,
+        name: `${hook.name}`,
         value: hook.name,
         checked: false,
       });
@@ -82,9 +82,8 @@ function filterSelectableChoices(choices: CheckboxChoice[]): CheckboxChoice[] {
 }
 
 function displayAvailableHooks(): void {
-  logger.break();
   logger.log('📦 Available Hooks:');
-  logger.log('Use ↑↓ to navigate, space to select, enter to confirm');
+  logger.log('Use ↑ ↓ to navigate, space to select, enter to confirm');
   logger.break();
 }
 
