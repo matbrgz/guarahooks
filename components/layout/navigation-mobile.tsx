@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-import { CommandMenu } from '@/components/command-menu';
 import { Icons } from '@/components/icons';
 import { HeaderLogo } from '@/components/layout/header-logo';
 import { MobileLink } from '@/components/layout/mobile-link';
@@ -24,6 +23,14 @@ import { docsConfig } from '@/config/docs';
 import { siteConfig } from '@/config/site';
 
 export function NavigationMobile() {
+  function renderIcon(icon: keyof typeof Icons | undefined) {
+    if (!icon) return null;
+    const IconComponent = Icons[icon];
+    if (typeof IconComponent === 'function') {
+      return <IconComponent className="size-4" />;
+    }
+    return null;
+  }
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -56,21 +63,33 @@ export function NavigationMobile() {
         {/* Content */}
         <ScrollArea className={cn('h-[calc(100dvh-68px)]')}>
           {/* Main Navigation */}
-          <ul className={cn('flex flex-col gap-y-2', 'p-4')}>
+          <ul className={cn('flex flex-col gap-y-2', 'py-4 px-2 border-b')}>
             {docsConfig.mainNav.map((item) => (
-              <Link key={item.href} href={item.href!} aria-label={item.title}>
+              <MobileLink
+                key={item.href}
+                href={item.href!}
+                aria-label={item.title}
+                title={item.title}
+              >
                 {item.title}
-              </Link>
+              </MobileLink>
             ))}
           </ul>
           {/* Docs Navigation */}
-          <ul className={cn('flex flex-col gap-y-2')}>
+          <ul className={cn('flex flex-col gap-y-2', 'py-4 px-2')}>
             {docsConfig.sidebarNav.map((item) => (
               <div className={cn('flex flex-col gap-y-2')} key={item.title}>
-                <h4 className={cn('font-medium', 'border-y  p-4')}>
-                  {item.title}
+                <h4
+                  className={cn(
+                    'inline-flex gap-2 items-center',
+                    'text-sm text-muted-foreground',
+                    'pl-2',
+                  )}
+                >
+                  {renderIcon(item.icon)}
+                  <span>{item.title}</span>
                 </h4>
-                <ul className={cn('flex flex-col gap-y-2', 'p-4')}>
+                <ul className={cn('flex flex-col gap-y-2')}>
                   {item.items?.map((item) => (
                     <li key={item.href}>
                       <MobileLink href={item.href!} title={item.title}>
@@ -84,7 +103,7 @@ export function NavigationMobile() {
           </ul>
           {/* Socials */}
           <div
-            className={cn('flex justify-end gap-2', 'px-4 py-4', 'border-t ')}
+            className={cn('flex justify-end gap-2', 'px-4 py-4', 'border-t')}
           >
             <Link
               href={siteConfig.links.twitter}

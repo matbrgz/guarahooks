@@ -35,18 +35,15 @@ export function MobileLink({
           onOpenChange?.(false);
         }}
         className={cn(
-          'flex items-center justify-between',
-          'text-foreground px-2 py-1 rounded-md',
-          pathname === href &&
-            'bg-accent/50 font-medium text-accent-foreground',
+          'inline-flex items-center justify-between w-full',
+          'text-foreground text-left text-sm',
+          'pr-1 py-1 pl-2 rounded-md',
+          'transition-all duration-200',
+          'hover:bg-accent/50',
+          pathname === href && 'bg-accent/50 text-foreground',
         )}
       >
         {children}
-        <span
-          className={cn('relative shrink-0', 'inline-flex items-center gap-1')}
-        >
-          {label && <Badge variant="sidebar">{label}</Badge>}
-        </span>
       </Link>
     </SheetClose>
   );
