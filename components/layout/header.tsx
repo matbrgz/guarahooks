@@ -20,7 +20,7 @@ export function Header() {
       <section
         className={cn(
           'max-w-screen-2xl size-full h-16',
-          'lg:border-x  mx-auto px-4',
+          'mx-auto',
           'flex items-center justify-between gap-4 lg:gap-0',
           'relative',
         )}

@@ -28,14 +28,14 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
   }
 
   return (
-    <ul className={cn('flex flex-col items-start gap-4', 'pr-4')}>
+    <ul className={cn('flex flex-col items-start gap-8', 'pr-4')}>
       {items.map((item, index) => (
         <li key={index} className={cn('flex flex-col gap-2 w-full')}>
           <h4
             className={cn(
               'inline-flex gap-2 items-center',
-              'text-sm',
-              'p-1.5 pl-4 border rounded-lg',
+              'text-sm text-muted-foreground',
+              'ml-2',
             )}
           >
             {renderIcon(item.icon)}

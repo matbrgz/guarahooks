@@ -62,7 +62,7 @@ export async function Hero() {
         <Link
           href="/docs"
           className={cn(
-            buttonVariants({ variant: 'rainbow', size: 'lg' }),
+            buttonVariants({ variant: 'default', size: 'lg' }),
             'group hover:scale-[1.025]',
           )}
         >
@@ -73,7 +73,7 @@ export async function Hero() {
           <TooltipTrigger asChild>
             <Link
               className={cn(
-                buttonVariants({ variant: 'rainbow-secondary', size: 'lg' }),
+                buttonVariants({ variant: 'secondary', size: 'lg' }),
                 'group hover:scale-[1.025] gap-2',
               )}
               href={siteConfig.links.github}
@@ -112,11 +112,11 @@ export async function Hero() {
       >
         Currently with {hooksCount} hooks.
       </p>
-      <BlurredBlob
+      {/* <BlurredBlob
         className="lg:-top-[90%] -top-1/2 left-1/2 lg:-translate-x-1/2 lg:opacity-30 opacity-40"
         colorFrom="#EC003F"
         colorTo="#4F39F6"
-      />
+      /> */}
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}

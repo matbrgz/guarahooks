@@ -64,7 +64,11 @@ export function CodeBlockCommand({
   }
 
   return (
-    <div className="relative w-full max-h-[650px] overflow-hidden border rounded-md bg-zinc-950 dark:bg-zinc-900">
+    <div
+      className={cn(
+        'relative w-full mt-6 max-h-[650px] overflow-hidden border rounded-md bg-zinc-950 dark:bg-zinc-900',
+      )}
+    >
       <Tabs
         className="w-full border-none gap-0"
         defaultValue={packageManager}
@@ -76,19 +80,11 @@ export function CodeBlockCommand({
           });
         }}
       >
-        <div className="flex items-start justify-between border-b border-zinc-800 bg-zinc-900 px-3 pt-2.5 w-full">
-          <TabsList className="h-10 translate-y-[2px] border-b-0 gap-3 bg-transparent p-0 pl-1 w-fit">
+        <div className="flex items-start justify-between border-b border-zinc-800 bg-zinc-900 w-full">
+          <TabsList className="h-11 border-b-0 gap-3 bg-transparent p-1 pl-1 w-fit">
             {Object.entries(tabs).map(([key, value]) => {
               return (
-                <TabsTrigger
-                  key={key}
-                  value={key}
-                  className={cn(
-                    'rounded-none p-0 pt-1.5 font-mono text-zinc-400 border-transparent dark:border-transparent',
-                    'bg-transparent data-[state=active]:bg-transparent dark:data-[state=active]:bg-transparent',
-                    'border-b-2 data-[state=active]:border-b-zinc-50 data-[state=active]:text-zinc-50 dark:data-[state=active]:text-zinc-50 dark:data-[state=active]:border-b-zinc-50',
-                  )}
-                >
+                <TabsTrigger key={key} value={key}>
                   {key}
                 </TabsTrigger>
               );
@@ -118,7 +114,7 @@ export function CodeBlockCommand({
         size="icon"
         variant="ghost"
         className={
-          'absolute right-2 top-2 z-10 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50'
+          'absolute right-1 top-1 z-10 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50'
         }
         onClick={copyCommand}
       >

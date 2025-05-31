@@ -39,8 +39,8 @@ export function Contribute({ doc }: { doc: Doc }) {
   ];
 
   return (
-    <div className="space-y-2 p-4">
-      <p className="font-medium">Contribute</p>
+    <div className="space-y-2 pt-4">
+      <p className="font-medium text-sm">Contribute</p>
       <ul className="m-0 list-none">
         {contributeLinks.map((link, index) => (
           <li key={index} className="mt-0 pt-2">
@@ -50,7 +50,7 @@ export function Contribute({ doc }: { doc: Doc }) {
               rel="noopener noreferrer"
               className={cn(
                 'inline-flex items-center',
-                'text-sm text-muted-foreground hover:text-foreground',
+                'text-xs text-muted-foreground hover:text-foreground',
                 'transition-colors',
               )}
             >

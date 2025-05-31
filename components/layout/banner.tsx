@@ -22,7 +22,7 @@ export function Banner() {
     >
       <div
         className={cn(
-          'container md:h-12',
+          'container md:h-12 text-center',
           'flex flex-col md:flex-row items-center justify-center gap-4',
           'mx-auto',
         )}
@@ -37,7 +37,7 @@ export function Banner() {
           </span>
           <Icons.Chevron.Right
             className={cn(
-              'size-5 ml-1',
+              'size-5 ml-1 my-auto lg:my-0',
               'transition-all duration-300 ease-out group-hover:translate-x-1',
             )}
           />

@@ -13,7 +13,7 @@ export default function DocsLayout({
     <section
       className={cn(
         'size-full max-w-screen-2xl',
-        'flex flex-row grow gap-4',
+        'flex flex-row grow gap-16',
         'mx-auto',
       )}
     >
@@ -21,7 +21,7 @@ export default function DocsLayout({
         id="docs-sidebar"
         className={cn(
           'fixed lg:sticky top-[80px] h-[calc(100vh-112px)]',
-          'hidden lg:block lg:flex-[22%]',
+          'hidden lg:block lg:flex-[18%]',
           'my-4',
         )}
       >
@@ -29,7 +29,7 @@ export default function DocsLayout({
           <DocsSidebar items={docsConfig.sidebarNav} />
         </div>
       </aside>
-      <div className={cn('w-full lg:flex-[78%]')}>{children}</div>
+      <div className={cn('w-full lg:flex-[82%] px-4 lg:px-0')}>{children}</div>
     </section>
   );
 }

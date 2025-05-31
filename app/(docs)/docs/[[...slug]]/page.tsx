@@ -78,30 +78,11 @@ export default async function DocsPage({ params }: PageProps) {
   const toc = await getTableOfContents(doc.body.raw);
 
   return (
-    <div className={cn('flex gap-4 h-full bg-transparent')}>
+    <div className={cn('flex gap-16 h-full bg-transparent')}>
       {/* Content */}
-      <article
-        id="docs-content"
-        className={cn(
-          'w-full',
-          'border my-4 rounded-md',
-          'bg-card/30 backdrop-blur-md w-3/4',
-        )}
-      >
-        {/* Breadcrumb */}
-        <Breadcrumb className={cn('border-b py-4 px-8')}>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem className={cn('text-foreground')}>
-              {doc.title}
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+      <article id="docs-content" className={cn('w-full', 'my-4')}>
         {/* Title and Description */}
-        <hgroup className={cn('border-b py-4 px-8')}>
+        <hgroup className={cn('pb-4')}>
           <h1
             className={cn('scroll-m-20', 'text-4xl font-bold tracking-tight')}
           >
@@ -114,7 +95,7 @@ export default async function DocsPage({ params }: PageProps) {
           )}
         </hgroup>
         {/* Content */}
-        <div className={cn('py-4 px-8')}>
+        <div>
           <Mdx code={doc.body.code} />
         </div>
       </article>
@@ -125,7 +106,6 @@ export default async function DocsPage({ params }: PageProps) {
           'fixed lg:sticky z-50 top-[80px] h-[calc(100vh-112px)]',
           'hidden lg:flex flex-col h-fit w-full lg:w-1/4',
           'mt-4',
-          'border rounded-md bg-card/30 backdrop-blur-md',
         )}
       >
         <TableOfContents toc={toc} />
