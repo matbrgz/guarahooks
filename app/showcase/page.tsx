@@ -1,4 +1,3 @@
-import { BlurredBlob } from '@/components/design/blurred-blob';
 import { BlurFade } from '@/components/magicui/blur-fade';
 import { ShowcaseCard } from '@/components/showcase-card';
 

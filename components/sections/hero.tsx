@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 
 import Link from 'next/link';
 
-import { BlurredBlob } from '@/components/design/blurred-blob';
 import { ScrollIndicator } from '@/components/design/scroll-indicator';
 import { Icons } from '@/components/icons';
 import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
