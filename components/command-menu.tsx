@@ -66,7 +66,7 @@ export function CommandMenu({ ...props }: DialogProps) {
         variant="outline"
         size="search"
         className={cn(
-          'relative md:w-40 lg:w-80',
+          'relative',
           'text-sm font-normal',
           'text-muted-foreground bg-background',
           'lg:justify-start',
@@ -82,7 +82,7 @@ export function CommandMenu({ ...props }: DialogProps) {
           className={cn(
             'hidden ml-auto',
             'lg:flex items-center gap-1.5',
-            'bg-muted rounded-[4px] border py-0.5 px-2',
+            'bg-muted rounded-sm border py-0.5 px-2',
             'font-mono text-xs font-medium',
             'pointer-events-none select-none opacity-100',
           )}

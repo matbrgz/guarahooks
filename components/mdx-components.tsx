@@ -193,13 +193,7 @@ const components = {
     className,
     ...props
   }: React.ComponentProps<typeof TabsList>) => (
-    <TabsList
-      className={cn(
-        'w-full justify-start rounded-none border-b bg-transparent p-0',
-        className,
-      )}
-      {...props}
-    />
+    <TabsList className={cn(className)} {...props} />
   ),
   TabsTrigger: ({
     className,
@@ -213,7 +207,7 @@ const components = {
   }: React.ComponentProps<typeof TabsContent>) => (
     <TabsContent
       className={cn(
-        'relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold',
+        'relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold [&_figure>div]:mt-0',
         className,
       )}
       {...props}
@@ -279,7 +273,7 @@ const components = {
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
-        'relative rounded bg-muted font-mono text-sm py-1 px-1.5',
+        'relative rounded-md bg-muted font-mono text-sm py-1 px-1.5',
         className,
       )}
       {...props}

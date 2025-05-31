@@ -15,7 +15,7 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
   if (items.length === 0) return null;
 
   return (
-    <div className={cn('relative', 'flex flex-col gap-1', 'ml-2')}>
+    <div className={cn('relative', 'flex flex-col gap-1')}>
       {items.map((item, index) =>
         item.href && !item.disabled ? (
           <Link
@@ -23,9 +23,10 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
             href={item.href}
             className={cn(
               'inline-flex items-center justify-between',
-              'text-muted-foreground tracking-tight font-mono text-sm pl-4 pr-1.5 py-1.5',
-              'group transition-all duration-200 rounded-lg',
-              'hover:text-foreground hover:bg-accent/50',
+              'text-foreground text-left text-sm',
+              'pr-1 py-1 pl-2 rounded-md',
+              'transition-all duration-200',
+              'hover:bg-accent/50',
               item.disabled && 'cursor-not-allowed opacity-60',
               pathname === item.href && 'bg-accent/50 text-foreground',
             )}
@@ -33,7 +34,11 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
             <span className="transition-all duration-200 group-hover:translate-x-0.5">
               {item.title}
             </span>
-            {item.label && <Badge variant="sidebar">{item.label}</Badge>}
+            {item.label && (
+              <Badge variant="secondary" className="rounded-sm">
+                {item.label}
+              </Badge>
+            )}
           </Link>
         ) : (
           <span
@@ -45,7 +50,11 @@ export function DocsSidebarItem({ items, pathname }: DocsSidebarNavItemsProps) {
             )}
           >
             <span className="">{item.title}</span>
-            {item.label && <Badge variant="sidebar">{item.label}</Badge>}
+            {item.label && (
+              <Badge variant="secondary" className="rounded-sm">
+                {item.label}
+              </Badge>
+            )}
           </span>
         ),
       )}
