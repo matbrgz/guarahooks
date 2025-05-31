@@ -1,3 +1,4 @@
+import fs from 'fs/promises';
 import path from 'path';
 
 import { confirm } from '@inquirer/prompts';
@@ -92,12 +93,69 @@ export const add = new Command()
 
       // Detect project structure
       const projectStructure = await detectProjectStructure(options.cwd);
-      const srcDir = options.srcDir ?? projectStructure.srcDir;
+      const srcDir = projectStructure.srcDir ? true : options.srcDir;
+
+      // Detect existing hook files and handle conflicts
+      const conflicts: string[] = [];
+      // Build a map of registry items by name for metadata
+      const registryMap = Object.fromEntries(
+        registryItems.map((item) => [item.name, item]),
+      );
+
+      for (const hookName of selectedHooks) {
+        const item = registryMap[hookName];
+
+        if (!item?.files) continue;
+
+        for (const file of item.files) {
+          if (!file.target) continue;
+
+          const targetPath = path.join(
+            options.cwd,
+            srcDir ? 'src' : '',
+            file.target,
+          );
+
+          try {
+            await fs.access(targetPath);
+            conflicts.push(hookName);
+            break;
+          } catch {
+            // file does not exist
+          }
+        }
+      }
+
+      if (conflicts.length > 0 && !options.overwrite) {
+        logger.break();
+        logger.warn(`Hooks already exist: ${conflicts.join(', ')}`);
+
+        const overwriteExisting = await confirm({
+          message: `Overwrite existing hook(s)? (${conflicts.join(', ')})`,
+          default: false,
+        });
+
+        if (!overwriteExisting) {
+          selectedHooks = selectedHooks.filter((h) => !conflicts.includes(h));
+
+          if (selectedHooks.length === 0) {
+            logger.info('No hooks left to install');
+            return;
+          }
+        } else {
+          options.overwrite = true;
+        }
+      }
 
       // Show confirmation unless --yes is used
       if (!options.yes) {
+        // Simplify display: extract only hook names (without descriptions)
+        const hookNames = selectedHooks.map((h) => h.split(' - ')[0]);
+
+        logger.break();
+
         const shouldInstall = await confirm({
-          message: `Install ${selectedHooks.length} hook(s)? (${selectedHooks.join(', ')})`,
+          message: `Install ${hookNames.length} hook(s)? (${hookNames.join(', ')})`,
           default: true,
         });
 

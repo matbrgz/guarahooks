@@ -219,10 +219,6 @@ async function installFile(
     // Write file to disk
     await fs.writeFile(targetPath, content, 'utf8');
 
-    if (!options.silent) {
-      logger.info(`Created ${targetPath}`);
-    }
-
     return { success: true, filePath: targetPath };
   } catch (error) {
     const errorMessage =
