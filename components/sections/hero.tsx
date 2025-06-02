@@ -49,7 +49,7 @@ export async function Hero() {
           <span className={cn('font-bold')}>React</span> and{' '}
           <span className={cn('font-bold')}>TypeScript</span>. Perfect for your
           next application. <span className={cn('font-bold')}>Shadcn</span>{' '}
-          powered.
+          inspired.
         </p>
       </hgroup>
       <div
