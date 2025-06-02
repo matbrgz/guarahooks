@@ -111,7 +111,7 @@ async function buildRegistry() {
   // 1. Build the registry
   await new Promise((resolve, reject) => {
     const process = exec(
-      `pnpm dlx shadcn build registry.json --output ./public/r/`,
+      `pnpm dlx shadcn build public/r/registry.json --output ./public/r/`,
     );
 
     process.on('exit', (code) => {
