@@ -20,7 +20,7 @@ export function Footer() {
         className={cn(
           'max-w-screen-2xl size-full',
           'flex items-center justify-between',
-          'border-x  mx-auto px-4',
+          'mx-auto px-4 2xl:px-0',
         )}
       >
         <p className="text-muted-foreground text-sm">

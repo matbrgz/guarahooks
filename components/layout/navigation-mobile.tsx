@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Icons } from '@/components/icons';
+import { Icons, renderIcon } from '@/components/icons';
 import { HeaderLogo } from '@/components/layout/header-logo';
 import { MobileLink } from '@/components/layout/mobile-link';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
@@ -23,14 +23,6 @@ import { docsConfig } from '@/config/docs';
 import { siteConfig } from '@/config/site';
 
 export function NavigationMobile() {
-  function renderIcon(icon: keyof typeof Icons | undefined) {
-    if (!icon) return null;
-    const IconComponent = Icons[icon];
-    if (typeof IconComponent === 'function') {
-      return <IconComponent className="size-4" />;
-    }
-    return null;
-  }
   return (
     <Sheet>
       <SheetTrigger asChild>

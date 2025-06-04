@@ -1,8 +1,24 @@
 import React from 'react';
 
+// ===========================================
+//    Icons from https://remixicon.com/
+// ===========================================
+
 export type IconProps = React.SVGProps<SVGSVGElement>;
 
-// Always checks if the icon can be used from this lib: https://remixicon.com/.
+export function renderIcon(
+  icon: keyof typeof Icons | undefined,
+  props: IconProps = {},
+) {
+  if (!icon) return null;
+
+  const IconComponent = Icons[icon];
+
+  if (typeof IconComponent === 'function') {
+    return <IconComponent {...props} />;
+  }
+  return null;
+}
 
 export const Icons = {
   Github: (props: IconProps) => (

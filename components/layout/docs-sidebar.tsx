@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 
-import { Icons } from '@/components/icons';
+import { renderIcon } from '@/components/icons';
 import { DocsSidebarItem } from '@/components/layout/docs-sidebar-item';
 
 import { cn } from '@/lib/utils';
@@ -18,15 +18,6 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
 
   if (items.length === 0) return null;
 
-  function renderIcon(icon: keyof typeof Icons | undefined) {
-    if (!icon) return null;
-    const IconComponent = Icons[icon];
-    if (typeof IconComponent === 'function') {
-      return <IconComponent className="size-4" />;
-    }
-    return null;
-  }
-
   return (
     <ul className={cn('flex flex-col items-start gap-8', 'pr-4')}>
       {items.map((item, index) => (
@@ -38,7 +29,7 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
               'ml-2',
             )}
           >
-            {renderIcon(item.icon)}
+            {renderIcon(item.icon, { className: 'size-4' })}
             <span>{item.title}</span>
           </h4>
           {item.items && item.items.length > 0 && (
