@@ -13,17 +13,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/hooks',
-        destination: '/docs/hooks/use-window-size',
+        destination: '/docs/hooks',
         permanent: true,
       },
       {
         source: '/hooks/:path*',
         destination: '/docs/hooks/:path*',
-        permanent: true,
-      },
-      {
-        source: '/docs/hooks',
-        destination: '/docs/hooks/marquee',
         permanent: true,
       },
       {

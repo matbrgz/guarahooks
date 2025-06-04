@@ -1,8 +1,10 @@
+import Link from 'next/link';
+
 import { CommandMenu } from '@/components/command-menu';
-import { DesktopLink } from '@/components/layout/desktop-link';
 import { GithubLink } from '@/components/layout/github-link';
 import { HeaderLogo } from '@/components/layout/header-logo';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
+import { buttonVariants } from '@/components/ui/button';
 
 import { cn } from '@/lib/utils';
 
@@ -30,13 +32,16 @@ export function DesktopNavigation() {
                 'flex items-center justify-center',
               )}
             >
-              <DesktopLink
+              <Link
                 href={item.href!}
                 title={item.title}
-                disabled={item.disabled}
+                className={cn(
+                  buttonVariants({ variant: 'ghost', size: 'sm' }),
+                  'text-muted-foreground',
+                )}
               >
                 {item.title}
-              </DesktopLink>
+              </Link>
             </li>
           ))}
         </ul>

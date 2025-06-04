@@ -89,7 +89,9 @@ export default async function DocsPage({ params }: PageProps) {
             {doc.title}
           </h1>
           {doc.description && (
-            <p className={cn('text-base text-muted-foreground')}>
+            <p
+              className={cn('text-base text-muted-foreground', 'max-w-[64ch]')}
+            >
               {doc.description}
             </p>
           )}

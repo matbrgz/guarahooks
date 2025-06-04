@@ -28,7 +28,7 @@ export function Banner() {
         <Link
           href="/docs/cli"
           onClick={() => posthog.capture('banner_cta_clicked')}
-          className="inline-flex text-xs leading-normal md:text-sm max-w-[36ch]"
+          className="inline-flex text-xs leading-normal md:text-sm max-w-[36ch] md:max-w-full"
         >
           <span className="font-medium">
             ✨ Introducing you to the CLI ⚙️ - Manage your hooks with ease.

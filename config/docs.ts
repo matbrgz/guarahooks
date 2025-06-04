@@ -3,6 +3,10 @@ import { DashboardConfig } from '@/types/docs';
 export const docsConfig: DashboardConfig = {
   mainNav: [
     {
+      title: 'Docs',
+      href: '/docs',
+    },
+    {
       title: 'Hooks',
       href: '/hooks',
     },
