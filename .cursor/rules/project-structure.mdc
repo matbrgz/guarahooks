@@ -8,28 +8,60 @@ alwaysApply: false
 ```tree
 .
 ├── .cursor/
+│   └── rules/
 ├── .git/
 ├── .next/
 ├── __registry__/
+├── .content-collections/
+├── .github/
+├── .husky/
+├── .vscode/
 ├── app/
 │   ├── (docs)/
+│   │   └── docs/
+│   │       ├── layout.tsx
+│   │       └── [[...slug]]/
+│   ├── showcase/
 │   ├── layout.tsx
 │   ├── page.tsx
 │   ├── not-found.tsx
-│   └── icon.png
+│   ├── robots.ts
+│   ├── sitemap.ts
+│   ├── apple-icon.png
+│   ├── favicon.ico
+│   ├── icon.png
+│   └── icon.svg
 ├── assets/
 ├── components/
+│   ├── ui/              # Shadcn UI components
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   ├── dialog.tsx
+│   │   ├── input.tsx
+│   │   └── ... (other UI components)
+│   ├── layout/          # Layout components
+│   │   ├── header.tsx
+│   │   ├── footer.tsx
+│   │   ├── docs-sidebar.tsx
+│   │   ├── navigation-desktop.tsx
+│   │   ├── navigation-mobile.tsx
+│   │   └── ... (other layout components)
+│   ├── sections/        # Page sections
+│   │   ├── hero.tsx
+│   │   ├── hooks-demo.tsx
+│   │   └── showcase.tsx
+│   ├── theme/          # Theme components
+│   │   ├── theme-provider.tsx
+│   │   └── theme-toggle.tsx
+│   ├── magicui/        # Magic UI components
+│   ├── design/         # Design components
 │   ├── command-menu.tsx
 │   ├── icons.tsx
-│   ├── layout/
 │   ├── table-of-contents.tsx
-│   ├── ui/
 │   ├── code-block-wrapper.tsx
 │   ├── hook-preview.tsx
 │   ├── hook-wrapper.tsx
 │   ├── open-in-v0.tsx
-│   ├── sections/
-│   ├── magicui/
 │   ├── mdx-components.tsx
 │   ├── contribute.tsx
 │   ├── repo-download.tsx
@@ -38,16 +70,25 @@ alwaysApply: false
 │   ├── callout.tsx
 │   ├── code-block-command.tsx
 │   ├── copy-button.tsx
-│   ├── design/
 │   ├── hook-source.tsx
-│   ├── page-banner.tsx
-│   ├── page-grid.tsx
-│   ├── theme/
-│   └── code-block.tsx
+│   ├── posthog-provider.tsx
+│   └── showcase-card.tsx
 ├── config/
+│   ├── docs.ts          # Documentation config
+│   └── site.ts          # Site config
 ├── content/
-├── hooks/
-├── lib/
+│   ├── docs/           # Documentation content
+│   │   ├── hooks/
+│   │   ├── installation/
+│   │   ├── index.mdx
+│   │   ├── cli.mdx
+│   │   └── resources.mdx
+│   ├── pages/          # Static pages content
+│   └── showcases/      # Showcase content
+├── hooks/              # Custom React hooks
+│   ├── use-config.tsx
+│   └── use-mounted.tsx
+├── lib/                # Utility libraries
 │   ├── events.ts
 │   ├── github.ts
 │   ├── rehype-component.ts
@@ -55,33 +96,90 @@ alwaysApply: false
 │   ├── toc.ts
 │   ├── hooks.ts
 │   └── utils.ts
-├── public/
-├── registry/
-├── types/
-├── .content-collections/
-├── .github/
-├── .husky/
-├── .vscode/
-├── scripts/
+├── packages/           # Monorepo packages
+│   └── cli/           # CLI package (guara-cli)
+│       ├── src/
+│       ├── dist/
+│       ├── package.json
+│       └── tsconfig.json
+├── public/            # Static assets
+├── registry/          # Component registry
+│   ├── hooks/         # Hook registry files
+│   ├── example/       # Example files
+│   ├── registry-hooks.ts
+│   └── registry-examples.ts
+├── scripts/           # Build and dev scripts
+├── types/             # TypeScript type definitions
+│   ├── docs.d.ts
+│   ├── lucide-react.d.ts
+│   └── unist.d.ts
 ├── node_modules/
-├── registry.json
-└── ... (config files)
+├── components.json    # Shadcn UI config
+├── content-collections.ts
+├── eslint.config.mjs
+├── next.config.ts
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.mjs
+├── prettier.config.mjs
+├── tsconfig.json
+├── CONTRIBUTING.md
+├── LICENSE
+└── README.md
 ```
 
 ## File Naming and Organization
 
-- Use kebab case for route directories (e.g., `api/hello-world/route`)
+- Use kebab case for route directories (e.g., `app/api/hello-world/route.ts`)
 - Use PascalCase for components (e.g. `components/Button.tsx`)
-- Shadcn components are in `components/ui`
-- All other components are in `components/`
-- If a component can be used in many places, place it in the `components` folder
+- Use kebab-case for file names when appropriate (e.g. `use-mounted.tsx`)
+
+### Component Organization
+
+- **Shadcn components**: `components/ui/` - UI primitives from Shadcn
+- **Layout components**: `components/layout/` - Header, footer, navigation
+- **Section components**: `components/sections/` - Page sections like hero, showcase
+- **Theme components**: `components/theme/` - Theme provider and toggle
+- **Magic UI**: `components/magicui/` - Magic UI components
+- **Design components**: `components/design/` - Design-specific components
+- **General components**: `components/` - All other reusable components
+
+### Content Organization
+
+- **Documentation**: `content/docs/` - MDX files for documentation
+- **Pages**: `content/pages/` - Static page content
+- **Showcases**: `content/showcases/` - Showcase examples
+
+### Configuration
+
+- **Site config**: `config/site.ts` - General site configuration
+- **Docs config**: `config/docs.ts` - Documentation navigation and structure
 
 ## New Pages
 
-- Create new pages at: `app/(www)/PAGE_NAME/page.tsx`
-  Pages are Server components for direct data loading
+### Documentation Pages
+- Create new docs at: `content/docs/PAGE_NAME.mdx`
+- The docs are rendered through the catch-all route: `app/(docs)/docs/[[...slug]]/page.tsx`
+
+### Regular Pages
+- Create new pages at: `app/PAGE_NAME/page.tsx`
+- Pages are Server components for direct data loading
 - Components with `onClick` must be client components with `use client` directive
+
+## Hooks
+
+- Custom hooks are in `hooks/` directory
+- Registry hooks are defined in `registry/registry-hooks.ts`
+- Hook files are stored in `registry/hooks/`
 
 ## Utility Functions
 
-Create utility functions in `utils/` folder for reusable logic
+- Create utility functions in `lib/` folder for reusable logic
+- Use `lib/utils.ts` for general utilities
+- Specific utilities like GitHub integration go in dedicated files (e.g., `lib/github.ts`)
+
+## Monorepo Structure
+
+- The project includes a CLI package in `packages/cli/`
+- Use pnpm workspaces for package management
+- Each package has its own `package.json` and build configuration
