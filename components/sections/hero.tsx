@@ -4,8 +4,10 @@ import Link from 'next/link';
 
 import { ScrollIndicator } from '@/components/design/scroll-indicator';
 import { Icons } from '@/components/icons';
-import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
+import { GridPattern } from '@/components/magicui/grid-pattern';
+import { NumberTicker } from '@/components/magicui/number-ticker';
 import { buttonVariants } from '@/components/ui/button';
+import { Spotlight } from '@/components/ui/spotlight';
 import {
   Tooltip,
   TooltipContent,
@@ -17,8 +19,6 @@ import { getHooksCount } from '@/lib/hooks';
 import { cn } from '@/lib/utils';
 
 import { siteConfig } from '@/config/site';
-
-import { NumberTicker } from '../magicui/number-ticker';
 
 export async function Hero() {
   const hooksCount = getHooksCount();
@@ -111,19 +111,18 @@ export async function Hero() {
       >
         Currently with {hooksCount} hooks.
       </p>
-      {/* <BlurredBlob
-        className="lg:-top-[90%] -top-1/2 left-1/2 lg:-translate-x-1/2 lg:opacity-30 opacity-40"
-        colorFrom="#EC003F"
-        colorTo="#4F39F6"
-      /> */}
-      <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
+      <Spotlight
+        className="-top-20 left-0 md:-top-40 md:left-80"
+        fill="white"
+      />
+      <GridPattern
+        width={30}
+        height={30}
+        x={-1}
+        y={-1}
+        strokeDasharray={'4 2'}
         className={cn(
-          '[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]',
-          'inset-x-0',
+          '[mask-image:radial-gradient(640px_circle_at_center,white,transparent)]',
         )}
       />
     </div>

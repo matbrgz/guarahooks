@@ -43,18 +43,9 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-
-  @keyframes rainbow {
-    0% {
-      background-position: 0%;
-    }
-    100% {
-      background-position: 200%;
-    }
-  }
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 
   @keyframes marquee {
     from {
@@ -70,6 +61,17 @@
     }
     to {
       transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
     }
   }
 }
@@ -197,16 +199,6 @@
 }
 
 @layer utilities {
-  .layout-container {
-    @apply size-full max-w-screen-2xl;
-    @apply flex flex-col;
-    @apply mx-auto my-4 px-4 lg:mt-8;
-  }
-
-  .sketch-pattern {
-    @apply bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 dark:[--pattern-fg:var(--color-white)]/10;
-  }
-
   .steps {
     counter-reset: steps;
   }
