@@ -97,7 +97,7 @@ export default async function DocsPage({ params }: PageProps) {
           )}
         </hgroup>
         {/* Content */}
-        <div>
+        <div className={cn('mt-8')}>
           <Mdx code={doc.body.code} />
         </div>
       </article>

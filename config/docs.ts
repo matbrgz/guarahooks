@@ -17,7 +17,7 @@ export const docsConfig: DashboardConfig = {
   ],
   sidebarNav: [
     {
-      title: 'Getting Started',
+      title: 'GetStarted',
       items: [
         {
           title: 'Introduction',
@@ -43,6 +43,11 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'Open in v0',
           href: '/docs/v0',
+          items: [],
+        },
+        {
+          title: 'Changelog',
+          href: '/docs/changelog',
           items: [],
         },
       ],
