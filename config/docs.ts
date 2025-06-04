@@ -36,6 +36,11 @@ export const docsConfig: DashboardConfig = {
           href: '/docs/resources',
           items: [],
         },
+        {
+          title: 'Open in v0',
+          href: '/docs/v0',
+          items: [],
+        },
       ],
     },
     {

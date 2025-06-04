@@ -19,7 +19,7 @@ type ThemeToggleProps = {
 };
 
 export function ThemeToggle({
-  variant = 'outline',
+  variant = 'ghost',
   size = 'icon',
   className,
 }: ThemeToggleProps) {

@@ -38,13 +38,18 @@ export async function Hero() {
           'text-center',
           'z-10',
           'flex flex-col items-center justify-center gap-4',
-          'px-4 lg:px-0',
+          'px-3 lg:px-0',
         )}
       >
-        <h1 className={cn('text-5xl lg:text-6xl font-bold', 'max-w-[18ch]')}>
+        <h1
+          className={cn(
+            'text-3xl md:text-5xl lg:text-6xl font-bold',
+            'max-w-[18ch]',
+          )}
+        >
           Hooks Library for Software Engineers
         </h1>
-        <p className={cn('max-w-[34ch]')}>
+        <p className={cn('text-sm lg:text-base max-w-[34ch]')}>
           Free and open-source hooks build with{' '}
           <span className={cn('font-bold')}>React</span> and{' '}
           <span className={cn('font-bold')}>TypeScript</span>. Perfect for your

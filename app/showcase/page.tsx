@@ -10,7 +10,7 @@ export default function ShowcasePage() {
     <section
       className={cn(
         'size-full max-w-screen-2xl grow',
-        'mx-auto border-x  px-4 py-16 lg:px-0',
+        'mx-auto lg:border-x px-3 py-16 lg:px-0',
         'flex flex-col items-center',
       )}
     >

@@ -100,7 +100,7 @@ export function CodeBlockCommand({
             >
               <pre className="px-4 py-5 overflow-x-auto">
                 <code
-                  className="relative font-mono text-sm leading-none"
+                  className="relative font-mono text-sm leading-none overflow-x-auto"
                   data-language="bash"
                 >
                   {value}

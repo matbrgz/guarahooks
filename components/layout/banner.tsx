@@ -8,14 +8,12 @@ import { Icons } from '@/components/icons';
 
 import { cn } from '@/lib/utils';
 
-// import { cn } from '@/lib/utils';
-
 export function Banner() {
   return (
     <section
       className={cn(
         'relative top-0',
-        'bg-amber-600 text-white',
+        'bg-amber-600 text-foreground',
         'group transition-all duration-300',
         'py-3 md:py-0',
       )}
@@ -30,14 +28,14 @@ export function Banner() {
         <Link
           href="/docs/cli"
           onClick={() => posthog.capture('banner_cta_clicked')}
-          className="inline-flex text-xs leading-normal md:text-sm"
+          className="inline-flex text-xs leading-normal md:text-sm max-w-[36ch]"
         >
           <span className="font-medium">
             ✨ Introducing you to the CLI ⚙️ - Manage your hooks with ease.
           </span>
           <Icons.Chevron.Right
             className={cn(
-              'size-5 ml-1 my-auto lg:my-0',
+              'size-7 md:size-5 ml-1 my-auto lg:my-0',
               'transition-all duration-300 ease-out group-hover:translate-x-1',
             )}
           />

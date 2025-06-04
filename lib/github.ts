@@ -62,7 +62,7 @@ export async function getGithubStars() {
             }
           : {},
         next: {
-          revalidate: 3600,
+          revalidate: 86400,
         },
       },
     );
