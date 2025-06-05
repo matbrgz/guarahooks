@@ -12,7 +12,7 @@ interface UseDebouncedStateOptions {
   leading?: boolean;
 }
 
-export function useDebouncedState<T = any>(
+export function useDebouncedState<T>(
   defaultValue: T,
   delay: number = 500,
   options: UseDebouncedStateOptions = {},

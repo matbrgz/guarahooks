@@ -161,8 +161,8 @@ Document browser support if relevant:
 
 ## Related
 
-- [Related Documentation Link](mdc:https:/example.com)
-- [Related API Documentation](mdc:https:/example.com)
+- [Related Documentation Link](https://example.com)
+- [Related API Documentation](https://example.com)
 ````
 
 ## Required Updates
@@ -195,7 +195,7 @@ Update `@/registry/registry-examples.ts`:
   name: 'use-hook-demo',
   type: 'registry:example',
   title: 'UseHookDemo',
-  description: "use-hook's hook in action.",
+  description: 'use-hook in action.',
   registryDependencies: [
     'used-components',
     'https://guarahooks.com/r/use-hook.json',
@@ -273,6 +273,6 @@ pnpm build:docs
 
 ## Reference Examples
 
-- Hook: [use-notifications.tsx](mdc:registry/hooks/use-notifications.tsx)
-- Example: [use-notifications-demo.tsx](mdc:registry/example/use-notifications-demo.tsx)
-- Documentation: [use-notifications.mdx](mdc:content/docs/hooks/use-notifications.mdx)
+- Hook: [use-notifications.tsx](registry/hooks/use-notifications.tsx)
+- Example: [use-notifications-demo.tsx](registry/example/use-notifications-demo.tsx)
+- Documentation: [use-notifications.mdx](content/docs/hooks/use-notifications.mdx)

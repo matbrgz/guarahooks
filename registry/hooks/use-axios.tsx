@@ -21,28 +21,28 @@ export interface UseAxiosReturn {
   instance: AxiosInstance;
   loading: boolean;
   error: AxiosError | null;
-  data: any;
-  get: <T = any>(
+  data: unknown;
+  get: <T = unknown>(
     url: string,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
-  post: <T = any>(
+  post: <T = unknown>(
     url: string,
-    data?: any,
+    data?: unknown,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
-  put: <T = any>(
+  put: <T = unknown>(
     url: string,
-    data?: any,
+    data?: unknown,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
-  delete: <T = any>(
+  delete: <T = unknown>(
     url: string,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
-  patch: <T = any>(
+  patch: <T = unknown>(
     url: string,
-    data?: any,
+    data?: unknown,
     config?: AxiosRequestConfig,
   ) => Promise<AxiosResponse<T>>;
   resetError: () => void;
@@ -56,7 +56,7 @@ export function useAxios({
 }: UseAxiosProps = {}): UseAxiosReturn {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<AxiosError | null>(null);
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<unknown>(null);
 
   // Create a ref to store the axios instance to prevent recreation on each render
   const instanceRef = useRef<AxiosInstance | null>(null);
@@ -90,10 +90,10 @@ export function useAxios({
 
   // Helper to handle request execution
   const executeRequest = useCallback(
-    async <T = any,>(
+    async <T = unknown,>(
       method: string,
       url: string,
-      data?: any,
+      data?: unknown,
       customConfig?: AxiosRequestConfig,
     ): Promise<AxiosResponse<T>> => {
       setLoading(true);
@@ -124,35 +124,35 @@ export function useAxios({
 
   // Request methods
   const get = useCallback(
-    <T = any,>(url: string, config?: AxiosRequestConfig) => {
+    <T = unknown,>(url: string, config?: AxiosRequestConfig) => {
       return executeRequest<T>('get', url, undefined, config);
     },
     [executeRequest],
   );
 
   const post = useCallback(
-    <T = any,>(url: string, data?: any, config?: AxiosRequestConfig) => {
+    <T = unknown,>(url: string, data?: unknown, config?: AxiosRequestConfig) => {
       return executeRequest<T>('post', url, data, config);
     },
     [executeRequest],
   );
 
   const put = useCallback(
-    <T = any,>(url: string, data?: any, config?: AxiosRequestConfig) => {
+    <T = unknown,>(url: string, data?: unknown, config?: AxiosRequestConfig) => {
       return executeRequest<T>('put', url, data, config);
     },
     [executeRequest],
   );
 
   const del = useCallback(
-    <T = any,>(url: string, config?: AxiosRequestConfig) => {
+    <T = unknown,>(url: string, config?: AxiosRequestConfig) => {
       return executeRequest<T>('delete', url, undefined, config);
     },
     [executeRequest],
   );
 
   const patch = useCallback(
-    <T = any,>(url: string, data?: any, config?: AxiosRequestConfig) => {
+    <T = unknown,>(url: string, data?: unknown, config?: AxiosRequestConfig) => {
       return executeRequest<T>('patch', url, data, config);
     },
     [executeRequest],

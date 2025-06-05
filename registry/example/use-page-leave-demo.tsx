@@ -28,7 +28,7 @@ export default function UsePageLeaveDemo() {
     onPageLeave(() => {
       // Custom action when the user leaves the page (tab switch)
       // Example: save draft, send telemetry, etc.
-      // You can replace this with any desired logic
+      // Replace this with whatever logic you need
       // eslint-disable-next-line no-console
       console.log('User left the page (tab switch)');
     });

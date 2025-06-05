@@ -58,18 +58,18 @@ pnpm add axios
 
 The hook returns an object with the following properties:
 
-| Property     | Type                                                                                           | Description                              |
-| ------------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `instance`   | `AxiosInstance`                                                                                | Axios instance that can be used directly |
-| `loading`    | `boolean`                                                                                      | Loading state for requests               |
-| `error`      | `AxiosError \| null`                                                                           | Error from the most recent request       |
-| `data`       | `any`                                                                                          | Data from the most recent request        |
-| `get`        | `<T = any>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`             | Execute a GET request                    |
-| `post`       | `<T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a POST request                   |
-| `put`        | `<T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PUT request                    |
-| `delete`     | `<T = any>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`             | Execute a DELETE request                 |
-| `patch`      | `<T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PATCH request                  |
-| `resetError` | `() => void`                                                                                   | Reset error state                        |
+| Property     | Type                                                                                                   | Description                              |
+| ------------ | ------------------------------------------------------------------------------------------------------ | ---------------------------------------- |
+| `instance`   | `AxiosInstance`                                                                                        | Axios instance that can be used directly |
+| `loading`    | `boolean`                                                                                              | Loading state for requests               |
+| `error`      | `AxiosError \| null`                                                                                   | Error from the most recent request       |
+| `data`       | `unknown`                                                                                              | Data from the most recent request        |
+| `get`        | `<T = unknown>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`                 | Execute a GET request                    |
+| `post`       | `<T = unknown>(url: string, data?: unknown, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a POST request                   |
+| `put`        | `<T = unknown>(url: string, data?: unknown, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PUT request                    |
+| `delete`     | `<T = unknown>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`                 | Execute a DELETE request                 |
+| `patch`      | `<T = unknown>(url: string, data?: unknown, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PATCH request                  |
+| `resetError` | `() => void`                                                                                           | Reset error state                        |
 
 ## Key Features & Details
 

@@ -36,7 +36,7 @@ export const registryItemTailwindSchema = z.object({
   config: z
     .object({
       content: z.array(z.string()).optional(),
-      theme: z.record(z.string(), z.any()).optional(),
+      theme: z.record(z.string(), z.unknown()).optional(),
       plugins: z.array(z.string()).optional(),
     })
     .optional(),
@@ -76,7 +76,7 @@ export const registryItemSchema = z.object({
   tailwind: registryItemTailwindSchema.optional(),
   cssVars: registryItemCssVarsSchema.optional(),
   css: registryItemCssSchema.optional(),
-  meta: z.record(z.string(), z.any()).optional(),
+  meta: z.record(z.string(), z.unknown()).optional(),
   docs: z.string().optional(),
   categories: z.array(z.string()).optional(),
 });

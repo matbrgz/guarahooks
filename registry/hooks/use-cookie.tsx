@@ -39,7 +39,7 @@ export function useCookie<T = string>(
 
   // Set cookie
   const setCookie = useCallback(
-    (val: T, options: CookieOptions = {}) => {
+    (val: T | undefined, options: CookieOptions = {}) => {
       if (!isBrowser) return;
       let encodedValue: string;
       if (typeof val === 'string') {
@@ -62,7 +62,7 @@ export function useCookie<T = string>(
 
   // Remove cookie
   const removeCookie = useCallback(() => {
-    setCookie(undefined as unknown as T, { path: '/', expires: new Date(0) });
+    setCookie(undefined, { path: '/', expires: new Date(0) });
   }, [setCookie]);
 
   // Get cookie value (and create if missing)
@@ -73,14 +73,14 @@ export function useCookie<T = string>(
         setCookie(initialValue);
         return initialValue;
       } else {
-        setCookie(undefined as unknown as T);
+        setCookie(undefined);
         return undefined;
       }
     }
     try {
       return JSON.parse(cookies[key]) as T;
     } catch {
-      return cookies[key] as unknown as T;
+      return cookies[key] as T;
     }
   }, [getCookies, key, initialValue, setCookie]);
 

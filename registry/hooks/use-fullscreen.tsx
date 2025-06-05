@@ -5,38 +5,48 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 // Type for the ref that can be passed to the hook
 export type FullscreenRef = React.RefObject<HTMLElement> | null;
 
+// Vendor-prefixed Fullscreen API support
+interface VendorDocument extends Document {
+  webkitFullscreenElement?: Element;
+  mozFullScreenElement?: Element;
+  msFullscreenElement?: Element;
+  webkitExitFullscreen?: () => Promise<void>;
+  mozCancelFullScreen?: () => Promise<void>;
+  msExitFullscreen?: () => Promise<void>;
+}
+
+interface VendorElement extends HTMLElement {
+  webkitRequestFullscreen?: () => Promise<void>;
+  mozRequestFullScreen?: () => Promise<void>;
+  msRequestFullscreen?: () => Promise<void>;
+}
+
 // Utility functions for cross-browser Fullscreen API
 function getFullscreenElement(): Element | null {
+  const doc = document as VendorDocument;
   return (
-    document.fullscreenElement ||
-    // @ts-ignore
-    document.webkitFullscreenElement ||
-    // @ts-ignore
-    document.mozFullScreenElement ||
-    // @ts-ignore
-    document.msFullscreenElement ||
+    doc.fullscreenElement ||
+    doc.webkitFullscreenElement ||
+    doc.mozFullScreenElement ||
+    doc.msFullscreenElement ||
     null
   );
 }
 
 function requestFullscreen(element: HTMLElement) {
-  if (element.requestFullscreen) return element.requestFullscreen();
-  // @ts-ignore
-  if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen();
-  // @ts-ignore
-  if (element.mozRequestFullScreen) return element.mozRequestFullScreen();
-  // @ts-ignore
-  if (element.msRequestFullscreen) return element.msRequestFullscreen();
+  const el = element as VendorElement;
+  if (el.requestFullscreen) return el.requestFullscreen();
+  if (el.webkitRequestFullscreen) return el.webkitRequestFullscreen();
+  if (el.mozRequestFullScreen) return el.mozRequestFullScreen();
+  if (el.msRequestFullscreen) return el.msRequestFullscreen();
 }
 
 function exitFullscreen() {
-  if (document.exitFullscreen) return document.exitFullscreen();
-  // @ts-ignore
-  if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
-  // @ts-ignore
-  if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
-  // @ts-ignore
-  if (document.msExitFullscreen) return document.msExitFullscreen();
+  const doc = document as VendorDocument;
+  if (doc.exitFullscreen) return doc.exitFullscreen();
+  if (doc.webkitExitFullscreen) return doc.webkitExitFullscreen();
+  if (doc.mozCancelFullScreen) return doc.mozCancelFullScreen();
+  if (doc.msExitFullscreen) return doc.msExitFullscreen();
 }
 
 function addFullscreenListener(cb: () => void) {

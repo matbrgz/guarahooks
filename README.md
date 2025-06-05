@@ -15,7 +15,7 @@ Visit https://guarahooks.com to view the documentation.
 
 ## Contributing
 
-Visit our [contributing guide](https://github.com/h3rmel/guarahooks/blob/main/CONTRIBUTING.md) to learn how to contribute. It only takes ~5 minutes to add an hook!
+Visit our [contributing guide](https://github.com/h3rmel/guarahooks/blob/main/CONTRIBUTING.md) to learn how to contribute. It only takes ~5 minutes to add a hook!
 
 ## Authors
 

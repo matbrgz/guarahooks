@@ -1,16 +1,20 @@
 import { toc } from 'mdast-util-toc';
 import { remark } from 'remark';
+import type { Node } from 'unist';
 import { visit } from 'unist-util-visit';
 
 const textTypes = ['text', 'emphasis', 'strong', 'inlineCode'];
 
-function flattenNode(node: any) {
-  const p: any[] = [];
-  visit(node, (node) => {
-    if (!textTypes.includes(node.type)) return;
-    p.push(node.value);
+function flattenNode(node: Node) {
+  const p: string[] = [];
+  visit(node, (n) => {
+    if (!('type' in n)) return;
+    if (!textTypes.includes(n.type as string)) return;
+    if ('value' in n && typeof (n as { value: unknown }).value === 'string') {
+      p.push((n as { value: string }).value);
+    }
   });
-  return p.join(``);
+  return p.join('');
 }
 
 interface Item {
@@ -23,7 +27,7 @@ interface Items {
   items?: Item[];
 }
 
-function getItems(node: any, current: any): Items {
+function getItems(node: Node | null | undefined, current: Item): Items {
   if (!node) {
     return {};
   }
@@ -44,11 +48,13 @@ function getItems(node: any, current: any): Items {
   }
 
   if (node.type === 'list') {
-    current.items = node.children.map((i: any) => getItems(i, {}));
+    current.items = (node.children as Node[]).map((i) =>
+      getItems(i, {} as Item),
+    );
 
     return current;
   } else if (node.type === 'listItem') {
-    const heading = getItems(node.children[0], {});
+    const heading = getItems(node.children[0], {} as Item);
 
     if (node.children.length > 1) {
       getItems(node.children[1], heading);
@@ -60,9 +66,9 @@ function getItems(node: any, current: any): Items {
   return {};
 }
 
-const getToc = () => (node: any, file: any) => {
+const getToc = () => (node: Node, file: { data: Items }) => {
   const table = toc(node);
-  file.data = getItems(table.map, {});
+  file.data = getItems(table.map, {} as Item);
 };
 
 export type TableOfContents = Items;
