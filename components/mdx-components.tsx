@@ -25,22 +25,26 @@ import { cn } from '@/lib/utils';
 
 import { BlurFade } from './magicui/blur-fade';
 
-const CustomLink = (props: any) => {
-  const href = props.href;
+const CustomLink = (props: React.ComponentProps<'a'>) => {
+  const { href = '', children, ...rest } = props;
 
   if (href.startsWith('/')) {
     return (
-      <Link {...props} href={href}>
-        {props.children}
+      <Link {...rest} href={href}>
+        {children}
       </Link>
     );
   }
 
   if (href.startsWith('#')) {
-    return <a {...props} />;
+    return <a {...rest}>{children}</a>;
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  return (
+    <a target="_blank" rel="noopener noreferrer" {...rest}>
+      {children}
+    </a>
+  );
 };
 
 const components = {
@@ -56,7 +60,9 @@ const components = {
   HookPreview,
   HooksList,
   BlurFade: BlurFade,
-  HookSource: (props: any) => <HookSource {...props} />,
+  HookSource: (props: React.ComponentProps<typeof HookSource>) => (
+    <HookSource {...props} />
+  ),
   h1: ({ className, ...props }: React.ComponentProps<'h1'>) => (
     <h1
       className={cn(
@@ -200,7 +206,7 @@ const components = {
       {...props}
     />
   ),
-  Steps: ({ ...props }) => (
+  Steps: ({ ...props }: React.HTMLAttributes<HTMLDivElement>) => (
     <div
       className="[&>h3]:step steps mb-12 ml-4 pl-8 [counter-reset:step] relative before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/50 before:to-transparent"
       {...props}

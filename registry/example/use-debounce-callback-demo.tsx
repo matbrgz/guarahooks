@@ -50,7 +50,7 @@ export function UseDebounceCallbackDemo() {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2">
         <p className="text-sm text-muted-foreground">
-          <strong>Imediate value:</strong> {inputValue}
+          <strong>Immediate value:</strong> {inputValue}
         </p>
         <p className="text-sm text-muted-foreground">
           <strong>Debounced value:</strong> {debouncedValue}

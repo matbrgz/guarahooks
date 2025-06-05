@@ -16,9 +16,9 @@ import { useFetch } from '@/registry/hooks/use-fetch';
 
 export default function UseFetchDemo() {
   // Using a slow endpoint to simulate network delay for testing abort
-  const { data, error, loading, refetch, abort, aborted } = useFetch<any>(
-    'https://httpbin.org/delay/5',
-  );
+  const { data, error, loading, refetch, abort, aborted } = useFetch<
+    Record<string, unknown>
+  >('https://httpbin.org/delay/5');
 
   return (
     <Card className="relative max-w-lg w-full">

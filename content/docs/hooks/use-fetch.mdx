@@ -107,7 +107,9 @@ const { data, error, loading } = useFetch<ResponseData>(
 ### Abort Request
 
 ```tsx
-const { loading, abort } = useFetch<any>('https://api.example.com/data');
+const { loading, abort } = useFetch<Record<string, unknown>>(
+  'https://api.example.com/data',
+);
 
 return (
   <Button onClick={abort} disabled={!loading}>

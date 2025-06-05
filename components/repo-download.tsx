@@ -25,7 +25,7 @@ export default function RepoDownload({ url, free = false }: RepoDownloadProps) {
     try {
       window.location.href = url;
     } catch (error) {
-      toast.error('Error occured while downloading. Please try again.');
+      toast.error('Error occurred while downloading. Please try again.');
       console.error('error', error);
     } finally {
       setLoading(false);

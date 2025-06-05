@@ -20,7 +20,7 @@ export default function UseAbortControllerDemo() {
   const [fetchStatus, setFetchStatus] = useState<
     'idle' | 'loading' | 'success' | 'error' | 'aborted'
   >('idle');
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<unknown>(null);
   const [error, setError] = useState<string | null>(null);
 
   const {
@@ -49,13 +49,13 @@ export default function UseAbortControllerDemo() {
       const result = await response.json();
       setData(result);
       setFetchStatus('success');
-    } catch (err: any) {
-      if (err.name === 'AbortError') {
+    } catch (err: unknown) {
+      if (err instanceof Error && err.name === 'AbortError') {
         setFetchStatus('aborted');
         setError('Request was aborted');
       } else {
         setFetchStatus('error');
-        setError(err.message || 'An error occurred');
+        setError(err instanceof Error ? err.message : 'An error occurred');
       }
     }
   };
@@ -76,13 +76,13 @@ export default function UseAbortControllerDemo() {
       const result = await response.json();
       setData(result);
       setFetchStatus('success');
-    } catch (err: any) {
-      if (err.name === 'AbortError') {
+    } catch (err: unknown) {
+      if (err instanceof Error && err.name === 'AbortError') {
         setFetchStatus('aborted');
         setError('Long request was aborted');
       } else {
         setFetchStatus('error');
-        setError(err.message || 'An error occurred');
+        setError(err instanceof Error ? err.message : 'An error occurred');
       }
     }
   };

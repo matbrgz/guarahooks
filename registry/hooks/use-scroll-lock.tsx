@@ -32,7 +32,7 @@ export function useScrollLock<T extends HTMLElement = HTMLElement>(
 
   const getTarget = useCallback((): HTMLElement => {
     const currentRef = refCached.current;
-    const el = currentRef ? (currentRef as any).current : null;
+    const el = currentRef?.current ?? null;
     return (el as HTMLElement) || document.body;
   }, []);
 
