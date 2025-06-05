@@ -103,11 +103,12 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
     <ul className={cn('m-0 list-none', { 'pl-4': level !== 1 })}>
       {tree.items.map((item, index) => {
         return (
-          <li key={index} className={cn('mt-0', index === 0 && 'pt-0')}>
+          <li key={index} className={cn('mt-0 pt-0')}>
             <a
               href={item.url}
               className={cn(
                 'inline-block text-xs no-underline transition-colors hover:text-foreground',
+                index === 0 && 'pt-1',
                 item.url === `#${activeItem}`
                   ? 'font-medium text-foreground'
                   : 'text-muted-foreground',

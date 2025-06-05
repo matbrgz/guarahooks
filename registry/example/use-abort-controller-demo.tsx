@@ -20,7 +20,7 @@ export default function UseAbortControllerDemo() {
   const [fetchStatus, setFetchStatus] = useState<
     'idle' | 'loading' | 'success' | 'error' | 'aborted'
   >('idle');
-  const [data, setData] = useState<unknown>(null);
+  const [data, setData] = useState<Record<string, unknown> | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const {
