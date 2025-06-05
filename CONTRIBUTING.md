@@ -40,7 +40,7 @@ Fork and clone the repository.
 
 ## Adding a new Hook
 
-To add a new Hook to guarahooks, you will need to modify and add several files. Follow this steps.
+To add a new Hook to guarahooks, you will need to modify and add several files. Follow these steps.
 
 ### 1. Create Hook
 
@@ -77,7 +77,7 @@ export function useExampleHookDemo() {
 
 ### 3. Update Sidebar
 
-Update the `config/docs.ts` wity your new hook in the correct category.
+Update the `config/docs.ts` with your new hook in the correct category.
 
 ```typescript
 {
@@ -182,8 +182,8 @@ export const examples: Registry['items'] = [
   {
     name: 'use-example-hook-demo',
     type: 'registry:example',
-    title: 'UseExampleSize Demo',
-    description: "use-example-hook's hook in action.",
+    title: 'UseExampleHook Demo',
+    description: 'use-example-hook in action.',
     registryDependencies: ['https://guarahooks.com/r/use-example-hook.json'],
     files: [
       {
@@ -239,7 +239,7 @@ affiliation: YC S25, raised $10M
 
 ### 2. Update your image
 
-Upload an banner image of you website in `public/showcase/website-name.png`
+Upload a banner image of your website in `public/showcase/website-name.png`
 
 ## Ask for Help
 

@@ -10,10 +10,23 @@ export interface BatteryStatus {
   dischargingTime: number;
 }
 
+interface BatteryManager extends EventTarget {
+  level: number;
+  charging: boolean;
+  chargingTime: number;
+  dischargingTime: number;
+}
+
+type NavigatorWithBattery = Navigator & {
+  getBattery?: () => Promise<BatteryManager>;
+};
+
 export function useBatteryStatus(): BatteryStatus {
-  const supported =
-    typeof navigator !== 'undefined' &&
-    typeof (navigator as any).getBattery === 'function';
+  const navigatorWithBattery =
+    typeof navigator !== 'undefined'
+      ? (navigator as NavigatorWithBattery)
+      : undefined;
+  const supported = typeof navigatorWithBattery?.getBattery === 'function';
 
   const [status, setStatus] = useState<BatteryStatus>({
     supported,
@@ -28,11 +41,11 @@ export function useBatteryStatus(): BatteryStatus {
       return;
     }
 
-    let battery: any;
+    let battery: BatteryManager | null = null;
     let isMounted = true;
 
     const updateStatus = () => {
-      if (!isMounted) return;
+      if (!isMounted || !battery) return;
       // Clamp times: use chargingTime only when charging, dischargingTime only when discharging
       const chargingTimeValue = battery.charging ? battery.chargingTime : 0;
       const dischargingTimeValue = battery.charging
@@ -48,9 +61,9 @@ export function useBatteryStatus(): BatteryStatus {
       });
     };
 
-    (navigator as any)
-      .getBattery()
-      .then((bat: any) => {
+    navigatorWithBattery
+      ?.getBattery?.()
+      .then((bat) => {
         battery = bat;
         updateStatus();
         battery.addEventListener('levelchange', updateStatus);

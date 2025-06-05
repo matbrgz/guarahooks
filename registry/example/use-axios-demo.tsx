@@ -119,7 +119,7 @@ export default function UseAxiosDemoComponent() {
         </Alert>
       )}
 
-      {data && (
+      {data != null && (
         <Card className="max-w-sm w-full">
           <CardHeader>
             <CardTitle>Response Data</CardTitle>

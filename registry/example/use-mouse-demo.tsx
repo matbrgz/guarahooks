@@ -19,7 +19,7 @@ export default function UseMouseDemo() {
   const [trackOutside, setTrackOutside] = useState(false);
   const [clampToZero, setClampToZero] = useState(false);
   const { docX, docY, posX, posY, elX, elY, elW, elH } = useMouse({
-    ref: ref as unknown as RefObject<HTMLElement>,
+    ref: ref as RefObject<HTMLElement>,
     trackOutside,
     clampToZero,
   });

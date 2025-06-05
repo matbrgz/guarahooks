@@ -58,7 +58,7 @@ export function useFetch<T = unknown>(
 
       return json;
     } catch (err) {
-      if ((err as any).name === 'AbortError') {
+      if (err instanceof DOMException && err.name === 'AbortError') {
         setAborted(true);
       } else if (isMounted.current) {
         setError(err as Error);

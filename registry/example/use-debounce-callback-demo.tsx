@@ -18,8 +18,8 @@ export function UseDebounceCallbackDemo() {
   const [inputValue, setInputValue] = useState('');
   const [debouncedValue, setDebouncedValue] = useState('');
 
-  const updateDebouncedValue = useCallback((value: string) => {
-    setDebouncedValue(value);
+  const updateDebouncedValue = useCallback((value: unknown) => {
+    setDebouncedValue(value as string);
   }, []);
 
   const debouncedUpdate = useDebounceCallback(updateDebouncedValue, 500);
@@ -50,7 +50,7 @@ export function UseDebounceCallbackDemo() {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2">
         <p className="text-sm text-muted-foreground">
-          <strong>Imediate value:</strong> {inputValue}
+          <strong>Immediate value:</strong> {inputValue}
         </p>
         <p className="text-sm text-muted-foreground">
           <strong>Debounced value:</strong> {debouncedValue}
