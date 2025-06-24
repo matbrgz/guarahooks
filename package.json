@@ -9,6 +9,17 @@
     "name": "Isaac Hermel Reginato",
     "url": "https://github.com/h3rmel"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h3rmel/guarahooks"
+  },
+  "bugs": {
+    "url": "https://github.com/h3rmel/guarahooks/issues"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9.15.3"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "prebuild": "pnpm build:docs && pnpm build:registry",
@@ -103,16 +114,5 @@
     "unist-builder": "^4.0.0",
     "unist-util-visit": "^5.0.0"
   },
-  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/h3rmel/guarahooks"
-  },
-  "bugs": {
-    "url": "https://github.com/h3rmel/guarahooks/issues"
-  },
-  "engines": {
-    "node": ">=18",
-    "pnpm": ">=9.15.3"
-  }
+  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
 }

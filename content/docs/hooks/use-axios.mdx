@@ -58,40 +58,30 @@ pnpm add axios
 
 The hook returns an object with the following properties:
 
-| Property                                                                                | Type                                                                                                     | Description                              |
-| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `instance`                                                                              | `AxiosInstance`                                                                                          | Axios instance that can be used directly |
-| `loading`                                                                               | `boolean`                                                                                                | Loading state for requests               |
-| `error`                                                                                 | `AxiosError \| null`                                                                                     | Error from the most recent request       |
-| `data`                                                                                  | `TData \| null`                                                                                          | Data from the most recent request        |
-| `get`                                                                                   | `<T = TData>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`                     | Execute a GET request                    |
-| `post`                                                                                  | `<T = TData, B = void>(url: string, data?: B, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a POST request                   |
-| `put`                                                                                   | `<T = TData, B = void>(url: string, data?: B, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PUT request                    |
-| `delete`                                                                                | `<T = TData>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`                     | Execute a DELETE request                 |
-| `patch`                                                                                 | `<T = TData, B = void>(url: string, data?: B, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PATCH request                  |
-| `setHeaders`                                                                            | `(headers: Record<string, string>) => void`                                                              |
-| Merge the provided headers into the instance defaults and save them for future requests |
-
-| `resetHeaders`
-| `() => void`
-| Clear all default headers |
-| `resetBaseURL`
-| `() => void`
-| Reset the base URL to the current prop value |
-| `resetTimeout`
-| `() => void`
-| Reset the request timeout to the current prop value |
-| `resetConfig`
-| `() => void`
-| Reset Axios options to the current prop value |
-| `setBaseURL` | `(url: string) => void` | Update the default base URL for requests |
-| `setInterceptors` | `(interceptors: AxiosInterceptors) => void` | Apply request and response interceptors |
-| `resetInterceptors` | `() => void` | Reset interceptors to the current prop value |
-| `cancelRequest` | `() => void` | Cancel the active request |
-| `resetError` | `() => void` | Reset error state |
-| `resetData` | `() => void` | Reset data state |
-| `setTimeout` | `(ms: number) => void` | Update the request timeout |
-| `setConfig` | `(config: AxiosRequestConfig) => void` | Merge options into the Axios configuration |
+| Property            | Type                                                                                                     | Description                                                                             |
+| ------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `instance`          | `AxiosInstance`                                                                                          | Axios instance that can be used directly                                                |
+| `loading`           | `boolean`                                                                                                | Loading state for requests                                                              |
+| `error`             | `AxiosError \| null`                                                                                     | Error from the most recent request                                                      |
+| `data`              | `TData \| null`                                                                                          | Data from the most recent request                                                       |
+| `get`               | `<T = TData>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`                     | Execute a GET request                                                                   |
+| `post`              | `<T = TData, B = void>(url: string, data?: B, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a POST request                                                                  |
+| `put`               | `<T = TData, B = void>(url: string, data?: B, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PUT request                                                                   |
+| `delete`            | `<T = TData>(url: string, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>`                     | Execute a DELETE request                                                                |
+| `patch`             | `<T = TData, B = void>(url: string, data?: B, config?: AxiosRequestConfig) => Promise<AxiosResponse<T>>` | Execute a PATCH request                                                                 |
+| `setHeaders`        | `(headers: Record<string, string>) => void`                                                              | Merge the provided headers into the instance defaults and save them for future requests |
+| `resetHeaders`      | `() => void`                                                                                             | Clear all default headers                                                               |
+| `resetBaseURL`      | `() => void`                                                                                             | Reset the base URL to the current prop value                                            |
+| `resetTimeout`      | `() => void`                                                                                             | Reset the request timeout to the current prop value                                     |
+| `resetConfig`       | `() => void`                                                                                             | Reset Axios options to the current prop value                                           |
+| `setBaseURL`        | `(url: string) => void`                                                                                  | Update the default base URL for requests                                                |
+| `setInterceptors`   | `(interceptors: AxiosInterceptors) => void`                                                              | Apply request and response interceptors                                                 |
+| `resetInterceptors` | `() => void`                                                                                             | Reset interceptors to the current prop value                                            |
+| `cancelRequest`     | `() => void`                                                                                             | Cancel the active request                                                               |
+| `resetError`        | `() => void`                                                                                             | Reset error state                                                                       |
+| `resetData`         | `() => void`                                                                                             | Reset data state                                                                        |
+| `setTimeout`        | `(ms: number) => void`                                                                                   | Update the request timeout                                                              |
+| `setConfig`         | `(config: AxiosRequestConfig) => void`                                                                   | Merge options into the Axios configuration                                              |
 
 ## Key Features & Details
 

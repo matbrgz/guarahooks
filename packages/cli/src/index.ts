@@ -4,6 +4,8 @@ import { add } from '@/src/commands/add';
 
 import packageJson from '../package.json';
 
+// #region Version check
+
 const required = packageJson.engines?.node || '>=18';
 const [reqMajor = 18, reqMinor = 0, reqPatch = 0] = required
   .replace(/[^\d.]/g, '')
@@ -34,6 +36,8 @@ if (
   console.error('Run `nvm install` and `nvm use` to switch versions.');
   process.exit(1);
 }
+
+// #endregion
 
 process.on('SIGINT', () => process.exit(0));
 process.on('SIGTERM', () => process.exit(0));
