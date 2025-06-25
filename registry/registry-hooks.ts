@@ -601,7 +601,8 @@ export const hooks: Registry['items'] = [
     name: 'use-react-hook-form',
     type: 'registry:hook',
     title: 'UseReactHookForm',
-    description: 'Simplifies React Hook Form setup.',
+    description:
+      'Custom wrapper for React Hook Form with simplified onSubmit handler and optional debug logging.',
     files: [
       {
         path: 'registry/hooks/use-react-hook-form.tsx',

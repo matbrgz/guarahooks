@@ -988,7 +988,8 @@ export const Index: Record<string, RegistryItem> = {
   },
   'use-react-hook-form': {
     name: 'use-react-hook-form',
-    description: 'Simplifies React Hook Form setup.',
+    description:
+      'Custom wrapper for React Hook Form with simplified onSubmit handler and optional debug logging.',
     type: 'registry:hook',
     registryDependencies: undefined,
     files: [
@@ -2184,6 +2185,37 @@ export const Index: Record<string, RegistryItem> = {
     component: React.lazy(async () => {
       const mod = await import(
         '@/registry/example/use-abort-controller-demo.tsx'
+      );
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-react-hook-form-demo': {
+    name: 'use-react-hook-form-demo',
+    description: "use-react-hook-form's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'label',
+      'input',
+      'button',
+      'https://guarahooks.com/r/use-react-hook-form.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-react-hook-form-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-react-hook-form-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        '@/registry/example/use-react-hook-form-demo.tsx'
       );
       const exportName =
         Object.keys(mod).find(

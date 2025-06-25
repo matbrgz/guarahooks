@@ -747,4 +747,24 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-react-hook-form-demo',
+    type: 'registry:example',
+    title: 'UseReactHookFormDemo',
+    description: "use-react-hook-form's hook in action.",
+    registryDependencies: [
+      'card',
+      'label',
+      'input',
+      'button',
+      'https://guarahooks.com/r/use-react-hook-form.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-react-hook-form-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-react-hook-form-demo.tsx',
+      },
+    ],
+  },
 ];
