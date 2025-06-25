@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-react-hook-form",
+  "type": "registry:hook",
+  "title": "UseReactHookForm",
+  "description": "Simplifies React Hook Form setup.",
+  "files": [
+    {
+      "path": "registry/hooks/use-react-hook-form.tsx",
+      "content": "'use client';\n\nimport { useCallback } from 'react';\n\nimport {\n  FieldValues,\n  SubmitHandler,\n  useForm,\n  UseFormProps,\n  UseFormReturn,\n} from 'react-hook-form';\n\nexport type UseReactHookFormReturn<T extends FieldValues> = UseFormReturn<T> & {\n  onSubmit: (\n    handler: SubmitHandler<T>,\n  ) => (e?: React.BaseSyntheticEvent) => Promise<void>;\n};\n\nexport function useReactHookForm<T extends FieldValues>(\n  options?: UseFormProps<T>,\n): UseReactHookFormReturn<T> {\n  const methods = useForm<T>(options);\n\n  const onSubmit = useCallback(\n    (handler: SubmitHandler<T>) => methods.handleSubmit(handler),\n    [methods],\n  );\n\n  return { ...methods, onSubmit };\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/guarahooks/use-react-hook-form.tsx"
+    }
+  ],
+  "categories": ["forms"]
+}

@@ -220,6 +220,34 @@ export const docsConfig: DashboardConfig = {
       ],
     },
     {
+      title: 'Form',
+      icon: 'Survey',
+      items: [
+        {
+          title: 'use-react-hook-form',
+          href: '/docs/hooks/use-react-hook-form',
+        },
+        {
+          title: 'use-formik',
+          href: '/docs/hooks/use-formik',
+        },
+      ],
+    },
+    {
+      title: 'Auth',
+      icon: 'Lock',
+      items: [
+        {
+          title: 'use-better-auth',
+          href: '/docs/hooks/use-better-auth',
+        },
+        {
+          title: 'use-next-auth',
+          href: '/docs/hooks/use-next-auth',
+        },
+      ],
+    },
+    {
       title: 'Lifecycle',
       icon: 'Refresh',
       items: [

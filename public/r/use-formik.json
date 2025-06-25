@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-formik",
+  "type": "registry:hook",
+  "title": "UseFormik",
+  "description": "Lightweight form state management with Formik.",
+  "files": [
+    {
+      "path": "registry/hooks/use-formik.tsx",
+      "content": "'use client';\n\nimport { useCallback } from 'react';\n\nimport { FormikConfig, FormikHelpers, FormikValues, useFormik } from 'formik';\n\nexport type UseFormikReturn<T extends FormikValues> = ReturnType<\n  typeof useFormik<T>\n> & {\n  onSubmit: (\n    handler: FormikConfig<T>['onSubmit'],\n  ) => (e?: React.FormEvent<HTMLFormElement>) => void;\n};\n\nexport function useFormikHook<T extends FormikValues>(\n  config: FormikConfig<T>,\n): UseFormikReturn<T> {\n  const formik = useFormik<T>(config);\n\n  const onSubmit = useCallback(\n    (handler: FormikConfig<T>['onSubmit']) => formik.handleSubmit(handler),\n    [formik],\n  );\n\n  return { ...formik, onSubmit } as UseFormikReturn<T>;\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/guarahooks/use-formik.tsx"
+    }
+  ],
+  "categories": ["forms"]
+}
