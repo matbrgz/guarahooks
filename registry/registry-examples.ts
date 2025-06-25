@@ -767,4 +767,25 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-formik-demo',
+    type: 'registry:example',
+    title: 'UseFormikDemo',
+    description: "use-formik's hook in action.",
+    registryDependencies: [
+      'card',
+      'label',
+      'input',
+      'button',
+      'sonner',
+      'https://guarahooks.com/r/use-formik.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-formik-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-formik-demo.tsx',
+      },
+    ],
+  },
 ];

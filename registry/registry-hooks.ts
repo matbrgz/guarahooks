@@ -601,8 +601,7 @@ export const hooks: Registry['items'] = [
     name: 'use-react-hook-form',
     type: 'registry:hook',
     title: 'UseReactHookForm',
-    description:
-      'Custom wrapper for React Hook Form with simplified onSubmit handler and optional debug logging.',
+    description: 'Custom wrapper for React Hook Form.',
     files: [
       {
         path: 'registry/hooks/use-react-hook-form.tsx',
@@ -630,7 +629,7 @@ export const hooks: Registry['items'] = [
     name: 'use-formik',
     type: 'registry:hook',
     title: 'UseFormik',
-    description: 'Lightweight form state management with Formik.',
+    description: 'Custom wrapper for Formik.',
     files: [
       {
         path: 'registry/hooks/use-formik.tsx',
