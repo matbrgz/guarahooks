@@ -808,4 +808,27 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-better-auth-demo',
+    type: 'registry:example',
+    title: 'UseBetterAuthDemo',
+    description: "use-better-auth's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'badge',
+      'input',
+      'label',
+      'tabs',
+      'sonner',
+      'https://guarahooks.com/r/use-better-auth.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-better-auth-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-better-auth-demo.tsx',
+      },
+    ],
+  },
 ];

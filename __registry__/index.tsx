@@ -1011,7 +1011,7 @@ export const Index: Record<string, RegistryItem> = {
   },
   'use-better-auth': {
     name: 'use-better-auth',
-    description: 'Simple authentication flow using fetch.',
+    description: 'Flexible authentication hook.',
     type: 'registry:hook',
     registryDependencies: undefined,
     files: [
@@ -2275,6 +2275,38 @@ export const Index: Record<string, RegistryItem> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-next-auth-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-better-auth-demo': {
+    name: 'use-better-auth-demo',
+    description: "use-better-auth's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'badge',
+      'input',
+      'label',
+      'tabs',
+      'sonner',
+      'https://guarahooks.com/r/use-better-auth.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-better-auth-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-better-auth-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-better-auth-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

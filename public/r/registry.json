@@ -608,7 +608,7 @@
       "name": "use-better-auth",
       "type": "registry:hook",
       "title": "UseBetterAuth",
-      "description": "Simple authentication flow using fetch.",
+      "description": "Flexible authentication hook.",
       "files": [
         {
           "path": "registry/hooks/use-better-auth.tsx",
@@ -1439,6 +1439,29 @@
           "path": "registry/example/use-next-auth-demo.tsx",
           "type": "registry:example",
           "target": "components/example/use-next-auth-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-better-auth-demo",
+      "type": "registry:example",
+      "title": "UseBetterAuthDemo",
+      "description": "use-better-auth's hook in action.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "badge",
+        "input",
+        "label",
+        "tabs",
+        "sonner",
+        "https://guarahooks.com/r/use-better-auth.json"
+      ],
+      "files": [
+        {
+          "path": "registry/example/use-better-auth-demo.tsx",
+          "type": "registry:example",
+          "target": "components/example/use-better-auth-demo.tsx"
         }
       ]
     }

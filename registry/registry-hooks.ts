@@ -615,7 +615,7 @@ export const hooks: Registry['items'] = [
     name: 'use-better-auth',
     type: 'registry:hook',
     title: 'UseBetterAuth',
-    description: 'Simple authentication flow using fetch.',
+    description: 'Flexible authentication hook.',
     files: [
       {
         path: 'registry/hooks/use-better-auth.tsx',
