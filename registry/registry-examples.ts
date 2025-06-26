@@ -788,4 +788,24 @@ export const examples: Registry['items'] = [
       },
     ],
   },
+  {
+    name: 'use-next-auth-demo',
+    type: 'registry:example',
+    title: 'UseNextAuthDemo',
+    description: "use-next-auth's hook in action.",
+    registryDependencies: [
+      'card',
+      'button',
+      'badge',
+      'sonner',
+      'https://guarahooks.com/r/use-next-auth.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-next-auth-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-next-auth-demo.tsx',
+      },
+    ],
+  },
 ];

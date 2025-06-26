@@ -587,7 +587,7 @@ export const hooks: Registry['items'] = [
     name: 'use-next-auth',
     type: 'registry:hook',
     title: 'UseNextAuth',
-    description: 'Wrapper around NextAuth session methods.',
+    description: 'Enhanced wrapper for NextAuth.js session management.',
     files: [
       {
         path: 'registry/hooks/use-next-auth.tsx',

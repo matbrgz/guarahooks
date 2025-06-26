@@ -965,7 +965,7 @@ export const Index: Record<string, RegistryItem> = {
   },
   'use-next-auth': {
     name: 'use-next-auth',
-    description: 'Wrapper around NextAuth session methods.',
+    description: 'Enhanced wrapper for NextAuth.js session management.',
     type: 'registry:hook',
     registryDependencies: undefined,
     files: [
@@ -2246,6 +2246,35 @@ export const Index: Record<string, RegistryItem> = {
     ],
     component: React.lazy(async () => {
       const mod = await import('@/registry/example/use-formik-demo.tsx');
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === 'function' || typeof mod[key] === 'object',
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  'use-next-auth-demo': {
+    name: 'use-next-auth-demo',
+    description: "use-next-auth's hook in action.",
+    type: 'registry:example',
+    registryDependencies: [
+      'card',
+      'button',
+      'badge',
+      'sonner',
+      'https://guarahooks.com/r/use-next-auth.json',
+    ],
+    files: [
+      {
+        path: 'registry/example/use-next-auth-demo.tsx',
+        type: 'registry:example',
+        target: 'components/example/use-next-auth-demo.tsx',
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import('@/registry/example/use-next-auth-demo.tsx');
       const exportName =
         Object.keys(mod).find(
           (key) =>

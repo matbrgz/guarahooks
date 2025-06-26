@@ -24,6 +24,13 @@ export interface UseNextAuthOptions<T extends Session = Session> {
   onError?: (error: Error) => void;
 }
 
+/**
+ * Enhanced hook for NextAuth.js session management with additional features
+ *
+ * @template T - Custom session interface extending NextAuth Session
+ * @param options - Configuration options for the hook
+ * @returns Enhanced session object with additional utilities
+ */
 export function useNextAuth<T extends Session = Session>(
   options: UseNextAuthOptions<T> = {},
 ): UseNextAuthReturn<T> {
@@ -59,18 +66,28 @@ export function useNextAuth<T extends Session = Session>(
     await update();
   }, [update]);
 
+  // Auto-refresh session at specified intervals
   useEffect(() => {
     if (!refreshInterval) return;
     const id = setInterval(refresh, refreshInterval);
     return () => clearInterval(id);
   }, [refreshInterval, refresh]);
 
+  // Session change detection and callbacks
   useEffect(() => {
     if (onSessionChange && previousRef.current !== data) {
       onSessionChange(data as T | null, status);
       previousRef.current = data as T | null;
     }
   }, [data, status, onSessionChange]);
+
+  // Debug logging in development mode
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[useNextAuth] Session:', data);
+      console.log('[useNextAuth] Status:', status);
+    }
+  }, [data, status]);
 
   return {
     session: data as T | null,
