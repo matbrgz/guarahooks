@@ -33,7 +33,6 @@ export const docsConfig: DashboardConfig = {
           title: 'CLI',
           href: '/docs/cli',
           items: [],
-          label: 'New',
         },
         {
           title: 'Resources',
@@ -49,6 +48,7 @@ export const docsConfig: DashboardConfig = {
           title: 'Changelog',
           href: '/docs/changelog',
           items: [],
+          label: 'New',
         },
       ],
     },
@@ -167,7 +167,6 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-abort-controller',
           href: '/docs/hooks/use-abort-controller',
-          label: 'New',
         },
         {
           title: 'use-copy-to-clipboard',
@@ -226,10 +225,12 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-react-hook-form',
           href: '/docs/hooks/use-react-hook-form',
+          label: 'New',
         },
         {
           title: 'use-formik',
           href: '/docs/hooks/use-formik',
+          label: 'New',
         },
       ],
     },
@@ -240,10 +241,12 @@ export const docsConfig: DashboardConfig = {
         {
           title: 'use-better-auth',
           href: '/docs/hooks/use-better-auth',
+          label: 'New',
         },
         {
           title: 'use-next-auth',
           href: '/docs/hooks/use-next-auth',
+          label: 'New',
         },
       ],
     },
