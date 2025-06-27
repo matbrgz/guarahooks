@@ -67,7 +67,7 @@ export default function UseAbortControllerDemo() {
       const result: Post = await response.json();
       setData(result);
       setFetchStatus('success');
-    } catch (err: Error) {
+    } catch (err: unknown) {
       if (err instanceof Error && err.name === 'AbortError') {
         setFetchStatus('aborted');
         setError('Request was aborted');
@@ -94,7 +94,7 @@ export default function UseAbortControllerDemo() {
       const result: HttpBinResponse = await response.json();
       setData(result);
       setFetchStatus('success');
-    } catch (err: Error) {
+    } catch (err: unknown) {
       if (err instanceof Error && err.name === 'AbortError') {
         setFetchStatus('aborted');
         setError('Long request was aborted');

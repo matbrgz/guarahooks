@@ -78,7 +78,7 @@ function getItems(node: Node | null | undefined, current: Item): Item | Items {
 }
 
 function getToc() {
-  return function (tree: Node, file: { data: Items }) {
+  return function (tree: Node, file: { data: unknown }) {
     const table = toc(tree as Parameters<typeof toc>[0]);
     const result = getItems(table.map, {} as Item);
     file.data = result as Items;

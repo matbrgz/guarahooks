@@ -19,7 +19,10 @@ export interface UseFetchResult<T> {
   aborted: boolean;
 }
 
-export function useFetch<TReturn = void, TBody = void>(
+export function useFetch<
+  TReturn = void,
+  TBody extends BodyInit | null = BodyInit | null,
+>(
   url: string,
   options: UseFetchOptions<TBody, TReturn> = {},
 ): UseFetchResult<TReturn> {

@@ -59,7 +59,7 @@ export function useCopyToClipboard(
         } else {
           throw new Error('Copy command failed');
         }
-      } catch (err: DOMException | Error) {
+      } catch (err: unknown) {
         console.error('Failed to copy text: ', err);
         return false;
       }
